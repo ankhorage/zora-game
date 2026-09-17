@@ -21,20 +21,30 @@ export function GameEntity({
 }: GameEntityProps) {
   return (
     <View
-      accessibilityLabel={accessibilityLabel}
+      {...(accessibilityLabel === undefined ? {} : { accessibilityLabel })}
+      {...(testID === undefined ? {} : { testID })}
       pointerEvents={pointerEvents}
-      style={[styles.root, createEntityStyle({ x, y, width, height, opacity, scale, rotation, zIndex, hidden })]}
-      testID={testID}
+      style={[
+        styles.root,
+        createEntityStyle({ x, y, width, height, opacity, scale, rotation, zIndex, hidden }),
+      ]}
     >
       {children}
     </View>
   );
 }
 
-type GameEntityStyleInput = Required<
-  Pick<GameEntityProps, 'hidden' | 'opacity' | 'rotation' | 'scale' | 'x' | 'y' | 'zIndex'>
-> &
-  Pick<GameEntityProps, 'height' | 'width'>;
+interface GameEntityStyleInput {
+  readonly x: number;
+  readonly y: number;
+  readonly width: number | undefined;
+  readonly height: number | undefined;
+  readonly opacity: number;
+  readonly scale: number;
+  readonly rotation: number;
+  readonly zIndex: number;
+  readonly hidden: boolean;
+}
 
 /*** Convert serializable entity presentation props into a React Native view style. */
 function createEntityStyle({
@@ -50,14 +60,14 @@ function createEntityStyle({
 }: GameEntityStyleInput): ViewStyle {
   return {
     display: hidden ? 'none' : 'flex',
-    height,
     left: toPercent(x),
     opacity: clamp(opacity, 0, 1),
     position: 'absolute',
     top: toPercent(y),
     transform: [{ scale }, { rotate: `${rotation}deg` }],
-    width,
     zIndex,
+    ...(height === undefined ? {} : { height }),
+    ...(width === undefined ? {} : { width }),
   };
 }
 

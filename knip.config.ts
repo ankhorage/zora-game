@@ -4,6 +4,7 @@ export default createKnipConfig({
   entry: [
     'src/index.ts',
     'src/metadata.ts',
+    'examples/**/*.tsx',
     'paradox.config.ts',
     'eslint.config.mjs',
     'eslint.local.config.mjs',

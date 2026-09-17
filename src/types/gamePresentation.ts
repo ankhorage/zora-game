@@ -4,11 +4,7 @@ type GameOverlayCornerPlacement = 'top-left' | 'top-right' | 'bottom-left' | 'bo
 
 export type GamePointerEvents = 'auto' | 'box-none' | 'box-only' | 'none';
 export type GameOverlayPlacement =
-  | 'fill'
-  | 'center'
-  | 'top'
-  | 'bottom'
-  | GameOverlayCornerPlacement;
+  'fill' | 'center' | 'top' | 'bottom' | GameOverlayCornerPlacement;
 
 export interface GameFieldProps {
   readonly children?: React.ReactNode;

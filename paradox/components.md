@@ -1,5 +1,28 @@
 # Components
 
+## Game
+
+Source: `src/features/game-presentation/adapters/inbound/Game.tsx:9:1`
+
+Bind one serializable game definition to a local transient session and presentation field.
+
+Export paths: `src/index.ts`
+
+| Prop | Type | Required | Default | Description |
+| --- | --- | --- | --- | --- |
+| accessibilityLabel | `string \| undefined` | no | — |  |
+| aspectRatio | `number \| undefined` | no | — |  |
+| autoAdvanceTime | `boolean \| undefined` | no | — |  |
+| children | `React.ReactNode \| undefined` | no | — |  |
+| clip | `boolean \| undefined` | no | — |  |
+| definition | `GameDefinition` | yes | — |  |
+| input | `GameInput \| undefined` | no | — |  |
+| minHeight | `number \| undefined` | no | — |  |
+| onOutput | `(output: GameOutput) => void \| undefined` | no | — |  |
+| resetKey | `string \| undefined` | no | — |  |
+| seed | `number \| undefined` | no | — |  |
+| testID | `string \| undefined` | no | — |  |
+
 ## GameEntity
 
 Source: `src/features/game-presentation/adapters/inbound/GameEntity.tsx:7:1`

@@ -14,7 +14,7 @@
     {
       "id": "npm",
       "label": "npm",
-      "value": "v0.1.0",
+      "value": "v0.2.0",
       "color": "cb3837"
     },
     {
@@ -72,6 +72,19 @@
   ],
   "modules": [
     {
+      "path": "src/features/game-presentation/adapters/inbound/Game.tsx",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/game-presentation/adapters/inbound/GameField.tsx",
+        "src/features/game-presentation/composition/GameRuntimeContext.ts",
+        "src/features/game-presentation/composition/useGameRuntime.ts",
+        "src/types/gamePresentation.ts"
+      ],
+      "exports": [
+        "Game"
+      ]
+    },
+    {
       "path": "src/features/game-presentation/adapters/inbound/GameEntity.tsx",
       "isEntrypoint": false,
       "dependencies": [
@@ -102,6 +115,38 @@
       ]
     },
     {
+      "path": "src/features/game-presentation/composition/GameRuntimeContext.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/types/gameRuntime.ts"
+      ],
+      "exports": [
+        "GameRuntimeContext"
+      ]
+    },
+    {
+      "path": "src/features/game-presentation/composition/useGameRuntime.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/game-presentation/composition/useGameScheduledEffects.ts",
+        "src/types/gamePresentation.ts",
+        "src/types/gameRuntime.ts"
+      ],
+      "exports": [
+        "useGameRuntime"
+      ]
+    },
+    {
+      "path": "src/features/game-presentation/composition/useGameScheduledEffects.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/types/gameRuntime.ts"
+      ],
+      "exports": [
+        "useGameScheduledEffects"
+      ]
+    },
+    {
       "path": "src/features/game-presentation/meta/gameEntityMeta.ts",
       "isEntrypoint": false,
       "dependencies": [],
@@ -118,6 +163,14 @@
       ]
     },
     {
+      "path": "src/features/game-presentation/meta/gameMeta.ts",
+      "isEntrypoint": false,
+      "dependencies": [],
+      "exports": [
+        "gameMeta"
+      ]
+    },
+    {
       "path": "src/features/game-presentation/meta/gameOverlayMeta.ts",
       "isEntrypoint": false,
       "dependencies": [],
@@ -130,21 +183,7 @@
       "isEntrypoint": false,
       "dependencies": [],
       "exports": [
-        "GameEntity",
-        "GameEntityProps",
-        "GameField",
-        "GameFieldProps",
-        "GameOverlay",
-        "GameOverlayPlacement",
-        "GameOverlayProps",
-        "GamePointerEvents"
-      ]
-    },
-    {
-      "path": "src/index.ts",
-      "isEntrypoint": true,
-      "dependencies": [],
-      "exports": [
+        "Game",
         "GameEntity",
         "GameEntityProps",
         "GameField",
@@ -153,6 +192,24 @@
         "GameOverlayPlacement",
         "GameOverlayProps",
         "GamePointerEvents",
+        "GameProps"
+      ]
+    },
+    {
+      "path": "src/index.ts",
+      "isEntrypoint": true,
+      "dependencies": [],
+      "exports": [
+        "Game",
+        "GameEntity",
+        "GameEntityProps",
+        "GameField",
+        "GameFieldProps",
+        "GameOverlay",
+        "GameOverlayPlacement",
+        "GameOverlayProps",
+        "GamePointerEvents",
+        "GameProps",
         "ZORA_GAME_PLUGIN"
       ]
     },
@@ -174,7 +231,17 @@
         "GameFieldProps",
         "GameOverlayPlacement",
         "GameOverlayProps",
-        "GamePointerEvents"
+        "GamePointerEvents",
+        "GameProps"
+      ]
+    },
+    {
+      "path": "src/types/gameRuntime.ts",
+      "isEntrypoint": false,
+      "dependencies": [],
+      "exports": [
+        "GameRuntimeContextValue",
+        "GameRuntimeState"
       ]
     },
     {
@@ -183,6 +250,7 @@
       "dependencies": [
         "src/features/game-presentation/meta/gameEntityMeta.ts",
         "src/features/game-presentation/meta/gameFieldMeta.ts",
+        "src/features/game-presentation/meta/gameMeta.ts",
         "src/features/game-presentation/meta/gameOverlayMeta.ts"
       ],
       "exports": [
@@ -193,6 +261,7 @@
       "path": "src/ZORA_GAME_PLUGIN.ts",
       "isEntrypoint": false,
       "dependencies": [
+        "src/features/game-presentation/adapters/inbound/Game.tsx",
         "src/features/game-presentation/adapters/inbound/GameEntity.tsx",
         "src/features/game-presentation/adapters/inbound/GameField.tsx",
         "src/features/game-presentation/adapters/inbound/GameOverlay.tsx",
@@ -222,6 +291,42 @@
     }
   ],
   "exports": [
+    {
+      "name": "Game",
+      "description": "Bind one serializable game definition to a local transient session and presentation field.",
+      "isReadme": false,
+      "examples": [],
+      "kind": "function",
+      "modulePath": "src/features/game-presentation/adapters/inbound/Game.tsx",
+      "sourceLocation": {
+        "filePath": "src/features/game-presentation/adapters/inbound/Game.tsx",
+        "line": 9,
+        "column": 1
+      },
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "GameProps"
+      ],
+      "signatures": [
+        {
+          "label": "(props: GameProps) => React.JSX.Element",
+          "parameters": [
+            {
+              "name": "props",
+              "type": "GameProps",
+              "required": true,
+              "description": null
+            }
+          ],
+          "returnType": "React.JSX.Element",
+          "returnDescription": null
+        }
+      ],
+      "members": [],
+      "structuredRows": []
+    },
     {
       "name": "GameEntity",
       "description": "Render one generic positioned game entity without owning gameplay semantics.",
@@ -267,7 +372,7 @@
       "modulePath": "src/types/gamePresentation.ts",
       "sourceLocation": {
         "filePath": "src/types/gamePresentation.ts",
-        "line": 18,
+        "line": 19,
         "column": 1
       },
       "exportPaths": [
@@ -417,7 +522,7 @@
       "modulePath": "src/types/gamePresentation.ts",
       "sourceLocation": {
         "filePath": "src/types/gamePresentation.ts",
-        "line": 9,
+        "line": 10,
         "column": 1
       },
       "exportPaths": [
@@ -516,7 +621,7 @@
       "modulePath": "src/types/gamePresentation.ts",
       "sourceLocation": {
         "filePath": "src/types/gamePresentation.ts",
-        "line": 6,
+        "line": 7,
         "column": 1
       },
       "exportPaths": [
@@ -536,7 +641,7 @@
       "modulePath": "src/types/gamePresentation.ts",
       "sourceLocation": {
         "filePath": "src/types/gamePresentation.ts",
-        "line": 34,
+        "line": 35,
         "column": 1
       },
       "exportPaths": [
@@ -601,7 +706,7 @@
       "modulePath": "src/types/gamePresentation.ts",
       "sourceLocation": {
         "filePath": "src/types/gamePresentation.ts",
-        "line": 5,
+        "line": 6,
         "column": 1
       },
       "exportPaths": [
@@ -613,6 +718,111 @@
       "structuredRows": []
     },
     {
+      "name": "GameProps",
+      "description": null,
+      "isReadme": false,
+      "examples": [],
+      "kind": "type",
+      "modulePath": "src/types/gamePresentation.ts",
+      "sourceLocation": {
+        "filePath": "src/types/gamePresentation.ts",
+        "line": 44,
+        "column": 1
+      },
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [],
+      "signatures": [],
+      "members": [
+        {
+          "name": "accessibilityLabel",
+          "kind": "property",
+          "type": "string",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "aspectRatio",
+          "kind": "property",
+          "type": "number",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "autoAdvanceTime",
+          "kind": "property",
+          "type": "boolean",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "children",
+          "kind": "property",
+          "type": "React.ReactNode",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "clip",
+          "kind": "property",
+          "type": "boolean",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "definition",
+          "kind": "property",
+          "type": "GameDefinition",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "input",
+          "kind": "property",
+          "type": "Readonly<Record<string, import(\"@ankhorage/game\").GameValue>>",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "minHeight",
+          "kind": "property",
+          "type": "number",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "onOutput",
+          "kind": "property",
+          "type": "(output: GameOutput) => void",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "resetKey",
+          "kind": "property",
+          "type": "string",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "seed",
+          "kind": "property",
+          "type": "number",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "testID",
+          "kind": "property",
+          "type": "string",
+          "required": false,
+          "description": null
+        }
+      ],
+      "structuredRows": []
+    },
+    {
       "name": "ZORA_GAME_COMPONENT_META",
       "description": "Register the generic game presentation metadata owned by this package.",
       "isReadme": false,
@@ -621,7 +831,7 @@
       "modulePath": "src/ZORA_GAME_COMPONENT_META.ts",
       "sourceLocation": {
         "filePath": "src/ZORA_GAME_COMPONENT_META.ts",
-        "line": 6,
+        "line": 7,
         "column": 14
       },
       "exportPaths": [
@@ -641,7 +851,7 @@
       "modulePath": "src/ZORA_GAME_PLUGIN.ts",
       "sourceLocation": {
         "filePath": "src/ZORA_GAME_PLUGIN.ts",
-        "line": 7,
+        "line": 8,
         "column": 14
       },
       "exportPaths": [
@@ -674,6 +884,95 @@
     }
   ],
   "components": [
+    {
+      "name": "Game",
+      "description": "Bind one serializable game definition to a local transient session and presentation field.",
+      "isReadme": false,
+      "examples": [],
+      "modulePath": "src/features/game-presentation/adapters/inbound/Game.tsx",
+      "sourceLocation": {
+        "filePath": "src/features/game-presentation/adapters/inbound/Game.tsx",
+        "line": 9,
+        "column": 1
+      },
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "props": [
+        {
+          "name": "accessibilityLabel",
+          "type": "string | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "aspectRatio",
+          "type": "number | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "autoAdvanceTime",
+          "type": "boolean | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "children",
+          "type": "React.ReactNode | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "clip",
+          "type": "boolean | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "definition",
+          "type": "GameDefinition",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "input",
+          "type": "GameInput | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "minHeight",
+          "type": "number | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "onOutput",
+          "type": "(output: GameOutput) => void | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "resetKey",
+          "type": "string | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "seed",
+          "type": "number | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "testID",
+          "type": "string | undefined",
+          "required": false,
+          "description": null
+        }
+      ]
+    },
     {
       "name": "GameEntity",
       "description": "Render one generic positioned game entity without owning gameplay semantics.",
@@ -891,6 +1190,15 @@
   ],
   "sourceFunctions": [
     {
+      "name": "Game",
+      "description": "Bind one serializable game definition to a local transient session and presentation field.",
+      "sourceLocation": {
+        "filePath": "src/features/game-presentation/adapters/inbound/Game.tsx",
+        "line": 9,
+        "column": 1
+      }
+    },
+    {
       "name": "GameEntity",
       "description": "Render one generic positioned game entity without owning gameplay semantics.",
       "sourceLocation": {
@@ -952,9 +1260,125 @@
         "line": 28,
         "column": 1
       }
+    },
+    {
+      "name": "useGameRuntime",
+      "description": "Own one local transient Game session while delegating all domain transitions to @ankhorage/game.",
+      "sourceLocation": {
+        "filePath": "src/features/game-presentation/composition/useGameRuntime.ts",
+        "line": 17,
+        "column": 1
+      }
+    },
+    {
+      "name": "useGameRuntimeReset",
+      "description": "Reset the transient session only when its explicit serializable runtime identity changes.",
+      "sourceLocation": {
+        "filePath": "src/features/game-presentation/composition/useGameRuntime.ts",
+        "line": 82,
+        "column": 1
+      }
+    },
+    {
+      "name": "useGameOutputEmitter",
+      "description": "Emit each runtime output exactly when one execution revision becomes current.",
+      "sourceLocation": {
+        "filePath": "src/features/game-presentation/composition/useGameRuntime.ts",
+        "line": 107,
+        "column": 1
+      }
+    },
+    {
+      "name": "applyRuntimeEvent",
+      "description": "Apply elapsed time and one explicit game event against the matching local session.",
+      "sourceLocation": {
+        "filePath": "src/features/game-presentation/composition/useGameRuntime.ts",
+        "line": 128,
+        "column": 1
+      }
+    },
+    {
+      "name": "createRuntimeState",
+      "description": "Create one transient runtime state through the published Game owner API.",
+      "sourceLocation": {
+        "filePath": "src/features/game-presentation/composition/useGameRuntime.ts",
+        "line": 152,
+        "column": 1
+      }
+    },
+    {
+      "name": "createRuntimeKey",
+      "description": "Create one runtime identity from serializable definition/session initialization inputs.",
+      "sourceLocation": {
+        "filePath": "src/features/game-presentation/composition/useGameRuntime.ts",
+        "line": 164,
+        "column": 1
+      }
+    },
+    {
+      "name": "emitGameOutputs",
+      "description": "Emit runtime outputs through the ZORA event callback boundary.",
+      "sourceLocation": {
+        "filePath": "src/features/game-presentation/composition/useGameRuntime.ts",
+        "line": 169,
+        "column": 1
+      }
+    },
+    {
+      "name": "useLatestValue",
+      "description": "Keep a stable ref object updated with the latest adapter input.",
+      "sourceLocation": {
+        "filePath": "src/features/game-presentation/composition/useGameRuntime.ts",
+        "line": 175,
+        "column": 1
+      }
+    },
+    {
+      "name": "useGameScheduledEffects",
+      "description": "Advance the nearest scheduled game effects through one platform timer.",
+      "sourceLocation": {
+        "filePath": "src/features/game-presentation/composition/useGameScheduledEffects.ts",
+        "line": 9,
+        "column": 1
+      }
+    },
+    {
+      "name": "advanceScheduledRuntime",
+      "description": "Advance one matching runtime state while preserving sessions that have already reset.",
+      "sourceLocation": {
+        "filePath": "src/features/game-presentation/composition/useGameScheduledEffects.ts",
+        "line": 60,
+        "column": 1
+      }
+    },
+    {
+      "name": "resolveNextScheduledDelay",
+      "description": "Resolve the nearest scheduled game consequence without owning domain timing rules.",
+      "sourceLocation": {
+        "filePath": "src/features/game-presentation/composition/useGameScheduledEffects.ts",
+        "line": 78,
+        "column": 1
+      }
+    },
+    {
+      "name": "readComponentMeta",
+      "description": "Require one composed component metadata entry for focused assertions.",
+      "sourceLocation": {
+        "filePath": "src/ZORA_PLUGIN_METADATA.test.ts",
+        "line": 44,
+        "column": 1
+      }
     }
   ],
   "sequenceScenarios": [
+    {
+      "kind": "export",
+      "name": "Game",
+      "sourcePath": "src/features/game-presentation/adapters/inbound/Game.tsx",
+      "symbolName": "Game",
+      "description": "Bind one serializable game definition to a local transient session and presentation field.",
+      "isReadme": false
+    },
     {
       "kind": "export",
       "name": "GameEntity",
@@ -1014,8 +1438,18 @@
       },
       {
         "fromPath": "src/ZORA_GAME_COMPONENT_META.ts",
+        "toPath": "src/features/game-presentation/meta/gameMeta.ts",
+        "sourcePath": "src/ZORA_GAME_COMPONENT_META.ts"
+      },
+      {
+        "fromPath": "src/ZORA_GAME_COMPONENT_META.ts",
         "toPath": "src/features/game-presentation/meta/gameOverlayMeta.ts",
         "sourcePath": "src/ZORA_GAME_COMPONENT_META.ts"
+      },
+      {
+        "fromPath": "src/ZORA_GAME_PLUGIN.ts",
+        "toPath": "src/features/game-presentation/adapters/inbound/Game.tsx",
+        "sourcePath": "src/ZORA_GAME_PLUGIN.ts"
       },
       {
         "fromPath": "src/ZORA_GAME_PLUGIN.ts",
@@ -1054,6 +1488,11 @@
       },
       {
         "fromPath": "src/features/game-presentation/public.ts",
+        "toPath": "src/features/game-presentation/adapters/inbound/Game.tsx",
+        "sourcePath": "src/features/game-presentation/public.ts"
+      },
+      {
+        "fromPath": "src/features/game-presentation/public.ts",
         "toPath": "src/features/game-presentation/adapters/inbound/GameEntity.tsx",
         "sourcePath": "src/features/game-presentation/public.ts"
       },
@@ -1066,6 +1505,51 @@
         "fromPath": "src/features/game-presentation/public.ts",
         "toPath": "src/features/game-presentation/adapters/inbound/GameOverlay.tsx",
         "sourcePath": "src/features/game-presentation/public.ts"
+      },
+      {
+        "fromPath": "src/features/game-presentation/composition/GameRuntimeContext.ts",
+        "toPath": "src/types/gameRuntime.ts",
+        "sourcePath": "src/features/game-presentation/composition/GameRuntimeContext.ts"
+      },
+      {
+        "fromPath": "src/features/game-presentation/composition/useGameRuntime.ts",
+        "toPath": "src/types/gamePresentation.ts",
+        "sourcePath": "src/features/game-presentation/composition/useGameRuntime.ts"
+      },
+      {
+        "fromPath": "src/features/game-presentation/composition/useGameRuntime.ts",
+        "toPath": "src/types/gameRuntime.ts",
+        "sourcePath": "src/features/game-presentation/composition/useGameRuntime.ts"
+      },
+      {
+        "fromPath": "src/features/game-presentation/composition/useGameRuntime.ts",
+        "toPath": "src/features/game-presentation/composition/useGameScheduledEffects.ts",
+        "sourcePath": "src/features/game-presentation/composition/useGameRuntime.ts"
+      },
+      {
+        "fromPath": "src/features/game-presentation/composition/useGameScheduledEffects.ts",
+        "toPath": "src/types/gameRuntime.ts",
+        "sourcePath": "src/features/game-presentation/composition/useGameScheduledEffects.ts"
+      },
+      {
+        "fromPath": "src/features/game-presentation/adapters/inbound/Game.tsx",
+        "toPath": "src/types/gamePresentation.ts",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/Game.tsx"
+      },
+      {
+        "fromPath": "src/features/game-presentation/adapters/inbound/Game.tsx",
+        "toPath": "src/features/game-presentation/composition/GameRuntimeContext.ts",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/Game.tsx"
+      },
+      {
+        "fromPath": "src/features/game-presentation/adapters/inbound/Game.tsx",
+        "toPath": "src/features/game-presentation/composition/useGameRuntime.ts",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/Game.tsx"
+      },
+      {
+        "fromPath": "src/features/game-presentation/adapters/inbound/Game.tsx",
+        "toPath": "src/features/game-presentation/adapters/inbound/GameField.tsx",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/Game.tsx"
       },
       {
         "fromPath": "src/features/game-presentation/adapters/inbound/GameEntity.tsx",
@@ -1104,9 +1588,129 @@
       },
       {
         "fromSymbol": "src/ZORA_PLUGIN_METADATA.test.ts",
+        "toSymbol": "readComponentMeta",
+        "callExpression": "readComponentMeta",
+        "sourcePath": "src/ZORA_PLUGIN_METADATA.test.ts"
+      },
+      {
+        "fromSymbol": "src/ZORA_PLUGIN_METADATA.test.ts",
         "toSymbol": "expect",
         "callExpression": "expect",
         "sourcePath": "src/ZORA_PLUGIN_METADATA.test.ts"
+      },
+      {
+        "fromSymbol": "useGameRuntime",
+        "toSymbol": "useLatestValue",
+        "callExpression": "useLatestValue",
+        "sourcePath": "src/features/game-presentation/composition/useGameRuntime.ts"
+      },
+      {
+        "fromSymbol": "useGameRuntime",
+        "toSymbol": "createRuntimeKey",
+        "callExpression": "createRuntimeKey",
+        "sourcePath": "src/features/game-presentation/composition/useGameRuntime.ts"
+      },
+      {
+        "fromSymbol": "src/features/game-presentation/composition/useGameRuntime.ts",
+        "toSymbol": "createRuntimeState",
+        "callExpression": "createRuntimeState",
+        "sourcePath": "src/features/game-presentation/composition/useGameRuntime.ts"
+      },
+      {
+        "fromSymbol": "useGameRuntime",
+        "toSymbol": "useGameRuntimeReset",
+        "callExpression": "useGameRuntimeReset",
+        "sourcePath": "src/features/game-presentation/composition/useGameRuntime.ts"
+      },
+      {
+        "fromSymbol": "useGameRuntime",
+        "toSymbol": "useGameOutputEmitter",
+        "callExpression": "useGameOutputEmitter",
+        "sourcePath": "src/features/game-presentation/composition/useGameRuntime.ts"
+      },
+      {
+        "fromSymbol": "src/features/game-presentation/composition/useGameRuntime.ts",
+        "toSymbol": "setRuntime",
+        "callExpression": "setRuntime",
+        "sourcePath": "src/features/game-presentation/composition/useGameRuntime.ts"
+      },
+      {
+        "fromSymbol": "src/features/game-presentation/composition/useGameRuntime.ts",
+        "toSymbol": "applyRuntimeEvent",
+        "callExpression": "applyRuntimeEvent",
+        "sourcePath": "src/features/game-presentation/composition/useGameRuntime.ts"
+      },
+      {
+        "fromSymbol": "useGameRuntime",
+        "toSymbol": "useGameScheduledEffects",
+        "callExpression": "useGameScheduledEffects",
+        "sourcePath": "src/features/game-presentation/composition/useGameRuntime.ts"
+      },
+      {
+        "fromSymbol": "src/features/game-presentation/composition/useGameRuntime.ts",
+        "toSymbol": "emitGameOutputs",
+        "callExpression": "emitGameOutputs",
+        "sourcePath": "src/features/game-presentation/composition/useGameRuntime.ts"
+      },
+      {
+        "fromSymbol": "applyRuntimeEvent",
+        "toSymbol": "createRuntimeState",
+        "callExpression": "createRuntimeState",
+        "sourcePath": "src/features/game-presentation/composition/useGameRuntime.ts"
+      },
+      {
+        "fromSymbol": "applyRuntimeEvent",
+        "toSymbol": "advanceGameTime",
+        "callExpression": "advanceGameTime",
+        "sourcePath": "src/features/game-presentation/composition/useGameRuntime.ts"
+      },
+      {
+        "fromSymbol": "applyRuntimeEvent",
+        "toSymbol": "applyGameEvent",
+        "callExpression": "applyGameEvent",
+        "sourcePath": "src/features/game-presentation/composition/useGameRuntime.ts"
+      },
+      {
+        "fromSymbol": "createRuntimeState",
+        "toSymbol": "createGameSession",
+        "callExpression": "createGameSession",
+        "sourcePath": "src/features/game-presentation/composition/useGameRuntime.ts"
+      },
+      {
+        "fromSymbol": "src/features/game-presentation/composition/useGameRuntime.ts",
+        "toSymbol": "onOutput",
+        "callExpression": "onOutput",
+        "sourcePath": "src/features/game-presentation/composition/useGameRuntime.ts"
+      },
+      {
+        "fromSymbol": "src/features/game-presentation/composition/useGameScheduledEffects.ts",
+        "toSymbol": "resolveNextScheduledDelay",
+        "callExpression": "resolveNextScheduledDelay",
+        "sourcePath": "src/features/game-presentation/composition/useGameScheduledEffects.ts"
+      },
+      {
+        "fromSymbol": "src/features/game-presentation/composition/useGameScheduledEffects.ts",
+        "toSymbol": "setRuntime",
+        "callExpression": "setRuntime",
+        "sourcePath": "src/features/game-presentation/composition/useGameScheduledEffects.ts"
+      },
+      {
+        "fromSymbol": "src/features/game-presentation/composition/useGameScheduledEffects.ts",
+        "toSymbol": "advanceScheduledRuntime",
+        "callExpression": "advanceScheduledRuntime",
+        "sourcePath": "src/features/game-presentation/composition/useGameScheduledEffects.ts"
+      },
+      {
+        "fromSymbol": "advanceScheduledRuntime",
+        "toSymbol": "advanceGameTime",
+        "callExpression": "advanceGameTime",
+        "sourcePath": "src/features/game-presentation/composition/useGameScheduledEffects.ts"
+      },
+      {
+        "fromSymbol": "Game",
+        "toSymbol": "useGameRuntime",
+        "callExpression": "useGameRuntime",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/Game.tsx"
       },
       {
         "fromSymbol": "GameEntity",
@@ -1181,6 +1785,46 @@
         "sourcePath": "src/types/gamePresentation.ts"
       },
       {
+        "fromSymbol": "GameProps",
+        "toType": "GameDefinition",
+        "sourcePath": "src/types/gamePresentation.ts"
+      },
+      {
+        "fromSymbol": "GameProps",
+        "toType": "GameOutput",
+        "sourcePath": "src/types/gamePresentation.ts"
+      },
+      {
+        "fromSymbol": "GameProps",
+        "toType": "GameValue",
+        "sourcePath": "src/types/gamePresentation.ts"
+      },
+      {
+        "fromSymbol": "GameProps",
+        "toType": "React",
+        "sourcePath": "src/types/gamePresentation.ts"
+      },
+      {
+        "fromSymbol": "GameProps",
+        "toType": "ReactNode",
+        "sourcePath": "src/types/gamePresentation.ts"
+      },
+      {
+        "fromSymbol": "GameProps",
+        "toType": "Readonly",
+        "sourcePath": "src/types/gamePresentation.ts"
+      },
+      {
+        "fromSymbol": "Game",
+        "toType": "GameProps",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/Game.tsx"
+      },
+      {
+        "fromSymbol": "Game",
+        "toType": "React",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/Game.tsx"
+      },
+      {
         "fromSymbol": "GameEntity",
         "toType": "GameEntityProps",
         "sourcePath": "src/features/game-presentation/adapters/inbound/GameEntity.tsx"
@@ -1197,6 +1841,18 @@
       }
     ],
     "componentComposition": [
+      {
+        "fromComponent": "Game",
+        "toComponent": "GameRuntimeContext.Provider",
+        "jsxElement": "<GameRuntimeContext.Provider value={runtime}>",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/Game.tsx"
+      },
+      {
+        "fromComponent": "Game",
+        "toComponent": "GameField",
+        "jsxElement": "<GameField\n        {...(props.aspectRatio === undefined ? {} : { aspectRatio: props.aspectRatio })}\n        {...(props.minHeight === undefined ? {} : { minHeight: props.minHeight })}\n        {...(props.clip === undefined ? {} : { clip: props.clip })}\n        {...(props.accessibilityLabel === undefined\n          ? {}\n          : { accessibilityLabel: props.accessibilityLabel })}\n        {...(props.testID === undefined ? {} : { testID: props.testID })}\n      >",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/Game.tsx"
+      },
       {
         "fromComponent": "GameEntity",
         "toComponent": "View",

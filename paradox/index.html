@@ -127,6 +127,11 @@
               </button>
             </li>
             <li>
+    <button class="nav-button" type="button" data-target="src/features/game-presentation/adapters/inbound/Game.tsx">
+      src/features/game-presentation/adapters/inbound/Game.tsx
+      <small>1 function</small>
+    </button>
+  </li><li>
     <button class="nav-button" type="button" data-target="src/features/game-presentation/adapters/inbound/GameEntity.tsx">
       src/features/game-presentation/adapters/inbound/GameEntity.tsx
       <small>4 functions</small>
@@ -141,6 +146,21 @@
       src/features/game-presentation/adapters/inbound/GameOverlay.tsx
       <small>2 functions</small>
     </button>
+  </li><li>
+    <button class="nav-button" type="button" data-target="src/features/game-presentation/composition/useGameRuntime.ts">
+      src/features/game-presentation/composition/useGameRuntime.ts
+      <small>8 functions</small>
+    </button>
+  </li><li>
+    <button class="nav-button" type="button" data-target="src/features/game-presentation/composition/useGameScheduledEffects.ts">
+      src/features/game-presentation/composition/useGameScheduledEffects.ts
+      <small>3 functions</small>
+    </button>
+  </li><li>
+    <button class="nav-button" type="button" data-target="src/ZORA_PLUGIN_METADATA.test.ts">
+      src/ZORA_PLUGIN_METADATA.test.ts
+      <small>1 function</small>
+    </button>
   </li>
           </ul>
         </nav>
@@ -151,9 +171,9 @@
     <section class="panel">
       <h2>Package overview</h2>
       <div class="summary">
-        <div><strong>11</strong><span class="muted">public exports</span></div>
-        <div><strong>3</strong><span class="muted">components</span></div>
-        <div><strong>14</strong><span class="muted">modules</span></div>
+        <div><strong>13</strong><span class="muted">public exports</span></div>
+        <div><strong>4</strong><span class="muted">components</span></div>
+        <div><strong>20</strong><span class="muted">modules</span></div>
         <div><strong>2</strong><span class="muted">entrypoints</span></div>
       </div>
       <h3>Entrypoints</h3>
@@ -164,7 +184,12 @@
     
     <section class="panel">
       <h2>Modules</h2>
-      <article class="item" data-search="src/features/game-presentation/adapters/inbound/GameEntity.tsx src/types/gamePresentation.ts GameEntity">
+      <article class="item" data-search="src/features/game-presentation/adapters/inbound/Game.tsx src/features/game-presentation/adapters/inbound/GameField.tsx src/features/game-presentation/composition/GameRuntimeContext.ts src/features/game-presentation/composition/useGameRuntime.ts src/types/gamePresentation.ts Game">
+    <h3>src/features/game-presentation/adapters/inbound/Game.tsx</h3>
+    <p class="muted">Referenced module</p>
+    <p><strong>Dependencies:</strong> <code>src/features/game-presentation/adapters/inbound/GameField.tsx</code>, <code>src/features/game-presentation/composition/GameRuntimeContext.ts</code>, <code>src/features/game-presentation/composition/useGameRuntime.ts</code>, <code>src/types/gamePresentation.ts</code></p>
+    <p><strong>Exports:</strong> <code>Game</code></p>
+  </article><article class="item" data-search="src/features/game-presentation/adapters/inbound/GameEntity.tsx src/types/gamePresentation.ts GameEntity">
     <h3>src/features/game-presentation/adapters/inbound/GameEntity.tsx</h3>
     <p class="muted">Referenced module</p>
     <p><strong>Dependencies:</strong> <code>src/types/gamePresentation.ts</code></p>
@@ -179,6 +204,21 @@
     <p class="muted">Referenced module</p>
     <p><strong>Dependencies:</strong> <code>src/types/gamePresentation.ts</code></p>
     <p><strong>Exports:</strong> <code>GameOverlay</code></p>
+  </article><article class="item" data-search="src/features/game-presentation/composition/GameRuntimeContext.ts src/types/gameRuntime.ts GameRuntimeContext">
+    <h3>src/features/game-presentation/composition/GameRuntimeContext.ts</h3>
+    <p class="muted">Referenced module</p>
+    <p><strong>Dependencies:</strong> <code>src/types/gameRuntime.ts</code></p>
+    <p><strong>Exports:</strong> <code>GameRuntimeContext</code></p>
+  </article><article class="item" data-search="src/features/game-presentation/composition/useGameRuntime.ts src/features/game-presentation/composition/useGameScheduledEffects.ts src/types/gamePresentation.ts src/types/gameRuntime.ts useGameRuntime">
+    <h3>src/features/game-presentation/composition/useGameRuntime.ts</h3>
+    <p class="muted">Referenced module</p>
+    <p><strong>Dependencies:</strong> <code>src/features/game-presentation/composition/useGameScheduledEffects.ts</code>, <code>src/types/gamePresentation.ts</code>, <code>src/types/gameRuntime.ts</code></p>
+    <p><strong>Exports:</strong> <code>useGameRuntime</code></p>
+  </article><article class="item" data-search="src/features/game-presentation/composition/useGameScheduledEffects.ts src/types/gameRuntime.ts useGameScheduledEffects">
+    <h3>src/features/game-presentation/composition/useGameScheduledEffects.ts</h3>
+    <p class="muted">Referenced module</p>
+    <p><strong>Dependencies:</strong> <code>src/types/gameRuntime.ts</code></p>
+    <p><strong>Exports:</strong> <code>useGameScheduledEffects</code></p>
   </article><article class="item" data-search="src/features/game-presentation/meta/gameEntityMeta.ts gameEntityMeta">
     <h3>src/features/game-presentation/meta/gameEntityMeta.ts</h3>
     <p class="muted">Referenced module</p>
@@ -189,40 +229,50 @@
     <p class="muted">Referenced module</p>
     <p><strong>Dependencies:</strong> <span class="empty">None</span></p>
     <p><strong>Exports:</strong> <code>gameFieldMeta</code></p>
+  </article><article class="item" data-search="src/features/game-presentation/meta/gameMeta.ts gameMeta">
+    <h3>src/features/game-presentation/meta/gameMeta.ts</h3>
+    <p class="muted">Referenced module</p>
+    <p><strong>Dependencies:</strong> <span class="empty">None</span></p>
+    <p><strong>Exports:</strong> <code>gameMeta</code></p>
   </article><article class="item" data-search="src/features/game-presentation/meta/gameOverlayMeta.ts gameOverlayMeta">
     <h3>src/features/game-presentation/meta/gameOverlayMeta.ts</h3>
     <p class="muted">Referenced module</p>
     <p><strong>Dependencies:</strong> <span class="empty">None</span></p>
     <p><strong>Exports:</strong> <code>gameOverlayMeta</code></p>
-  </article><article class="item" data-search="src/features/game-presentation/public.ts GameEntity GameEntityProps GameField GameFieldProps GameOverlay GameOverlayPlacement GameOverlayProps GamePointerEvents">
+  </article><article class="item" data-search="src/features/game-presentation/public.ts Game GameEntity GameEntityProps GameField GameFieldProps GameOverlay GameOverlayPlacement GameOverlayProps GamePointerEvents GameProps">
     <h3>src/features/game-presentation/public.ts</h3>
     <p class="muted">Referenced module</p>
     <p><strong>Dependencies:</strong> <span class="empty">None</span></p>
-    <p><strong>Exports:</strong> <code>GameEntity</code>, <code>GameEntityProps</code>, <code>GameField</code>, <code>GameFieldProps</code>, <code>GameOverlay</code>, <code>GameOverlayPlacement</code>, <code>GameOverlayProps</code>, <code>GamePointerEvents</code></p>
-  </article><article class="item" data-search="src/index.ts GameEntity GameEntityProps GameField GameFieldProps GameOverlay GameOverlayPlacement GameOverlayProps GamePointerEvents ZORA_GAME_PLUGIN">
+    <p><strong>Exports:</strong> <code>Game</code>, <code>GameEntity</code>, <code>GameEntityProps</code>, <code>GameField</code>, <code>GameFieldProps</code>, <code>GameOverlay</code>, <code>GameOverlayPlacement</code>, <code>GameOverlayProps</code>, <code>GamePointerEvents</code>, <code>GameProps</code></p>
+  </article><article class="item" data-search="src/index.ts Game GameEntity GameEntityProps GameField GameFieldProps GameOverlay GameOverlayPlacement GameOverlayProps GamePointerEvents GameProps ZORA_GAME_PLUGIN">
     <h3>src/index.ts</h3>
     <p class="muted">Configured entrypoint</p>
     <p><strong>Dependencies:</strong> <span class="empty">None</span></p>
-    <p><strong>Exports:</strong> <code>GameEntity</code>, <code>GameEntityProps</code>, <code>GameField</code>, <code>GameFieldProps</code>, <code>GameOverlay</code>, <code>GameOverlayPlacement</code>, <code>GameOverlayProps</code>, <code>GamePointerEvents</code>, <code>ZORA_GAME_PLUGIN</code></p>
+    <p><strong>Exports:</strong> <code>Game</code>, <code>GameEntity</code>, <code>GameEntityProps</code>, <code>GameField</code>, <code>GameFieldProps</code>, <code>GameOverlay</code>, <code>GameOverlayPlacement</code>, <code>GameOverlayProps</code>, <code>GamePointerEvents</code>, <code>GameProps</code>, <code>ZORA_GAME_PLUGIN</code></p>
   </article><article class="item" data-search="src/metadata.ts ZORA_GAME_COMPONENT_META ZORA_PLUGIN_METADATA">
     <h3>src/metadata.ts</h3>
     <p class="muted">Configured entrypoint</p>
     <p><strong>Dependencies:</strong> <span class="empty">None</span></p>
     <p><strong>Exports:</strong> <code>ZORA_GAME_COMPONENT_META</code>, <code>ZORA_PLUGIN_METADATA</code></p>
-  </article><article class="item" data-search="src/types/gamePresentation.ts GameEntityProps GameFieldProps GameOverlayPlacement GameOverlayProps GamePointerEvents">
+  </article><article class="item" data-search="src/types/gamePresentation.ts GameEntityProps GameFieldProps GameOverlayPlacement GameOverlayProps GamePointerEvents GameProps">
     <h3>src/types/gamePresentation.ts</h3>
     <p class="muted">Referenced module</p>
     <p><strong>Dependencies:</strong> <span class="empty">None</span></p>
-    <p><strong>Exports:</strong> <code>GameEntityProps</code>, <code>GameFieldProps</code>, <code>GameOverlayPlacement</code>, <code>GameOverlayProps</code>, <code>GamePointerEvents</code></p>
-  </article><article class="item" data-search="src/ZORA_GAME_COMPONENT_META.ts src/features/game-presentation/meta/gameEntityMeta.ts src/features/game-presentation/meta/gameFieldMeta.ts src/features/game-presentation/meta/gameOverlayMeta.ts ZORA_GAME_COMPONENT_META">
+    <p><strong>Exports:</strong> <code>GameEntityProps</code>, <code>GameFieldProps</code>, <code>GameOverlayPlacement</code>, <code>GameOverlayProps</code>, <code>GamePointerEvents</code>, <code>GameProps</code></p>
+  </article><article class="item" data-search="src/types/gameRuntime.ts GameRuntimeContextValue GameRuntimeState">
+    <h3>src/types/gameRuntime.ts</h3>
+    <p class="muted">Referenced module</p>
+    <p><strong>Dependencies:</strong> <span class="empty">None</span></p>
+    <p><strong>Exports:</strong> <code>GameRuntimeContextValue</code>, <code>GameRuntimeState</code></p>
+  </article><article class="item" data-search="src/ZORA_GAME_COMPONENT_META.ts src/features/game-presentation/meta/gameEntityMeta.ts src/features/game-presentation/meta/gameFieldMeta.ts src/features/game-presentation/meta/gameMeta.ts src/features/game-presentation/meta/gameOverlayMeta.ts ZORA_GAME_COMPONENT_META">
     <h3>src/ZORA_GAME_COMPONENT_META.ts</h3>
     <p class="muted">Referenced module</p>
-    <p><strong>Dependencies:</strong> <code>src/features/game-presentation/meta/gameEntityMeta.ts</code>, <code>src/features/game-presentation/meta/gameFieldMeta.ts</code>, <code>src/features/game-presentation/meta/gameOverlayMeta.ts</code></p>
+    <p><strong>Dependencies:</strong> <code>src/features/game-presentation/meta/gameEntityMeta.ts</code>, <code>src/features/game-presentation/meta/gameFieldMeta.ts</code>, <code>src/features/game-presentation/meta/gameMeta.ts</code>, <code>src/features/game-presentation/meta/gameOverlayMeta.ts</code></p>
     <p><strong>Exports:</strong> <code>ZORA_GAME_COMPONENT_META</code></p>
-  </article><article class="item" data-search="src/ZORA_GAME_PLUGIN.ts src/features/game-presentation/adapters/inbound/GameEntity.tsx src/features/game-presentation/adapters/inbound/GameField.tsx src/features/game-presentation/adapters/inbound/GameOverlay.tsx src/ZORA_PLUGIN_METADATA.ts ZORA_GAME_PLUGIN">
+  </article><article class="item" data-search="src/ZORA_GAME_PLUGIN.ts src/features/game-presentation/adapters/inbound/Game.tsx src/features/game-presentation/adapters/inbound/GameEntity.tsx src/features/game-presentation/adapters/inbound/GameField.tsx src/features/game-presentation/adapters/inbound/GameOverlay.tsx src/ZORA_PLUGIN_METADATA.ts ZORA_GAME_PLUGIN">
     <h3>src/ZORA_GAME_PLUGIN.ts</h3>
     <p class="muted">Referenced module</p>
-    <p><strong>Dependencies:</strong> <code>src/features/game-presentation/adapters/inbound/GameEntity.tsx</code>, <code>src/features/game-presentation/adapters/inbound/GameField.tsx</code>, <code>src/features/game-presentation/adapters/inbound/GameOverlay.tsx</code>, <code>src/ZORA_PLUGIN_METADATA.ts</code></p>
+    <p><strong>Dependencies:</strong> <code>src/features/game-presentation/adapters/inbound/Game.tsx</code>, <code>src/features/game-presentation/adapters/inbound/GameEntity.tsx</code>, <code>src/features/game-presentation/adapters/inbound/GameField.tsx</code>, <code>src/features/game-presentation/adapters/inbound/GameOverlay.tsx</code>, <code>src/ZORA_PLUGIN_METADATA.ts</code></p>
     <p><strong>Exports:</strong> <code>ZORA_GAME_PLUGIN</code></p>
   </article><article class="item" data-search="src/ZORA_PLUGIN_METADATA.test.ts src/ZORA_PLUGIN_METADATA.ts">
     <h3>src/ZORA_PLUGIN_METADATA.test.ts</h3>
@@ -239,6 +289,33 @@
     <section class="panel">
       <h2>Public API</h2>
       
+            <section>
+              <h3>src/features/game-presentation/adapters/inbound/Game.tsx</h3>
+              <article class="item" id="symbol-game" data-search="Game function src/features/game-presentation/adapters/inbound/Game.tsx Bind one serializable game definition to a local transient session and presentation field. GameProps (props: GameProps) =&gt; React.JSX.Element">
+    <h4>Game</h4>
+    <p class="muted">function • <code>src/features/game-presentation/adapters/inbound/Game.tsx:9:1</code></p>
+    <p>Bind one serializable game definition to a local transient session and presentation field.</p>
+    <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
+    <div><strong>Related symbols:</strong> <ul class="chips"><li class="chip">GameProps</li></ul></div>
+    <div>
+        <h5>Signature</h5>
+        <pre>(props: GameProps) =&gt; React.JSX.Element</pre>
+        <table>
+                <thead><tr><th>Parameter</th><th>Type</th><th>Required</th><th>Description</th></tr></thead>
+                <tbody>
+                  <tr>
+                        <td><code>props</code></td>
+                        <td><code>GameProps</code></td>
+                        <td>yes</td>
+                        <td></td>
+                      </tr>
+                </tbody>
+              </table>
+        <p><strong>Returns:</strong> <code>React.JSX.Element</code></p>
+      </div>
+    
+  </article>
+            </section>
             <section>
               <h3>src/features/game-presentation/adapters/inbound/GameEntity.tsx</h3>
               <article class="item" id="symbol-gameentity" data-search="GameEntity function src/features/game-presentation/adapters/inbound/GameEntity.tsx Render one generic positioned game entity without owning gameplay semantics. GameEntityProps ({&#10;  children,&#10;  x = 0,&#10;  y = 0,&#10;  width,&#10;  height,&#10;  opacity = 1,&#10;  scale = 1,&#10;  rotation = 0,&#10;  zIndex = 0,&#10;  hidden = false,&#10;  pointerEvents = &#39;auto&#39;,&#10;  accessibilityLabel,&#10;  testID,&#10;}: GameEntityProps) =&gt; import(&quot;react&quot;).JSX.Element">
@@ -380,7 +457,7 @@
               <h3>src/types/gamePresentation.ts</h3>
               <article class="item" id="symbol-gameentityprops" data-search="GameEntityProps type src/types/gamePresentation.ts  GamePointerEvents">
     <h4>GameEntityProps</h4>
-    <p class="muted">type • <code>src/types/gamePresentation.ts:18:1</code></p>
+    <p class="muted">type • <code>src/types/gamePresentation.ts:19:1</code></p>
     
     <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
     <div><strong>Related symbols:</strong> <ul class="chips"><li class="chip">GamePointerEvents</li></ul></div>
@@ -471,7 +548,7 @@
   </table>
   </article><article class="item" id="symbol-gamefieldprops" data-search="GameFieldProps type src/types/gamePresentation.ts ">
     <h4>GameFieldProps</h4>
-    <p class="muted">type • <code>src/types/gamePresentation.ts:9:1</code></p>
+    <p class="muted">type • <code>src/types/gamePresentation.ts:10:1</code></p>
     
     <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
     <div><strong>Related symbols:</strong> <span class="empty">None</span></div>
@@ -520,7 +597,7 @@
   </table>
   </article><article class="item" id="symbol-gameoverlayplacement" data-search="GameOverlayPlacement unknown src/types/gamePresentation.ts ">
     <h4>GameOverlayPlacement</h4>
-    <p class="muted">unknown • <code>src/types/gamePresentation.ts:6:1</code></p>
+    <p class="muted">unknown • <code>src/types/gamePresentation.ts:7:1</code></p>
     
     <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
     <div><strong>Related symbols:</strong> <span class="empty">None</span></div>
@@ -528,7 +605,7 @@
     
   </article><article class="item" id="symbol-gameoverlayprops" data-search="GameOverlayProps type src/types/gamePresentation.ts  GameOverlayPlacement">
     <h4>GameOverlayProps</h4>
-    <p class="muted">type • <code>src/types/gamePresentation.ts:34:1</code></p>
+    <p class="muted">type • <code>src/types/gamePresentation.ts:35:1</code></p>
     
     <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
     <div><strong>Related symbols:</strong> <ul class="chips"><li class="chip">GameOverlayPlacement</li></ul></div>
@@ -577,19 +654,104 @@
   </table>
   </article><article class="item" id="symbol-gamepointerevents" data-search="GamePointerEvents unknown src/types/gamePresentation.ts ">
     <h4>GamePointerEvents</h4>
-    <p class="muted">unknown • <code>src/types/gamePresentation.ts:5:1</code></p>
+    <p class="muted">unknown • <code>src/types/gamePresentation.ts:6:1</code></p>
     
     <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
     <div><strong>Related symbols:</strong> <span class="empty">None</span></div>
     
     
+  </article><article class="item" id="symbol-gameprops" data-search="GameProps type src/types/gamePresentation.ts ">
+    <h4>GameProps</h4>
+    <p class="muted">type • <code>src/types/gamePresentation.ts:44:1</code></p>
+    
+    <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
+    <div><strong>Related symbols:</strong> <span class="empty">None</span></div>
+    
+    <table>
+    <thead><tr><th>Member</th><th>Kind</th><th>Type</th><th>Required</th><th>Description</th></tr></thead>
+    <tbody>
+      <tr>
+            <td><code>accessibilityLabel</code></td>
+            <td>property</td>
+            <td><code>string</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>aspectRatio</code></td>
+            <td>property</td>
+            <td><code>number</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>autoAdvanceTime</code></td>
+            <td>property</td>
+            <td><code>boolean</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>children</code></td>
+            <td>property</td>
+            <td><code>React.ReactNode</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>clip</code></td>
+            <td>property</td>
+            <td><code>boolean</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>definition</code></td>
+            <td>property</td>
+            <td><code>GameDefinition</code></td>
+            <td>yes</td>
+            <td></td>
+          </tr><tr>
+            <td><code>input</code></td>
+            <td>property</td>
+            <td><code>Readonly&lt;Record&lt;string, import(&quot;@ankhorage/game&quot;).GameValue&gt;&gt;</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>minHeight</code></td>
+            <td>property</td>
+            <td><code>number</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>onOutput</code></td>
+            <td>property</td>
+            <td><code>(output: GameOutput) =&gt; void</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>resetKey</code></td>
+            <td>property</td>
+            <td><code>string</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>seed</code></td>
+            <td>property</td>
+            <td><code>number</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>testID</code></td>
+            <td>property</td>
+            <td><code>string</code></td>
+            <td>no</td>
+            <td></td>
+          </tr>
+    </tbody>
+  </table>
   </article>
             </section>
             <section>
               <h3>src/ZORA_GAME_COMPONENT_META.ts</h3>
               <article class="item" id="symbol-zora-game-component-meta" data-search="ZORA_GAME_COMPONENT_META value src/ZORA_GAME_COMPONENT_META.ts Register the generic game presentation metadata owned by this package.">
     <h4>ZORA_GAME_COMPONENT_META</h4>
-    <p class="muted">value • <code>src/ZORA_GAME_COMPONENT_META.ts:6:14</code></p>
+    <p class="muted">value • <code>src/ZORA_GAME_COMPONENT_META.ts:7:14</code></p>
     <p>Register the generic game presentation metadata owned by this package.</p>
     <p><strong>Export paths:</strong> <code>src/metadata.ts</code></p>
     <div><strong>Related symbols:</strong> <span class="empty">None</span></div>
@@ -601,7 +763,7 @@
               <h3>src/ZORA_GAME_PLUGIN.ts</h3>
               <article class="item" id="symbol-zora-game-plugin" data-search="ZORA_GAME_PLUGIN value src/ZORA_GAME_PLUGIN.ts Expose the runtime component registry together with metadata for ZORA plugin consumers.">
     <h4>ZORA_GAME_PLUGIN</h4>
-    <p class="muted">value • <code>src/ZORA_GAME_PLUGIN.ts:7:14</code></p>
+    <p class="muted">value • <code>src/ZORA_GAME_PLUGIN.ts:8:14</code></p>
     <p>Expose the runtime component registry together with metadata for ZORA plugin consumers.</p>
     <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
     <div><strong>Related symbols:</strong> <span class="empty">None</span></div>
@@ -624,7 +786,78 @@
     </section>
     <section class="panel">
       <h2>Component registry</h2>
-      <article class="item" id="component-gameentity" data-search="GameEntity src/features/game-presentation/adapters/inbound/GameEntity.tsx Render one generic positioned game entity without owning gameplay semantics. accessibilityLabel string | undefined children React.ReactNode | undefined height number | undefined hidden boolean | undefined opacity number | undefined pointerEvents GamePointerEvents | undefined rotation number | undefined scale number | undefined testID string | undefined width number | undefined x number | undefined y number | undefined zIndex number | undefined">
+      <article class="item" id="component-game" data-search="Game src/features/game-presentation/adapters/inbound/Game.tsx Bind one serializable game definition to a local transient session and presentation field. accessibilityLabel string | undefined aspectRatio number | undefined autoAdvanceTime boolean | undefined children React.ReactNode | undefined clip boolean | undefined definition GameDefinition input GameInput | undefined minHeight number | undefined onOutput (output: GameOutput) =&gt; void | undefined resetKey string | undefined seed number | undefined testID string | undefined">
+    <h3>Game</h3>
+    <p class="muted"><code>src/features/game-presentation/adapters/inbound/Game.tsx:9:1</code></p>
+    <p>Bind one serializable game definition to a local transient session and presentation field.</p>
+    <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
+    <table>
+      <thead><tr><th>Prop</th><th>Type</th><th>Required</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr>
+              <td><code>accessibilityLabel</code></td>
+              <td><code>string | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>aspectRatio</code></td>
+              <td><code>number | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>autoAdvanceTime</code></td>
+              <td><code>boolean | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>children</code></td>
+              <td><code>React.ReactNode | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>clip</code></td>
+              <td><code>boolean | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>definition</code></td>
+              <td><code>GameDefinition</code></td>
+              <td>yes</td>
+              <td></td>
+            </tr><tr>
+              <td><code>input</code></td>
+              <td><code>GameInput | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>minHeight</code></td>
+              <td><code>number | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>onOutput</code></td>
+              <td><code>(output: GameOutput) =&gt; void | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>resetKey</code></td>
+              <td><code>string | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>seed</code></td>
+              <td><code>number | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>testID</code></td>
+              <td><code>string | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr>
+      </tbody>
+    </table>
+  </article><article class="item" id="component-gameentity" data-search="GameEntity src/features/game-presentation/adapters/inbound/GameEntity.tsx Render one generic positioned game entity without owning gameplay semantics. accessibilityLabel string | undefined children React.ReactNode | undefined height number | undefined hidden boolean | undefined opacity number | undefined pointerEvents GamePointerEvents | undefined rotation number | undefined scale number | undefined testID string | undefined width number | undefined x number | undefined y number | undefined zIndex number | undefined">
     <h3>GameEntity</h3>
     <p class="muted"><code>src/features/game-presentation/adapters/inbound/GameEntity.tsx:7:1</code></p>
     <p>Render one generic positioned game entity without owning gameplay semantics.</p>
@@ -795,6 +1028,12 @@
   package__ankhorage_zora_game --&gt; entrypoint_src_index_ts
   entrypoint_src_metadata_ts[&quot;src/metadata.ts&quot;]
   package__ankhorage_zora_game --&gt; entrypoint_src_metadata_ts
+  module_src_features_game_presentation_adapters_inbound_Game_tsx[&quot;src/features/game-presentation/adapters/inbound/Game.tsx&quot;]
+  package__ankhorage_zora_game -.-&gt; module_src_features_game_presentation_adapters_inbound_Game_tsx
+  module_src_features_game_presentation_adapters_inbound_Game_tsx --&gt; module_src_features_game_presentation_adapters_inbound_GameField_tsx
+  module_src_features_game_presentation_adapters_inbound_Game_tsx --&gt; module_src_features_game_presentation_composition_GameRuntimeContext_ts
+  module_src_features_game_presentation_adapters_inbound_Game_tsx --&gt; module_src_features_game_presentation_composition_useGameRuntime_ts
+  module_src_features_game_presentation_adapters_inbound_Game_tsx --&gt; module_src_types_gamePresentation_ts
   module_src_features_game_presentation_adapters_inbound_GameEntity_tsx[&quot;src/features/game-presentation/adapters/inbound/GameEntity.tsx&quot;]
   package__ankhorage_zora_game -.-&gt; module_src_features_game_presentation_adapters_inbound_GameEntity_tsx
   module_src_features_game_presentation_adapters_inbound_GameEntity_tsx --&gt; module_src_types_gamePresentation_ts
@@ -804,10 +1043,23 @@
   module_src_features_game_presentation_adapters_inbound_GameOverlay_tsx[&quot;src/features/game-presentation/adapters/inbound/GameOverlay.tsx&quot;]
   package__ankhorage_zora_game -.-&gt; module_src_features_game_presentation_adapters_inbound_GameOverlay_tsx
   module_src_features_game_presentation_adapters_inbound_GameOverlay_tsx --&gt; module_src_types_gamePresentation_ts
+  module_src_features_game_presentation_composition_GameRuntimeContext_ts[&quot;src/features/game-presentation/composition/GameRuntimeContext.ts&quot;]
+  package__ankhorage_zora_game -.-&gt; module_src_features_game_presentation_composition_GameRuntimeContext_ts
+  module_src_features_game_presentation_composition_GameRuntimeContext_ts --&gt; module_src_types_gameRuntime_ts
+  module_src_features_game_presentation_composition_useGameRuntime_ts[&quot;src/features/game-presentation/composition/useGameRuntime.ts&quot;]
+  package__ankhorage_zora_game -.-&gt; module_src_features_game_presentation_composition_useGameRuntime_ts
+  module_src_features_game_presentation_composition_useGameRuntime_ts --&gt; module_src_features_game_presentation_composition_useGameScheduledEffects_ts
+  module_src_features_game_presentation_composition_useGameRuntime_ts --&gt; module_src_types_gamePresentation_ts
+  module_src_features_game_presentation_composition_useGameRuntime_ts --&gt; module_src_types_gameRuntime_ts
+  module_src_features_game_presentation_composition_useGameScheduledEffects_ts[&quot;src/features/game-presentation/composition/useGameScheduledEffects.ts&quot;]
+  package__ankhorage_zora_game -.-&gt; module_src_features_game_presentation_composition_useGameScheduledEffects_ts
+  module_src_features_game_presentation_composition_useGameScheduledEffects_ts --&gt; module_src_types_gameRuntime_ts
   module_src_features_game_presentation_meta_gameEntityMeta_ts[&quot;src/features/game-presentation/meta/gameEntityMeta.ts&quot;]
   package__ankhorage_zora_game -.-&gt; module_src_features_game_presentation_meta_gameEntityMeta_ts
   module_src_features_game_presentation_meta_gameFieldMeta_ts[&quot;src/features/game-presentation/meta/gameFieldMeta.ts&quot;]
   package__ankhorage_zora_game -.-&gt; module_src_features_game_presentation_meta_gameFieldMeta_ts
+  module_src_features_game_presentation_meta_gameMeta_ts[&quot;src/features/game-presentation/meta/gameMeta.ts&quot;]
+  package__ankhorage_zora_game -.-&gt; module_src_features_game_presentation_meta_gameMeta_ts
   module_src_features_game_presentation_meta_gameOverlayMeta_ts[&quot;src/features/game-presentation/meta/gameOverlayMeta.ts&quot;]
   package__ankhorage_zora_game -.-&gt; module_src_features_game_presentation_meta_gameOverlayMeta_ts
   module_src_features_game_presentation_public_ts[&quot;src/features/game-presentation/public.ts&quot;]
@@ -816,13 +1068,17 @@
   module_src_metadata_ts[&quot;src/metadata.ts&quot;]
   module_src_types_gamePresentation_ts[&quot;src/types/gamePresentation.ts&quot;]
   package__ankhorage_zora_game -.-&gt; module_src_types_gamePresentation_ts
+  module_src_types_gameRuntime_ts[&quot;src/types/gameRuntime.ts&quot;]
+  package__ankhorage_zora_game -.-&gt; module_src_types_gameRuntime_ts
   module_src_ZORA_GAME_COMPONENT_META_ts[&quot;src/ZORA_GAME_COMPONENT_META.ts&quot;]
   package__ankhorage_zora_game -.-&gt; module_src_ZORA_GAME_COMPONENT_META_ts
   module_src_ZORA_GAME_COMPONENT_META_ts --&gt; module_src_features_game_presentation_meta_gameEntityMeta_ts
   module_src_ZORA_GAME_COMPONENT_META_ts --&gt; module_src_features_game_presentation_meta_gameFieldMeta_ts
+  module_src_ZORA_GAME_COMPONENT_META_ts --&gt; module_src_features_game_presentation_meta_gameMeta_ts
   module_src_ZORA_GAME_COMPONENT_META_ts --&gt; module_src_features_game_presentation_meta_gameOverlayMeta_ts
   module_src_ZORA_GAME_PLUGIN_ts[&quot;src/ZORA_GAME_PLUGIN.ts&quot;]
   package__ankhorage_zora_game -.-&gt; module_src_ZORA_GAME_PLUGIN_ts
+  module_src_ZORA_GAME_PLUGIN_ts --&gt; module_src_features_game_presentation_adapters_inbound_Game_tsx
   module_src_ZORA_GAME_PLUGIN_ts --&gt; module_src_features_game_presentation_adapters_inbound_GameEntity_tsx
   module_src_ZORA_GAME_PLUGIN_ts --&gt; module_src_features_game_presentation_adapters_inbound_GameField_tsx
   module_src_ZORA_GAME_PLUGIN_ts --&gt; module_src_features_game_presentation_adapters_inbound_GameOverlay_tsx
@@ -842,6 +1098,12 @@
   package__ankhorage_zora_game --&gt; entrypoint_src_index_ts
   entrypoint_src_metadata_ts[&quot;src/metadata.ts&quot;]
   package__ankhorage_zora_game --&gt; entrypoint_src_metadata_ts
+  module_src_features_game_presentation_adapters_inbound_Game_tsx[&quot;src/features/game-presentation/adapters/inbound/Game.tsx&quot;]
+  package__ankhorage_zora_game -.-&gt; module_src_features_game_presentation_adapters_inbound_Game_tsx
+  module_src_features_game_presentation_adapters_inbound_Game_tsx --&gt; module_src_features_game_presentation_adapters_inbound_GameField_tsx
+  module_src_features_game_presentation_adapters_inbound_Game_tsx --&gt; module_src_features_game_presentation_composition_GameRuntimeContext_ts
+  module_src_features_game_presentation_adapters_inbound_Game_tsx --&gt; module_src_features_game_presentation_composition_useGameRuntime_ts
+  module_src_features_game_presentation_adapters_inbound_Game_tsx --&gt; module_src_types_gamePresentation_ts
   module_src_features_game_presentation_adapters_inbound_GameEntity_tsx[&quot;src/features/game-presentation/adapters/inbound/GameEntity.tsx&quot;]
   package__ankhorage_zora_game -.-&gt; module_src_features_game_presentation_adapters_inbound_GameEntity_tsx
   module_src_features_game_presentation_adapters_inbound_GameEntity_tsx --&gt; module_src_types_gamePresentation_ts
@@ -851,10 +1113,23 @@
   module_src_features_game_presentation_adapters_inbound_GameOverlay_tsx[&quot;src/features/game-presentation/adapters/inbound/GameOverlay.tsx&quot;]
   package__ankhorage_zora_game -.-&gt; module_src_features_game_presentation_adapters_inbound_GameOverlay_tsx
   module_src_features_game_presentation_adapters_inbound_GameOverlay_tsx --&gt; module_src_types_gamePresentation_ts
+  module_src_features_game_presentation_composition_GameRuntimeContext_ts[&quot;src/features/game-presentation/composition/GameRuntimeContext.ts&quot;]
+  package__ankhorage_zora_game -.-&gt; module_src_features_game_presentation_composition_GameRuntimeContext_ts
+  module_src_features_game_presentation_composition_GameRuntimeContext_ts --&gt; module_src_types_gameRuntime_ts
+  module_src_features_game_presentation_composition_useGameRuntime_ts[&quot;src/features/game-presentation/composition/useGameRuntime.ts&quot;]
+  package__ankhorage_zora_game -.-&gt; module_src_features_game_presentation_composition_useGameRuntime_ts
+  module_src_features_game_presentation_composition_useGameRuntime_ts --&gt; module_src_features_game_presentation_composition_useGameScheduledEffects_ts
+  module_src_features_game_presentation_composition_useGameRuntime_ts --&gt; module_src_types_gamePresentation_ts
+  module_src_features_game_presentation_composition_useGameRuntime_ts --&gt; module_src_types_gameRuntime_ts
+  module_src_features_game_presentation_composition_useGameScheduledEffects_ts[&quot;src/features/game-presentation/composition/useGameScheduledEffects.ts&quot;]
+  package__ankhorage_zora_game -.-&gt; module_src_features_game_presentation_composition_useGameScheduledEffects_ts
+  module_src_features_game_presentation_composition_useGameScheduledEffects_ts --&gt; module_src_types_gameRuntime_ts
   module_src_features_game_presentation_meta_gameEntityMeta_ts[&quot;src/features/game-presentation/meta/gameEntityMeta.ts&quot;]
   package__ankhorage_zora_game -.-&gt; module_src_features_game_presentation_meta_gameEntityMeta_ts
   module_src_features_game_presentation_meta_gameFieldMeta_ts[&quot;src/features/game-presentation/meta/gameFieldMeta.ts&quot;]
   package__ankhorage_zora_game -.-&gt; module_src_features_game_presentation_meta_gameFieldMeta_ts
+  module_src_features_game_presentation_meta_gameMeta_ts[&quot;src/features/game-presentation/meta/gameMeta.ts&quot;]
+  package__ankhorage_zora_game -.-&gt; module_src_features_game_presentation_meta_gameMeta_ts
   module_src_features_game_presentation_meta_gameOverlayMeta_ts[&quot;src/features/game-presentation/meta/gameOverlayMeta.ts&quot;]
   package__ankhorage_zora_game -.-&gt; module_src_features_game_presentation_meta_gameOverlayMeta_ts
   module_src_features_game_presentation_public_ts[&quot;src/features/game-presentation/public.ts&quot;]
@@ -863,13 +1138,17 @@
   module_src_metadata_ts[&quot;src/metadata.ts&quot;]
   module_src_types_gamePresentation_ts[&quot;src/types/gamePresentation.ts&quot;]
   package__ankhorage_zora_game -.-&gt; module_src_types_gamePresentation_ts
+  module_src_types_gameRuntime_ts[&quot;src/types/gameRuntime.ts&quot;]
+  package__ankhorage_zora_game -.-&gt; module_src_types_gameRuntime_ts
   module_src_ZORA_GAME_COMPONENT_META_ts[&quot;src/ZORA_GAME_COMPONENT_META.ts&quot;]
   package__ankhorage_zora_game -.-&gt; module_src_ZORA_GAME_COMPONENT_META_ts
   module_src_ZORA_GAME_COMPONENT_META_ts --&gt; module_src_features_game_presentation_meta_gameEntityMeta_ts
   module_src_ZORA_GAME_COMPONENT_META_ts --&gt; module_src_features_game_presentation_meta_gameFieldMeta_ts
+  module_src_ZORA_GAME_COMPONENT_META_ts --&gt; module_src_features_game_presentation_meta_gameMeta_ts
   module_src_ZORA_GAME_COMPONENT_META_ts --&gt; module_src_features_game_presentation_meta_gameOverlayMeta_ts
   module_src_ZORA_GAME_PLUGIN_ts[&quot;src/ZORA_GAME_PLUGIN.ts&quot;]
   package__ankhorage_zora_game -.-&gt; module_src_ZORA_GAME_PLUGIN_ts
+  module_src_ZORA_GAME_PLUGIN_ts --&gt; module_src_features_game_presentation_adapters_inbound_Game_tsx
   module_src_ZORA_GAME_PLUGIN_ts --&gt; module_src_features_game_presentation_adapters_inbound_GameEntity_tsx
   module_src_ZORA_GAME_PLUGIN_ts --&gt; module_src_features_game_presentation_adapters_inbound_GameField_tsx
   module_src_ZORA_GAME_PLUGIN_ts --&gt; module_src_features_game_presentation_adapters_inbound_GameOverlay_tsx
@@ -886,26 +1165,43 @@
     <h3>Module relationships</h3>
     <p class="muted"><code>diagrams/module-relationships.mmd</code></p>
     <div class="mermaid">graph LR
+  module_src_features_game_presentation_adapters_inbound_Game_tsx[&quot;src/features/game-presentation/adapters/inbound/Game.tsx&quot;]
   module_src_features_game_presentation_adapters_inbound_GameEntity_tsx[&quot;src/features/game-presentation/adapters/inbound/GameEntity.tsx&quot;]
   module_src_features_game_presentation_adapters_inbound_GameField_tsx[&quot;src/features/game-presentation/adapters/inbound/GameField.tsx&quot;]
   module_src_features_game_presentation_adapters_inbound_GameOverlay_tsx[&quot;src/features/game-presentation/adapters/inbound/GameOverlay.tsx&quot;]
+  module_src_features_game_presentation_composition_GameRuntimeContext_ts[&quot;src/features/game-presentation/composition/GameRuntimeContext.ts&quot;]
+  module_src_features_game_presentation_composition_useGameRuntime_ts[&quot;src/features/game-presentation/composition/useGameRuntime.ts&quot;]
+  module_src_features_game_presentation_composition_useGameScheduledEffects_ts[&quot;src/features/game-presentation/composition/useGameScheduledEffects.ts&quot;]
   module_src_features_game_presentation_meta_gameEntityMeta_ts[&quot;src/features/game-presentation/meta/gameEntityMeta.ts&quot;]
   module_src_features_game_presentation_meta_gameFieldMeta_ts[&quot;src/features/game-presentation/meta/gameFieldMeta.ts&quot;]
+  module_src_features_game_presentation_meta_gameMeta_ts[&quot;src/features/game-presentation/meta/gameMeta.ts&quot;]
   module_src_features_game_presentation_meta_gameOverlayMeta_ts[&quot;src/features/game-presentation/meta/gameOverlayMeta.ts&quot;]
   module_src_features_game_presentation_public_ts[&quot;src/features/game-presentation/public.ts&quot;]
   module_src_index_ts[&quot;src/index.ts&quot;]
   module_src_metadata_ts[&quot;src/metadata.ts&quot;]
   module_src_types_gamePresentation_ts[&quot;src/types/gamePresentation.ts&quot;]
+  module_src_types_gameRuntime_ts[&quot;src/types/gameRuntime.ts&quot;]
   module_src_ZORA_GAME_COMPONENT_META_ts[&quot;src/ZORA_GAME_COMPONENT_META.ts&quot;]
   module_src_ZORA_GAME_PLUGIN_ts[&quot;src/ZORA_GAME_PLUGIN.ts&quot;]
   module_src_ZORA_PLUGIN_METADATA_test_ts[&quot;src/ZORA_PLUGIN_METADATA.test.ts&quot;]
   module_src_ZORA_PLUGIN_METADATA_ts[&quot;src/ZORA_PLUGIN_METADATA.ts&quot;]
+  module_src_features_game_presentation_adapters_inbound_Game_tsx --&gt; module_src_features_game_presentation_adapters_inbound_GameField_tsx
+  module_src_features_game_presentation_adapters_inbound_Game_tsx --&gt; module_src_features_game_presentation_composition_GameRuntimeContext_ts
+  module_src_features_game_presentation_adapters_inbound_Game_tsx --&gt; module_src_features_game_presentation_composition_useGameRuntime_ts
+  module_src_features_game_presentation_adapters_inbound_Game_tsx --&gt; module_src_types_gamePresentation_ts
   module_src_features_game_presentation_adapters_inbound_GameEntity_tsx --&gt; module_src_types_gamePresentation_ts
   module_src_features_game_presentation_adapters_inbound_GameField_tsx --&gt; module_src_types_gamePresentation_ts
   module_src_features_game_presentation_adapters_inbound_GameOverlay_tsx --&gt; module_src_types_gamePresentation_ts
+  module_src_features_game_presentation_composition_GameRuntimeContext_ts --&gt; module_src_types_gameRuntime_ts
+  module_src_features_game_presentation_composition_useGameRuntime_ts --&gt; module_src_features_game_presentation_composition_useGameScheduledEffects_ts
+  module_src_features_game_presentation_composition_useGameRuntime_ts --&gt; module_src_types_gamePresentation_ts
+  module_src_features_game_presentation_composition_useGameRuntime_ts --&gt; module_src_types_gameRuntime_ts
+  module_src_features_game_presentation_composition_useGameScheduledEffects_ts --&gt; module_src_types_gameRuntime_ts
   module_src_ZORA_GAME_COMPONENT_META_ts --&gt; module_src_features_game_presentation_meta_gameEntityMeta_ts
   module_src_ZORA_GAME_COMPONENT_META_ts --&gt; module_src_features_game_presentation_meta_gameFieldMeta_ts
+  module_src_ZORA_GAME_COMPONENT_META_ts --&gt; module_src_features_game_presentation_meta_gameMeta_ts
   module_src_ZORA_GAME_COMPONENT_META_ts --&gt; module_src_features_game_presentation_meta_gameOverlayMeta_ts
+  module_src_ZORA_GAME_PLUGIN_ts --&gt; module_src_features_game_presentation_adapters_inbound_Game_tsx
   module_src_ZORA_GAME_PLUGIN_ts --&gt; module_src_features_game_presentation_adapters_inbound_GameEntity_tsx
   module_src_ZORA_GAME_PLUGIN_ts --&gt; module_src_features_game_presentation_adapters_inbound_GameField_tsx
   module_src_ZORA_GAME_PLUGIN_ts --&gt; module_src_features_game_presentation_adapters_inbound_GameOverlay_tsx
@@ -916,26 +1212,43 @@
     <details>
       <summary>View Mermaid source</summary>
       <pre>graph LR
+  module_src_features_game_presentation_adapters_inbound_Game_tsx[&quot;src/features/game-presentation/adapters/inbound/Game.tsx&quot;]
   module_src_features_game_presentation_adapters_inbound_GameEntity_tsx[&quot;src/features/game-presentation/adapters/inbound/GameEntity.tsx&quot;]
   module_src_features_game_presentation_adapters_inbound_GameField_tsx[&quot;src/features/game-presentation/adapters/inbound/GameField.tsx&quot;]
   module_src_features_game_presentation_adapters_inbound_GameOverlay_tsx[&quot;src/features/game-presentation/adapters/inbound/GameOverlay.tsx&quot;]
+  module_src_features_game_presentation_composition_GameRuntimeContext_ts[&quot;src/features/game-presentation/composition/GameRuntimeContext.ts&quot;]
+  module_src_features_game_presentation_composition_useGameRuntime_ts[&quot;src/features/game-presentation/composition/useGameRuntime.ts&quot;]
+  module_src_features_game_presentation_composition_useGameScheduledEffects_ts[&quot;src/features/game-presentation/composition/useGameScheduledEffects.ts&quot;]
   module_src_features_game_presentation_meta_gameEntityMeta_ts[&quot;src/features/game-presentation/meta/gameEntityMeta.ts&quot;]
   module_src_features_game_presentation_meta_gameFieldMeta_ts[&quot;src/features/game-presentation/meta/gameFieldMeta.ts&quot;]
+  module_src_features_game_presentation_meta_gameMeta_ts[&quot;src/features/game-presentation/meta/gameMeta.ts&quot;]
   module_src_features_game_presentation_meta_gameOverlayMeta_ts[&quot;src/features/game-presentation/meta/gameOverlayMeta.ts&quot;]
   module_src_features_game_presentation_public_ts[&quot;src/features/game-presentation/public.ts&quot;]
   module_src_index_ts[&quot;src/index.ts&quot;]
   module_src_metadata_ts[&quot;src/metadata.ts&quot;]
   module_src_types_gamePresentation_ts[&quot;src/types/gamePresentation.ts&quot;]
+  module_src_types_gameRuntime_ts[&quot;src/types/gameRuntime.ts&quot;]
   module_src_ZORA_GAME_COMPONENT_META_ts[&quot;src/ZORA_GAME_COMPONENT_META.ts&quot;]
   module_src_ZORA_GAME_PLUGIN_ts[&quot;src/ZORA_GAME_PLUGIN.ts&quot;]
   module_src_ZORA_PLUGIN_METADATA_test_ts[&quot;src/ZORA_PLUGIN_METADATA.test.ts&quot;]
   module_src_ZORA_PLUGIN_METADATA_ts[&quot;src/ZORA_PLUGIN_METADATA.ts&quot;]
+  module_src_features_game_presentation_adapters_inbound_Game_tsx --&gt; module_src_features_game_presentation_adapters_inbound_GameField_tsx
+  module_src_features_game_presentation_adapters_inbound_Game_tsx --&gt; module_src_features_game_presentation_composition_GameRuntimeContext_ts
+  module_src_features_game_presentation_adapters_inbound_Game_tsx --&gt; module_src_features_game_presentation_composition_useGameRuntime_ts
+  module_src_features_game_presentation_adapters_inbound_Game_tsx --&gt; module_src_types_gamePresentation_ts
   module_src_features_game_presentation_adapters_inbound_GameEntity_tsx --&gt; module_src_types_gamePresentation_ts
   module_src_features_game_presentation_adapters_inbound_GameField_tsx --&gt; module_src_types_gamePresentation_ts
   module_src_features_game_presentation_adapters_inbound_GameOverlay_tsx --&gt; module_src_types_gamePresentation_ts
+  module_src_features_game_presentation_composition_GameRuntimeContext_ts --&gt; module_src_types_gameRuntime_ts
+  module_src_features_game_presentation_composition_useGameRuntime_ts --&gt; module_src_features_game_presentation_composition_useGameScheduledEffects_ts
+  module_src_features_game_presentation_composition_useGameRuntime_ts --&gt; module_src_types_gamePresentation_ts
+  module_src_features_game_presentation_composition_useGameRuntime_ts --&gt; module_src_types_gameRuntime_ts
+  module_src_features_game_presentation_composition_useGameScheduledEffects_ts --&gt; module_src_types_gameRuntime_ts
   module_src_ZORA_GAME_COMPONENT_META_ts --&gt; module_src_features_game_presentation_meta_gameEntityMeta_ts
   module_src_ZORA_GAME_COMPONENT_META_ts --&gt; module_src_features_game_presentation_meta_gameFieldMeta_ts
+  module_src_ZORA_GAME_COMPONENT_META_ts --&gt; module_src_features_game_presentation_meta_gameMeta_ts
   module_src_ZORA_GAME_COMPONENT_META_ts --&gt; module_src_features_game_presentation_meta_gameOverlayMeta_ts
+  module_src_ZORA_GAME_PLUGIN_ts --&gt; module_src_features_game_presentation_adapters_inbound_Game_tsx
   module_src_ZORA_GAME_PLUGIN_ts --&gt; module_src_features_game_presentation_adapters_inbound_GameEntity_tsx
   module_src_ZORA_GAME_PLUGIN_ts --&gt; module_src_features_game_presentation_adapters_inbound_GameField_tsx
   module_src_ZORA_GAME_PLUGIN_ts --&gt; module_src_features_game_presentation_adapters_inbound_GameOverlay_tsx
@@ -948,20 +1261,29 @@
     <h3>Export graph</h3>
     <p class="muted"><code>diagrams/export-graph.mmd</code></p>
     <div class="mermaid">graph LR
+  module_src_features_game_presentation_adapters_inbound_Game_tsx[&quot;src/features/game-presentation/adapters/inbound/Game.tsx&quot;]
   module_src_features_game_presentation_adapters_inbound_GameEntity_tsx[&quot;src/features/game-presentation/adapters/inbound/GameEntity.tsx&quot;]
   module_src_features_game_presentation_adapters_inbound_GameField_tsx[&quot;src/features/game-presentation/adapters/inbound/GameField.tsx&quot;]
   module_src_features_game_presentation_adapters_inbound_GameOverlay_tsx[&quot;src/features/game-presentation/adapters/inbound/GameOverlay.tsx&quot;]
+  module_src_features_game_presentation_composition_GameRuntimeContext_ts[&quot;src/features/game-presentation/composition/GameRuntimeContext.ts&quot;]
+  module_src_features_game_presentation_composition_useGameRuntime_ts[&quot;src/features/game-presentation/composition/useGameRuntime.ts&quot;]
+  module_src_features_game_presentation_composition_useGameScheduledEffects_ts[&quot;src/features/game-presentation/composition/useGameScheduledEffects.ts&quot;]
   module_src_features_game_presentation_meta_gameEntityMeta_ts[&quot;src/features/game-presentation/meta/gameEntityMeta.ts&quot;]
   module_src_features_game_presentation_meta_gameFieldMeta_ts[&quot;src/features/game-presentation/meta/gameFieldMeta.ts&quot;]
+  module_src_features_game_presentation_meta_gameMeta_ts[&quot;src/features/game-presentation/meta/gameMeta.ts&quot;]
   module_src_features_game_presentation_meta_gameOverlayMeta_ts[&quot;src/features/game-presentation/meta/gameOverlayMeta.ts&quot;]
   module_src_features_game_presentation_public_ts[&quot;src/features/game-presentation/public.ts&quot;]
   module_src_index_ts[&quot;src/index.ts&quot;]
   module_src_metadata_ts[&quot;src/metadata.ts&quot;]
   module_src_types_gamePresentation_ts[&quot;src/types/gamePresentation.ts&quot;]
+  module_src_types_gameRuntime_ts[&quot;src/types/gameRuntime.ts&quot;]
   module_src_ZORA_GAME_COMPONENT_META_ts[&quot;src/ZORA_GAME_COMPONENT_META.ts&quot;]
   module_src_ZORA_GAME_PLUGIN_ts[&quot;src/ZORA_GAME_PLUGIN.ts&quot;]
   module_src_ZORA_PLUGIN_METADATA_test_ts[&quot;src/ZORA_PLUGIN_METADATA.test.ts&quot;]
   module_src_ZORA_PLUGIN_METADATA_ts[&quot;src/ZORA_PLUGIN_METADATA.ts&quot;]
+  export_Game[&quot;Game&quot;]
+  module_src_features_game_presentation_adapters_inbound_Game_tsx --&gt; export_Game
+  export_Game -.-&gt; export_GameProps
   export_GameEntity[&quot;GameEntity&quot;]
   module_src_features_game_presentation_adapters_inbound_GameEntity_tsx --&gt; export_GameEntity
   export_GameEntity -.-&gt; export_GameEntityProps
@@ -983,6 +1305,8 @@
   export_GameOverlayProps -.-&gt; export_GameOverlayPlacement
   export_GamePointerEvents[&quot;GamePointerEvents&quot;]
   module_src_types_gamePresentation_ts --&gt; export_GamePointerEvents
+  export_GameProps[&quot;GameProps&quot;]
+  module_src_types_gamePresentation_ts --&gt; export_GameProps
   export_ZORA_GAME_COMPONENT_META[&quot;ZORA_GAME_COMPONENT_META&quot;]
   module_src_ZORA_GAME_COMPONENT_META_ts --&gt; export_ZORA_GAME_COMPONENT_META
   export_ZORA_GAME_PLUGIN[&quot;ZORA_GAME_PLUGIN&quot;]
@@ -993,20 +1317,29 @@
     <details>
       <summary>View Mermaid source</summary>
       <pre>graph LR
+  module_src_features_game_presentation_adapters_inbound_Game_tsx[&quot;src/features/game-presentation/adapters/inbound/Game.tsx&quot;]
   module_src_features_game_presentation_adapters_inbound_GameEntity_tsx[&quot;src/features/game-presentation/adapters/inbound/GameEntity.tsx&quot;]
   module_src_features_game_presentation_adapters_inbound_GameField_tsx[&quot;src/features/game-presentation/adapters/inbound/GameField.tsx&quot;]
   module_src_features_game_presentation_adapters_inbound_GameOverlay_tsx[&quot;src/features/game-presentation/adapters/inbound/GameOverlay.tsx&quot;]
+  module_src_features_game_presentation_composition_GameRuntimeContext_ts[&quot;src/features/game-presentation/composition/GameRuntimeContext.ts&quot;]
+  module_src_features_game_presentation_composition_useGameRuntime_ts[&quot;src/features/game-presentation/composition/useGameRuntime.ts&quot;]
+  module_src_features_game_presentation_composition_useGameScheduledEffects_ts[&quot;src/features/game-presentation/composition/useGameScheduledEffects.ts&quot;]
   module_src_features_game_presentation_meta_gameEntityMeta_ts[&quot;src/features/game-presentation/meta/gameEntityMeta.ts&quot;]
   module_src_features_game_presentation_meta_gameFieldMeta_ts[&quot;src/features/game-presentation/meta/gameFieldMeta.ts&quot;]
+  module_src_features_game_presentation_meta_gameMeta_ts[&quot;src/features/game-presentation/meta/gameMeta.ts&quot;]
   module_src_features_game_presentation_meta_gameOverlayMeta_ts[&quot;src/features/game-presentation/meta/gameOverlayMeta.ts&quot;]
   module_src_features_game_presentation_public_ts[&quot;src/features/game-presentation/public.ts&quot;]
   module_src_index_ts[&quot;src/index.ts&quot;]
   module_src_metadata_ts[&quot;src/metadata.ts&quot;]
   module_src_types_gamePresentation_ts[&quot;src/types/gamePresentation.ts&quot;]
+  module_src_types_gameRuntime_ts[&quot;src/types/gameRuntime.ts&quot;]
   module_src_ZORA_GAME_COMPONENT_META_ts[&quot;src/ZORA_GAME_COMPONENT_META.ts&quot;]
   module_src_ZORA_GAME_PLUGIN_ts[&quot;src/ZORA_GAME_PLUGIN.ts&quot;]
   module_src_ZORA_PLUGIN_METADATA_test_ts[&quot;src/ZORA_PLUGIN_METADATA.test.ts&quot;]
   module_src_ZORA_PLUGIN_METADATA_ts[&quot;src/ZORA_PLUGIN_METADATA.ts&quot;]
+  export_Game[&quot;Game&quot;]
+  module_src_features_game_presentation_adapters_inbound_Game_tsx --&gt; export_Game
+  export_Game -.-&gt; export_GameProps
   export_GameEntity[&quot;GameEntity&quot;]
   module_src_features_game_presentation_adapters_inbound_GameEntity_tsx --&gt; export_GameEntity
   export_GameEntity -.-&gt; export_GameEntityProps
@@ -1028,12 +1361,62 @@
   export_GameOverlayProps -.-&gt; export_GameOverlayPlacement
   export_GamePointerEvents[&quot;GamePointerEvents&quot;]
   module_src_types_gamePresentation_ts --&gt; export_GamePointerEvents
+  export_GameProps[&quot;GameProps&quot;]
+  module_src_types_gamePresentation_ts --&gt; export_GameProps
   export_ZORA_GAME_COMPONENT_META[&quot;ZORA_GAME_COMPONENT_META&quot;]
   module_src_ZORA_GAME_COMPONENT_META_ts --&gt; export_ZORA_GAME_COMPONENT_META
   export_ZORA_GAME_PLUGIN[&quot;ZORA_GAME_PLUGIN&quot;]
   module_src_ZORA_GAME_PLUGIN_ts --&gt; export_ZORA_GAME_PLUGIN
   export_ZORA_PLUGIN_METADATA[&quot;ZORA_PLUGIN_METADATA&quot;]
   module_src_ZORA_PLUGIN_METADATA_ts --&gt; export_ZORA_PLUGIN_METADATA
+</pre>
+    </details>
+  </article><article class="item" data-search="Game sequence diagrams/sequences/game.mmd">
+    <h3>Game sequence</h3>
+    <p class="muted"><code>diagrams/sequences/game.mmd</code></p>
+    <div class="mermaid">sequenceDiagram
+  participant participant_createRuntimeKey as createRuntimeKey
+  participant participant_Game as Game
+  participant participant_useGameOutputEmitter as useGameOutputEmitter
+  participant participant_useGameRuntime as useGameRuntime
+  participant participant_useGameRuntimeReset as useGameRuntimeReset
+  participant participant_useGameScheduledEffects as useGameScheduledEffects
+  participant participant_useLatestValue as useLatestValue
+  participant_Game-&gt;&gt;participant_useGameRuntime: useGameRuntime()
+  participant_useGameRuntime-&gt;&gt;participant_useLatestValue: useLatestValue()
+  participant_useLatestValue--&gt;&gt;participant_useGameRuntime: return
+  participant_useGameRuntime-&gt;&gt;participant_createRuntimeKey: createRuntimeKey()
+  participant_createRuntimeKey--&gt;&gt;participant_useGameRuntime: return
+  participant_useGameRuntime-&gt;&gt;participant_useGameRuntimeReset: useGameRuntimeReset()
+  participant_useGameRuntimeReset--&gt;&gt;participant_useGameRuntime: return
+  participant_useGameRuntime-&gt;&gt;participant_useGameOutputEmitter: useGameOutputEmitter()
+  participant_useGameOutputEmitter--&gt;&gt;participant_useGameRuntime: return
+  participant_useGameRuntime-&gt;&gt;participant_useGameScheduledEffects: useGameScheduledEffects()
+  participant_useGameScheduledEffects--&gt;&gt;participant_useGameRuntime: return
+  participant_useGameRuntime--&gt;&gt;participant_Game: return
+</div>
+    <details>
+      <summary>View Mermaid source</summary>
+      <pre>sequenceDiagram
+  participant participant_createRuntimeKey as createRuntimeKey
+  participant participant_Game as Game
+  participant participant_useGameOutputEmitter as useGameOutputEmitter
+  participant participant_useGameRuntime as useGameRuntime
+  participant participant_useGameRuntimeReset as useGameRuntimeReset
+  participant participant_useGameScheduledEffects as useGameScheduledEffects
+  participant participant_useLatestValue as useLatestValue
+  participant_Game-&gt;&gt;participant_useGameRuntime: useGameRuntime()
+  participant_useGameRuntime-&gt;&gt;participant_useLatestValue: useLatestValue()
+  participant_useLatestValue--&gt;&gt;participant_useGameRuntime: return
+  participant_useGameRuntime-&gt;&gt;participant_createRuntimeKey: createRuntimeKey()
+  participant_createRuntimeKey--&gt;&gt;participant_useGameRuntime: return
+  participant_useGameRuntime-&gt;&gt;participant_useGameRuntimeReset: useGameRuntimeReset()
+  participant_useGameRuntimeReset--&gt;&gt;participant_useGameRuntime: return
+  participant_useGameRuntime-&gt;&gt;participant_useGameOutputEmitter: useGameOutputEmitter()
+  participant_useGameOutputEmitter--&gt;&gt;participant_useGameRuntime: return
+  participant_useGameRuntime-&gt;&gt;participant_useGameScheduledEffects: useGameScheduledEffects()
+  participant_useGameScheduledEffects--&gt;&gt;participant_useGameRuntime: return
+  participant_useGameRuntime--&gt;&gt;participant_Game: return
 </pre>
     </details>
   </article><article class="item" data-search="GameEntity sequence diagrams/sequences/game-entity.mmd">
@@ -1091,7 +1474,16 @@
   </article>
     </section>
         </section>
-        <section id="view-src-features-game-presentation-adapters-inbound-gameentity-tsx" class="view" data-view="src/features/game-presentation/adapters/inbound/GameEntity.tsx" hidden>
+        <section id="view-src-features-game-presentation-adapters-inbound-game-tsx" class="view" data-view="src/features/game-presentation/adapters/inbound/Game.tsx" hidden>
+    <section class="panel">
+      <h2>src/features/game-presentation/adapters/inbound/Game.tsx</h2>
+      <article class="item" data-search="Game src/features/game-presentation/adapters/inbound/Game.tsx Bind one serializable game definition to a local transient session and presentation field.">
+    <h3>Game</h3>
+    <p class="muted"><code>src/features/game-presentation/adapters/inbound/Game.tsx:9:1</code></p>
+    <p>Bind one serializable game definition to a local transient session and presentation field.</p>
+  </article>
+    </section>
+  </section><section id="view-src-features-game-presentation-adapters-inbound-gameentity-tsx" class="view" data-view="src/features/game-presentation/adapters/inbound/GameEntity.tsx" hidden>
     <section class="panel">
       <h2>src/features/game-presentation/adapters/inbound/GameEntity.tsx</h2>
       <article class="item" data-search="GameEntity src/features/game-presentation/adapters/inbound/GameEntity.tsx Render one generic positioned game entity without owning gameplay semantics.">
@@ -1132,6 +1524,69 @@
     <h3>resolvePlacementStyle</h3>
     <p class="muted"><code>src/features/game-presentation/adapters/inbound/GameOverlay.tsx:28:1</code></p>
     <p>Resolve overlay alignment without coupling layout to any game genre or rule.</p>
+  </article>
+    </section>
+  </section><section id="view-src-features-game-presentation-composition-usegameruntime-ts" class="view" data-view="src/features/game-presentation/composition/useGameRuntime.ts" hidden>
+    <section class="panel">
+      <h2>src/features/game-presentation/composition/useGameRuntime.ts</h2>
+      <article class="item" data-search="useGameRuntime src/features/game-presentation/composition/useGameRuntime.ts Own one local transient Game session while delegating all domain transitions to @ankhorage/game.">
+    <h3>useGameRuntime</h3>
+    <p class="muted"><code>src/features/game-presentation/composition/useGameRuntime.ts:17:1</code></p>
+    <p>Own one local transient Game session while delegating all domain transitions to @ankhorage/game.</p>
+  </article><article class="item" data-search="useGameRuntimeReset src/features/game-presentation/composition/useGameRuntime.ts Reset the transient session only when its explicit serializable runtime identity changes.">
+    <h3>useGameRuntimeReset</h3>
+    <p class="muted"><code>src/features/game-presentation/composition/useGameRuntime.ts:82:1</code></p>
+    <p>Reset the transient session only when its explicit serializable runtime identity changes.</p>
+  </article><article class="item" data-search="useGameOutputEmitter src/features/game-presentation/composition/useGameRuntime.ts Emit each runtime output exactly when one execution revision becomes current.">
+    <h3>useGameOutputEmitter</h3>
+    <p class="muted"><code>src/features/game-presentation/composition/useGameRuntime.ts:107:1</code></p>
+    <p>Emit each runtime output exactly when one execution revision becomes current.</p>
+  </article><article class="item" data-search="applyRuntimeEvent src/features/game-presentation/composition/useGameRuntime.ts Apply elapsed time and one explicit game event against the matching local session.">
+    <h3>applyRuntimeEvent</h3>
+    <p class="muted"><code>src/features/game-presentation/composition/useGameRuntime.ts:128:1</code></p>
+    <p>Apply elapsed time and one explicit game event against the matching local session.</p>
+  </article><article class="item" data-search="createRuntimeState src/features/game-presentation/composition/useGameRuntime.ts Create one transient runtime state through the published Game owner API.">
+    <h3>createRuntimeState</h3>
+    <p class="muted"><code>src/features/game-presentation/composition/useGameRuntime.ts:152:1</code></p>
+    <p>Create one transient runtime state through the published Game owner API.</p>
+  </article><article class="item" data-search="createRuntimeKey src/features/game-presentation/composition/useGameRuntime.ts Create one runtime identity from serializable definition/session initialization inputs.">
+    <h3>createRuntimeKey</h3>
+    <p class="muted"><code>src/features/game-presentation/composition/useGameRuntime.ts:164:1</code></p>
+    <p>Create one runtime identity from serializable definition/session initialization inputs.</p>
+  </article><article class="item" data-search="emitGameOutputs src/features/game-presentation/composition/useGameRuntime.ts Emit runtime outputs through the ZORA event callback boundary.">
+    <h3>emitGameOutputs</h3>
+    <p class="muted"><code>src/features/game-presentation/composition/useGameRuntime.ts:169:1</code></p>
+    <p>Emit runtime outputs through the ZORA event callback boundary.</p>
+  </article><article class="item" data-search="useLatestValue src/features/game-presentation/composition/useGameRuntime.ts Keep a stable ref object updated with the latest adapter input.">
+    <h3>useLatestValue</h3>
+    <p class="muted"><code>src/features/game-presentation/composition/useGameRuntime.ts:175:1</code></p>
+    <p>Keep a stable ref object updated with the latest adapter input.</p>
+  </article>
+    </section>
+  </section><section id="view-src-features-game-presentation-composition-usegamescheduledeffects-ts" class="view" data-view="src/features/game-presentation/composition/useGameScheduledEffects.ts" hidden>
+    <section class="panel">
+      <h2>src/features/game-presentation/composition/useGameScheduledEffects.ts</h2>
+      <article class="item" data-search="useGameScheduledEffects src/features/game-presentation/composition/useGameScheduledEffects.ts Advance the nearest scheduled game effects through one platform timer.">
+    <h3>useGameScheduledEffects</h3>
+    <p class="muted"><code>src/features/game-presentation/composition/useGameScheduledEffects.ts:9:1</code></p>
+    <p>Advance the nearest scheduled game effects through one platform timer.</p>
+  </article><article class="item" data-search="advanceScheduledRuntime src/features/game-presentation/composition/useGameScheduledEffects.ts Advance one matching runtime state while preserving sessions that have already reset.">
+    <h3>advanceScheduledRuntime</h3>
+    <p class="muted"><code>src/features/game-presentation/composition/useGameScheduledEffects.ts:60:1</code></p>
+    <p>Advance one matching runtime state while preserving sessions that have already reset.</p>
+  </article><article class="item" data-search="resolveNextScheduledDelay src/features/game-presentation/composition/useGameScheduledEffects.ts Resolve the nearest scheduled game consequence without owning domain timing rules.">
+    <h3>resolveNextScheduledDelay</h3>
+    <p class="muted"><code>src/features/game-presentation/composition/useGameScheduledEffects.ts:78:1</code></p>
+    <p>Resolve the nearest scheduled game consequence without owning domain timing rules.</p>
+  </article>
+    </section>
+  </section><section id="view-src-zora-plugin-metadata-test-ts" class="view" data-view="src/ZORA_PLUGIN_METADATA.test.ts" hidden>
+    <section class="panel">
+      <h2>src/ZORA_PLUGIN_METADATA.test.ts</h2>
+      <article class="item" data-search="readComponentMeta src/ZORA_PLUGIN_METADATA.test.ts Require one composed component metadata entry for focused assertions.">
+    <h3>readComponentMeta</h3>
+    <p class="muted"><code>src/ZORA_PLUGIN_METADATA.test.ts:44:1</code></p>
+    <p>Require one composed component metadata entry for focused assertions.</p>
   </article>
     </section>
   </section>

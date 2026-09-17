@@ -1,5 +1,12 @@
 # @ankhorage/zora-game
 
+## 0.2.0
+
+### Minor Changes
+
+- f9e964f: Add the embeddable `Game` binder backed by the published `@ankhorage/game` runtime, local session
+  state, scheduled-effect timing, ordinary ZORA placement metadata, and app-bindable game outputs.
+
 ## 0.1.0
 
 ### Minor Changes

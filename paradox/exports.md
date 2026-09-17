@@ -1,5 +1,19 @@
 # Public API
 
+## Game
+
+Kind: `function`
+Module: `src/features/game-presentation/adapters/inbound/Game.tsx`
+Source: `src/features/game-presentation/adapters/inbound/Game.tsx:9:1`
+
+Bind one serializable game definition to a local transient session and presentation field.
+
+### Signatures
+
+- `(props: GameProps) => React.JSX.Element`
+  - props: `GameProps`
+  - returns: `React.JSX.Element`
+
 ## GameEntity
 
 Kind: `function`
@@ -46,7 +60,7 @@ Render one generic positioned game entity without owning gameplay semantics.
 
 Kind: `type`
 Module: `src/types/gamePresentation.ts`
-Source: `src/types/gamePresentation.ts:18:1`
+Source: `src/types/gamePresentation.ts:19:1`
 
 ### Members
 
@@ -98,7 +112,7 @@ Render a bounded relative-positioning surface for game presentation content.
 
 Kind: `type`
 Module: `src/types/gamePresentation.ts`
-Source: `src/types/gamePresentation.ts:9:1`
+Source: `src/types/gamePresentation.ts:10:1`
 
 ### Members
 
@@ -143,13 +157,13 @@ Render an absolute game presentation layer for HUD, feedback, and phase content.
 
 Kind: `unknown`
 Module: `src/types/gamePresentation.ts`
-Source: `src/types/gamePresentation.ts:6:1`
+Source: `src/types/gamePresentation.ts:7:1`
 
 ## GameOverlayProps
 
 Kind: `type`
 Module: `src/types/gamePresentation.ts`
-Source: `src/types/gamePresentation.ts:34:1`
+Source: `src/types/gamePresentation.ts:35:1`
 
 ### Members
 
@@ -166,13 +180,36 @@ Source: `src/types/gamePresentation.ts:34:1`
 
 Kind: `unknown`
 Module: `src/types/gamePresentation.ts`
-Source: `src/types/gamePresentation.ts:5:1`
+Source: `src/types/gamePresentation.ts:6:1`
+
+## GameProps
+
+Kind: `type`
+Module: `src/types/gamePresentation.ts`
+Source: `src/types/gamePresentation.ts:44:1`
+
+### Members
+
+| Name | Kind | Type | Required | Description |
+| --- | --- | --- | --- | --- |
+| accessibilityLabel | property | `string` | no |  |
+| aspectRatio | property | `number` | no |  |
+| autoAdvanceTime | property | `boolean` | no |  |
+| children | property | `React.ReactNode` | no |  |
+| clip | property | `boolean` | no |  |
+| definition | property | `GameDefinition` | yes |  |
+| input | property | `Readonly<Record<string, import("@ankhorage/game").GameValue>>` | no |  |
+| minHeight | property | `number` | no |  |
+| onOutput | property | `(output: GameOutput) => void` | no |  |
+| resetKey | property | `string` | no |  |
+| seed | property | `number` | no |  |
+| testID | property | `string` | no |  |
 
 ## ZORA_GAME_COMPONENT_META
 
 Kind: `value`
 Module: `src/ZORA_GAME_COMPONENT_META.ts`
-Source: `src/ZORA_GAME_COMPONENT_META.ts:6:14`
+Source: `src/ZORA_GAME_COMPONENT_META.ts:7:14`
 
 Register the generic game presentation metadata owned by this package.
 
@@ -180,7 +217,7 @@ Register the generic game presentation metadata owned by this package.
 
 Kind: `value`
 Module: `src/ZORA_GAME_PLUGIN.ts`
-Source: `src/ZORA_GAME_PLUGIN.ts:7:14`
+Source: `src/ZORA_GAME_PLUGIN.ts:8:14`
 
 Expose the runtime component registry together with metadata for ZORA plugin consumers.
 

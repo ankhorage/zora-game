@@ -1,0 +1,40 @@
+name: Bootstrap
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: '1.4.2'
+
+      - name: Install provider dependencies
+        run: bun install
+
+      - name: Sync Devtools managed repository files
+        env:
+          HEAD_REF: ${{ github.head_ref }}
+        run: |
+          bunx @ankhorage/ankh devtools sync .
+          bun install
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add AGENTS.md .agents .vscode renovate.json5 package.json bun.lock \
+            eslint.config.mjs eslint.local.config.mjs knip.config.ts \
+            prettier.local.config.js .prettierrc.js .prettierignore
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: sync Devtools repository management"
+            git push origin "HEAD:${HEAD_REF}"
+          fi

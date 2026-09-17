@@ -1,0 +1,49 @@
+{
+  "name": "@ankhorage/zora-game",
+  "version": "0.0.0",
+  "type": "module",
+  "description": "Generic game presentation primitives for React Native and React Native Web apps built on ZORA.",
+  "homepage": "https://github.com/ankhorage/zora-game#readme",
+  "bugs": {
+    "url": "https://github.com/ankhorage/zora-game/issues"
+  },
+  "license": "MIT",
+  "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ankhorage/zora-game.git"
+  },
+  "keywords": [
+    "ankhorage",
+    "expo",
+    "game",
+    "game-ui",
+    "react-native",
+    "react-native-web",
+    "ui-kit",
+    "zora"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "@ankhorage/zora": ">=19.0.1",
+    "react": "19.2.3",
+    "react-native": "0.86.x"
+  },
+  "devDependencies": {
+    "@ankhorage/devtools": "^1.15.1",
+    "@ankhorage/paradox": "^0.1.26",
+    "@ankhorage/zora": "^19.0.1",
+    "@types/bun": "^1.4.2",
+    "@types/node": "^26.6.1",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "react-native": "0.86.3",
+    "react-native-web": "~0.21.0",
+    "typescript": "~6.0.3"
+  },
+  "packageManager": "bun@1.4.2"
+}

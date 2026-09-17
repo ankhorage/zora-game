@@ -1,5 +1,5 @@
-import { describe, expect, test } from 'bun:test';
 import { composeZoraPluginMetadata, ZORA_CORE_PLUGIN_METADATA } from '@ankhorage/zora/metadata';
+import { describe, expect, test } from 'bun:test';
 
 import { ZORA_PLUGIN_METADATA } from './ZORA_PLUGIN_METADATA';
 

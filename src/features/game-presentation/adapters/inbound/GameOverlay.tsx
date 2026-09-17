@@ -14,10 +14,10 @@ export function GameOverlay({
 }: GameOverlayProps) {
   return (
     <View
-      accessibilityLabel={accessibilityLabel}
+      {...(accessibilityLabel === undefined ? {} : { accessibilityLabel })}
+      {...(testID === undefined ? {} : { testID })}
       pointerEvents={blocking ? 'auto' : 'box-none'}
       style={[styles.root, resolvePlacementStyle(placement), { padding }]}
-      testID={testID}
     >
       {children}
     </View>
@@ -48,6 +48,10 @@ function resolvePlacementStyle(placement: GameOverlayPlacement): ViewStyle {
 
 const styles = StyleSheet.create({
   root: {
-    ...StyleSheet.absoluteFillObject,
+    bottom: 0,
+    left: 0,
+    position: 'absolute',
+    right: 0,
+    top: 0,
   },
 });

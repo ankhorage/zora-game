@@ -1,4 +1,4 @@
-import type { GameEvent, GameSession } from '@ankhorage/game';
+import type { GameEvent, GameOutput, GameSession } from '@ankhorage/game';
 
 export interface GameRuntimeContextValue {
   readonly session: GameSession;
@@ -8,6 +8,6 @@ export interface GameRuntimeContextValue {
 export interface GameRuntimeState {
   readonly key: string;
   readonly session: GameSession;
-  readonly outputs: readonly import('@ankhorage/game').GameOutput[];
+  readonly outputs: readonly GameOutput[];
   readonly revision: number;
 }

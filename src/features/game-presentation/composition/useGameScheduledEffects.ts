@@ -7,25 +7,26 @@ type SetGameRuntime = React.Dispatch<React.SetStateAction<GameRuntimeState>>;
 
 /*** Advance the nearest scheduled game effects through one platform timer. */
 export function useGameScheduledEffects({
+  clockRef,
+  definitionRef,
   enabled,
-  definition,
   inputRef,
-  runtime,
   runtimeKey,
+  scheduled,
   setRuntime,
 }: UseGameScheduledEffectsArgs): void {
   React.useEffect(() => {
-    if (!enabled || runtime.key !== runtimeKey) return undefined;
-    const delayMs = resolveNextScheduledDelay(runtime);
-    if (delayMs === undefined) return undefined;
+    if (!enabled || scheduled.length === 0) return undefined;
+    const delayMs = resolveNextScheduledDelay(scheduled);
 
-    const startedAt = Date.now();
     const timer = setTimeout(() => {
-      const elapsedMs = Math.max(0, Date.now() - startedAt);
+      const now = Date.now();
+      const elapsedMs = Math.max(0, now - clockRef.current);
+      clockRef.current = now;
       setRuntime((current) =>
         advanceScheduledRuntime({
           current,
-          definition,
+          definition: definitionRef.current,
           elapsedMs,
           input: inputRef.current,
           runtimeKey,
@@ -34,15 +35,16 @@ export function useGameScheduledEffects({
     }, delayMs);
 
     return () => clearTimeout(timer);
-  }, [definition, enabled, inputRef, runtime, runtimeKey, setRuntime]);
+  }, [clockRef, definitionRef, enabled, inputRef, runtimeKey, scheduled, setRuntime]);
 }
 
 interface UseGameScheduledEffectsArgs {
+  readonly clockRef: React.RefObject<number>;
+  readonly definitionRef: React.RefObject<GameDefinition>;
   readonly enabled: boolean;
-  readonly definition: GameDefinition;
   readonly inputRef: React.RefObject<GameInput>;
-  readonly runtime: GameRuntimeState;
   readonly runtimeKey: string;
+  readonly scheduled: GameRuntimeState['session']['scheduled'];
   readonly setRuntime: SetGameRuntime;
 }
 
@@ -73,9 +75,11 @@ function advanceScheduledRuntime({
 }
 
 /*** Resolve the nearest scheduled game consequence without owning domain timing rules. */
-function resolveNextScheduledDelay(runtime: GameRuntimeState): number | undefined {
-  return runtime.session.scheduled.reduce<number | undefined>((nearest, scheduled) => {
-    if (nearest === undefined) return scheduled.remainingMs;
-    return Math.min(nearest, scheduled.remainingMs);
-  }, undefined);
+function resolveNextScheduledDelay(
+  scheduledEffects: GameRuntimeState['session']['scheduled'],
+): number {
+  return scheduledEffects.reduce(
+    (nearest, scheduled) => Math.min(nearest, scheduled.remainingMs),
+    Number.POSITIVE_INFINITY,
+  );
 }

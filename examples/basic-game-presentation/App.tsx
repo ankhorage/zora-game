@@ -1,4 +1,12 @@
-import { AppBar, AppShell, Screen, ScreenSection, Text, ZoraProvider, type ZoraTheme } from '@ankhorage/zora';
+import {
+  AppBar,
+  AppShell,
+  Screen,
+  ScreenSection,
+  Text,
+  ZoraProvider,
+  type ZoraTheme,
+} from '@ankhorage/zora';
 import { GameEntity, GameField, GameOverlay } from '@ankhorage/zora-game';
 
 const gameTheme: ZoraTheme = {

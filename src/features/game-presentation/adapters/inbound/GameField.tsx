@@ -18,10 +18,10 @@ export function GameField({
       {...(testID === undefined ? {} : { testID })}
       style={[
         styles.root,
+        clip ? styles.clipped : styles.overflowVisible,
         {
           ...(aspectRatio === undefined ? {} : { aspectRatio }),
           minHeight,
-          overflow: clip ? 'hidden' : 'visible',
         },
       ]}
     >
@@ -31,6 +31,12 @@ export function GameField({
 }
 
 const styles = StyleSheet.create({
+  clipped: {
+    overflow: 'hidden',
+  },
+  overflowVisible: {
+    overflow: 'visible',
+  },
   root: {
     position: 'relative',
     width: '100%',

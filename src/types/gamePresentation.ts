@@ -1,8 +1,4 @@
-import type {
-  GameDefinition,
-  GameInput,
-  GameOutput,
-} from '@ankhorage/game';
+import type { GameDefinition, GameInput, GameOutput } from '@ankhorage/game';
 import type React from 'react';
 
 type GameOverlayCornerPlacement = 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
@@ -44,7 +40,6 @@ export interface GameOverlayProps {
   readonly accessibilityLabel?: string;
   readonly testID?: string;
 }
-
 
 export interface GameProps extends GameFieldProps {
   readonly definition: GameDefinition;

@@ -26,24 +26,15 @@ export function useGameRuntime(props: GameProps): GameRuntimeContextValue {
     createRuntimeState(definition, input, seed, runtimeKey, 0),
   );
 
-  React.useEffect(() => {
-    clockRef.current = Date.now();
-    setRuntime((current) =>
-      current.key === runtimeKey
-        ? current
-        : createRuntimeState(
-            definitionRef.current,
-            inputRef.current,
-            seed,
-            runtimeKey,
-            current.revision + 1,
-          ),
-    );
-  }, [definitionRef, inputRef, runtimeKey, seed]);
-
-  React.useEffect(() => {
-    emitGameOutputs(runtime.outputs, outputRef.current);
-  }, [outputRef, runtime.outputs, runtime.revision]);
+  useGameRuntimeReset({
+    clockRef,
+    definitionRef,
+    inputRef,
+    runtimeKey,
+    seed,
+    setRuntime,
+  });
+  useGameOutputEmitter(runtime, outputRef);
 
   const dispatch = React.useCallback<GameRuntimeContextValue['dispatch']>(
     (event) => {
@@ -62,7 +53,7 @@ export function useGameRuntime(props: GameProps): GameRuntimeContextValue {
       );
       clockRef.current = now;
     },
-    [autoAdvanceTimeRef, definitionRef, inputRef, runtimeKey, seed],
+    [autoAdvanceTimeRef, clockRef, definitionRef, inputRef, runtimeKey, seed],
   );
 
   useGameScheduledEffects({
@@ -76,6 +67,50 @@ export function useGameRuntime(props: GameProps): GameRuntimeContextValue {
   });
 
   return React.useMemo(() => ({ session: runtime.session, dispatch }), [dispatch, runtime.session]);
+}
+
+interface GameRuntimeResetArgs {
+  readonly clockRef: React.RefObject<number>;
+  readonly definitionRef: React.RefObject<GameProps['definition']>;
+  readonly inputRef: React.RefObject<GameInput>;
+  readonly runtimeKey: string;
+  readonly seed: number;
+  readonly setRuntime: React.Dispatch<React.SetStateAction<GameRuntimeState>>;
+}
+
+/*** Reset the transient session only when its explicit serializable runtime identity changes. */
+function useGameRuntimeReset({
+  clockRef,
+  definitionRef,
+  inputRef,
+  runtimeKey,
+  seed,
+  setRuntime,
+}: GameRuntimeResetArgs): void {
+  React.useEffect(() => {
+    clockRef.current = Date.now();
+    setRuntime((current) =>
+      current.key === runtimeKey
+        ? current
+        : createRuntimeState(
+            definitionRef.current,
+            inputRef.current,
+            seed,
+            runtimeKey,
+            current.revision + 1,
+          ),
+    );
+  }, [clockRef, definitionRef, inputRef, runtimeKey, seed, setRuntime]);
+}
+
+/*** Emit each runtime output exactly when one execution revision becomes current. */
+function useGameOutputEmitter(
+  runtime: GameRuntimeState,
+  outputRef: React.RefObject<GameProps['onOutput']>,
+): void {
+  React.useEffect(() => {
+    emitGameOutputs(runtime.outputs, outputRef.current);
+  }, [outputRef, runtime.outputs, runtime.revision]);
 }
 
 interface ApplyRuntimeEventArgs {
@@ -94,7 +129,13 @@ function applyRuntimeEvent(args: ApplyRuntimeEventArgs): GameRuntimeState {
   const base =
     args.current.key === args.runtimeKey
       ? args.current
-      : createRuntimeState(args.definition, args.input, args.seed, args.runtimeKey, args.current.revision);
+      : createRuntimeState(
+          args.definition,
+          args.input,
+          args.seed,
+          args.runtimeKey,
+          args.current.revision,
+        );
   const timed = args.autoAdvanceTime
     ? advanceGameTime(args.definition, base.session, args.elapsedMs, args.input)
     : { session: base.session, outputs: [] };

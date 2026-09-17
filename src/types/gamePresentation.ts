@@ -32,6 +32,20 @@ export interface GameEntityProps {
   readonly testID?: string;
 }
 
+export interface GameInputZoneProps {
+  readonly eventType: string;
+  readonly entityId?: string;
+  readonly x?: number;
+  readonly y?: number;
+  readonly width?: number;
+  readonly height?: number;
+  readonly zIndex?: number;
+  readonly enabled?: boolean;
+  readonly continuous?: boolean;
+  readonly accessibilityLabel?: string;
+  readonly testID?: string;
+}
+
 export interface GameOverlayProps {
   readonly children?: React.ReactNode;
   readonly placement?: GameOverlayPlacement;

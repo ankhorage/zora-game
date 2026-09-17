@@ -1,10 +1,10 @@
 export type {
   GameEntityProps,
   GameFieldProps,
-  GameProps,
   GameOverlayPlacement,
   GameOverlayProps,
   GamePointerEvents,
+  GameProps,
 } from '../../types/gamePresentation';
 export { Game } from './adapters/inbound/Game';
 export { GameEntity } from './adapters/inbound/GameEntity';

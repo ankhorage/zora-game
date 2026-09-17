@@ -19,8 +19,8 @@ export function useGameRuntime(props: GameProps): GameRuntimeContextValue {
   const definitionRef = useLatestValue(definition);
   const inputRef = useLatestValue(input);
   const outputRef = useLatestValue(props.onOutput);
-  const autoAdvanceTimeRef = useLatestValue(props.autoAdvanceTime ?? true);
-  const clockRef = React.useRef(Date.now());
+  const autoAdvanceTime = props.autoAdvanceTime ?? true;
+  const clockRef = React.useRef(0);
   const runtimeKey = createRuntimeKey(definition.id, resetKey, seed);
   const [runtime, setRuntime] = React.useState<GameRuntimeState>(() =>
     createRuntimeState(definition, input, seed, runtimeKey, 0),
@@ -41,7 +41,7 @@ export function useGameRuntime(props: GameProps): GameRuntimeContextValue {
       const now = Date.now();
       setRuntime((current) =>
         applyRuntimeEvent({
-          autoAdvanceTime: autoAdvanceTimeRef.current,
+          autoAdvanceTime,
           current,
           definition: definitionRef.current,
           elapsedMs: Math.max(0, now - clockRef.current),
@@ -53,13 +53,13 @@ export function useGameRuntime(props: GameProps): GameRuntimeContextValue {
       );
       clockRef.current = now;
     },
-    [autoAdvanceTimeRef, clockRef, definitionRef, inputRef, runtimeKey, seed],
+    [autoAdvanceTime, definitionRef, inputRef, runtimeKey, seed],
   );
 
   useGameScheduledEffects({
     clockRef,
     definitionRef,
-    enabled: autoAdvanceTimeRef.current,
+    enabled: autoAdvanceTime,
     inputRef,
     runtimeKey,
     scheduled: runtime.session.scheduled,
@@ -143,11 +143,7 @@ function applyRuntimeEvent(args: ApplyRuntimeEventArgs): GameRuntimeState {
   return {
     key: args.runtimeKey,
     session: result.session,
-    outputs: [
-      ...(base === args.current ? [] : base.outputs),
-      ...timed.outputs,
-      ...result.outputs,
-    ],
+    outputs: [...(base === args.current ? [] : base.outputs), ...timed.outputs, ...result.outputs],
     revision: args.current.revision + 1,
   };
 }
@@ -178,6 +174,8 @@ function emitGameOutputs(outputs: readonly GameOutput[], onOutput: GameProps['on
 /*** Keep a stable ref object updated with the latest adapter input. */
 function useLatestValue<TValue>(value: TValue): React.RefObject<TValue> {
   const ref = React.useRef(value);
-  ref.current = value;
+  React.useEffect(() => {
+    ref.current = value;
+  }, [value]);
   return ref;
 }

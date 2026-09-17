@@ -14,7 +14,7 @@
     {
       "id": "npm",
       "label": "npm",
-      "value": "v0.2.0",
+      "value": "v0.3.0",
       "color": "cb3837"
     },
     {
@@ -72,6 +72,24 @@
   ],
   "modules": [
     {
+      "path": "src/features/game-presentation/adapters/inbound/createGamePointerEvent.test.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/game-presentation/adapters/inbound/createGamePointerEvent.ts"
+      ],
+      "exports": []
+    },
+    {
+      "path": "src/features/game-presentation/adapters/inbound/createGamePointerEvent.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/game-presentation/utils/clampGamePercentage.ts"
+      ],
+      "exports": [
+        "createGamePointerEvent"
+      ]
+    },
+    {
       "path": "src/features/game-presentation/adapters/inbound/Game.tsx",
       "isEntrypoint": false,
       "dependencies": [
@@ -88,6 +106,7 @@
       "path": "src/features/game-presentation/adapters/inbound/GameEntity.tsx",
       "isEntrypoint": false,
       "dependencies": [
+        "src/features/game-presentation/utils/toGamePercentage.ts",
         "src/types/gamePresentation.ts"
       ],
       "exports": [
@@ -105,6 +124,18 @@
       ]
     },
     {
+      "path": "src/features/game-presentation/adapters/inbound/GameInputZone.tsx",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/game-presentation/adapters/inbound/useGameInputZoneResponder.ts",
+        "src/features/game-presentation/utils/toGamePercentage.ts",
+        "src/types/gamePresentation.ts"
+      ],
+      "exports": [
+        "GameInputZone"
+      ]
+    },
+    {
       "path": "src/features/game-presentation/adapters/inbound/GameOverlay.tsx",
       "isEntrypoint": false,
       "dependencies": [
@@ -112,6 +143,18 @@
       ],
       "exports": [
         "GameOverlay"
+      ]
+    },
+    {
+      "path": "src/features/game-presentation/adapters/inbound/useGameInputZoneResponder.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/game-presentation/adapters/inbound/createGamePointerEvent.ts",
+        "src/features/game-presentation/composition/GameRuntimeContext.ts",
+        "src/types/gamePresentation.ts"
+      ],
+      "exports": [
+        "useGameInputZoneResponder"
       ]
     },
     {
@@ -163,6 +206,14 @@
       ]
     },
     {
+      "path": "src/features/game-presentation/meta/gameInputZoneMeta.ts",
+      "isEntrypoint": false,
+      "dependencies": [],
+      "exports": [
+        "gameInputZoneMeta"
+      ]
+    },
+    {
       "path": "src/features/game-presentation/meta/gameMeta.ts",
       "isEntrypoint": false,
       "dependencies": [],
@@ -188,11 +239,31 @@
         "GameEntityProps",
         "GameField",
         "GameFieldProps",
+        "GameInputZone",
+        "GameInputZoneProps",
         "GameOverlay",
         "GameOverlayPlacement",
         "GameOverlayProps",
         "GamePointerEvents",
         "GameProps"
+      ]
+    },
+    {
+      "path": "src/features/game-presentation/utils/clampGamePercentage.ts",
+      "isEntrypoint": false,
+      "dependencies": [],
+      "exports": [
+        "clampGamePercentage"
+      ]
+    },
+    {
+      "path": "src/features/game-presentation/utils/toGamePercentage.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/game-presentation/utils/clampGamePercentage.ts"
+      ],
+      "exports": [
+        "toGamePercentage"
       ]
     },
     {
@@ -205,6 +276,8 @@
         "GameEntityProps",
         "GameField",
         "GameFieldProps",
+        "GameInputZone",
+        "GameInputZoneProps",
         "GameOverlay",
         "GameOverlayPlacement",
         "GameOverlayProps",
@@ -229,6 +302,7 @@
       "exports": [
         "GameEntityProps",
         "GameFieldProps",
+        "GameInputZoneProps",
         "GameOverlayPlacement",
         "GameOverlayProps",
         "GamePointerEvents",
@@ -250,6 +324,7 @@
       "dependencies": [
         "src/features/game-presentation/meta/gameEntityMeta.ts",
         "src/features/game-presentation/meta/gameFieldMeta.ts",
+        "src/features/game-presentation/meta/gameInputZoneMeta.ts",
         "src/features/game-presentation/meta/gameMeta.ts",
         "src/features/game-presentation/meta/gameOverlayMeta.ts"
       ],
@@ -264,6 +339,7 @@
         "src/features/game-presentation/adapters/inbound/Game.tsx",
         "src/features/game-presentation/adapters/inbound/GameEntity.tsx",
         "src/features/game-presentation/adapters/inbound/GameField.tsx",
+        "src/features/game-presentation/adapters/inbound/GameInputZone.tsx",
         "src/features/game-presentation/adapters/inbound/GameOverlay.tsx",
         "src/ZORA_PLUGIN_METADATA.ts"
       ],
@@ -336,7 +412,7 @@
       "modulePath": "src/features/game-presentation/adapters/inbound/GameEntity.tsx",
       "sourceLocation": {
         "filePath": "src/features/game-presentation/adapters/inbound/GameEntity.tsx",
-        "line": 7,
+        "line": 8,
         "column": 1
       },
       "exportPaths": [
@@ -577,6 +653,140 @@
       "structuredRows": []
     },
     {
+      "name": "GameInputZone",
+      "description": "Capture pointer/touch geometry and dispatch only normalized generic Game events.",
+      "isReadme": false,
+      "examples": [],
+      "kind": "function",
+      "modulePath": "src/features/game-presentation/adapters/inbound/GameInputZone.tsx",
+      "sourceLocation": {
+        "filePath": "src/features/game-presentation/adapters/inbound/GameInputZone.tsx",
+        "line": 8,
+        "column": 1
+      },
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "GameInputZoneProps"
+      ],
+      "signatures": [
+        {
+          "label": "({\n  x = 0,\n  y = 0,\n  width = 100,\n  height = 100,\n  zIndex = 0,\n  enabled = true,\n  continuous = true,\n  accessibilityLabel,\n  testID,\n  ...inputProps\n}: GameInputZoneProps) => import(\"react\").JSX.Element",
+          "parameters": [
+            {
+              "name": "{\n  x = 0,\n  y = 0,\n  width = 100,\n  height = 100,\n  zIndex = 0,\n  enabled = true,\n  continuous = true,\n  accessibilityLabel,\n  testID,\n  ...inputProps\n}",
+              "type": "GameInputZoneProps",
+              "required": true,
+              "description": null
+            }
+          ],
+          "returnType": "import(\"react\").JSX.Element",
+          "returnDescription": null
+        }
+      ],
+      "members": [],
+      "structuredRows": []
+    },
+    {
+      "name": "GameInputZoneProps",
+      "description": null,
+      "isReadme": false,
+      "examples": [],
+      "kind": "type",
+      "modulePath": "src/types/gamePresentation.ts",
+      "sourceLocation": {
+        "filePath": "src/types/gamePresentation.ts",
+        "line": 35,
+        "column": 1
+      },
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [],
+      "signatures": [],
+      "members": [
+        {
+          "name": "accessibilityLabel",
+          "kind": "property",
+          "type": "string",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "continuous",
+          "kind": "property",
+          "type": "boolean",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "enabled",
+          "kind": "property",
+          "type": "boolean",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "entityId",
+          "kind": "property",
+          "type": "string",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "eventType",
+          "kind": "property",
+          "type": "string",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "height",
+          "kind": "property",
+          "type": "number",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "testID",
+          "kind": "property",
+          "type": "string",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "width",
+          "kind": "property",
+          "type": "number",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "x",
+          "kind": "property",
+          "type": "number",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "y",
+          "kind": "property",
+          "type": "number",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "zIndex",
+          "kind": "property",
+          "type": "number",
+          "required": false,
+          "description": null
+        }
+      ],
+      "structuredRows": []
+    },
+    {
       "name": "GameOverlay",
       "description": "Render an absolute game presentation layer for HUD, feedback, and phase content.",
       "isReadme": false,
@@ -641,7 +851,7 @@
       "modulePath": "src/types/gamePresentation.ts",
       "sourceLocation": {
         "filePath": "src/types/gamePresentation.ts",
-        "line": 35,
+        "line": 49,
         "column": 1
       },
       "exportPaths": [
@@ -726,7 +936,7 @@
       "modulePath": "src/types/gamePresentation.ts",
       "sourceLocation": {
         "filePath": "src/types/gamePresentation.ts",
-        "line": 44,
+        "line": 58,
         "column": 1
       },
       "exportPaths": [
@@ -831,7 +1041,7 @@
       "modulePath": "src/ZORA_GAME_COMPONENT_META.ts",
       "sourceLocation": {
         "filePath": "src/ZORA_GAME_COMPONENT_META.ts",
-        "line": 7,
+        "line": 8,
         "column": 14
       },
       "exportPaths": [
@@ -851,7 +1061,7 @@
       "modulePath": "src/ZORA_GAME_PLUGIN.ts",
       "sourceLocation": {
         "filePath": "src/ZORA_GAME_PLUGIN.ts",
-        "line": 8,
+        "line": 9,
         "column": 14
       },
       "exportPaths": [
@@ -981,7 +1191,7 @@
       "modulePath": "src/features/game-presentation/adapters/inbound/GameEntity.tsx",
       "sourceLocation": {
         "filePath": "src/features/game-presentation/adapters/inbound/GameEntity.tsx",
-        "line": 7,
+        "line": 8,
         "column": 1
       },
       "exportPaths": [
@@ -1132,6 +1342,96 @@
       ]
     },
     {
+      "name": "GameInputZone",
+      "description": "Capture pointer/touch geometry and dispatch only normalized generic Game events.",
+      "isReadme": false,
+      "examples": [],
+      "modulePath": "src/features/game-presentation/adapters/inbound/GameInputZone.tsx",
+      "sourceLocation": {
+        "filePath": "src/features/game-presentation/adapters/inbound/GameInputZone.tsx",
+        "line": 8,
+        "column": 1
+      },
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "props": [
+        {
+          "name": "accessibilityLabel",
+          "type": "string | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "continuous",
+          "type": "boolean | undefined",
+          "required": false,
+          "defaultValue": "true",
+          "description": null
+        },
+        {
+          "name": "enabled",
+          "type": "boolean | undefined",
+          "required": false,
+          "defaultValue": "true",
+          "description": null
+        },
+        {
+          "name": "entityId",
+          "type": "string | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "eventType",
+          "type": "string",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "height",
+          "type": "number | undefined",
+          "required": false,
+          "defaultValue": "100",
+          "description": null
+        },
+        {
+          "name": "testID",
+          "type": "string | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "width",
+          "type": "number | undefined",
+          "required": false,
+          "defaultValue": "100",
+          "description": null
+        },
+        {
+          "name": "x",
+          "type": "number | undefined",
+          "required": false,
+          "defaultValue": "0",
+          "description": null
+        },
+        {
+          "name": "y",
+          "type": "number | undefined",
+          "required": false,
+          "defaultValue": "0",
+          "description": null
+        },
+        {
+          "name": "zIndex",
+          "type": "number | undefined",
+          "required": false,
+          "defaultValue": "0",
+          "description": null
+        }
+      ]
+    },
+    {
       "name": "GameOverlay",
       "description": "Render an absolute game presentation layer for HUD, feedback, and phase content.",
       "isReadme": false,
@@ -1190,6 +1490,15 @@
   ],
   "sourceFunctions": [
     {
+      "name": "createGamePointerEvent",
+      "description": "Normalize one measured pointer/touch position into a field-relative generic Game event.",
+      "sourceLocation": {
+        "filePath": "src/features/game-presentation/adapters/inbound/createGamePointerEvent.ts",
+        "line": 19,
+        "column": 1
+      }
+    },
+    {
       "name": "Game",
       "description": "Bind one serializable game definition to a local transient session and presentation field.",
       "sourceLocation": {
@@ -1203,7 +1512,7 @@
       "description": "Render one generic positioned game entity without owning gameplay semantics.",
       "sourceLocation": {
         "filePath": "src/features/game-presentation/adapters/inbound/GameEntity.tsx",
-        "line": 7,
+        "line": 8,
         "column": 1
       }
     },
@@ -1212,25 +1521,7 @@
       "description": "Convert serializable entity presentation props into a React Native view style.",
       "sourceLocation": {
         "filePath": "src/features/game-presentation/adapters/inbound/GameEntity.tsx",
-        "line": 50,
-        "column": 1
-      }
-    },
-    {
-      "name": "toPercent",
-      "description": "Convert a bounded percentage number to React Native percentage syntax.",
-      "sourceLocation": {
-        "filePath": "src/features/game-presentation/adapters/inbound/GameEntity.tsx",
-        "line": 75,
-        "column": 1
-      }
-    },
-    {
-      "name": "clamp",
-      "description": "Clamp one numeric presentation value to an inclusive range.",
-      "sourceLocation": {
-        "filePath": "src/features/game-presentation/adapters/inbound/GameEntity.tsx",
-        "line": 80,
+        "line": 51,
         "column": 1
       }
     },
@@ -1240,6 +1531,24 @@
       "sourceLocation": {
         "filePath": "src/features/game-presentation/adapters/inbound/GameField.tsx",
         "line": 7,
+        "column": 1
+      }
+    },
+    {
+      "name": "GameInputZone",
+      "description": "Capture pointer/touch geometry and dispatch only normalized generic Game events.",
+      "sourceLocation": {
+        "filePath": "src/features/game-presentation/adapters/inbound/GameInputZone.tsx",
+        "line": 8,
+        "column": 1
+      }
+    },
+    {
+      "name": "createInputZoneStyle",
+      "description": "Convert field-relative input-zone props into one absolute React Native style.",
+      "sourceLocation": {
+        "filePath": "src/features/game-presentation/adapters/inbound/GameInputZone.tsx",
+        "line": 55,
         "column": 1
       }
     },
@@ -1258,6 +1567,15 @@
       "sourceLocation": {
         "filePath": "src/features/game-presentation/adapters/inbound/GameOverlay.tsx",
         "line": 28,
+        "column": 1
+      }
+    },
+    {
+      "name": "useGameInputZoneResponder",
+      "description": "Own React Native responder measurement and event dispatch for one Game input zone.",
+      "sourceLocation": {
+        "filePath": "src/features/game-presentation/adapters/inbound/useGameInputZoneResponder.ts",
+        "line": 14,
         "column": 1
       }
     },
@@ -1361,11 +1679,29 @@
       }
     },
     {
+      "name": "clampGamePercentage",
+      "description": "Clamp one game presentation coordinate to the inclusive field-percentage range.",
+      "sourceLocation": {
+        "filePath": "src/features/game-presentation/utils/clampGamePercentage.ts",
+        "line": 2,
+        "column": 1
+      }
+    },
+    {
+      "name": "toGamePercentage",
+      "description": "Convert one game percentage coordinate to React Native percentage style syntax.",
+      "sourceLocation": {
+        "filePath": "src/features/game-presentation/utils/toGamePercentage.ts",
+        "line": 4,
+        "column": 1
+      }
+    },
+    {
       "name": "readComponentMeta",
       "description": "Require one composed component metadata entry for focused assertions.",
       "sourceLocation": {
         "filePath": "src/ZORA_PLUGIN_METADATA.test.ts",
-        "line": 44,
+        "line": 55,
         "column": 1
       }
     }
@@ -1393,6 +1729,14 @@
       "sourcePath": "src/features/game-presentation/adapters/inbound/GameField.tsx",
       "symbolName": "GameField",
       "description": "Render a bounded relative-positioning surface for game presentation content.",
+      "isReadme": false
+    },
+    {
+      "kind": "export",
+      "name": "GameInputZone",
+      "sourcePath": "src/features/game-presentation/adapters/inbound/GameInputZone.tsx",
+      "symbolName": "GameInputZone",
+      "description": "Capture pointer/touch geometry and dispatch only normalized generic Game events.",
       "isReadme": false
     },
     {
@@ -1438,6 +1782,11 @@
       },
       {
         "fromPath": "src/ZORA_GAME_COMPONENT_META.ts",
+        "toPath": "src/features/game-presentation/meta/gameInputZoneMeta.ts",
+        "sourcePath": "src/ZORA_GAME_COMPONENT_META.ts"
+      },
+      {
+        "fromPath": "src/ZORA_GAME_COMPONENT_META.ts",
         "toPath": "src/features/game-presentation/meta/gameMeta.ts",
         "sourcePath": "src/ZORA_GAME_COMPONENT_META.ts"
       },
@@ -1459,6 +1808,11 @@
       {
         "fromPath": "src/ZORA_GAME_PLUGIN.ts",
         "toPath": "src/features/game-presentation/adapters/inbound/GameField.tsx",
+        "sourcePath": "src/ZORA_GAME_PLUGIN.ts"
+      },
+      {
+        "fromPath": "src/ZORA_GAME_PLUGIN.ts",
+        "toPath": "src/features/game-presentation/adapters/inbound/GameInputZone.tsx",
         "sourcePath": "src/ZORA_GAME_PLUGIN.ts"
       },
       {
@@ -1503,6 +1857,11 @@
       },
       {
         "fromPath": "src/features/game-presentation/public.ts",
+        "toPath": "src/features/game-presentation/adapters/inbound/GameInputZone.tsx",
+        "sourcePath": "src/features/game-presentation/public.ts"
+      },
+      {
+        "fromPath": "src/features/game-presentation/public.ts",
         "toPath": "src/features/game-presentation/adapters/inbound/GameOverlay.tsx",
         "sourcePath": "src/features/game-presentation/public.ts"
       },
@@ -1532,6 +1891,21 @@
         "sourcePath": "src/features/game-presentation/composition/useGameScheduledEffects.ts"
       },
       {
+        "fromPath": "src/features/game-presentation/utils/toGamePercentage.ts",
+        "toPath": "src/features/game-presentation/utils/clampGamePercentage.ts",
+        "sourcePath": "src/features/game-presentation/utils/toGamePercentage.ts"
+      },
+      {
+        "fromPath": "src/features/game-presentation/adapters/inbound/createGamePointerEvent.test.ts",
+        "toPath": "src/features/game-presentation/adapters/inbound/createGamePointerEvent.ts",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/createGamePointerEvent.test.ts"
+      },
+      {
+        "fromPath": "src/features/game-presentation/adapters/inbound/createGamePointerEvent.ts",
+        "toPath": "src/features/game-presentation/utils/clampGamePercentage.ts",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/createGamePointerEvent.ts"
+      },
+      {
         "fromPath": "src/features/game-presentation/adapters/inbound/Game.tsx",
         "toPath": "src/types/gamePresentation.ts",
         "sourcePath": "src/features/game-presentation/adapters/inbound/Game.tsx"
@@ -1557,14 +1931,49 @@
         "sourcePath": "src/features/game-presentation/adapters/inbound/GameEntity.tsx"
       },
       {
+        "fromPath": "src/features/game-presentation/adapters/inbound/GameEntity.tsx",
+        "toPath": "src/features/game-presentation/utils/toGamePercentage.ts",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/GameEntity.tsx"
+      },
+      {
         "fromPath": "src/features/game-presentation/adapters/inbound/GameField.tsx",
         "toPath": "src/types/gamePresentation.ts",
         "sourcePath": "src/features/game-presentation/adapters/inbound/GameField.tsx"
       },
       {
+        "fromPath": "src/features/game-presentation/adapters/inbound/GameInputZone.tsx",
+        "toPath": "src/types/gamePresentation.ts",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/GameInputZone.tsx"
+      },
+      {
+        "fromPath": "src/features/game-presentation/adapters/inbound/GameInputZone.tsx",
+        "toPath": "src/features/game-presentation/utils/toGamePercentage.ts",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/GameInputZone.tsx"
+      },
+      {
+        "fromPath": "src/features/game-presentation/adapters/inbound/GameInputZone.tsx",
+        "toPath": "src/features/game-presentation/adapters/inbound/useGameInputZoneResponder.ts",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/GameInputZone.tsx"
+      },
+      {
         "fromPath": "src/features/game-presentation/adapters/inbound/GameOverlay.tsx",
         "toPath": "src/types/gamePresentation.ts",
         "sourcePath": "src/features/game-presentation/adapters/inbound/GameOverlay.tsx"
+      },
+      {
+        "fromPath": "src/features/game-presentation/adapters/inbound/useGameInputZoneResponder.ts",
+        "toPath": "src/types/gamePresentation.ts",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/useGameInputZoneResponder.ts"
+      },
+      {
+        "fromPath": "src/features/game-presentation/adapters/inbound/useGameInputZoneResponder.ts",
+        "toPath": "src/features/game-presentation/composition/GameRuntimeContext.ts",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/useGameInputZoneResponder.ts"
+      },
+      {
+        "fromPath": "src/features/game-presentation/adapters/inbound/useGameInputZoneResponder.ts",
+        "toPath": "src/features/game-presentation/adapters/inbound/createGamePointerEvent.ts",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/useGameInputZoneResponder.ts"
       }
     ],
     "calls": [
@@ -1707,6 +2116,42 @@
         "sourcePath": "src/features/game-presentation/composition/useGameScheduledEffects.ts"
       },
       {
+        "fromSymbol": "toGamePercentage",
+        "toSymbol": "clampGamePercentage",
+        "callExpression": "clampGamePercentage",
+        "sourcePath": "src/features/game-presentation/utils/toGamePercentage.ts"
+      },
+      {
+        "fromSymbol": "src/features/game-presentation/adapters/inbound/createGamePointerEvent.test.ts",
+        "toSymbol": "describe",
+        "callExpression": "describe",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/createGamePointerEvent.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/game-presentation/adapters/inbound/createGamePointerEvent.test.ts",
+        "toSymbol": "test",
+        "callExpression": "test",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/createGamePointerEvent.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/game-presentation/adapters/inbound/createGamePointerEvent.test.ts",
+        "toSymbol": "expect",
+        "callExpression": "expect",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/createGamePointerEvent.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/game-presentation/adapters/inbound/createGamePointerEvent.test.ts",
+        "toSymbol": "createGamePointerEvent",
+        "callExpression": "createGamePointerEvent",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/createGamePointerEvent.test.ts"
+      },
+      {
+        "fromSymbol": "createGamePointerEvent",
+        "toSymbol": "clampGamePercentage",
+        "callExpression": "clampGamePercentage",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/createGamePointerEvent.ts"
+      },
+      {
         "fromSymbol": "Game",
         "toSymbol": "useGameRuntime",
         "callExpression": "useGameRuntime",
@@ -1720,27 +2165,45 @@
       },
       {
         "fromSymbol": "createEntityStyle",
-        "toSymbol": "toPercent",
-        "callExpression": "toPercent",
+        "toSymbol": "toGamePercentage",
+        "callExpression": "toGamePercentage",
         "sourcePath": "src/features/game-presentation/adapters/inbound/GameEntity.tsx"
       },
       {
-        "fromSymbol": "createEntityStyle",
-        "toSymbol": "clamp",
-        "callExpression": "clamp",
-        "sourcePath": "src/features/game-presentation/adapters/inbound/GameEntity.tsx"
+        "fromSymbol": "GameInputZone",
+        "toSymbol": "useGameInputZoneResponder",
+        "callExpression": "useGameInputZoneResponder",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/GameInputZone.tsx"
       },
       {
-        "fromSymbol": "toPercent",
-        "toSymbol": "clamp",
-        "callExpression": "clamp",
-        "sourcePath": "src/features/game-presentation/adapters/inbound/GameEntity.tsx"
+        "fromSymbol": "GameInputZone",
+        "toSymbol": "createInputZoneStyle",
+        "callExpression": "createInputZoneStyle",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/GameInputZone.tsx"
+      },
+      {
+        "fromSymbol": "createInputZoneStyle",
+        "toSymbol": "toGamePercentage",
+        "callExpression": "toGamePercentage",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/GameInputZone.tsx"
       },
       {
         "fromSymbol": "GameOverlay",
         "toSymbol": "resolvePlacementStyle",
         "callExpression": "resolvePlacementStyle",
         "sourcePath": "src/features/game-presentation/adapters/inbound/GameOverlay.tsx"
+      },
+      {
+        "fromSymbol": "src/features/game-presentation/adapters/inbound/useGameInputZoneResponder.ts",
+        "toSymbol": "createGamePointerEvent",
+        "callExpression": "createGamePointerEvent",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/useGameInputZoneResponder.ts"
+      },
+      {
+        "fromSymbol": "src/features/game-presentation/adapters/inbound/useGameInputZoneResponder.ts",
+        "toSymbol": "dispatch",
+        "callExpression": "runtime.dispatch",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/useGameInputZoneResponder.ts"
       }
     ],
     "typeReferences": [
@@ -1835,6 +2298,11 @@
         "sourcePath": "src/features/game-presentation/adapters/inbound/GameField.tsx"
       },
       {
+        "fromSymbol": "GameInputZone",
+        "toType": "GameInputZoneProps",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/GameInputZone.tsx"
+      },
+      {
         "fromSymbol": "GameOverlay",
         "toType": "GameOverlayProps",
         "sourcePath": "src/features/game-presentation/adapters/inbound/GameOverlay.tsx"
@@ -1864,6 +2332,12 @@
         "toComponent": "View",
         "jsxElement": "<View\n      {...(accessibilityLabel === undefined ? {} : { accessibilityLabel })}\n      {...(testID === undefined ? {} : { testID })}\n      style={[\n        styles.root,\n        clip ? styles.clipped : styles.overflowVisible,\n        {\n          ...(aspectRatio === undefined ? {} : { aspectRatio }),\n          minHeight,\n        },\n      ]}\n    >",
         "sourcePath": "src/features/game-presentation/adapters/inbound/GameField.tsx"
+      },
+      {
+        "fromComponent": "GameInputZone",
+        "toComponent": "View",
+        "jsxElement": "<View\n      {...(accessibilityLabel === undefined ? {} : { accessibilityLabel })}\n      {...(testID === undefined ? {} : { testID })}\n      {...(continuous\n        ? { onResponderGrant: dispatchPointer, onResponderMove: dispatchPointer }\n        : { onResponderRelease: dispatchPointer })}\n      collapsable={false}\n      onLayout={handleLayout}\n      onStartShouldSetResponder={shouldSetResponder}\n      pointerEvents={enabled ? 'auto' : 'none'}\n      style={createInputZoneStyle({ x, y, width, height, zIndex })}\n    />",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/GameInputZone.tsx"
       },
       {
         "fromComponent": "GameOverlay",

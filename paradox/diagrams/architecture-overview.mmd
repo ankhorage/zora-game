@@ -4,6 +4,12 @@ graph TD
   package__ankhorage_zora_game --> entrypoint_src_index_ts
   entrypoint_src_metadata_ts["src/metadata.ts"]
   package__ankhorage_zora_game --> entrypoint_src_metadata_ts
+  module_src_features_game_presentation_adapters_inbound_createGamePointerEvent_test_ts["src/features/game-presentation/adapters/inbound/createGamePointerEvent.test.ts"]
+  package__ankhorage_zora_game -.-> module_src_features_game_presentation_adapters_inbound_createGamePointerEvent_test_ts
+  module_src_features_game_presentation_adapters_inbound_createGamePointerEvent_test_ts --> module_src_features_game_presentation_adapters_inbound_createGamePointerEvent_ts
+  module_src_features_game_presentation_adapters_inbound_createGamePointerEvent_ts["src/features/game-presentation/adapters/inbound/createGamePointerEvent.ts"]
+  package__ankhorage_zora_game -.-> module_src_features_game_presentation_adapters_inbound_createGamePointerEvent_ts
+  module_src_features_game_presentation_adapters_inbound_createGamePointerEvent_ts --> module_src_features_game_presentation_utils_clampGamePercentage_ts
   module_src_features_game_presentation_adapters_inbound_Game_tsx["src/features/game-presentation/adapters/inbound/Game.tsx"]
   package__ankhorage_zora_game -.-> module_src_features_game_presentation_adapters_inbound_Game_tsx
   module_src_features_game_presentation_adapters_inbound_Game_tsx --> module_src_features_game_presentation_adapters_inbound_GameField_tsx
@@ -12,13 +18,24 @@ graph TD
   module_src_features_game_presentation_adapters_inbound_Game_tsx --> module_src_types_gamePresentation_ts
   module_src_features_game_presentation_adapters_inbound_GameEntity_tsx["src/features/game-presentation/adapters/inbound/GameEntity.tsx"]
   package__ankhorage_zora_game -.-> module_src_features_game_presentation_adapters_inbound_GameEntity_tsx
+  module_src_features_game_presentation_adapters_inbound_GameEntity_tsx --> module_src_features_game_presentation_utils_toGamePercentage_ts
   module_src_features_game_presentation_adapters_inbound_GameEntity_tsx --> module_src_types_gamePresentation_ts
   module_src_features_game_presentation_adapters_inbound_GameField_tsx["src/features/game-presentation/adapters/inbound/GameField.tsx"]
   package__ankhorage_zora_game -.-> module_src_features_game_presentation_adapters_inbound_GameField_tsx
   module_src_features_game_presentation_adapters_inbound_GameField_tsx --> module_src_types_gamePresentation_ts
+  module_src_features_game_presentation_adapters_inbound_GameInputZone_tsx["src/features/game-presentation/adapters/inbound/GameInputZone.tsx"]
+  package__ankhorage_zora_game -.-> module_src_features_game_presentation_adapters_inbound_GameInputZone_tsx
+  module_src_features_game_presentation_adapters_inbound_GameInputZone_tsx --> module_src_features_game_presentation_adapters_inbound_useGameInputZoneResponder_ts
+  module_src_features_game_presentation_adapters_inbound_GameInputZone_tsx --> module_src_features_game_presentation_utils_toGamePercentage_ts
+  module_src_features_game_presentation_adapters_inbound_GameInputZone_tsx --> module_src_types_gamePresentation_ts
   module_src_features_game_presentation_adapters_inbound_GameOverlay_tsx["src/features/game-presentation/adapters/inbound/GameOverlay.tsx"]
   package__ankhorage_zora_game -.-> module_src_features_game_presentation_adapters_inbound_GameOverlay_tsx
   module_src_features_game_presentation_adapters_inbound_GameOverlay_tsx --> module_src_types_gamePresentation_ts
+  module_src_features_game_presentation_adapters_inbound_useGameInputZoneResponder_ts["src/features/game-presentation/adapters/inbound/useGameInputZoneResponder.ts"]
+  package__ankhorage_zora_game -.-> module_src_features_game_presentation_adapters_inbound_useGameInputZoneResponder_ts
+  module_src_features_game_presentation_adapters_inbound_useGameInputZoneResponder_ts --> module_src_features_game_presentation_adapters_inbound_createGamePointerEvent_ts
+  module_src_features_game_presentation_adapters_inbound_useGameInputZoneResponder_ts --> module_src_features_game_presentation_composition_GameRuntimeContext_ts
+  module_src_features_game_presentation_adapters_inbound_useGameInputZoneResponder_ts --> module_src_types_gamePresentation_ts
   module_src_features_game_presentation_composition_GameRuntimeContext_ts["src/features/game-presentation/composition/GameRuntimeContext.ts"]
   package__ankhorage_zora_game -.-> module_src_features_game_presentation_composition_GameRuntimeContext_ts
   module_src_features_game_presentation_composition_GameRuntimeContext_ts --> module_src_types_gameRuntime_ts
@@ -34,12 +51,19 @@ graph TD
   package__ankhorage_zora_game -.-> module_src_features_game_presentation_meta_gameEntityMeta_ts
   module_src_features_game_presentation_meta_gameFieldMeta_ts["src/features/game-presentation/meta/gameFieldMeta.ts"]
   package__ankhorage_zora_game -.-> module_src_features_game_presentation_meta_gameFieldMeta_ts
+  module_src_features_game_presentation_meta_gameInputZoneMeta_ts["src/features/game-presentation/meta/gameInputZoneMeta.ts"]
+  package__ankhorage_zora_game -.-> module_src_features_game_presentation_meta_gameInputZoneMeta_ts
   module_src_features_game_presentation_meta_gameMeta_ts["src/features/game-presentation/meta/gameMeta.ts"]
   package__ankhorage_zora_game -.-> module_src_features_game_presentation_meta_gameMeta_ts
   module_src_features_game_presentation_meta_gameOverlayMeta_ts["src/features/game-presentation/meta/gameOverlayMeta.ts"]
   package__ankhorage_zora_game -.-> module_src_features_game_presentation_meta_gameOverlayMeta_ts
   module_src_features_game_presentation_public_ts["src/features/game-presentation/public.ts"]
   package__ankhorage_zora_game -.-> module_src_features_game_presentation_public_ts
+  module_src_features_game_presentation_utils_clampGamePercentage_ts["src/features/game-presentation/utils/clampGamePercentage.ts"]
+  package__ankhorage_zora_game -.-> module_src_features_game_presentation_utils_clampGamePercentage_ts
+  module_src_features_game_presentation_utils_toGamePercentage_ts["src/features/game-presentation/utils/toGamePercentage.ts"]
+  package__ankhorage_zora_game -.-> module_src_features_game_presentation_utils_toGamePercentage_ts
+  module_src_features_game_presentation_utils_toGamePercentage_ts --> module_src_features_game_presentation_utils_clampGamePercentage_ts
   module_src_index_ts["src/index.ts"]
   module_src_metadata_ts["src/metadata.ts"]
   module_src_types_gamePresentation_ts["src/types/gamePresentation.ts"]
@@ -50,6 +74,7 @@ graph TD
   package__ankhorage_zora_game -.-> module_src_ZORA_GAME_COMPONENT_META_ts
   module_src_ZORA_GAME_COMPONENT_META_ts --> module_src_features_game_presentation_meta_gameEntityMeta_ts
   module_src_ZORA_GAME_COMPONENT_META_ts --> module_src_features_game_presentation_meta_gameFieldMeta_ts
+  module_src_ZORA_GAME_COMPONENT_META_ts --> module_src_features_game_presentation_meta_gameInputZoneMeta_ts
   module_src_ZORA_GAME_COMPONENT_META_ts --> module_src_features_game_presentation_meta_gameMeta_ts
   module_src_ZORA_GAME_COMPONENT_META_ts --> module_src_features_game_presentation_meta_gameOverlayMeta_ts
   module_src_ZORA_GAME_PLUGIN_ts["src/ZORA_GAME_PLUGIN.ts"]
@@ -57,6 +82,7 @@ graph TD
   module_src_ZORA_GAME_PLUGIN_ts --> module_src_features_game_presentation_adapters_inbound_Game_tsx
   module_src_ZORA_GAME_PLUGIN_ts --> module_src_features_game_presentation_adapters_inbound_GameEntity_tsx
   module_src_ZORA_GAME_PLUGIN_ts --> module_src_features_game_presentation_adapters_inbound_GameField_tsx
+  module_src_ZORA_GAME_PLUGIN_ts --> module_src_features_game_presentation_adapters_inbound_GameInputZone_tsx
   module_src_ZORA_GAME_PLUGIN_ts --> module_src_features_game_presentation_adapters_inbound_GameOverlay_tsx
   module_src_ZORA_GAME_PLUGIN_ts --> module_src_ZORA_PLUGIN_METADATA_ts
   module_src_ZORA_PLUGIN_METADATA_test_ts["src/ZORA_PLUGIN_METADATA.test.ts"]

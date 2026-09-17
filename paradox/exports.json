@@ -44,7 +44,7 @@
     "modulePath": "src/features/game-presentation/adapters/inbound/GameEntity.tsx",
     "sourceLocation": {
       "filePath": "src/features/game-presentation/adapters/inbound/GameEntity.tsx",
-      "line": 7,
+      "line": 8,
       "column": 1
     },
     "exportPaths": [
@@ -285,6 +285,140 @@
     "structuredRows": []
   },
   {
+    "name": "GameInputZone",
+    "description": "Capture pointer/touch geometry and dispatch only normalized generic Game events.",
+    "isReadme": false,
+    "examples": [],
+    "kind": "function",
+    "modulePath": "src/features/game-presentation/adapters/inbound/GameInputZone.tsx",
+    "sourceLocation": {
+      "filePath": "src/features/game-presentation/adapters/inbound/GameInputZone.tsx",
+      "line": 8,
+      "column": 1
+    },
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "GameInputZoneProps"
+    ],
+    "signatures": [
+      {
+        "label": "({\n  x = 0,\n  y = 0,\n  width = 100,\n  height = 100,\n  zIndex = 0,\n  enabled = true,\n  continuous = true,\n  accessibilityLabel,\n  testID,\n  ...inputProps\n}: GameInputZoneProps) => import(\"react\").JSX.Element",
+        "parameters": [
+          {
+            "name": "{\n  x = 0,\n  y = 0,\n  width = 100,\n  height = 100,\n  zIndex = 0,\n  enabled = true,\n  continuous = true,\n  accessibilityLabel,\n  testID,\n  ...inputProps\n}",
+            "type": "GameInputZoneProps",
+            "required": true,
+            "description": null
+          }
+        ],
+        "returnType": "import(\"react\").JSX.Element",
+        "returnDescription": null
+      }
+    ],
+    "members": [],
+    "structuredRows": []
+  },
+  {
+    "name": "GameInputZoneProps",
+    "description": null,
+    "isReadme": false,
+    "examples": [],
+    "kind": "type",
+    "modulePath": "src/types/gamePresentation.ts",
+    "sourceLocation": {
+      "filePath": "src/types/gamePresentation.ts",
+      "line": 35,
+      "column": 1
+    },
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [],
+    "signatures": [],
+    "members": [
+      {
+        "name": "accessibilityLabel",
+        "kind": "property",
+        "type": "string",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "continuous",
+        "kind": "property",
+        "type": "boolean",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "enabled",
+        "kind": "property",
+        "type": "boolean",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "entityId",
+        "kind": "property",
+        "type": "string",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "eventType",
+        "kind": "property",
+        "type": "string",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "height",
+        "kind": "property",
+        "type": "number",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "testID",
+        "kind": "property",
+        "type": "string",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "width",
+        "kind": "property",
+        "type": "number",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "x",
+        "kind": "property",
+        "type": "number",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "y",
+        "kind": "property",
+        "type": "number",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "zIndex",
+        "kind": "property",
+        "type": "number",
+        "required": false,
+        "description": null
+      }
+    ],
+    "structuredRows": []
+  },
+  {
     "name": "GameOverlay",
     "description": "Render an absolute game presentation layer for HUD, feedback, and phase content.",
     "isReadme": false,
@@ -349,7 +483,7 @@
     "modulePath": "src/types/gamePresentation.ts",
     "sourceLocation": {
       "filePath": "src/types/gamePresentation.ts",
-      "line": 35,
+      "line": 49,
       "column": 1
     },
     "exportPaths": [
@@ -434,7 +568,7 @@
     "modulePath": "src/types/gamePresentation.ts",
     "sourceLocation": {
       "filePath": "src/types/gamePresentation.ts",
-      "line": 44,
+      "line": 58,
       "column": 1
     },
     "exportPaths": [
@@ -539,7 +673,7 @@
     "modulePath": "src/ZORA_GAME_COMPONENT_META.ts",
     "sourceLocation": {
       "filePath": "src/ZORA_GAME_COMPONENT_META.ts",
-      "line": 7,
+      "line": 8,
       "column": 14
     },
     "exportPaths": [
@@ -559,7 +693,7 @@
     "modulePath": "src/ZORA_GAME_PLUGIN.ts",
     "sourceLocation": {
       "filePath": "src/ZORA_GAME_PLUGIN.ts",
-      "line": 8,
+      "line": 9,
       "column": 14
     },
     "exportPaths": [

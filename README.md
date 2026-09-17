@@ -3,7 +3,7 @@
 
 # @ankhorage/zora-game
 
-![license: MIT](././paradox/badges/license.svg) ![npm: v0.2.0](././paradox/badges/npm.svg) ![runtime: bun](././paradox/badges/runtime.svg) ![typescript: strict](././paradox/badges/typescript.svg) ![eslint: checked](././paradox/badges/eslint.svg) ![prettier: checked](././paradox/badges/prettier.svg) ![build: checked](././paradox/badges/build.svg) ![tests: checked](././paradox/badges/tests.svg) ![docs: paradox](././paradox/badges/docs.svg)
+![license: MIT](././paradox/badges/license.svg) ![npm: v0.3.0](././paradox/badges/npm.svg) ![runtime: bun](././paradox/badges/runtime.svg) ![typescript: strict](././paradox/badges/typescript.svg) ![eslint: checked](././paradox/badges/eslint.svg) ![prettier: checked](././paradox/badges/prettier.svg) ![build: checked](././paradox/badges/build.svg) ![tests: checked](././paradox/badges/tests.svg) ![docs: paradox](././paradox/badges/docs.svg)
 
 Generic game presentation primitives for React Native and React Native Web apps built on ZORA.
 
@@ -17,4 +17,5 @@ Generic game presentation primitives for React Native and React Native Web apps 
 - [Export graph](././paradox/diagrams/export-graph.mmd)
 - [Game sequence](././paradox/diagrams/sequences/game.mmd)
 - [GameEntity sequence](././paradox/diagrams/sequences/game-entity.mmd)
+- [GameInputZone sequence](././paradox/diagrams/sequences/game-input-zone.mmd)
 - [GameOverlay sequence](././paradox/diagrams/sequences/game-overlay.mmd)

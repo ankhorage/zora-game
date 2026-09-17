@@ -1,13 +1,11 @@
 sequenceDiagram
-  participant participant_clamp as clamp
+  participant participant_clampGamePercentage as clampGamePercentage
   participant participant_createEntityStyle as createEntityStyle
   participant participant_GameEntity as GameEntity
-  participant participant_toPercent as toPercent
+  participant participant_toGamePercentage as toGamePercentage
   participant_GameEntity->>participant_createEntityStyle: createEntityStyle()
-  participant_createEntityStyle->>participant_toPercent: toPercent()
-  participant_toPercent->>participant_clamp: clamp()
-  participant_clamp-->>participant_toPercent: return
-  participant_toPercent-->>participant_createEntityStyle: return
-  participant_createEntityStyle->>participant_clamp: clamp()
-  participant_clamp-->>participant_createEntityStyle: return
+  participant_createEntityStyle->>participant_toGamePercentage: toGamePercentage()
+  participant_toGamePercentage->>participant_clampGamePercentage: clampGamePercentage()
+  participant_clampGamePercentage-->>participant_toGamePercentage: return
+  participant_toGamePercentage-->>participant_createEntityStyle: return
   participant_createEntityStyle-->>participant_GameEntity: return

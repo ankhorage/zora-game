@@ -25,7 +25,7 @@ Export paths: `src/index.ts`
 
 ## GameEntity
 
-Source: `src/features/game-presentation/adapters/inbound/GameEntity.tsx:7:1`
+Source: `src/features/game-presentation/adapters/inbound/GameEntity.tsx:8:1`
 
 Render one generic positioned game entity without owning gameplay semantics.
 
@@ -63,6 +63,28 @@ Export paths: `src/index.ts`
 | clip | `boolean \| undefined` | no | `true` |  |
 | minHeight | `number \| undefined` | no | `240` |  |
 | testID | `string \| undefined` | no | — |  |
+
+## GameInputZone
+
+Source: `src/features/game-presentation/adapters/inbound/GameInputZone.tsx:8:1`
+
+Capture pointer/touch geometry and dispatch only normalized generic Game events.
+
+Export paths: `src/index.ts`
+
+| Prop | Type | Required | Default | Description |
+| --- | --- | --- | --- | --- |
+| accessibilityLabel | `string \| undefined` | no | — |  |
+| continuous | `boolean \| undefined` | no | `true` |  |
+| enabled | `boolean \| undefined` | no | `true` |  |
+| entityId | `string \| undefined` | no | — |  |
+| eventType | `string` | yes | — |  |
+| height | `number \| undefined` | no | `100` |  |
+| testID | `string \| undefined` | no | — |  |
+| width | `number \| undefined` | no | `100` |  |
+| x | `number \| undefined` | no | `0` |  |
+| y | `number \| undefined` | no | `0` |  |
+| zIndex | `number \| undefined` | no | `0` |  |
 
 ## GameOverlay
 

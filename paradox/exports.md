@@ -18,7 +18,7 @@ Bind one serializable game definition to a local transient session and presentat
 
 Kind: `function`
 Module: `src/features/game-presentation/adapters/inbound/GameEntity.tsx`
-Source: `src/features/game-presentation/adapters/inbound/GameEntity.tsx:7:1`
+Source: `src/features/game-presentation/adapters/inbound/GameEntity.tsx:8:1`
 
 Render one generic positioned game entity without owning gameplay semantics.
 
@@ -125,6 +125,64 @@ Source: `src/types/gamePresentation.ts:10:1`
 | minHeight | property | `number` | no |  |
 | testID | property | `string` | no |  |
 
+## GameInputZone
+
+Kind: `function`
+Module: `src/features/game-presentation/adapters/inbound/GameInputZone.tsx`
+Source: `src/features/game-presentation/adapters/inbound/GameInputZone.tsx:8:1`
+
+Capture pointer/touch geometry and dispatch only normalized generic Game events.
+
+### Signatures
+
+- `({
+  x = 0,
+  y = 0,
+  width = 100,
+  height = 100,
+  zIndex = 0,
+  enabled = true,
+  continuous = true,
+  accessibilityLabel,
+  testID,
+  ...inputProps
+}: GameInputZoneProps) => import("react").JSX.Element`
+  - {
+  x = 0,
+  y = 0,
+  width = 100,
+  height = 100,
+  zIndex = 0,
+  enabled = true,
+  continuous = true,
+  accessibilityLabel,
+  testID,
+  ...inputProps
+}: `GameInputZoneProps`
+  - returns: `import("react").JSX.Element`
+
+## GameInputZoneProps
+
+Kind: `type`
+Module: `src/types/gamePresentation.ts`
+Source: `src/types/gamePresentation.ts:35:1`
+
+### Members
+
+| Name | Kind | Type | Required | Description |
+| --- | --- | --- | --- | --- |
+| accessibilityLabel | property | `string` | no |  |
+| continuous | property | `boolean` | no |  |
+| enabled | property | `boolean` | no |  |
+| entityId | property | `string` | no |  |
+| eventType | property | `string` | yes |  |
+| height | property | `number` | no |  |
+| testID | property | `string` | no |  |
+| width | property | `number` | no |  |
+| x | property | `number` | no |  |
+| y | property | `number` | no |  |
+| zIndex | property | `number` | no |  |
+
 ## GameOverlay
 
 Kind: `function`
@@ -163,7 +221,7 @@ Source: `src/types/gamePresentation.ts:7:1`
 
 Kind: `type`
 Module: `src/types/gamePresentation.ts`
-Source: `src/types/gamePresentation.ts:35:1`
+Source: `src/types/gamePresentation.ts:49:1`
 
 ### Members
 
@@ -186,7 +244,7 @@ Source: `src/types/gamePresentation.ts:6:1`
 
 Kind: `type`
 Module: `src/types/gamePresentation.ts`
-Source: `src/types/gamePresentation.ts:44:1`
+Source: `src/types/gamePresentation.ts:58:1`
 
 ### Members
 
@@ -209,7 +267,7 @@ Source: `src/types/gamePresentation.ts:44:1`
 
 Kind: `value`
 Module: `src/ZORA_GAME_COMPONENT_META.ts`
-Source: `src/ZORA_GAME_COMPONENT_META.ts:7:14`
+Source: `src/ZORA_GAME_COMPONENT_META.ts:8:14`
 
 Register the generic game presentation metadata owned by this package.
 
@@ -217,7 +275,7 @@ Register the generic game presentation metadata owned by this package.
 
 Kind: `value`
 Module: `src/ZORA_GAME_PLUGIN.ts`
-Source: `src/ZORA_GAME_PLUGIN.ts:8:14`
+Source: `src/ZORA_GAME_PLUGIN.ts:9:14`
 
 Expose the runtime component registry together with metadata for ZORA plugin consumers.
 

@@ -1,5 +1,12 @@
 # @ankhorage/zora-game
 
+## 0.3.0
+
+### Minor Changes
+
+- ee7760c: Add a generic field-relative pointer and touch input-zone adapter that dispatches normalized events
+  into the embeddable Game runtime without owning gameplay rules.
+
 ## 0.2.0
 
 ### Minor Changes

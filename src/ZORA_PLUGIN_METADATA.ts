@@ -7,7 +7,7 @@ export const ZORA_PLUGIN_METADATA = {
   packageName: '@ankhorage/zora-game',
   displayName: 'ZORA Game',
   componentMeta: ZORA_GAME_COMPONENT_META,
-  extensionHosts: ['Game', 'GameField', 'GameEntity', 'GameOverlay'],
+  extensionHosts: ['Game', 'GameEntity', 'GameField', 'GameInputZone', 'GameOverlay'],
   placements: [
     {
       child: 'Game',
@@ -20,6 +20,10 @@ export const ZORA_PLUGIN_METADATA = {
     {
       child: 'GameEntity',
       parents: ['Game', 'GameField', 'GameOverlay'],
+    },
+    {
+      child: 'GameInputZone',
+      parents: ['Game'],
     },
     {
       child: 'GameOverlay',

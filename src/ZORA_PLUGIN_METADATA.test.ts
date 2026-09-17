@@ -18,7 +18,18 @@ describe('ZORA game plugin metadata', () => {
     expect(gameField.allowedChildren).toContain('GameEntity');
     expect(gameField.allowedChildren).toContain('GameOverlay');
     expect(game.allowedChildren).toContain('GameEntity');
+    expect(game.allowedChildren).toContain('GameInputZone');
     expect(game.allowedChildren).toContain('GameOverlay');
+  });
+
+  test('keeps Game input zones scoped to runtime-owning Game parents', () => {
+    const catalog = composeZoraPluginMetadata([ZORA_CORE_PLUGIN_METADATA, ZORA_PLUGIN_METADATA]);
+    const gameInputZone = readComponentMeta(catalog.componentMeta.GameInputZone, 'GameInputZone');
+
+    expect(gameInputZone.props.eventType?.type).toBe('string');
+    expect(gameInputZone.props.continuous?.type).toBe('boolean');
+    expect(catalog.componentMeta.Game?.allowedChildren).toContain('GameInputZone');
+    expect(catalog.componentMeta.GameField?.allowedChildren).not.toContain('GameInputZone');
   });
 
   test('describes bindable Game inputs and domain-neutral outputs', () => {

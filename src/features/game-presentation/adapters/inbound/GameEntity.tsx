@@ -2,6 +2,7 @@ import { View } from '@ankhorage/zora';
 import { StyleSheet, type ViewStyle } from 'react-native';
 
 import type { GameEntityProps } from '../../../../types/gamePresentation';
+import { toGamePercentage } from '../../utils/toGamePercentage';
 
 /*** Render one generic positioned game entity without owning gameplay semantics. */
 export function GameEntity({
@@ -60,25 +61,15 @@ function createEntityStyle({
 }: GameEntityStyleInput): ViewStyle {
   return {
     display: hidden ? 'none' : 'flex',
-    left: toPercent(x),
-    opacity: clamp(opacity, 0, 1),
+    left: toGamePercentage(x),
+    opacity: Math.min(1, Math.max(0, opacity)),
     position: 'absolute',
-    top: toPercent(y),
+    top: toGamePercentage(y),
     transform: [{ scale }, { rotate: `${rotation}deg` }],
     zIndex,
     ...(height === undefined ? {} : { height }),
     ...(width === undefined ? {} : { width }),
   };
-}
-
-/*** Convert a bounded percentage number to React Native percentage syntax. */
-function toPercent(value: number): `${number}%` {
-  return `${clamp(value, 0, 100)}%`;
-}
-
-/*** Clamp one numeric presentation value to an inclusive range. */
-function clamp(value: number, minimum: number, maximum: number): number {
-  return Math.min(maximum, Math.max(minimum, value));
 }
 
 const styles = StyleSheet.create({

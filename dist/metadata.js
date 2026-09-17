@@ -1,3 +1,0 @@
-export { ZORA_GAME_COMPONENT_META } from './ZORA_GAME_COMPONENT_META';
-export { ZORA_PLUGIN_METADATA } from './ZORA_PLUGIN_METADATA';
-//# sourceMappingURL=metadata.js.map

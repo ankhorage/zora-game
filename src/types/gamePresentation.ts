@@ -3,7 +3,12 @@ import type React from 'react';
 type GameOverlayCornerPlacement = 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
 
 export type GamePointerEvents = 'auto' | 'box-none' | 'box-only' | 'none';
-export type GameOverlayPlacement = 'fill' | 'center' | 'top' | 'bottom' | GameOverlayCornerPlacement;
+export type GameOverlayPlacement =
+  | 'fill'
+  | 'center'
+  | 'top'
+  | 'bottom'
+  | GameOverlayCornerPlacement;
 
 export interface GameFieldProps {
   readonly children?: React.ReactNode;

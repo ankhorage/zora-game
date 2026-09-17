@@ -14,7 +14,8 @@ export function GameField({
 }: GameFieldProps) {
   return (
     <View
-      accessibilityLabel={accessibilityLabel}
+      {...(accessibilityLabel === undefined ? {} : { accessibilityLabel })}
+      {...(testID === undefined ? {} : { testID })}
       style={[
         styles.root,
         {
@@ -23,7 +24,6 @@ export function GameField({
           overflow: clip ? 'hidden' : 'visible',
         },
       ]}
-      testID={testID}
     >
       {children}
     </View>

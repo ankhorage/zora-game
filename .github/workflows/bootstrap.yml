@@ -20,6 +20,9 @@ jobs:
         with:
           bun-version: '1.4.2'
 
+      - name: Install provider dependencies
+        run: bun install
+
       - name: Sync Devtools managed repository files
         env:
           HEAD_REF: ${{ github.head_ref }}

@@ -7,19 +7,23 @@ export const ZORA_PLUGIN_METADATA = {
   packageName: '@ankhorage/zora-game',
   displayName: 'ZORA Game',
   componentMeta: ZORA_GAME_COMPONENT_META,
-  extensionHosts: ['GameField', 'GameEntity', 'GameOverlay'],
+  extensionHosts: ['Game', 'GameField', 'GameEntity', 'GameOverlay'],
   placements: [
+    {
+      child: 'Game',
+      parents: ['Card', 'Grid', 'Screen', 'ScreenSection', 'View'],
+    },
     {
       child: 'GameField',
       parents: ['Card', 'Grid', 'Screen', 'ScreenSection', 'View'],
     },
     {
       child: 'GameEntity',
-      parents: ['GameField', 'GameOverlay'],
+      parents: ['Game', 'GameField', 'GameOverlay'],
     },
     {
       child: 'GameOverlay',
-      parents: ['GameField'],
+      parents: ['Game', 'GameField'],
     },
   ],
 } as const satisfies ZoraPluginMetadata;

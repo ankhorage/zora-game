@@ -91,5 +91,8 @@
     "react-native-web": "~0.21.0",
     "typescript": "~6.0.3"
   },
-  "packageManager": "bun@1.4.2"
+  "packageManager": "bun@1.4.2",
+  "dependencies": {
+    "@ankhorage/game": "^0.1.0"
+  }
 }

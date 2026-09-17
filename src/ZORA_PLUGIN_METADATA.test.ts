@@ -4,13 +4,30 @@ import { describe, expect, test } from 'bun:test';
 import { ZORA_PLUGIN_METADATA } from './ZORA_PLUGIN_METADATA';
 
 describe('ZORA game plugin metadata', () => {
-  test('makes GameField embeddable in ordinary ZORA containers', () => {
+  test('makes Game and GameField embeddable in ordinary ZORA containers', () => {
     const catalog = composeZoraPluginMetadata([ZORA_CORE_PLUGIN_METADATA, ZORA_PLUGIN_METADATA]);
+    const game = readComponentMeta(catalog.componentMeta.Game, 'Game');
+    const gameField = readComponentMeta(catalog.componentMeta.GameField, 'GameField');
+    const screen = readComponentMeta(catalog.componentMeta.Screen, 'Screen');
+    const view = readComponentMeta(catalog.componentMeta.View, 'View');
 
-    expect(catalog.componentMeta.Screen?.allowedChildren).toContain('GameField');
-    expect(catalog.componentMeta.View?.allowedChildren).toContain('GameField');
-    expect(catalog.componentMeta.GameField?.allowedChildren).toContain('GameEntity');
-    expect(catalog.componentMeta.GameField?.allowedChildren).toContain('GameOverlay');
+    expect(screen.allowedChildren).toContain('Game');
+    expect(view.allowedChildren).toContain('Game');
+    expect(screen.allowedChildren).toContain('GameField');
+    expect(view.allowedChildren).toContain('GameField');
+    expect(gameField.allowedChildren).toContain('GameEntity');
+    expect(gameField.allowedChildren).toContain('GameOverlay');
+    expect(game.allowedChildren).toContain('GameEntity');
+    expect(game.allowedChildren).toContain('GameOverlay');
+  });
+
+  test('describes bindable Game inputs and domain-neutral outputs', () => {
+    const catalog = composeZoraPluginMetadata([ZORA_CORE_PLUGIN_METADATA, ZORA_PLUGIN_METADATA]);
+    const game = readComponentMeta(catalog.componentMeta.Game, 'Game');
+
+    expect(game.bindings?.props?.definition?.value.type).toBe('object');
+    expect(game.bindings?.props?.input?.value.type).toBe('record');
+    expect(game.events?.output?.eventType).toBe('game.output');
   });
 
   test('keeps the generic presentation vocabulary free of product-specific concepts', () => {
@@ -22,3 +39,9 @@ describe('ZORA game plugin metadata', () => {
     expect(serialized).not.toContain('letterprojectile');
   });
 });
+
+/*** Require one composed component metadata entry for focused assertions. */
+function readComponentMeta<TValue>(value: TValue | undefined, name: string): TValue {
+  if (value === undefined) throw new Error(`Missing composed component metadata for ${name}.`);
+  return value;
+}

@@ -1,3 +1,4 @@
+import { Game } from './features/game-presentation/adapters/inbound/Game';
 import { GameEntity } from './features/game-presentation/adapters/inbound/GameEntity';
 import { GameField } from './features/game-presentation/adapters/inbound/GameField';
 import { GameOverlay } from './features/game-presentation/adapters/inbound/GameOverlay';
@@ -7,6 +8,7 @@ import { ZORA_PLUGIN_METADATA } from './ZORA_PLUGIN_METADATA';
 export const ZORA_GAME_PLUGIN = {
   ...ZORA_PLUGIN_METADATA,
   componentRegistry: {
+    Game,
     GameEntity,
     GameField,
     GameOverlay,

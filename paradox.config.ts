@@ -4,7 +4,8 @@ export default defineParadoxConfig({
   mode: 'write',
   docs: {
     title: '@ankhorage/zora-game',
-    description: 'Generic game presentation primitives for React Native and React Native Web apps built on ZORA.',
+    description:
+      'Generic game presentation primitives for React Native and React Native Web apps built on ZORA.',
   },
   package: {
     root: '.',

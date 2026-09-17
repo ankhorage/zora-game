@@ -1,0 +1,42 @@
+graph LR
+  module_src_features_game_presentation_adapters_inbound_GameEntity_tsx["src/features/game-presentation/adapters/inbound/GameEntity.tsx"]
+  module_src_features_game_presentation_adapters_inbound_GameField_tsx["src/features/game-presentation/adapters/inbound/GameField.tsx"]
+  module_src_features_game_presentation_adapters_inbound_GameOverlay_tsx["src/features/game-presentation/adapters/inbound/GameOverlay.tsx"]
+  module_src_features_game_presentation_meta_gameEntityMeta_ts["src/features/game-presentation/meta/gameEntityMeta.ts"]
+  module_src_features_game_presentation_meta_gameFieldMeta_ts["src/features/game-presentation/meta/gameFieldMeta.ts"]
+  module_src_features_game_presentation_meta_gameOverlayMeta_ts["src/features/game-presentation/meta/gameOverlayMeta.ts"]
+  module_src_features_game_presentation_public_ts["src/features/game-presentation/public.ts"]
+  module_src_index_ts["src/index.ts"]
+  module_src_metadata_ts["src/metadata.ts"]
+  module_src_types_gamePresentation_ts["src/types/gamePresentation.ts"]
+  module_src_ZORA_GAME_COMPONENT_META_ts["src/ZORA_GAME_COMPONENT_META.ts"]
+  module_src_ZORA_GAME_PLUGIN_ts["src/ZORA_GAME_PLUGIN.ts"]
+  module_src_ZORA_PLUGIN_METADATA_test_ts["src/ZORA_PLUGIN_METADATA.test.ts"]
+  module_src_ZORA_PLUGIN_METADATA_ts["src/ZORA_PLUGIN_METADATA.ts"]
+  export_GameEntity["GameEntity"]
+  module_src_features_game_presentation_adapters_inbound_GameEntity_tsx --> export_GameEntity
+  export_GameEntity -.-> export_GameEntityProps
+  export_GameEntityProps["GameEntityProps"]
+  module_src_types_gamePresentation_ts --> export_GameEntityProps
+  export_GameEntityProps -.-> export_GamePointerEvents
+  export_GameField["GameField"]
+  module_src_features_game_presentation_adapters_inbound_GameField_tsx --> export_GameField
+  export_GameField -.-> export_GameFieldProps
+  export_GameFieldProps["GameFieldProps"]
+  module_src_types_gamePresentation_ts --> export_GameFieldProps
+  export_GameOverlay["GameOverlay"]
+  module_src_features_game_presentation_adapters_inbound_GameOverlay_tsx --> export_GameOverlay
+  export_GameOverlay -.-> export_GameOverlayProps
+  export_GameOverlayPlacement["GameOverlayPlacement"]
+  module_src_types_gamePresentation_ts --> export_GameOverlayPlacement
+  export_GameOverlayProps["GameOverlayProps"]
+  module_src_types_gamePresentation_ts --> export_GameOverlayProps
+  export_GameOverlayProps -.-> export_GameOverlayPlacement
+  export_GamePointerEvents["GamePointerEvents"]
+  module_src_types_gamePresentation_ts --> export_GamePointerEvents
+  export_ZORA_GAME_COMPONENT_META["ZORA_GAME_COMPONENT_META"]
+  module_src_ZORA_GAME_COMPONENT_META_ts --> export_ZORA_GAME_COMPONENT_META
+  export_ZORA_GAME_PLUGIN["ZORA_GAME_PLUGIN"]
+  module_src_ZORA_GAME_PLUGIN_ts --> export_ZORA_GAME_PLUGIN
+  export_ZORA_PLUGIN_METADATA["ZORA_PLUGIN_METADATA"]
+  module_src_ZORA_PLUGIN_METADATA_ts --> export_ZORA_PLUGIN_METADATA

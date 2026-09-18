@@ -3,6 +3,7 @@ export type {
   GameFieldProps,
   GameInputZoneProps,
   GameKeyboardBinding,
+  GameMeasurementProbeProps,
   GameOverlayPlacement,
   GameOverlayProps,
   GamePointerEvents,
@@ -13,6 +14,7 @@ export {
   GameEntity,
   GameField,
   GameInputZone,
+  GameMeasurementProbe,
   GameOverlay,
 } from './features/game-presentation/public';
 export { ZORA_GAME_PLUGIN } from './ZORA_GAME_PLUGIN';

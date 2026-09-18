@@ -12,7 +12,7 @@ export interface GameMeasurementBounds {
 export type GameMeasurementReader = () => Promise<GameMeasurementBounds | undefined>;
 
 export interface GameMeasurementRegistry {
-  readonly registerMeasurement: (id: string, reader: GameMeasurementReader) => (() => void);
+  readonly registerMeasurement: (id: string, reader: GameMeasurementReader) => () => void;
   readonly measure: (id: string) => Promise<GameMeasurementBounds | undefined>;
 }
 

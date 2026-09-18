@@ -26,6 +26,10 @@ export const ZORA_PLUGIN_METADATA = {
       parents: ['Game'],
     },
     {
+      child: 'GameMeasurementProbe',
+      parents: ['Game'],
+    },
+    {
       child: 'GameOverlay',
       parents: ['Game', 'GameField'],
     },

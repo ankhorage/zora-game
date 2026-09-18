@@ -56,7 +56,6 @@ describe('ZORA game plugin metadata', () => {
       'ease-in-out',
     ]);
   });
-
 });
 
 describe('ZORA game genericity metadata', () => {

@@ -1,4 +1,6 @@
 export type {
+  GameEntityEasing,
+  GameEntityMotionProps,
   GameEntityProps,
   GameFieldProps,
   GameInputZoneProps,

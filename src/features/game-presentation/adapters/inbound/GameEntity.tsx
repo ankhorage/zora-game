@@ -1,87 +1,37 @@
 import React from 'react';
-import { StyleSheet, View, type ViewStyle } from 'react-native';
+import { Animated, StyleSheet, type View, type ViewStyle } from 'react-native';
 
 import type { GameEntityProps } from '../../../../types/gamePresentation';
-import { GameRuntimeContext } from '../../composition/GameRuntimeContext';
-import { toGamePercentage } from '../../utils/toGamePercentage';
-import { measureGameEntity } from './measureGameEntity';
+import { useGameEntityAnimatedStyle } from '../../utils/useGameEntityAnimatedStyle';
+import { useGameEntityMeasurement } from '../../utils/useGameEntityMeasurement';
 
 /*** Render one generic positioned game entity without owning gameplay semantics. */
-export function GameEntity({
-  children,
-  x = 0,
-  y = 0,
-  width,
-  height,
-  opacity = 1,
-  scale = 1,
-  rotation = 0,
-  zIndex = 0,
-  hidden = false,
-  pointerEvents = 'auto',
-  measurementId,
-  accessibilityLabel,
-  testID,
-}: GameEntityProps) {
+export function GameEntity(props: GameEntityProps) {
   const elementRef = React.useRef<View | null>(null);
-  const runtime = React.useContext(GameRuntimeContext);
-  const registerMeasurement = runtime?.registerMeasurement;
-
-  React.useEffect(() => {
-    if (measurementId === undefined || registerMeasurement === undefined) return undefined;
-    return registerMeasurement(measurementId, () => measureGameEntity(elementRef.current));
-  }, [measurementId, registerMeasurement]);
+  const animatedStyle = useGameEntityAnimatedStyle(props);
+  useGameEntityMeasurement(elementRef, props.measurementId);
 
   return (
-    <View
+    <Animated.View
       ref={elementRef}
-      {...(accessibilityLabel === undefined ? {} : { accessibilityLabel })}
-      {...(testID === undefined ? {} : { testID })}
-      pointerEvents={pointerEvents}
-      style={[
-        styles.root,
-        createEntityStyle({ x, y, width, height, opacity, scale, rotation, zIndex, hidden }),
-      ]}
+      accessibilityLabel={props.accessibilityLabel}
+      testID={props.testID}
+      pointerEvents={props.pointerEvents ?? 'auto'}
+      style={[styles.root, createEntityStaticStyle(props), animatedStyle]}
     >
-      {children}
-    </View>
+      {props.children}
+    </Animated.View>
   );
 }
 
-interface GameEntityStyleInput {
-  readonly x: number;
-  readonly y: number;
-  readonly width: number | undefined;
-  readonly height: number | undefined;
-  readonly opacity: number;
-  readonly scale: number;
-  readonly rotation: number;
-  readonly zIndex: number;
-  readonly hidden: boolean;
-}
-
-/*** Convert serializable entity presentation props into a React Native view style. */
-function createEntityStyle({
-  x,
-  y,
-  width,
-  height,
-  opacity,
-  scale,
-  rotation,
-  zIndex,
-  hidden,
-}: GameEntityStyleInput): ViewStyle {
+/*** Convert non-animated GameEntity presentation props into a React Native view style. */
+function createEntityStaticStyle(props: GameEntityProps): ViewStyle {
   return {
-    display: hidden ? 'none' : 'flex',
-    left: toGamePercentage(x),
-    opacity: Math.min(1, Math.max(0, opacity)),
+    display: props.hidden === true ? 'none' : 'flex',
     position: 'absolute',
-    top: toGamePercentage(y),
-    transform: [{ scale }, { rotate: `${rotation}deg` }],
-    zIndex,
-    ...(height === undefined ? {} : { height }),
-    ...(width === undefined ? {} : { width }),
+    zIndex: props.zIndex ?? 0,
+    ...(props.height === undefined ? {} : { height: props.height }),
+    ...(props.width === undefined ? {} : { width: props.width }),
   };
 }
 

@@ -42,6 +42,23 @@ describe('ZORA game plugin metadata', () => {
     expect(gameEntity.bindings?.props?.measurementId?.value.type).toBe('string');
   });
 
+  test('exposes serializable GameEntity motion props to canonical ZORA bindings', () => {
+    const catalog = composeZoraPluginMetadata([ZORA_CORE_PLUGIN_METADATA, ZORA_PLUGIN_METADATA]);
+    const gameEntity = readComponentMeta(catalog.componentMeta.GameEntity, 'GameEntity');
+
+    expect(gameEntity.bindings?.props?.transitionDurationMs?.value.type).toBe('number');
+    expect(gameEntity.bindings?.props?.motionOffsetY?.value.type).toBe('number');
+    expect(gameEntity.bindings?.props?.motionRepeat?.value.type).toBe('boolean');
+    expect(gameEntity.props.motionEasing?.enum).toEqual([
+      'linear',
+      'ease-in',
+      'ease-out',
+      'ease-in-out',
+    ]);
+  });
+});
+
+describe('ZORA game genericity metadata', () => {
   test('keeps the generic presentation vocabulary free of product-specific concepts', () => {
     const serialized = JSON.stringify(ZORA_PLUGIN_METADATA).toLowerCase();
 

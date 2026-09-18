@@ -4,6 +4,24 @@ import type React from 'react';
 type GameOverlayCornerPlacement = 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
 
 export type GamePointerEvents = 'auto' | 'box-none' | 'box-only' | 'none';
+export type GameEntityEasing = 'linear' | 'ease-in' | 'ease-out' | 'ease-in-out';
+
+export interface GameEntityMotionProps {
+  readonly transitionDurationMs?: number;
+  readonly transitionEasing?: GameEntityEasing;
+  readonly motionOffsetX?: number;
+  readonly motionOffsetY?: number;
+  readonly motionOpacityDelta?: number;
+  readonly motionScaleDelta?: number;
+  readonly motionRotationDelta?: number;
+  readonly motionDurationMs?: number;
+  readonly motionDelayMs?: number;
+  readonly motionEasing?: GameEntityEasing;
+  readonly motionRepeat?: boolean;
+  readonly motionAlternate?: boolean;
+  readonly motionPaused?: boolean;
+  readonly motionEssential?: boolean;
+}
 export type GameOverlayPlacement =
   'fill' | 'center' | 'top' | 'bottom' | GameOverlayCornerPlacement;
 
@@ -16,7 +34,7 @@ export interface GameFieldProps {
   readonly testID?: string;
 }
 
-export interface GameEntityProps {
+export interface GameEntityProps extends GameEntityMotionProps {
   readonly children?: React.ReactNode;
   readonly x?: number;
   readonly y?: number;

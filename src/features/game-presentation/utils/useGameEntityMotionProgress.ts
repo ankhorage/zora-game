@@ -6,7 +6,7 @@ import type { GameEntityMotionPlan } from './resolveGameEntityMotionPlan';
 
 /*** Drive one optional relative GameEntity motion timeline without changing game-session state. */
 export function useGameEntityMotionProgress(plan: GameEntityMotionPlan): Animated.Value {
-  const progress = React.useRef(new Animated.Value(0)).current;
+  const [progress] = React.useState(() => new Animated.Value(0));
   const signature = createMotionSignature(plan);
   const previousSignature = React.useRef(signature);
 

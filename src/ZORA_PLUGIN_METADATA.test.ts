@@ -57,6 +57,9 @@ describe('ZORA game plugin metadata', () => {
     ]);
   });
 
+});
+
+describe('ZORA game genericity metadata', () => {
   test('keeps the generic presentation vocabulary free of product-specific concepts', () => {
     const serialized = JSON.stringify(ZORA_PLUGIN_METADATA).toLowerCase();
 

@@ -7,7 +7,15 @@ export const gameMeta = {
   description:
     'Embeds one config-driven game session inside ordinary ZORA layout and emits domain-neutral game outputs.',
   directManifestNode: true,
-  allowedChildren: ['GameEntity', 'GameInputZone', 'GameOverlay', 'Gradient', 'Image', 'View'],
+  allowedChildren: [
+    'GameEntity',
+    'GameInputZone',
+    'GameMeasurementProbe',
+    'GameOverlay',
+    'Gradient',
+    'Image',
+    'View',
+  ],
   blueprint: {
     label: 'Game',
     defaultProps: {

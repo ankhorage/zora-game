@@ -1,8 +1,10 @@
-import { View } from '@ankhorage/zora';
-import { StyleSheet, type ViewStyle } from 'react-native';
+import React from 'react';
+import { StyleSheet, View, type ViewStyle } from 'react-native';
 
 import type { GameEntityProps } from '../../../../types/gamePresentation';
+import { GameRuntimeContext } from '../../composition/GameRuntimeContext';
 import { toGamePercentage } from '../../utils/toGamePercentage';
+import { measureGameEntity } from './measureGameEntity';
 
 /*** Render one generic positioned game entity without owning gameplay semantics. */
 export function GameEntity({
@@ -17,11 +19,22 @@ export function GameEntity({
   zIndex = 0,
   hidden = false,
   pointerEvents = 'auto',
+  measurementId,
   accessibilityLabel,
   testID,
 }: GameEntityProps) {
+  const elementRef = React.useRef<View | null>(null);
+  const runtime = React.useContext(GameRuntimeContext);
+  const registerMeasurement = runtime?.registerMeasurement;
+
+  React.useEffect(() => {
+    if (measurementId === undefined || registerMeasurement === undefined) return undefined;
+    return registerMeasurement(measurementId, () => measureGameEntity(elementRef.current));
+  }, [measurementId, registerMeasurement]);
+
   return (
     <View
+      ref={elementRef}
       {...(accessibilityLabel === undefined ? {} : { accessibilityLabel })}
       {...(testID === undefined ? {} : { testID })}
       pointerEvents={pointerEvents}

@@ -1,6 +1,7 @@
 import { gameEntityMeta } from './features/game-presentation/meta/gameEntityMeta';
 import { gameFieldMeta } from './features/game-presentation/meta/gameFieldMeta';
 import { gameInputZoneMeta } from './features/game-presentation/meta/gameInputZoneMeta';
+import { gameMeasurementProbeMeta } from './features/game-presentation/meta/gameMeasurementProbeMeta';
 import { gameMeta } from './features/game-presentation/meta/gameMeta';
 import { gameOverlayMeta } from './features/game-presentation/meta/gameOverlayMeta';
 
@@ -10,5 +11,6 @@ export const ZORA_GAME_COMPONENT_META = {
   GameEntity: gameEntityMeta,
   GameField: gameFieldMeta,
   GameInputZone: gameInputZoneMeta,
+  GameMeasurementProbe: gameMeasurementProbeMeta,
   GameOverlay: gameOverlayMeta,
 } as const;

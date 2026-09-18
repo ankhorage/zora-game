@@ -16,10 +16,12 @@ export interface GameMeasurementRegistry {
   readonly measure: (id: string) => Promise<GameMeasurementBounds | undefined>;
 }
 
-export interface GameRuntimeContextValue extends GameMeasurementRegistry {
+export interface GameRuntimeValue {
   readonly session: GameSession;
   readonly dispatch: (event: GameEvent) => void;
 }
+
+export interface GameRuntimeContextValue extends GameRuntimeValue, GameMeasurementRegistry {}
 
 export interface GameRuntimeState {
   readonly key: string;

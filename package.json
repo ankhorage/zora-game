@@ -78,7 +78,7 @@
     "version-packages": "ankhorage-changeset version"
   },
   "devDependencies": {
-    "@ankhorage/devtools": "^1.15.3",
+    "@ankhorage/devtools": "^1.17.1",
     "@ankhorage/paradox": "^0.1.26",
     "@ankhorage/zora": "^20.0.1",
     "@types/bun": "^1.4.1",

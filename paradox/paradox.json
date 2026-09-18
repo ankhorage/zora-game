@@ -14,7 +14,7 @@
     {
       "id": "npm",
       "label": "npm",
-      "value": "v0.7.2",
+      "value": "v0.8.0",
       "color": "cb3837"
     },
     {
@@ -789,7 +789,7 @@
       "modulePath": "src/types/gamePresentation.ts",
       "sourceLocation": {
         "filePath": "src/types/gamePresentation.ts",
-        "line": 37,
+        "line": 38,
         "column": 1
       },
       "exportPaths": [
@@ -1020,10 +1020,10 @@
       ],
       "signatures": [
         {
-          "label": "({\n  children,\n  aspectRatio,\n  minHeight = 240,\n  clip = true,\n  accessibilityLabel,\n  testID,\n}: GameFieldProps) => import(\"react\").JSX.Element",
+          "label": "({\n  children,\n  aspectRatio,\n  minHeight = 240,\n  fill = false,\n  clip = true,\n  accessibilityLabel,\n  testID,\n}: GameFieldProps) => import(\"react\").JSX.Element",
           "parameters": [
             {
-              "name": "{\n  children,\n  aspectRatio,\n  minHeight = 240,\n  clip = true,\n  accessibilityLabel,\n  testID,\n}",
+              "name": "{\n  children,\n  aspectRatio,\n  minHeight = 240,\n  fill = false,\n  clip = true,\n  accessibilityLabel,\n  testID,\n}",
               "type": "GameFieldProps",
               "required": true,
               "description": null
@@ -1077,6 +1077,13 @@
         },
         {
           "name": "clip",
+          "kind": "property",
+          "type": "boolean",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "fill",
           "kind": "property",
           "type": "boolean",
           "required": false,
@@ -1144,7 +1151,7 @@
       "modulePath": "src/types/gamePresentation.ts",
       "sourceLocation": {
         "filePath": "src/types/gamePresentation.ts",
-        "line": 61,
+        "line": 62,
         "column": 1
       },
       "exportPaths": [
@@ -1251,7 +1258,7 @@
       "modulePath": "src/types/gamePresentation.ts",
       "sourceLocation": {
         "filePath": "src/types/gamePresentation.ts",
-        "line": 54,
+        "line": 55,
         "column": 1
       },
       "exportPaths": [
@@ -1336,7 +1343,7 @@
       "modulePath": "src/types/gamePresentation.ts",
       "sourceLocation": {
         "filePath": "src/types/gamePresentation.ts",
-        "line": 76,
+        "line": 77,
         "column": 1
       },
       "exportPaths": [
@@ -1455,7 +1462,7 @@
       "modulePath": "src/types/gamePresentation.ts",
       "sourceLocation": {
         "filePath": "src/types/gamePresentation.ts",
-        "line": 85,
+        "line": 86,
         "column": 1
       },
       "exportPaths": [
@@ -1540,7 +1547,7 @@
       "modulePath": "src/types/gamePresentation.ts",
       "sourceLocation": {
         "filePath": "src/types/gamePresentation.ts",
-        "line": 94,
+        "line": 95,
         "column": 1
       },
       "exportPaths": [
@@ -1589,6 +1596,13 @@
           "kind": "property",
           "type": "GameDefinition",
           "required": true,
+          "description": null
+        },
+        {
+          "name": "fill",
+          "kind": "property",
+          "type": "boolean",
+          "required": false,
           "description": null
         },
         {
@@ -1747,6 +1761,12 @@
           "name": "definition",
           "type": "GameDefinition",
           "required": true,
+          "description": null
+        },
+        {
+          "name": "fill",
+          "type": "boolean | undefined",
+          "required": false,
           "description": null
         },
         {
@@ -2010,6 +2030,13 @@
           "type": "boolean | undefined",
           "required": false,
           "defaultValue": "true",
+          "description": null
+        },
+        {
+          "name": "fill",
+          "type": "boolean | undefined",
+          "required": false,
+          "defaultValue": "false",
           "description": null
         },
         {
@@ -2609,7 +2636,7 @@
       "description": "Require one composed component metadata entry for focused assertions.",
       "sourceLocation": {
         "filePath": "src/ZORA_PLUGIN_METADATA.test.ts",
-        "line": 108,
+        "line": 110,
         "column": 1
       }
     }
@@ -3742,7 +3769,7 @@
       {
         "fromComponent": "Game",
         "toComponent": "GameField",
-        "jsxElement": "<GameField\n          {...(props.aspectRatio === undefined ? {} : { aspectRatio: props.aspectRatio })}\n          {...(props.minHeight === undefined ? {} : { minHeight: props.minHeight })}\n          {...(props.clip === undefined ? {} : { clip: props.clip })}\n          {...(props.accessibilityLabel === undefined\n            ? {}\n            : { accessibilityLabel: props.accessibilityLabel })}\n          {...(props.testID === undefined ? {} : { testID: props.testID })}\n        >",
+        "jsxElement": "<GameField\n          {...(props.aspectRatio === undefined ? {} : { aspectRatio: props.aspectRatio })}\n          {...(props.minHeight === undefined ? {} : { minHeight: props.minHeight })}\n          {...(props.fill === undefined ? {} : { fill: props.fill })}\n          {...(props.clip === undefined ? {} : { clip: props.clip })}\n          {...(props.accessibilityLabel === undefined\n            ? {}\n            : { accessibilityLabel: props.accessibilityLabel })}\n          {...(props.testID === undefined ? {} : { testID: props.testID })}\n        >",
         "sourcePath": "src/features/game-presentation/adapters/inbound/Game.tsx"
       },
       {
@@ -3754,7 +3781,7 @@
       {
         "fromComponent": "GameField",
         "toComponent": "View",
-        "jsxElement": "<View\n      {...(accessibilityLabel === undefined ? {} : { accessibilityLabel })}\n      {...(testID === undefined ? {} : { testID })}\n      style={[\n        styles.root,\n        clip ? styles.clipped : styles.overflowVisible,\n        {\n          ...(aspectRatio === undefined ? {} : { aspectRatio }),\n          minHeight,\n        },\n      ]}\n    >",
+        "jsxElement": "<View\n      {...(accessibilityLabel === undefined ? {} : { accessibilityLabel })}\n      {...(testID === undefined ? {} : { testID })}\n      style={[\n        styles.root,\n        clip ? styles.clipped : styles.overflowVisible,\n        fill ? styles.fill : undefined,\n        {\n          ...(aspectRatio === undefined ? {} : { aspectRatio }),\n          minHeight,\n        },\n      ]}\n    >",
         "sourcePath": "src/features/game-presentation/adapters/inbound/GameField.tsx"
       },
       {

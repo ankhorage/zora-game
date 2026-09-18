@@ -1,5 +1,11 @@
 # @ankhorage/zora-game
 
+## 0.8.0
+
+### Minor Changes
+
+- 7e35c6d: Add an optional fill layout mode to Game and GameField so full-screen games can use ordinary parent flex sizing without introducing a dedicated GameScreen runtime concept.
+
 ## 0.7.2
 
 ### Patch Changes

@@ -16,6 +16,7 @@ Export paths: `src/index.ts`
 | children | `React.ReactNode \| undefined` | no | — |  |
 | clip | `boolean \| undefined` | no | — |  |
 | definition | `GameDefinition` | yes | — |  |
+| fill | `boolean \| undefined` | no | — |  |
 | input | `GameInput \| undefined` | no | — |  |
 | minHeight | `number \| undefined` | no | — |  |
 | onOutput | `(output: GameOutput) => void \| undefined` | no | — |  |
@@ -76,6 +77,7 @@ Export paths: `src/index.ts`
 | aspectRatio | `number \| undefined` | no | — |  |
 | children | `React.ReactNode \| undefined` | no | — |  |
 | clip | `boolean \| undefined` | no | `true` |  |
+| fill | `boolean \| undefined` | no | `false` |  |
 | minHeight | `number \| undefined` | no | `240` |  |
 | testID | `string \| undefined` | no | — |  |
 

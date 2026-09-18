@@ -555,7 +555,7 @@
             </section>
             <section>
               <h3>src/features/game-presentation/adapters/inbound/GameField.tsx</h3>
-              <article class="item" id="symbol-gamefield" data-search="GameField function src/features/game-presentation/adapters/inbound/GameField.tsx Render a bounded relative-positioning surface for game presentation content. GameFieldProps ({&#10;  children,&#10;  aspectRatio,&#10;  minHeight = 240,&#10;  clip = true,&#10;  accessibilityLabel,&#10;  testID,&#10;}: GameFieldProps) =&gt; import(&quot;react&quot;).JSX.Element">
+              <article class="item" id="symbol-gamefield" data-search="GameField function src/features/game-presentation/adapters/inbound/GameField.tsx Render a bounded relative-positioning surface for game presentation content. GameFieldProps ({&#10;  children,&#10;  aspectRatio,&#10;  minHeight = 240,&#10;  fill = false,&#10;  clip = true,&#10;  accessibilityLabel,&#10;  testID,&#10;}: GameFieldProps) =&gt; import(&quot;react&quot;).JSX.Element">
     <h4>GameField</h4>
     <p class="muted">function • <code>src/features/game-presentation/adapters/inbound/GameField.tsx:7:1</code></p>
     <p>Render a bounded relative-positioning surface for game presentation content.</p>
@@ -567,6 +567,7 @@
   children,
   aspectRatio,
   minHeight = 240,
+  fill = false,
   clip = true,
   accessibilityLabel,
   testID,
@@ -579,6 +580,7 @@
   children,
   aspectRatio,
   minHeight = 240,
+  fill = false,
   clip = true,
   accessibilityLabel,
   testID,
@@ -836,7 +838,7 @@
   </table>
   </article><article class="item" id="symbol-gameentityprops" data-search="GameEntityProps type src/types/gamePresentation.ts  GameEntityEasing GamePointerEvents">
     <h4>GameEntityProps</h4>
-    <p class="muted">type • <code>src/types/gamePresentation.ts:37:1</code></p>
+    <p class="muted">type • <code>src/types/gamePresentation.ts:38:1</code></p>
     
     <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
     <div><strong>Related symbols:</strong> <ul class="chips"><li class="chip">GameEntityEasing</li><li class="chip">GamePointerEvents</li></ul></div>
@@ -1050,6 +1052,12 @@
             <td>no</td>
             <td></td>
           </tr><tr>
+            <td><code>fill</code></td>
+            <td>property</td>
+            <td><code>boolean</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
             <td><code>minHeight</code></td>
             <td>property</td>
             <td><code>number</code></td>
@@ -1066,7 +1074,7 @@
   </table>
   </article><article class="item" id="symbol-gameinputzoneprops" data-search="GameInputZoneProps type src/types/gamePresentation.ts  GameKeyboardBinding">
     <h4>GameInputZoneProps</h4>
-    <p class="muted">type • <code>src/types/gamePresentation.ts:61:1</code></p>
+    <p class="muted">type • <code>src/types/gamePresentation.ts:62:1</code></p>
     
     <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
     <div><strong>Related symbols:</strong> <ul class="chips"><li class="chip">GameKeyboardBinding</li></ul></div>
@@ -1151,7 +1159,7 @@
   </table>
   </article><article class="item" id="symbol-gamekeyboardbinding" data-search="GameKeyboardBinding type src/types/gamePresentation.ts ">
     <h4>GameKeyboardBinding</h4>
-    <p class="muted">type • <code>src/types/gamePresentation.ts:54:1</code></p>
+    <p class="muted">type • <code>src/types/gamePresentation.ts:55:1</code></p>
     
     <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
     <div><strong>Related symbols:</strong> <span class="empty">None</span></div>
@@ -1188,7 +1196,7 @@
   </table>
   </article><article class="item" id="symbol-gamemeasurementprobeprops" data-search="GameMeasurementProbeProps type src/types/gamePresentation.ts ">
     <h4>GameMeasurementProbeProps</h4>
-    <p class="muted">type • <code>src/types/gamePresentation.ts:76:1</code></p>
+    <p class="muted">type • <code>src/types/gamePresentation.ts:77:1</code></p>
     
     <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
     <div><strong>Related symbols:</strong> <span class="empty">None</span></div>
@@ -1245,7 +1253,7 @@
     
   </article><article class="item" id="symbol-gameoverlayprops" data-search="GameOverlayProps type src/types/gamePresentation.ts  GameOverlayPlacement">
     <h4>GameOverlayProps</h4>
-    <p class="muted">type • <code>src/types/gamePresentation.ts:85:1</code></p>
+    <p class="muted">type • <code>src/types/gamePresentation.ts:86:1</code></p>
     
     <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
     <div><strong>Related symbols:</strong> <ul class="chips"><li class="chip">GameOverlayPlacement</li></ul></div>
@@ -1302,7 +1310,7 @@
     
   </article><article class="item" id="symbol-gameprops" data-search="GameProps type src/types/gamePresentation.ts ">
     <h4>GameProps</h4>
-    <p class="muted">type • <code>src/types/gamePresentation.ts:94:1</code></p>
+    <p class="muted">type • <code>src/types/gamePresentation.ts:95:1</code></p>
     
     <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
     <div><strong>Related symbols:</strong> <span class="empty">None</span></div>
@@ -1345,6 +1353,12 @@
             <td>property</td>
             <td><code>GameDefinition</code></td>
             <td>yes</td>
+            <td></td>
+          </tr><tr>
+            <td><code>fill</code></td>
+            <td>property</td>
+            <td><code>boolean</code></td>
+            <td>no</td>
             <td></td>
           </tr><tr>
             <td><code>input</code></td>
@@ -1426,7 +1440,7 @@
     </section>
     <section class="panel">
       <h2>Component registry</h2>
-      <article class="item" id="component-game" data-search="Game src/features/game-presentation/adapters/inbound/Game.tsx Bind one serializable game definition to a local transient session and presentation field. accessibilityLabel string | undefined aspectRatio number | undefined autoAdvanceTime boolean | undefined children React.ReactNode | undefined clip boolean | undefined definition GameDefinition input GameInput | undefined minHeight number | undefined onOutput (output: GameOutput) =&gt; void | undefined resetKey string | undefined seed number | undefined testID string | undefined">
+      <article class="item" id="component-game" data-search="Game src/features/game-presentation/adapters/inbound/Game.tsx Bind one serializable game definition to a local transient session and presentation field. accessibilityLabel string | undefined aspectRatio number | undefined autoAdvanceTime boolean | undefined children React.ReactNode | undefined clip boolean | undefined definition GameDefinition fill boolean | undefined input GameInput | undefined minHeight number | undefined onOutput (output: GameOutput) =&gt; void | undefined resetKey string | undefined seed number | undefined testID string | undefined">
     <h3>Game</h3>
     <p class="muted"><code>src/features/game-presentation/adapters/inbound/Game.tsx:12:1</code></p>
     <p>Bind one serializable game definition to a local transient session and presentation field.</p>
@@ -1463,6 +1477,11 @@
               <td><code>definition</code></td>
               <td><code>GameDefinition</code></td>
               <td>yes</td>
+              <td></td>
+            </tr><tr>
+              <td><code>fill</code></td>
+              <td><code>boolean | undefined</code></td>
+              <td>no</td>
               <td></td>
             </tr><tr>
               <td><code>input</code></td>
@@ -1648,7 +1667,7 @@
             </tr>
       </tbody>
     </table>
-  </article><article class="item" id="component-gamefield" data-search="GameField src/features/game-presentation/adapters/inbound/GameField.tsx Render a bounded relative-positioning surface for game presentation content. accessibilityLabel string | undefined aspectRatio number | undefined children React.ReactNode | undefined clip boolean | undefined minHeight number | undefined testID string | undefined">
+  </article><article class="item" id="component-gamefield" data-search="GameField src/features/game-presentation/adapters/inbound/GameField.tsx Render a bounded relative-positioning surface for game presentation content. accessibilityLabel string | undefined aspectRatio number | undefined children React.ReactNode | undefined clip boolean | undefined fill boolean | undefined minHeight number | undefined testID string | undefined">
     <h3>GameField</h3>
     <p class="muted"><code>src/features/game-presentation/adapters/inbound/GameField.tsx:7:1</code></p>
     <p>Render a bounded relative-positioning surface for game presentation content.</p>
@@ -1673,6 +1692,11 @@
               <td></td>
             </tr><tr>
               <td><code>clip</code></td>
+              <td><code>boolean | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>fill</code></td>
               <td><code>boolean | undefined</code></td>
               <td>no</td>
               <td></td>
@@ -2990,7 +3014,7 @@
       <h2>src/ZORA_PLUGIN_METADATA.test.ts</h2>
       <article class="item" data-search="readComponentMeta src/ZORA_PLUGIN_METADATA.test.ts Require one composed component metadata entry for focused assertions.">
     <h3>readComponentMeta</h3>
-    <p class="muted"><code>src/ZORA_PLUGIN_METADATA.test.ts:108:1</code></p>
+    <p class="muted"><code>src/ZORA_PLUGIN_METADATA.test.ts:110:1</code></p>
     <p>Require one composed component metadata entry for focused assertions.</p>
   </article>
     </section>

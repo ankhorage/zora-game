@@ -28,6 +28,13 @@ describe('ZORA game plugin metadata', () => {
 
     expect(gameInputZone.props.eventType?.type).toBe('string');
     expect(gameInputZone.props.continuous?.type).toBe('boolean');
+    expect(gameInputZone.props.keyboardBindings?.type).toBe('array');
+    expect(gameInputZone.props.keyboardBindings?.itemSchema?.map(({ key }) => key)).toEqual([
+      'key',
+      'eventType',
+      'entityId',
+      'preventDefault',
+    ]);
     expect(catalog.componentMeta.Game?.allowedChildren).toContain('GameInputZone');
     expect(catalog.componentMeta.GameField?.allowedChildren).not.toContain('GameInputZone');
   });

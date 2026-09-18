@@ -1,9 +1,9 @@
 import React from 'react';
-import { StyleSheet, View, type ViewStyle } from 'react-native';
+import { Animated, StyleSheet, View, type ViewStyle } from 'react-native';
 
 import type { GameEntityProps } from '../../../../types/gamePresentation';
 import { GameRuntimeContext } from '../../composition/GameRuntimeContext';
-import { toGamePercentage } from '../../utils/toGamePercentage';
+import { useGameEntityAnimatedStyle } from '../../utils/useGameEntityAnimatedStyle';
 import { measureGameEntity } from './measureGameEntity';
 
 /*** Render one generic positioned game entity without owning gameplay semantics. */
@@ -20,12 +20,47 @@ export function GameEntity({
   hidden = false,
   pointerEvents = 'auto',
   measurementId,
+  transitionDurationMs,
+  transitionEasing,
+  motionOffsetX,
+  motionOffsetY,
+  motionOpacityDelta,
+  motionScaleDelta,
+  motionRotationDelta,
+  motionDurationMs,
+  motionDelayMs,
+  motionEasing,
+  motionRepeat,
+  motionAlternate,
+  motionPaused,
+  motionEssential,
   accessibilityLabel,
   testID,
 }: GameEntityProps) {
   const elementRef = React.useRef<View | null>(null);
   const runtime = React.useContext(GameRuntimeContext);
   const registerMeasurement = runtime?.registerMeasurement;
+  const animatedStyle = useGameEntityAnimatedStyle({
+    x,
+    y,
+    opacity,
+    scale,
+    rotation,
+    ...(transitionDurationMs === undefined ? {} : { transitionDurationMs }),
+    ...(transitionEasing === undefined ? {} : { transitionEasing }),
+    ...(motionOffsetX === undefined ? {} : { motionOffsetX }),
+    ...(motionOffsetY === undefined ? {} : { motionOffsetY }),
+    ...(motionOpacityDelta === undefined ? {} : { motionOpacityDelta }),
+    ...(motionScaleDelta === undefined ? {} : { motionScaleDelta }),
+    ...(motionRotationDelta === undefined ? {} : { motionRotationDelta }),
+    ...(motionDurationMs === undefined ? {} : { motionDurationMs }),
+    ...(motionDelayMs === undefined ? {} : { motionDelayMs }),
+    ...(motionEasing === undefined ? {} : { motionEasing }),
+    ...(motionRepeat === undefined ? {} : { motionRepeat }),
+    ...(motionAlternate === undefined ? {} : { motionAlternate }),
+    ...(motionPaused === undefined ? {} : { motionPaused }),
+    ...(motionEssential === undefined ? {} : { motionEssential }),
+  });
 
   React.useEffect(() => {
     if (measurementId === undefined || registerMeasurement === undefined) return undefined;
@@ -33,52 +68,39 @@ export function GameEntity({
   }, [measurementId, registerMeasurement]);
 
   return (
-    <View
+    <Animated.View
       ref={elementRef}
       {...(accessibilityLabel === undefined ? {} : { accessibilityLabel })}
       {...(testID === undefined ? {} : { testID })}
       pointerEvents={pointerEvents}
       style={[
         styles.root,
-        createEntityStyle({ x, y, width, height, opacity, scale, rotation, zIndex, hidden }),
+        createEntityStaticStyle({ width, height, zIndex, hidden }),
+        animatedStyle,
       ]}
     >
       {children}
-    </View>
+    </Animated.View>
   );
 }
 
-interface GameEntityStyleInput {
-  readonly x: number;
-  readonly y: number;
+interface GameEntityStaticStyleInput {
   readonly width: number | undefined;
   readonly height: number | undefined;
-  readonly opacity: number;
-  readonly scale: number;
-  readonly rotation: number;
   readonly zIndex: number;
   readonly hidden: boolean;
 }
 
-/*** Convert serializable entity presentation props into a React Native view style. */
-function createEntityStyle({
-  x,
-  y,
+/*** Convert non-animated GameEntity presentation props into a React Native view style. */
+function createEntityStaticStyle({
   width,
   height,
-  opacity,
-  scale,
-  rotation,
   zIndex,
   hidden,
-}: GameEntityStyleInput): ViewStyle {
+}: GameEntityStaticStyleInput): ViewStyle {
   return {
     display: hidden ? 'none' : 'flex',
-    left: toGamePercentage(x),
-    opacity: Math.min(1, Math.max(0, opacity)),
     position: 'absolute',
-    top: toGamePercentage(y),
-    transform: [{ scale }, { rotate: `${rotation}deg` }],
     zIndex,
     ...(height === undefined ? {} : { height }),
     ...(width === undefined ? {} : { width }),

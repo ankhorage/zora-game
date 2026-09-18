@@ -27,7 +27,7 @@ export function GameMeasurementProbe({
         sourceId,
         targetId,
         eventType,
-        entityId,
+        ...(entityId === undefined ? {} : { entityId }),
       });
     }, Math.max(0, delayMs));
 

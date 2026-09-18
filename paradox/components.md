@@ -2,7 +2,7 @@
 
 ## Game
 
-Source: `src/features/game-presentation/adapters/inbound/Game.tsx:11:1`
+Source: `src/features/game-presentation/adapters/inbound/Game.tsx:12:1`
 
 Bind one serializable game definition to a local transient session and presentation field.
 
@@ -25,7 +25,7 @@ Export paths: `src/index.ts`
 
 ## GameEntity
 
-Source: `src/features/game-presentation/adapters/inbound/GameEntity.tsx:8:1`
+Source: `src/features/game-presentation/adapters/inbound/GameEntity.tsx:10:1`
 
 Render one generic positioned game entity without owning gameplay semantics.
 
@@ -37,6 +37,7 @@ Export paths: `src/index.ts`
 | children | `React.ReactNode \| undefined` | no | — |  |
 | height | `number \| undefined` | no | — |  |
 | hidden | `boolean \| undefined` | no | `false` |  |
+| measurementId | `string \| undefined` | no | — |  |
 | opacity | `number \| undefined` | no | `1` |  |
 | pointerEvents | `GamePointerEvents \| undefined` | no | `'auto'` |  |
 | rotation | `number \| undefined` | no | `0` |  |

@@ -1,5 +1,12 @@
 # @ankhorage/zora-game
 
+## 0.6.0
+
+### Minor Changes
+
+- 867360a: Add cross-platform measurable Game entities and a non-visual measurement probe that reports raw
+  source/target bounds through the normal Game event path without deciding collision semantics.
+
 ## 0.5.0
 
 ### Minor Changes

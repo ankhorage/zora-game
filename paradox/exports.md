@@ -4,7 +4,7 @@
 
 Kind: `function`
 Module: `src/features/game-presentation/adapters/inbound/Game.tsx`
-Source: `src/features/game-presentation/adapters/inbound/Game.tsx:11:1`
+Source: `src/features/game-presentation/adapters/inbound/Game.tsx:12:1`
 
 Bind one serializable game definition to a local transient session and presentation field.
 
@@ -18,7 +18,7 @@ Bind one serializable game definition to a local transient session and presentat
 
 Kind: `function`
 Module: `src/features/game-presentation/adapters/inbound/GameEntity.tsx`
-Source: `src/features/game-presentation/adapters/inbound/GameEntity.tsx:8:1`
+Source: `src/features/game-presentation/adapters/inbound/GameEntity.tsx:10:1`
 
 Render one generic positioned game entity without owning gameplay semantics.
 
@@ -36,9 +36,10 @@ Render one generic positioned game entity without owning gameplay semantics.
   zIndex = 0,
   hidden = false,
   pointerEvents = 'auto',
+  measurementId,
   accessibilityLabel,
   testID,
-}: GameEntityProps) => import("react").JSX.Element`
+}: GameEntityProps) => React.JSX.Element`
   - {
   children,
   x = 0,
@@ -51,10 +52,11 @@ Render one generic positioned game entity without owning gameplay semantics.
   zIndex = 0,
   hidden = false,
   pointerEvents = 'auto',
+  measurementId,
   accessibilityLabel,
   testID,
 }: `GameEntityProps`
-  - returns: `import("react").JSX.Element`
+  - returns: `React.JSX.Element`
 
 ## GameEntityProps
 
@@ -70,6 +72,7 @@ Source: `src/types/gamePresentation.ts:19:1`
 | children | property | `React.ReactNode` | no |  |
 | height | property | `number` | no |  |
 | hidden | property | `boolean` | no |  |
+| measurementId | property | `string` | no |  |
 | opacity | property | `number` | no |  |
 | pointerEvents | property | `GamePointerEvents` | no |  |
 | rotation | property | `number` | no |  |
@@ -167,7 +170,7 @@ Capture pointer/touch geometry and optional keyboard input as normalized generic
 
 Kind: `type`
 Module: `src/types/gamePresentation.ts`
-Source: `src/types/gamePresentation.ts:42:1`
+Source: `src/types/gamePresentation.ts:43:1`
 
 ### Members
 
@@ -190,7 +193,7 @@ Source: `src/types/gamePresentation.ts:42:1`
 
 Kind: `type`
 Module: `src/types/gamePresentation.ts`
-Source: `src/types/gamePresentation.ts:35:1`
+Source: `src/types/gamePresentation.ts:36:1`
 
 ### Members
 
@@ -200,6 +203,51 @@ Source: `src/types/gamePresentation.ts:35:1`
 | eventType | property | `string` | no |  |
 | key | property | `string` | yes |  |
 | preventDefault | property | `boolean` | no |  |
+
+## GameMeasurementProbe
+
+Kind: `function`
+Module: `src/features/game-presentation/adapters/inbound/GameMeasurementProbe.tsx`
+Source: `src/features/game-presentation/adapters/inbound/GameMeasurementProbe.tsx:9:1`
+
+Measure two registered game entities and dispatch only their raw rendered geometry.
+
+### Signatures
+
+- `({
+  sourceId,
+  targetId,
+  eventType = 'game.measurement',
+  entityId,
+  delayMs = 0,
+  enabled = true,
+}: GameMeasurementProbeProps) => null`
+  - {
+  sourceId,
+  targetId,
+  eventType = 'game.measurement',
+  entityId,
+  delayMs = 0,
+  enabled = true,
+}: `GameMeasurementProbeProps`
+  - returns: `null`
+
+## GameMeasurementProbeProps
+
+Kind: `type`
+Module: `src/types/gamePresentation.ts`
+Source: `src/types/gamePresentation.ts:58:1`
+
+### Members
+
+| Name | Kind | Type | Required | Description |
+| --- | --- | --- | --- | --- |
+| delayMs | property | `number` | no |  |
+| enabled | property | `boolean` | no |  |
+| entityId | property | `string` | no |  |
+| eventType | property | `string` | no |  |
+| sourceId | property | `string` | yes |  |
+| targetId | property | `string` | yes |  |
 
 ## GameOverlay
 
@@ -239,7 +287,7 @@ Source: `src/types/gamePresentation.ts:7:1`
 
 Kind: `type`
 Module: `src/types/gamePresentation.ts`
-Source: `src/types/gamePresentation.ts:57:1`
+Source: `src/types/gamePresentation.ts:67:1`
 
 ### Members
 
@@ -262,7 +310,7 @@ Source: `src/types/gamePresentation.ts:6:1`
 
 Kind: `type`
 Module: `src/types/gamePresentation.ts`
-Source: `src/types/gamePresentation.ts:66:1`
+Source: `src/types/gamePresentation.ts:76:1`
 
 ### Members
 
@@ -285,7 +333,7 @@ Source: `src/types/gamePresentation.ts:66:1`
 
 Kind: `value`
 Module: `src/ZORA_GAME_COMPONENT_META.ts`
-Source: `src/ZORA_GAME_COMPONENT_META.ts:8:14`
+Source: `src/ZORA_GAME_COMPONENT_META.ts:9:14`
 
 Register the generic game presentation metadata owned by this package.
 
@@ -293,7 +341,7 @@ Register the generic game presentation metadata owned by this package.
 
 Kind: `value`
 Module: `src/ZORA_GAME_PLUGIN.ts`
-Source: `src/ZORA_GAME_PLUGIN.ts:9:14`
+Source: `src/ZORA_GAME_PLUGIN.ts:10:14`
 
 Expose the runtime component registry together with metadata for ZORA plugin consumers.
 

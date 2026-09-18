@@ -8,7 +8,7 @@
     "modulePath": "src/features/game-presentation/adapters/inbound/Game.tsx",
     "sourceLocation": {
       "filePath": "src/features/game-presentation/adapters/inbound/Game.tsx",
-      "line": 11,
+      "line": 12,
       "column": 1
     },
     "exportPaths": [
@@ -44,7 +44,7 @@
     "modulePath": "src/features/game-presentation/adapters/inbound/GameEntity.tsx",
     "sourceLocation": {
       "filePath": "src/features/game-presentation/adapters/inbound/GameEntity.tsx",
-      "line": 8,
+      "line": 10,
       "column": 1
     },
     "exportPaths": [
@@ -55,16 +55,16 @@
     ],
     "signatures": [
       {
-        "label": "({\n  children,\n  x = 0,\n  y = 0,\n  width,\n  height,\n  opacity = 1,\n  scale = 1,\n  rotation = 0,\n  zIndex = 0,\n  hidden = false,\n  pointerEvents = 'auto',\n  accessibilityLabel,\n  testID,\n}: GameEntityProps) => import(\"react\").JSX.Element",
+        "label": "({\n  children,\n  x = 0,\n  y = 0,\n  width,\n  height,\n  opacity = 1,\n  scale = 1,\n  rotation = 0,\n  zIndex = 0,\n  hidden = false,\n  pointerEvents = 'auto',\n  measurementId,\n  accessibilityLabel,\n  testID,\n}: GameEntityProps) => React.JSX.Element",
         "parameters": [
           {
-            "name": "{\n  children,\n  x = 0,\n  y = 0,\n  width,\n  height,\n  opacity = 1,\n  scale = 1,\n  rotation = 0,\n  zIndex = 0,\n  hidden = false,\n  pointerEvents = 'auto',\n  accessibilityLabel,\n  testID,\n}",
+            "name": "{\n  children,\n  x = 0,\n  y = 0,\n  width,\n  height,\n  opacity = 1,\n  scale = 1,\n  rotation = 0,\n  zIndex = 0,\n  hidden = false,\n  pointerEvents = 'auto',\n  measurementId,\n  accessibilityLabel,\n  testID,\n}",
             "type": "GameEntityProps",
             "required": true,
             "description": null
           }
         ],
-        "returnType": "import(\"react\").JSX.Element",
+        "returnType": "React.JSX.Element",
         "returnDescription": null
       }
     ],
@@ -116,6 +116,13 @@
         "name": "hidden",
         "kind": "property",
         "type": "boolean",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "measurementId",
+        "kind": "property",
+        "type": "string",
         "required": false,
         "description": null
       },
@@ -329,7 +336,7 @@
     "modulePath": "src/types/gamePresentation.ts",
     "sourceLocation": {
       "filePath": "src/types/gamePresentation.ts",
-      "line": 42,
+      "line": 43,
       "column": 1
     },
     "exportPaths": [
@@ -436,7 +443,7 @@
     "modulePath": "src/types/gamePresentation.ts",
     "sourceLocation": {
       "filePath": "src/types/gamePresentation.ts",
-      "line": 35,
+      "line": 36,
       "column": 1
     },
     "exportPaths": [
@@ -471,6 +478,105 @@
         "kind": "property",
         "type": "boolean",
         "required": false,
+        "description": null
+      }
+    ],
+    "structuredRows": []
+  },
+  {
+    "name": "GameMeasurementProbe",
+    "description": "Measure two registered game entities and dispatch only their raw rendered geometry.",
+    "isReadme": false,
+    "examples": [],
+    "kind": "function",
+    "modulePath": "src/features/game-presentation/adapters/inbound/GameMeasurementProbe.tsx",
+    "sourceLocation": {
+      "filePath": "src/features/game-presentation/adapters/inbound/GameMeasurementProbe.tsx",
+      "line": 9,
+      "column": 1
+    },
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "GameMeasurementProbeProps"
+    ],
+    "signatures": [
+      {
+        "label": "({\n  sourceId,\n  targetId,\n  eventType = 'game.measurement',\n  entityId,\n  delayMs = 0,\n  enabled = true,\n}: GameMeasurementProbeProps) => null",
+        "parameters": [
+          {
+            "name": "{\n  sourceId,\n  targetId,\n  eventType = 'game.measurement',\n  entityId,\n  delayMs = 0,\n  enabled = true,\n}",
+            "type": "GameMeasurementProbeProps",
+            "required": true,
+            "description": null
+          }
+        ],
+        "returnType": "null",
+        "returnDescription": null
+      }
+    ],
+    "members": [],
+    "structuredRows": []
+  },
+  {
+    "name": "GameMeasurementProbeProps",
+    "description": null,
+    "isReadme": false,
+    "examples": [],
+    "kind": "type",
+    "modulePath": "src/types/gamePresentation.ts",
+    "sourceLocation": {
+      "filePath": "src/types/gamePresentation.ts",
+      "line": 58,
+      "column": 1
+    },
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [],
+    "signatures": [],
+    "members": [
+      {
+        "name": "delayMs",
+        "kind": "property",
+        "type": "number",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "enabled",
+        "kind": "property",
+        "type": "boolean",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "entityId",
+        "kind": "property",
+        "type": "string",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "eventType",
+        "kind": "property",
+        "type": "string",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "sourceId",
+        "kind": "property",
+        "type": "string",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "targetId",
+        "kind": "property",
+        "type": "string",
+        "required": true,
         "description": null
       }
     ],
@@ -541,7 +647,7 @@
     "modulePath": "src/types/gamePresentation.ts",
     "sourceLocation": {
       "filePath": "src/types/gamePresentation.ts",
-      "line": 57,
+      "line": 67,
       "column": 1
     },
     "exportPaths": [
@@ -626,7 +732,7 @@
     "modulePath": "src/types/gamePresentation.ts",
     "sourceLocation": {
       "filePath": "src/types/gamePresentation.ts",
-      "line": 66,
+      "line": 76,
       "column": 1
     },
     "exportPaths": [
@@ -731,7 +837,7 @@
     "modulePath": "src/ZORA_GAME_COMPONENT_META.ts",
     "sourceLocation": {
       "filePath": "src/ZORA_GAME_COMPONENT_META.ts",
-      "line": 8,
+      "line": 9,
       "column": 14
     },
     "exportPaths": [
@@ -751,7 +857,7 @@
     "modulePath": "src/ZORA_GAME_PLUGIN.ts",
     "sourceLocation": {
       "filePath": "src/ZORA_GAME_PLUGIN.ts",
-      "line": 9,
+      "line": 10,
       "column": 14
     },
     "exportPaths": [

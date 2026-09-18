@@ -14,7 +14,7 @@
     {
       "id": "npm",
       "label": "npm",
-      "value": "v0.5.0",
+      "value": "v0.6.0",
       "color": "cb3837"
     },
     {
@@ -90,6 +90,25 @@
       ]
     },
     {
+      "path": "src/features/game-presentation/adapters/inbound/createGameMeasurementEvent.test.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/game-presentation/adapters/inbound/createGameMeasurementEvent.ts",
+        "src/types/gameRuntime.ts"
+      ],
+      "exports": []
+    },
+    {
+      "path": "src/features/game-presentation/adapters/inbound/createGameMeasurementEvent.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/types/gameRuntime.ts"
+      ],
+      "exports": [
+        "createGameMeasurementEvent"
+      ]
+    },
+    {
       "path": "src/features/game-presentation/adapters/inbound/createGamePointerEvent.test.ts",
       "isEntrypoint": false,
       "dependencies": [
@@ -113,6 +132,7 @@
       "dependencies": [
         "src/features/game-presentation/adapters/inbound/GameField.tsx",
         "src/features/game-presentation/composition/createGameBindingContext.ts",
+        "src/features/game-presentation/composition/createGameMeasurementRegistry.ts",
         "src/features/game-presentation/composition/GameRuntimeContext.ts",
         "src/features/game-presentation/composition/useGameRuntime.ts",
         "src/types/gamePresentation.ts"
@@ -125,6 +145,8 @@
       "path": "src/features/game-presentation/adapters/inbound/GameEntity.tsx",
       "isEntrypoint": false,
       "dependencies": [
+        "src/features/game-presentation/adapters/inbound/measureGameEntity.ts",
+        "src/features/game-presentation/composition/GameRuntimeContext.ts",
         "src/features/game-presentation/utils/toGamePercentage.ts",
         "src/types/gamePresentation.ts"
       ],
@@ -155,6 +177,19 @@
       ]
     },
     {
+      "path": "src/features/game-presentation/adapters/inbound/GameMeasurementProbe.tsx",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/game-presentation/adapters/inbound/createGameMeasurementEvent.ts",
+        "src/features/game-presentation/composition/GameRuntimeContext.ts",
+        "src/types/gamePresentation.ts",
+        "src/types/gameRuntime.ts"
+      ],
+      "exports": [
+        "GameMeasurementProbe"
+      ]
+    },
+    {
       "path": "src/features/game-presentation/adapters/inbound/GameOverlay.tsx",
       "isEntrypoint": false,
       "dependencies": [
@@ -162,6 +197,16 @@
       ],
       "exports": [
         "GameOverlay"
+      ]
+    },
+    {
+      "path": "src/features/game-presentation/adapters/inbound/measureGameEntity.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/types/gameRuntime.ts"
+      ],
+      "exports": [
+        "measureGameEntity"
       ]
     },
     {
@@ -191,6 +236,25 @@
       "dependencies": [],
       "exports": [
         "createGameBindingContext"
+      ]
+    },
+    {
+      "path": "src/features/game-presentation/composition/createGameMeasurementRegistry.test.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/game-presentation/composition/createGameMeasurementRegistry.ts",
+        "src/types/gameRuntime.ts"
+      ],
+      "exports": []
+    },
+    {
+      "path": "src/features/game-presentation/composition/createGameMeasurementRegistry.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/types/gameRuntime.ts"
+      ],
+      "exports": [
+        "createGameMeasurementRegistry"
       ]
     },
     {
@@ -250,6 +314,14 @@
       ]
     },
     {
+      "path": "src/features/game-presentation/meta/gameMeasurementProbeMeta.ts",
+      "isEntrypoint": false,
+      "dependencies": [],
+      "exports": [
+        "gameMeasurementProbeMeta"
+      ]
+    },
+    {
       "path": "src/features/game-presentation/meta/gameMeta.ts",
       "isEntrypoint": false,
       "dependencies": [],
@@ -278,6 +350,8 @@
         "GameInputZone",
         "GameInputZoneProps",
         "GameKeyboardBinding",
+        "GameMeasurementProbe",
+        "GameMeasurementProbeProps",
         "GameOverlay",
         "GameOverlayPlacement",
         "GameOverlayProps",
@@ -316,6 +390,8 @@
         "GameInputZone",
         "GameInputZoneProps",
         "GameKeyboardBinding",
+        "GameMeasurementProbe",
+        "GameMeasurementProbeProps",
         "GameOverlay",
         "GameOverlayPlacement",
         "GameOverlayProps",
@@ -342,6 +418,7 @@
         "GameFieldProps",
         "GameInputZoneProps",
         "GameKeyboardBinding",
+        "GameMeasurementProbeProps",
         "GameOverlayPlacement",
         "GameOverlayProps",
         "GamePointerEvents",
@@ -353,8 +430,12 @@
       "isEntrypoint": false,
       "dependencies": [],
       "exports": [
+        "GameMeasurementBounds",
+        "GameMeasurementReader",
+        "GameMeasurementRegistry",
         "GameRuntimeContextValue",
-        "GameRuntimeState"
+        "GameRuntimeState",
+        "GameRuntimeValue"
       ]
     },
     {
@@ -364,6 +445,7 @@
         "src/features/game-presentation/meta/gameEntityMeta.ts",
         "src/features/game-presentation/meta/gameFieldMeta.ts",
         "src/features/game-presentation/meta/gameInputZoneMeta.ts",
+        "src/features/game-presentation/meta/gameMeasurementProbeMeta.ts",
         "src/features/game-presentation/meta/gameMeta.ts",
         "src/features/game-presentation/meta/gameOverlayMeta.ts"
       ],
@@ -379,6 +461,7 @@
         "src/features/game-presentation/adapters/inbound/GameEntity.tsx",
         "src/features/game-presentation/adapters/inbound/GameField.tsx",
         "src/features/game-presentation/adapters/inbound/GameInputZone.tsx",
+        "src/features/game-presentation/adapters/inbound/GameMeasurementProbe.tsx",
         "src/features/game-presentation/adapters/inbound/GameOverlay.tsx",
         "src/ZORA_PLUGIN_METADATA.ts"
       ],
@@ -415,7 +498,7 @@
       "modulePath": "src/features/game-presentation/adapters/inbound/Game.tsx",
       "sourceLocation": {
         "filePath": "src/features/game-presentation/adapters/inbound/Game.tsx",
-        "line": 11,
+        "line": 12,
         "column": 1
       },
       "exportPaths": [
@@ -451,7 +534,7 @@
       "modulePath": "src/features/game-presentation/adapters/inbound/GameEntity.tsx",
       "sourceLocation": {
         "filePath": "src/features/game-presentation/adapters/inbound/GameEntity.tsx",
-        "line": 8,
+        "line": 10,
         "column": 1
       },
       "exportPaths": [
@@ -462,16 +545,16 @@
       ],
       "signatures": [
         {
-          "label": "({\n  children,\n  x = 0,\n  y = 0,\n  width,\n  height,\n  opacity = 1,\n  scale = 1,\n  rotation = 0,\n  zIndex = 0,\n  hidden = false,\n  pointerEvents = 'auto',\n  accessibilityLabel,\n  testID,\n}: GameEntityProps) => import(\"react\").JSX.Element",
+          "label": "({\n  children,\n  x = 0,\n  y = 0,\n  width,\n  height,\n  opacity = 1,\n  scale = 1,\n  rotation = 0,\n  zIndex = 0,\n  hidden = false,\n  pointerEvents = 'auto',\n  measurementId,\n  accessibilityLabel,\n  testID,\n}: GameEntityProps) => React.JSX.Element",
           "parameters": [
             {
-              "name": "{\n  children,\n  x = 0,\n  y = 0,\n  width,\n  height,\n  opacity = 1,\n  scale = 1,\n  rotation = 0,\n  zIndex = 0,\n  hidden = false,\n  pointerEvents = 'auto',\n  accessibilityLabel,\n  testID,\n}",
+              "name": "{\n  children,\n  x = 0,\n  y = 0,\n  width,\n  height,\n  opacity = 1,\n  scale = 1,\n  rotation = 0,\n  zIndex = 0,\n  hidden = false,\n  pointerEvents = 'auto',\n  measurementId,\n  accessibilityLabel,\n  testID,\n}",
               "type": "GameEntityProps",
               "required": true,
               "description": null
             }
           ],
-          "returnType": "import(\"react\").JSX.Element",
+          "returnType": "React.JSX.Element",
           "returnDescription": null
         }
       ],
@@ -523,6 +606,13 @@
           "name": "hidden",
           "kind": "property",
           "type": "boolean",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "measurementId",
+          "kind": "property",
+          "type": "string",
           "required": false,
           "description": null
         },
@@ -736,7 +826,7 @@
       "modulePath": "src/types/gamePresentation.ts",
       "sourceLocation": {
         "filePath": "src/types/gamePresentation.ts",
-        "line": 42,
+        "line": 43,
         "column": 1
       },
       "exportPaths": [
@@ -843,7 +933,7 @@
       "modulePath": "src/types/gamePresentation.ts",
       "sourceLocation": {
         "filePath": "src/types/gamePresentation.ts",
-        "line": 35,
+        "line": 36,
         "column": 1
       },
       "exportPaths": [
@@ -878,6 +968,105 @@
           "kind": "property",
           "type": "boolean",
           "required": false,
+          "description": null
+        }
+      ],
+      "structuredRows": []
+    },
+    {
+      "name": "GameMeasurementProbe",
+      "description": "Measure two registered game entities and dispatch only their raw rendered geometry.",
+      "isReadme": false,
+      "examples": [],
+      "kind": "function",
+      "modulePath": "src/features/game-presentation/adapters/inbound/GameMeasurementProbe.tsx",
+      "sourceLocation": {
+        "filePath": "src/features/game-presentation/adapters/inbound/GameMeasurementProbe.tsx",
+        "line": 9,
+        "column": 1
+      },
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "GameMeasurementProbeProps"
+      ],
+      "signatures": [
+        {
+          "label": "({\n  sourceId,\n  targetId,\n  eventType = 'game.measurement',\n  entityId,\n  delayMs = 0,\n  enabled = true,\n}: GameMeasurementProbeProps) => null",
+          "parameters": [
+            {
+              "name": "{\n  sourceId,\n  targetId,\n  eventType = 'game.measurement',\n  entityId,\n  delayMs = 0,\n  enabled = true,\n}",
+              "type": "GameMeasurementProbeProps",
+              "required": true,
+              "description": null
+            }
+          ],
+          "returnType": "null",
+          "returnDescription": null
+        }
+      ],
+      "members": [],
+      "structuredRows": []
+    },
+    {
+      "name": "GameMeasurementProbeProps",
+      "description": null,
+      "isReadme": false,
+      "examples": [],
+      "kind": "type",
+      "modulePath": "src/types/gamePresentation.ts",
+      "sourceLocation": {
+        "filePath": "src/types/gamePresentation.ts",
+        "line": 58,
+        "column": 1
+      },
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [],
+      "signatures": [],
+      "members": [
+        {
+          "name": "delayMs",
+          "kind": "property",
+          "type": "number",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "enabled",
+          "kind": "property",
+          "type": "boolean",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "entityId",
+          "kind": "property",
+          "type": "string",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "eventType",
+          "kind": "property",
+          "type": "string",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "sourceId",
+          "kind": "property",
+          "type": "string",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "targetId",
+          "kind": "property",
+          "type": "string",
+          "required": true,
           "description": null
         }
       ],
@@ -948,7 +1137,7 @@
       "modulePath": "src/types/gamePresentation.ts",
       "sourceLocation": {
         "filePath": "src/types/gamePresentation.ts",
-        "line": 57,
+        "line": 67,
         "column": 1
       },
       "exportPaths": [
@@ -1033,7 +1222,7 @@
       "modulePath": "src/types/gamePresentation.ts",
       "sourceLocation": {
         "filePath": "src/types/gamePresentation.ts",
-        "line": 66,
+        "line": 76,
         "column": 1
       },
       "exportPaths": [
@@ -1138,7 +1327,7 @@
       "modulePath": "src/ZORA_GAME_COMPONENT_META.ts",
       "sourceLocation": {
         "filePath": "src/ZORA_GAME_COMPONENT_META.ts",
-        "line": 8,
+        "line": 9,
         "column": 14
       },
       "exportPaths": [
@@ -1158,7 +1347,7 @@
       "modulePath": "src/ZORA_GAME_PLUGIN.ts",
       "sourceLocation": {
         "filePath": "src/ZORA_GAME_PLUGIN.ts",
-        "line": 9,
+        "line": 10,
         "column": 14
       },
       "exportPaths": [
@@ -1199,7 +1388,7 @@
       "modulePath": "src/features/game-presentation/adapters/inbound/Game.tsx",
       "sourceLocation": {
         "filePath": "src/features/game-presentation/adapters/inbound/Game.tsx",
-        "line": 11,
+        "line": 12,
         "column": 1
       },
       "exportPaths": [
@@ -1288,7 +1477,7 @@
       "modulePath": "src/features/game-presentation/adapters/inbound/GameEntity.tsx",
       "sourceLocation": {
         "filePath": "src/features/game-presentation/adapters/inbound/GameEntity.tsx",
-        "line": 8,
+        "line": 10,
         "column": 1
       },
       "exportPaths": [
@@ -1318,6 +1507,12 @@
           "type": "boolean | undefined",
           "required": false,
           "defaultValue": "false",
+          "description": null
+        },
+        {
+          "name": "measurementId",
+          "type": "string | undefined",
+          "required": false,
           "description": null
         },
         {
@@ -1602,6 +1797,24 @@
       }
     },
     {
+      "name": "createGameMeasurementEvent",
+      "description": "Create one raw geometry event without deciding collision semantics.",
+      "sourceLocation": {
+        "filePath": "src/features/game-presentation/adapters/inbound/createGameMeasurementEvent.ts",
+        "line": 6,
+        "column": 1
+      }
+    },
+    {
+      "name": "toGameMeasurementRecord",
+      "description": "Convert measured geometry into a serializable Game record.",
+      "sourceLocation": {
+        "filePath": "src/features/game-presentation/adapters/inbound/createGameMeasurementEvent.ts",
+        "line": 29,
+        "column": 1
+      }
+    },
+    {
       "name": "createGamePointerEvent",
       "description": "Normalize one measured pointer/touch position into a field-relative generic Game event.",
       "sourceLocation": {
@@ -1615,7 +1828,7 @@
       "description": "Bind one serializable game definition to a local transient session and presentation field.",
       "sourceLocation": {
         "filePath": "src/features/game-presentation/adapters/inbound/Game.tsx",
-        "line": 11,
+        "line": 12,
         "column": 1
       }
     },
@@ -1624,7 +1837,7 @@
       "description": "Render one generic positioned game entity without owning gameplay semantics.",
       "sourceLocation": {
         "filePath": "src/features/game-presentation/adapters/inbound/GameEntity.tsx",
-        "line": 8,
+        "line": 10,
         "column": 1
       }
     },
@@ -1633,7 +1846,7 @@
       "description": "Convert serializable entity presentation props into a React Native view style.",
       "sourceLocation": {
         "filePath": "src/features/game-presentation/adapters/inbound/GameEntity.tsx",
-        "line": 51,
+        "line": 64,
         "column": 1
       }
     },
@@ -1674,6 +1887,24 @@
       }
     },
     {
+      "name": "GameMeasurementProbe",
+      "description": "Measure two registered game entities and dispatch only their raw rendered geometry.",
+      "sourceLocation": {
+        "filePath": "src/features/game-presentation/adapters/inbound/GameMeasurementProbe.tsx",
+        "line": 9,
+        "column": 1
+      }
+    },
+    {
+      "name": "dispatchGameMeasurement",
+      "description": "Resolve both registered entity measurements before dispatching one Game event.",
+      "sourceLocation": {
+        "filePath": "src/features/game-presentation/adapters/inbound/GameMeasurementProbe.tsx",
+        "line": 62,
+        "column": 1
+      }
+    },
+    {
       "name": "GameOverlay",
       "description": "Render an absolute game presentation layer for HUD, feedback, and phase content.",
       "sourceLocation": {
@@ -1692,6 +1923,15 @@
       }
     },
     {
+      "name": "measureGameEntity",
+      "description": "Measure one rendered React Native or React Native Web game entity in window coordinates.",
+      "sourceLocation": {
+        "filePath": "src/features/game-presentation/adapters/inbound/measureGameEntity.ts",
+        "line": 6,
+        "column": 1
+      }
+    },
+    {
       "name": "useGameInputZoneResponder",
       "description": "Own React Native responder measurement and event dispatch for one Game input zone.",
       "sourceLocation": {
@@ -1705,6 +1945,15 @@
       "description": "Create the canonical Runtime context namespace for one local game session.",
       "sourceLocation": {
         "filePath": "src/features/game-presentation/composition/createGameBindingContext.ts",
+        "line": 4,
+        "column": 1
+      }
+    },
+    {
+      "name": "createGameMeasurementRegistry",
+      "description": "Create one isolated measurement registry for an embeddable Game instance.",
+      "sourceLocation": {
+        "filePath": "src/features/game-presentation/composition/createGameMeasurementRegistry.ts",
         "line": 4,
         "column": 1
       }
@@ -1831,7 +2080,7 @@
       "description": "Require one composed component metadata entry for focused assertions.",
       "sourceLocation": {
         "filePath": "src/ZORA_PLUGIN_METADATA.test.ts",
-        "line": 73,
+        "line": 91,
         "column": 1
       }
     }
@@ -1867,6 +2116,14 @@
       "sourcePath": "src/features/game-presentation/adapters/inbound/GameInputZone.tsx",
       "symbolName": "GameInputZone",
       "description": "Capture pointer/touch geometry and optional keyboard input as normalized generic Game events.",
+      "isReadme": false
+    },
+    {
+      "kind": "export",
+      "name": "GameMeasurementProbe",
+      "sourcePath": "src/features/game-presentation/adapters/inbound/GameMeasurementProbe.tsx",
+      "symbolName": "GameMeasurementProbe",
+      "description": "Measure two registered game entities and dispatch only their raw rendered geometry.",
       "isReadme": false
     },
     {
@@ -1917,6 +2174,11 @@
       },
       {
         "fromPath": "src/ZORA_GAME_COMPONENT_META.ts",
+        "toPath": "src/features/game-presentation/meta/gameMeasurementProbeMeta.ts",
+        "sourcePath": "src/ZORA_GAME_COMPONENT_META.ts"
+      },
+      {
+        "fromPath": "src/ZORA_GAME_COMPONENT_META.ts",
         "toPath": "src/features/game-presentation/meta/gameMeta.ts",
         "sourcePath": "src/ZORA_GAME_COMPONENT_META.ts"
       },
@@ -1943,6 +2205,11 @@
       {
         "fromPath": "src/ZORA_GAME_PLUGIN.ts",
         "toPath": "src/features/game-presentation/adapters/inbound/GameInputZone.tsx",
+        "sourcePath": "src/ZORA_GAME_PLUGIN.ts"
+      },
+      {
+        "fromPath": "src/ZORA_GAME_PLUGIN.ts",
+        "toPath": "src/features/game-presentation/adapters/inbound/GameMeasurementProbe.tsx",
         "sourcePath": "src/ZORA_GAME_PLUGIN.ts"
       },
       {
@@ -1992,6 +2259,11 @@
       },
       {
         "fromPath": "src/features/game-presentation/public.ts",
+        "toPath": "src/features/game-presentation/adapters/inbound/GameMeasurementProbe.tsx",
+        "sourcePath": "src/features/game-presentation/public.ts"
+      },
+      {
+        "fromPath": "src/features/game-presentation/public.ts",
         "toPath": "src/features/game-presentation/adapters/inbound/GameOverlay.tsx",
         "sourcePath": "src/features/game-presentation/public.ts"
       },
@@ -1999,6 +2271,21 @@
         "fromPath": "src/features/game-presentation/composition/createGameBindingContext.test.ts",
         "toPath": "src/features/game-presentation/composition/createGameBindingContext.ts",
         "sourcePath": "src/features/game-presentation/composition/createGameBindingContext.test.ts"
+      },
+      {
+        "fromPath": "src/features/game-presentation/composition/createGameMeasurementRegistry.test.ts",
+        "toPath": "src/types/gameRuntime.ts",
+        "sourcePath": "src/features/game-presentation/composition/createGameMeasurementRegistry.test.ts"
+      },
+      {
+        "fromPath": "src/features/game-presentation/composition/createGameMeasurementRegistry.test.ts",
+        "toPath": "src/features/game-presentation/composition/createGameMeasurementRegistry.ts",
+        "sourcePath": "src/features/game-presentation/composition/createGameMeasurementRegistry.test.ts"
+      },
+      {
+        "fromPath": "src/features/game-presentation/composition/createGameMeasurementRegistry.ts",
+        "toPath": "src/types/gameRuntime.ts",
+        "sourcePath": "src/features/game-presentation/composition/createGameMeasurementRegistry.ts"
       },
       {
         "fromPath": "src/features/game-presentation/composition/GameRuntimeContext.ts",
@@ -2041,6 +2328,21 @@
         "sourcePath": "src/features/game-presentation/adapters/inbound/createGameKeyboardEvent.ts"
       },
       {
+        "fromPath": "src/features/game-presentation/adapters/inbound/createGameMeasurementEvent.test.ts",
+        "toPath": "src/types/gameRuntime.ts",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/createGameMeasurementEvent.test.ts"
+      },
+      {
+        "fromPath": "src/features/game-presentation/adapters/inbound/createGameMeasurementEvent.test.ts",
+        "toPath": "src/features/game-presentation/adapters/inbound/createGameMeasurementEvent.ts",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/createGameMeasurementEvent.test.ts"
+      },
+      {
+        "fromPath": "src/features/game-presentation/adapters/inbound/createGameMeasurementEvent.ts",
+        "toPath": "src/types/gameRuntime.ts",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/createGameMeasurementEvent.ts"
+      },
+      {
         "fromPath": "src/features/game-presentation/adapters/inbound/createGamePointerEvent.test.ts",
         "toPath": "src/features/game-presentation/adapters/inbound/createGamePointerEvent.ts",
         "sourcePath": "src/features/game-presentation/adapters/inbound/createGamePointerEvent.test.ts"
@@ -2058,6 +2360,11 @@
       {
         "fromPath": "src/features/game-presentation/adapters/inbound/Game.tsx",
         "toPath": "src/features/game-presentation/composition/createGameBindingContext.ts",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/Game.tsx"
+      },
+      {
+        "fromPath": "src/features/game-presentation/adapters/inbound/Game.tsx",
+        "toPath": "src/features/game-presentation/composition/createGameMeasurementRegistry.ts",
         "sourcePath": "src/features/game-presentation/adapters/inbound/Game.tsx"
       },
       {
@@ -2082,7 +2389,17 @@
       },
       {
         "fromPath": "src/features/game-presentation/adapters/inbound/GameEntity.tsx",
+        "toPath": "src/features/game-presentation/composition/GameRuntimeContext.ts",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/GameEntity.tsx"
+      },
+      {
+        "fromPath": "src/features/game-presentation/adapters/inbound/GameEntity.tsx",
         "toPath": "src/features/game-presentation/utils/toGamePercentage.ts",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/GameEntity.tsx"
+      },
+      {
+        "fromPath": "src/features/game-presentation/adapters/inbound/GameEntity.tsx",
+        "toPath": "src/features/game-presentation/adapters/inbound/measureGameEntity.ts",
         "sourcePath": "src/features/game-presentation/adapters/inbound/GameEntity.tsx"
       },
       {
@@ -2106,9 +2423,34 @@
         "sourcePath": "src/features/game-presentation/adapters/inbound/GameInputZone.tsx"
       },
       {
+        "fromPath": "src/features/game-presentation/adapters/inbound/GameMeasurementProbe.tsx",
+        "toPath": "src/types/gamePresentation.ts",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/GameMeasurementProbe.tsx"
+      },
+      {
+        "fromPath": "src/features/game-presentation/adapters/inbound/GameMeasurementProbe.tsx",
+        "toPath": "src/types/gameRuntime.ts",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/GameMeasurementProbe.tsx"
+      },
+      {
+        "fromPath": "src/features/game-presentation/adapters/inbound/GameMeasurementProbe.tsx",
+        "toPath": "src/features/game-presentation/composition/GameRuntimeContext.ts",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/GameMeasurementProbe.tsx"
+      },
+      {
+        "fromPath": "src/features/game-presentation/adapters/inbound/GameMeasurementProbe.tsx",
+        "toPath": "src/features/game-presentation/adapters/inbound/createGameMeasurementEvent.ts",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/GameMeasurementProbe.tsx"
+      },
+      {
         "fromPath": "src/features/game-presentation/adapters/inbound/GameOverlay.tsx",
         "toPath": "src/types/gamePresentation.ts",
         "sourcePath": "src/features/game-presentation/adapters/inbound/GameOverlay.tsx"
+      },
+      {
+        "fromPath": "src/features/game-presentation/adapters/inbound/measureGameEntity.ts",
+        "toPath": "src/types/gameRuntime.ts",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/measureGameEntity.ts"
       },
       {
         "fromPath": "src/features/game-presentation/adapters/inbound/useGameInputZoneResponder.ts",
@@ -2191,6 +2533,54 @@
         "toSymbol": "resolveRuntimeBindingValueSync",
         "callExpression": "resolveRuntimeBindingValueSync",
         "sourcePath": "src/features/game-presentation/composition/createGameBindingContext.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/game-presentation/composition/createGameMeasurementRegistry.test.ts",
+        "toSymbol": "describe",
+        "callExpression": "describe",
+        "sourcePath": "src/features/game-presentation/composition/createGameMeasurementRegistry.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/game-presentation/composition/createGameMeasurementRegistry.test.ts",
+        "toSymbol": "test",
+        "callExpression": "test",
+        "sourcePath": "src/features/game-presentation/composition/createGameMeasurementRegistry.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/game-presentation/composition/createGameMeasurementRegistry.test.ts",
+        "toSymbol": "createGameMeasurementRegistry",
+        "callExpression": "createGameMeasurementRegistry",
+        "sourcePath": "src/features/game-presentation/composition/createGameMeasurementRegistry.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/game-presentation/composition/createGameMeasurementRegistry.test.ts",
+        "toSymbol": "registerMeasurement",
+        "callExpression": "registry.registerMeasurement",
+        "sourcePath": "src/features/game-presentation/composition/createGameMeasurementRegistry.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/game-presentation/composition/createGameMeasurementRegistry.test.ts",
+        "toSymbol": "expect",
+        "callExpression": "expect",
+        "sourcePath": "src/features/game-presentation/composition/createGameMeasurementRegistry.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/game-presentation/composition/createGameMeasurementRegistry.test.ts",
+        "toSymbol": "measure",
+        "callExpression": "registry.measure",
+        "sourcePath": "src/features/game-presentation/composition/createGameMeasurementRegistry.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/game-presentation/composition/createGameMeasurementRegistry.test.ts",
+        "toSymbol": "unregister",
+        "callExpression": "unregister",
+        "sourcePath": "src/features/game-presentation/composition/createGameMeasurementRegistry.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/game-presentation/composition/createGameMeasurementRegistry.test.ts",
+        "toSymbol": "firstCleanup",
+        "callExpression": "firstCleanup",
+        "sourcePath": "src/features/game-presentation/composition/createGameMeasurementRegistry.test.ts"
       },
       {
         "fromSymbol": "useGameRuntime",
@@ -2331,6 +2721,36 @@
         "sourcePath": "src/features/game-presentation/adapters/inbound/createGameKeyboardEvent.test.ts"
       },
       {
+        "fromSymbol": "src/features/game-presentation/adapters/inbound/createGameMeasurementEvent.test.ts",
+        "toSymbol": "describe",
+        "callExpression": "describe",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/createGameMeasurementEvent.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/game-presentation/adapters/inbound/createGameMeasurementEvent.test.ts",
+        "toSymbol": "test",
+        "callExpression": "test",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/createGameMeasurementEvent.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/game-presentation/adapters/inbound/createGameMeasurementEvent.test.ts",
+        "toSymbol": "createGameMeasurementEvent",
+        "callExpression": "createGameMeasurementEvent",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/createGameMeasurementEvent.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/game-presentation/adapters/inbound/createGameMeasurementEvent.test.ts",
+        "toSymbol": "expect",
+        "callExpression": "expect",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/createGameMeasurementEvent.test.ts"
+      },
+      {
+        "fromSymbol": "createGameMeasurementEvent",
+        "toSymbol": "toGameMeasurementRecord",
+        "callExpression": "toGameMeasurementRecord",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/createGameMeasurementEvent.ts"
+      },
+      {
         "fromSymbol": "src/features/game-presentation/adapters/inbound/createGamePointerEvent.test.ts",
         "toSymbol": "describe",
         "callExpression": "describe",
@@ -2373,6 +2793,18 @@
         "sourcePath": "src/features/game-presentation/adapters/inbound/Game.tsx"
       },
       {
+        "fromSymbol": "src/features/game-presentation/adapters/inbound/GameEntity.tsx",
+        "toSymbol": "registerMeasurement",
+        "callExpression": "registerMeasurement",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/GameEntity.tsx"
+      },
+      {
+        "fromSymbol": "src/features/game-presentation/adapters/inbound/GameEntity.tsx",
+        "toSymbol": "measureGameEntity",
+        "callExpression": "measureGameEntity",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/GameEntity.tsx"
+      },
+      {
         "fromSymbol": "GameEntity",
         "toSymbol": "createEntityStyle",
         "callExpression": "createEntityStyle",
@@ -2409,10 +2841,40 @@
         "sourcePath": "src/features/game-presentation/adapters/inbound/GameInputZone.tsx"
       },
       {
+        "fromSymbol": "src/features/game-presentation/adapters/inbound/GameMeasurementProbe.tsx",
+        "toSymbol": "dispatchGameMeasurement",
+        "callExpression": "dispatchGameMeasurement",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/GameMeasurementProbe.tsx"
+      },
+      {
+        "fromSymbol": "dispatchGameMeasurement",
+        "toSymbol": "measure",
+        "callExpression": "input.measure",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/GameMeasurementProbe.tsx"
+      },
+      {
+        "fromSymbol": "dispatchGameMeasurement",
+        "toSymbol": "dispatch",
+        "callExpression": "input.dispatch",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/GameMeasurementProbe.tsx"
+      },
+      {
+        "fromSymbol": "dispatchGameMeasurement",
+        "toSymbol": "createGameMeasurementEvent",
+        "callExpression": "createGameMeasurementEvent",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/GameMeasurementProbe.tsx"
+      },
+      {
         "fromSymbol": "GameOverlay",
         "toSymbol": "resolvePlacementStyle",
         "callExpression": "resolvePlacementStyle",
         "sourcePath": "src/features/game-presentation/adapters/inbound/GameOverlay.tsx"
+      },
+      {
+        "fromSymbol": "src/features/game-presentation/adapters/inbound/measureGameEntity.ts",
+        "toSymbol": "resolve",
+        "callExpression": "resolve",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/measureGameEntity.ts"
       },
       {
         "fromSymbol": "src/features/game-presentation/adapters/inbound/useGameInputZoneResponder.ts",
@@ -2531,6 +2993,11 @@
         "sourcePath": "src/features/game-presentation/adapters/inbound/GameEntity.tsx"
       },
       {
+        "fromSymbol": "GameEntity",
+        "toType": "React",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/GameEntity.tsx"
+      },
+      {
         "fromSymbol": "GameField",
         "toType": "GameFieldProps",
         "sourcePath": "src/features/game-presentation/adapters/inbound/GameField.tsx"
@@ -2539,6 +3006,11 @@
         "fromSymbol": "GameInputZone",
         "toType": "GameInputZoneProps",
         "sourcePath": "src/features/game-presentation/adapters/inbound/GameInputZone.tsx"
+      },
+      {
+        "fromSymbol": "GameMeasurementProbe",
+        "toType": "GameMeasurementProbeProps",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/GameMeasurementProbe.tsx"
       },
       {
         "fromSymbol": "GameOverlay",
@@ -2550,7 +3022,7 @@
       {
         "fromComponent": "Game",
         "toComponent": "GameRuntimeContext.Provider",
-        "jsxElement": "<GameRuntimeContext.Provider value={runtime}>",
+        "jsxElement": "<GameRuntimeContext.Provider value={runtimeContext}>",
         "sourcePath": "src/features/game-presentation/adapters/inbound/Game.tsx"
       },
       {
@@ -2568,7 +3040,7 @@
       {
         "fromComponent": "GameEntity",
         "toComponent": "View",
-        "jsxElement": "<View\n      {...(accessibilityLabel === undefined ? {} : { accessibilityLabel })}\n      {...(testID === undefined ? {} : { testID })}\n      pointerEvents={pointerEvents}\n      style={[\n        styles.root,\n        createEntityStyle({ x, y, width, height, opacity, scale, rotation, zIndex, hidden }),\n      ]}\n    >",
+        "jsxElement": "<View\n      ref={elementRef}\n      {...(accessibilityLabel === undefined ? {} : { accessibilityLabel })}\n      {...(testID === undefined ? {} : { testID })}\n      pointerEvents={pointerEvents}\n      style={[\n        styles.root,\n        createEntityStyle({ x, y, width, height, opacity, scale, rotation, zIndex, hidden }),\n      ]}\n    >",
         "sourcePath": "src/features/game-presentation/adapters/inbound/GameEntity.tsx"
       },
       {

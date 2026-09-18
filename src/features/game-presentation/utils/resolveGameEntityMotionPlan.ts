@@ -1,7 +1,4 @@
-import type {
-  GameEntityEasing,
-  GameEntityMotionProps,
-} from '../../../types/gamePresentation';
+import type { GameEntityEasing, GameEntityMotionProps } from '../../../types/gamePresentation';
 
 export interface GameEntityMotionPlan {
   readonly transitionDurationMs: number;

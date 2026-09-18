@@ -4,16 +4,33 @@ import { Animated, Easing } from 'react-native';
 import type { GameEntityEasing } from '../../../types/gamePresentation';
 import type { GameEntityMotionPlan } from './resolveGameEntityMotionPlan';
 
+interface MotionAnimationInput {
+  readonly durationMs: number;
+  readonly delayMs: number;
+  readonly easing: GameEntityEasing;
+  readonly repeat: boolean;
+  readonly alternate: boolean;
+}
+
 /*** Drive one optional relative GameEntity motion timeline without changing game-session state. */
 export function useGameEntityMotionProgress(plan: GameEntityMotionPlan): Animated.Value {
   const [progress] = React.useState(() => new Animated.Value(0));
   const signature = createMotionSignature(plan);
   const previousSignature = React.useRef(signature);
+  const {
+    motionEnabled,
+    motionPaused,
+    motionDurationMs,
+    motionDelayMs,
+    motionEasing,
+    motionRepeat,
+    motionAlternate,
+  } = plan;
 
   React.useEffect(() => {
     progress.stopAnimation();
 
-    if (!plan.motionEnabled) {
+    if (!motionEnabled) {
       progress.setValue(0);
       return undefined;
     }
@@ -23,41 +40,57 @@ export function useGameEntityMotionProgress(plan: GameEntityMotionPlan): Animate
       previousSignature.current = signature;
     }
 
-    if (plan.motionPaused) return undefined;
+    if (motionPaused) return undefined;
 
-    const animation = createMotionAnimation(progress, plan);
+    const animation = createMotionAnimation(progress, {
+      durationMs: motionDurationMs,
+      delayMs: motionDelayMs,
+      easing: motionEasing,
+      repeat: motionRepeat,
+      alternate: motionAlternate,
+    });
     animation.start();
     return () => animation.stop();
-  }, [plan, progress, signature]);
+  }, [
+    motionAlternate,
+    motionDelayMs,
+    motionDurationMs,
+    motionEasing,
+    motionEnabled,
+    motionPaused,
+    motionRepeat,
+    progress,
+    signature,
+  ]);
 
   return progress;
 }
 
 /*** Create the one-shot or repeating React Native motion sequence for one entity. */
-function createMotionAnimation(progress: Animated.Value, plan: GameEntityMotionPlan) {
+function createMotionAnimation(progress: Animated.Value, input: MotionAnimationInput) {
   const forward = () =>
     Animated.timing(progress, {
       toValue: 1,
-      duration: plan.motionDurationMs,
-      easing: resolveMotionEasing(plan.motionEasing),
+      duration: input.durationMs,
+      easing: resolveMotionEasing(input.easing),
       useNativeDriver: false,
     });
   const reverse = () =>
     Animated.timing(progress, {
       toValue: 0,
-      duration: plan.motionDurationMs,
-      easing: resolveMotionEasing(plan.motionEasing),
+      duration: input.durationMs,
+      easing: resolveMotionEasing(input.easing),
       useNativeDriver: false,
     });
-  const movement = plan.motionAlternate
+  const movement = input.alternate
     ? Animated.loop(Animated.sequence([forward(), reverse()]))
-    : plan.motionRepeat
+    : input.repeat
       ? Animated.loop(forward())
       : forward();
 
-  return plan.motionDelayMs === 0
+  return input.delayMs === 0
     ? movement
-    : Animated.sequence([Animated.delay(plan.motionDelayMs), movement]);
+    : Animated.sequence([Animated.delay(input.delayMs), movement]);
 }
 
 /*** Create a stable signature for motion parameters that should restart the relative timeline. */

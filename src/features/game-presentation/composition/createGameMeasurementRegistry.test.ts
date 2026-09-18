@@ -24,7 +24,7 @@ describe('createGameMeasurementRegistry', () => {
 
   test('does not let an older cleanup delete a newer registration with the same id', async () => {
     const registry = createGameMeasurementRegistry();
-    const firstCleanup = registry.registerMeasurement('actor', async () => bounds);
+    const firstCleanup = registry.registerMeasurement('actor', () => Promise.resolve(bounds));
     const newerBounds = { ...bounds, left: 40, right: 60 };
     registry.registerMeasurement('actor', () => Promise.resolve(newerBounds));
 

@@ -21,6 +21,8 @@ describe('ZORA game plugin metadata', () => {
     expect(game.allowedChildren).toContain('GameInputZone');
     expect(game.allowedChildren).toContain('GameMeasurementProbe');
     expect(game.allowedChildren).toContain('GameOverlay');
+    expect(game.props.fill?.type).toBe('boolean');
+    expect(gameField.props.fill?.type).toBe('boolean');
   });
 
   test('describes bindable Game inputs and domain-neutral outputs', () => {

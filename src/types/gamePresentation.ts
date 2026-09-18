@@ -32,6 +32,13 @@ export interface GameEntityProps {
   readonly testID?: string;
 }
 
+export interface GameKeyboardBinding {
+  readonly key: string;
+  readonly eventType?: string;
+  readonly entityId?: string;
+  readonly preventDefault?: boolean;
+}
+
 export interface GameInputZoneProps {
   readonly eventType: string;
   readonly entityId?: string;
@@ -42,6 +49,7 @@ export interface GameInputZoneProps {
   readonly zIndex?: number;
   readonly enabled?: boolean;
   readonly continuous?: boolean;
+  readonly keyboardBindings?: readonly GameKeyboardBinding[];
   readonly accessibilityLabel?: string;
   readonly testID?: string;
 }

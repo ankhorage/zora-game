@@ -14,7 +14,7 @@
     {
       "id": "npm",
       "label": "npm",
-      "value": "v0.8.0",
+      "value": "v0.8.1",
       "color": "cb3837"
     },
     {
@@ -61,8 +61,16 @@
     }
   ],
   "usage": null,
-  "readmeUsageDescription": null,
-  "readmeUsage": [],
+  "readmeUsageDescription": "Use @ankhorage/game for serializable gameplay semantics and @ankhorage/zora-game for the React Native / React Native Web presentation edge. Embed Game in ordinary ZORA layout, render session state with GameEntity and overlays, and add input/measurement adapters only where the platform needs them.",
+  "readmeUsage": [
+    {
+      "title": "Embed a config-driven Game inside ordinary ZORA content.",
+      "description": "Embed a config-driven Game inside ordinary ZORA content.\n\nGame owns the local platform-neutral session, GameEntity renders positioned presentation, and\nGameOverlay composes HUD/feedback content. Set `fill` when the surrounding layout should give\nthe game all available space; no dedicated GameScreen runtime type is required.",
+      "language": "tsx",
+      "code": "import {\n  AppBar,\n  AppShell,\n  Screen,\n  ScreenSection,\n  Text,\n  ZoraProvider,\n  type ZoraTheme,\n} from '@ankhorage/zora';\nimport { Game, GameEntity, GameOverlay } from '@ankhorage/zora-game';\n\nconst gameTheme: ZoraTheme = {\n  id: 'basic-game-presentation',\n  name: 'Basic game presentation',\n  appCategory: 'games',\n  primaryColor: '#2563eb',\n  harmony: 'analogous',\n};\n\nconst definition = {\n  id: 'orb-field',\n  initialPhase: 'playing',\n  initialState: { score: 0 },\n  stages: [{ id: 'round' }],\n  rules: [],\n} as const;\n\nexport default function BasicGamePresentationApp() {\n  return (\n    <ZoraProvider initialMode=\"light\" theme={gameTheme}>\n      <AppShell header={<AppBar title=\"Orb field\" subtitle=\"Generic embeddable game UI\" />}>\n        <Screen>\n          <ScreenSection\n            title=\"Mini-game region\"\n            description=\"The game lives beside ordinary screen content.\"\n          >\n            <Text emphasis=\"muted\">\n              Game rules stay in @ankhorage/game; this package owns presentation and input adapters.\n            </Text>\n            <Game definition={definition} aspectRatio={1.4} minHeight={320}>\n              <GameEntity x={18} y={28} accessibilityLabel=\"Blue orb\">\n                <Text>●</Text>\n              </GameEntity>\n              <GameEntity x={68} y={52} scale={1.4} accessibilityLabel=\"Large orb\">\n                <Text>◆</Text>\n              </GameEntity>\n              <GameEntity x={46} y={78} accessibilityLabel=\"Player marker\">\n                <Text>▲</Text>\n              </GameEntity>\n              <GameOverlay placement=\"top\" padding={12}>\n                <Text>Score 0 / 5</Text>\n              </GameOverlay>\n            </Game>\n          </ScreenSection>\n        </Screen>\n      </AppShell>\n    </ZoraProvider>\n  );\n}",
+      "sourcePath": "examples/basic-game-presentation/App.tsx"
+    }
+  ],
   "readmeCli": null,
   "readmeConfig": null,
   "config": null,

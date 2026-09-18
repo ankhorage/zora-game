@@ -1,5 +1,11 @@
 # @ankhorage/zora-game
 
+## 0.8.1
+
+### Patch Changes
+
+- 4fd46db: Publish the basic embeddable game presentation example in generated Paradox README usage documentation.
+
 ## 0.8.0
 
 ### Minor Changes

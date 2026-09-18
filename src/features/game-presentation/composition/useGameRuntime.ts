@@ -8,13 +8,13 @@ import {
 import React from 'react';
 
 import type { GameProps } from '../../../types/gamePresentation';
-import type { GameRuntimeContextValue, GameRuntimeState } from '../../../types/gameRuntime';
+import type { GameRuntimeState, GameRuntimeValue } from '../../../types/gameRuntime';
 import { useGameScheduledEffects } from './useGameScheduledEffects';
 
 const EMPTY_GAME_INPUT: GameInput = {};
 
 /*** Own one local transient Game session while delegating all domain transitions to @ankhorage/game. */
-export function useGameRuntime(props: GameProps): GameRuntimeContextValue {
+export function useGameRuntime(props: GameProps): GameRuntimeValue {
   const { definition, input = EMPTY_GAME_INPUT, seed = 0, resetKey = '' } = props;
   const definitionRef = useLatestValue(definition);
   const inputRef = useLatestValue(input);
@@ -36,7 +36,7 @@ export function useGameRuntime(props: GameProps): GameRuntimeContextValue {
   });
   useGameOutputEmitter(runtime, outputRef);
 
-  const dispatch = React.useCallback<GameRuntimeContextValue['dispatch']>(
+  const dispatch = React.useCallback<GameRuntimeValue['dispatch']>(
     (event) => {
       const now = Date.now();
       setRuntime((current) =>

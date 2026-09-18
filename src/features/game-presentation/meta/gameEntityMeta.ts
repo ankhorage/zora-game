@@ -11,6 +11,19 @@ export const gameEntityMeta = {
     label: 'Game entity',
     defaultProps: { x: 0, y: 0, opacity: 1, scale: 1, rotation: 0, zIndex: 0 },
   },
+  bindings: {
+    props: {
+      x: { value: { type: 'number' }, acceptsFallback: true },
+      y: { value: { type: 'number' }, acceptsFallback: true },
+      width: { value: { type: 'number' }, acceptsFallback: true },
+      height: { value: { type: 'number' }, acceptsFallback: true },
+      opacity: { value: { type: 'number' }, acceptsFallback: true },
+      scale: { value: { type: 'number' }, acceptsFallback: true },
+      rotation: { value: { type: 'number' }, acceptsFallback: true },
+      zIndex: { value: { type: 'number' }, acceptsFallback: true },
+      hidden: { value: { type: 'boolean' }, acceptsFallback: true },
+    },
+  },
   props: {
     x: {
       type: 'number',

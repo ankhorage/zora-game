@@ -1,7 +1,4 @@
-import type {
-  GameMeasurementReader,
-  GameMeasurementRegistry,
-} from '../../../types/gameRuntime';
+import type { GameMeasurementReader, GameMeasurementRegistry } from '../../../types/gameRuntime';
 
 /*** Create one isolated measurement registry for an embeddable Game instance. */
 export function createGameMeasurementRegistry(): GameMeasurementRegistry {

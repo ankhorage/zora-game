@@ -14,7 +14,7 @@
     {
       "id": "npm",
       "label": "npm",
-      "value": "v0.3.0",
+      "value": "v0.4.0",
       "color": "cb3837"
     },
     {
@@ -94,6 +94,7 @@
       "isEntrypoint": false,
       "dependencies": [
         "src/features/game-presentation/adapters/inbound/GameField.tsx",
+        "src/features/game-presentation/composition/createGameBindingContext.ts",
         "src/features/game-presentation/composition/GameRuntimeContext.ts",
         "src/features/game-presentation/composition/useGameRuntime.ts",
         "src/types/gamePresentation.ts"
@@ -155,6 +156,22 @@
       ],
       "exports": [
         "useGameInputZoneResponder"
+      ]
+    },
+    {
+      "path": "src/features/game-presentation/composition/createGameBindingContext.test.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/game-presentation/composition/createGameBindingContext.ts"
+      ],
+      "exports": []
+    },
+    {
+      "path": "src/features/game-presentation/composition/createGameBindingContext.ts",
+      "isEntrypoint": false,
+      "dependencies": [],
+      "exports": [
+        "createGameBindingContext"
       ]
     },
     {
@@ -376,7 +393,7 @@
       "modulePath": "src/features/game-presentation/adapters/inbound/Game.tsx",
       "sourceLocation": {
         "filePath": "src/features/game-presentation/adapters/inbound/Game.tsx",
-        "line": 9,
+        "line": 11,
         "column": 1
       },
       "exportPaths": [
@@ -1102,7 +1119,7 @@
       "modulePath": "src/features/game-presentation/adapters/inbound/Game.tsx",
       "sourceLocation": {
         "filePath": "src/features/game-presentation/adapters/inbound/Game.tsx",
-        "line": 9,
+        "line": 11,
         "column": 1
       },
       "exportPaths": [
@@ -1503,7 +1520,7 @@
       "description": "Bind one serializable game definition to a local transient session and presentation field.",
       "sourceLocation": {
         "filePath": "src/features/game-presentation/adapters/inbound/Game.tsx",
-        "line": 9,
+        "line": 11,
         "column": 1
       }
     },
@@ -1576,6 +1593,15 @@
       "sourceLocation": {
         "filePath": "src/features/game-presentation/adapters/inbound/useGameInputZoneResponder.ts",
         "line": 14,
+        "column": 1
+      }
+    },
+    {
+      "name": "createGameBindingContext",
+      "description": "Create the canonical Runtime context namespace for one local game session.",
+      "sourceLocation": {
+        "filePath": "src/features/game-presentation/composition/createGameBindingContext.ts",
+        "line": 4,
         "column": 1
       }
     },
@@ -1701,7 +1727,7 @@
       "description": "Require one composed component metadata entry for focused assertions.",
       "sourceLocation": {
         "filePath": "src/ZORA_PLUGIN_METADATA.test.ts",
-        "line": 55,
+        "line": 64,
         "column": 1
       }
     }
@@ -1866,6 +1892,11 @@
         "sourcePath": "src/features/game-presentation/public.ts"
       },
       {
+        "fromPath": "src/features/game-presentation/composition/createGameBindingContext.test.ts",
+        "toPath": "src/features/game-presentation/composition/createGameBindingContext.ts",
+        "sourcePath": "src/features/game-presentation/composition/createGameBindingContext.test.ts"
+      },
+      {
         "fromPath": "src/features/game-presentation/composition/GameRuntimeContext.ts",
         "toPath": "src/types/gameRuntime.ts",
         "sourcePath": "src/features/game-presentation/composition/GameRuntimeContext.ts"
@@ -1908,6 +1939,11 @@
       {
         "fromPath": "src/features/game-presentation/adapters/inbound/Game.tsx",
         "toPath": "src/types/gamePresentation.ts",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/Game.tsx"
+      },
+      {
+        "fromPath": "src/features/game-presentation/adapters/inbound/Game.tsx",
+        "toPath": "src/features/game-presentation/composition/createGameBindingContext.ts",
         "sourcePath": "src/features/game-presentation/adapters/inbound/Game.tsx"
       },
       {
@@ -2006,6 +2042,36 @@
         "toSymbol": "expect",
         "callExpression": "expect",
         "sourcePath": "src/ZORA_PLUGIN_METADATA.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/game-presentation/composition/createGameBindingContext.test.ts",
+        "toSymbol": "describe",
+        "callExpression": "describe",
+        "sourcePath": "src/features/game-presentation/composition/createGameBindingContext.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/game-presentation/composition/createGameBindingContext.test.ts",
+        "toSymbol": "test",
+        "callExpression": "test",
+        "sourcePath": "src/features/game-presentation/composition/createGameBindingContext.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/game-presentation/composition/createGameBindingContext.test.ts",
+        "toSymbol": "createGameBindingContext",
+        "callExpression": "createGameBindingContext",
+        "sourcePath": "src/features/game-presentation/composition/createGameBindingContext.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/game-presentation/composition/createGameBindingContext.test.ts",
+        "toSymbol": "expect",
+        "callExpression": "expect",
+        "sourcePath": "src/features/game-presentation/composition/createGameBindingContext.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/game-presentation/composition/createGameBindingContext.test.ts",
+        "toSymbol": "resolveRuntimeBindingValueSync",
+        "callExpression": "resolveRuntimeBindingValueSync",
+        "sourcePath": "src/features/game-presentation/composition/createGameBindingContext.test.ts"
       },
       {
         "fromSymbol": "useGameRuntime",
@@ -2155,6 +2221,12 @@
         "fromSymbol": "Game",
         "toSymbol": "useGameRuntime",
         "callExpression": "useGameRuntime",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/Game.tsx"
+      },
+      {
+        "fromSymbol": "src/features/game-presentation/adapters/inbound/Game.tsx",
+        "toSymbol": "createGameBindingContext",
+        "callExpression": "createGameBindingContext",
         "sourcePath": "src/features/game-presentation/adapters/inbound/Game.tsx"
       },
       {
@@ -2317,8 +2389,14 @@
       },
       {
         "fromComponent": "Game",
+        "toComponent": "RuntimeRendererConfigProvider",
+        "jsxElement": "<RuntimeRendererConfigProvider value={runtimeBindingConfig}>",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/Game.tsx"
+      },
+      {
+        "fromComponent": "Game",
         "toComponent": "GameField",
-        "jsxElement": "<GameField\n        {...(props.aspectRatio === undefined ? {} : { aspectRatio: props.aspectRatio })}\n        {...(props.minHeight === undefined ? {} : { minHeight: props.minHeight })}\n        {...(props.clip === undefined ? {} : { clip: props.clip })}\n        {...(props.accessibilityLabel === undefined\n          ? {}\n          : { accessibilityLabel: props.accessibilityLabel })}\n        {...(props.testID === undefined ? {} : { testID: props.testID })}\n      >",
+        "jsxElement": "<GameField\n          {...(props.aspectRatio === undefined ? {} : { aspectRatio: props.aspectRatio })}\n          {...(props.minHeight === undefined ? {} : { minHeight: props.minHeight })}\n          {...(props.clip === undefined ? {} : { clip: props.clip })}\n          {...(props.accessibilityLabel === undefined\n            ? {}\n            : { accessibilityLabel: props.accessibilityLabel })}\n          {...(props.testID === undefined ? {} : { testID: props.testID })}\n        >",
         "sourcePath": "src/features/game-presentation/adapters/inbound/Game.tsx"
       },
       {

@@ -1,5 +1,12 @@
 # @ankhorage/zora-game
 
+## 0.4.0
+
+### Minor Changes
+
+- fd5e7c9: Expose each local Game session through the canonical Runtime binding context so ordinary ZORA props,
+  including positioned entity, text, progress, and health presentation, can bind to game session data.
+
 ## 0.3.0
 
 ### Minor Changes

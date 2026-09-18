@@ -2,7 +2,7 @@
 
 ## Game
 
-Source: `src/features/game-presentation/adapters/inbound/Game.tsx:9:1`
+Source: `src/features/game-presentation/adapters/inbound/Game.tsx:11:1`
 
 Bind one serializable game definition to a local transient session and presentation field.
 

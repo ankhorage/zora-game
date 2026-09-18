@@ -27,6 +27,7 @@ export function Game(props: GameProps) {
         <GameField
           {...(props.aspectRatio === undefined ? {} : { aspectRatio: props.aspectRatio })}
           {...(props.minHeight === undefined ? {} : { minHeight: props.minHeight })}
+          {...(props.fill === undefined ? {} : { fill: props.fill })}
           {...(props.clip === undefined ? {} : { clip: props.clip })}
           {...(props.accessibilityLabel === undefined
             ? {}

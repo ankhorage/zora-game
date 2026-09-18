@@ -40,6 +40,15 @@ describe('ZORA game plugin metadata', () => {
     expect(gameEntity.bindings?.props?.y?.value.type).toBe('number');
     expect(gameEntity.bindings?.props?.hidden?.value.type).toBe('boolean');
     expect(gameEntity.bindings?.props?.measurementId?.value.type).toBe('string');
+    expect(gameEntity.bindings?.props?.transitionDurationMs?.value.type).toBe('number');
+    expect(gameEntity.bindings?.props?.motionOffsetY?.value.type).toBe('number');
+    expect(gameEntity.bindings?.props?.motionRepeat?.value.type).toBe('boolean');
+    expect(gameEntity.props.motionEasing?.enum).toEqual([
+      'linear',
+      'ease-in',
+      'ease-out',
+      'ease-in-out',
+    ]);
   });
 
   test('keeps the generic presentation vocabulary free of product-specific concepts', () => {

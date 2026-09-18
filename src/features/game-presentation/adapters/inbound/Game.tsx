@@ -1,6 +1,8 @@
+import { RuntimeRendererConfigProvider } from '@ankhorage/runtime';
 import React from 'react';
 
 import type { GameProps } from '../../../../types/gamePresentation';
+import { createGameBindingContext } from '../../composition/createGameBindingContext';
 import { GameRuntimeContext } from '../../composition/GameRuntimeContext';
 import { useGameRuntime } from '../../composition/useGameRuntime';
 import { GameField } from './GameField';
@@ -11,7 +13,8 @@ export function Game(props: GameProps) {
 
   return (
     <GameRuntimeContext.Provider value={runtime}>
-      <GameField
+      <RuntimeRendererConfigProvider value={runtimeBindingConfig}>
+        <GameField
         {...(props.aspectRatio === undefined ? {} : { aspectRatio: props.aspectRatio })}
         {...(props.minHeight === undefined ? {} : { minHeight: props.minHeight })}
         {...(props.clip === undefined ? {} : { clip: props.clip })}
@@ -21,7 +24,8 @@ export function Game(props: GameProps) {
         {...(props.testID === undefined ? {} : { testID: props.testID })}
       >
         {props.children}
-      </GameField>
+        </GameField>
+      </RuntimeRendererConfigProvider>
     </GameRuntimeContext.Provider>
   );
 }

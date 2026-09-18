@@ -1,5 +1,11 @@
 # @ankhorage/zora-game
 
+## 0.6.2
+
+### Patch Changes
+
+- 0f61a17: Update Ankhorage dependencies: `@ankhorage/runtime`, `@ankhorage/zora`.
+
 ## 0.6.1
 
 ### Patch Changes

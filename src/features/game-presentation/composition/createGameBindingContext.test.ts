@@ -1,5 +1,5 @@
 import type { GameSession } from '@ankhorage/game';
-import { mergeRuntimeRendererConfig, resolveRuntimeBindingValueSync } from '@ankhorage/runtime';
+import { resolveRuntimeBindingValueSync } from '@ankhorage/runtime/bindings';
 import { describe, expect, test } from 'bun:test';
 
 import { createGameBindingContext } from './createGameBindingContext';
@@ -39,18 +39,9 @@ describe('createGameBindingContext', () => {
     ).toBe(80);
   });
 
-  test('preserves inherited context while replacing only the local game namespace', () => {
-    const merged = mergeRuntimeRendererConfig(
-      { bindingContext: createGameBindingContext(session) },
-      {
-        bindingContext: {
-          route: { params: { id: 'demo' } },
-          game: { session: { definitionId: 'outer' } },
-        },
-      },
-    );
-
-    expect(merged.bindingContext?.route).toEqual({ params: { id: 'demo' } });
-    expect(merged.bindingContext?.game).toEqual({ session });
+  test('owns only the local game namespace', () => {
+    expect(createGameBindingContext(session)).toEqual({
+      game: { session },
+    });
   });
 });

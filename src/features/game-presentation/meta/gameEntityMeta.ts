@@ -22,6 +22,7 @@ export const gameEntityMeta = {
       rotation: { value: { type: 'number' }, acceptsFallback: true },
       zIndex: { value: { type: 'number' }, acceptsFallback: true },
       hidden: { value: { type: 'boolean' }, acceptsFallback: true },
+      measurementId: { value: { type: 'string' }, acceptsFallback: true },
     },
   },
   props: {
@@ -92,6 +93,12 @@ export const gameEntityMeta = {
       label: 'Pointer events',
       enum: ['auto', 'box-none', 'box-only', 'none'],
       default: 'auto',
+      authoring: { authority: 'instance' },
+    },
+    measurementId: {
+      type: 'string',
+      category: 'Measurement',
+      label: 'Measurement id',
       authoring: { authority: 'instance' },
     },
     accessibilityLabel: {

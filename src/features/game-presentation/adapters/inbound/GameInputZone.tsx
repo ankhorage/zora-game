@@ -1,10 +1,10 @@
-import { StyleSheet, View, type ViewStyle } from 'react-native';
+import { Platform, StyleSheet, View, type ViewStyle } from 'react-native';
 
 import type { GameInputZoneProps } from '../../../../types/gamePresentation';
 import { toGamePercentage } from '../../utils/toGamePercentage';
 import { useGameInputZoneResponder } from './useGameInputZoneResponder';
 
-/*** Capture pointer/touch geometry and dispatch only normalized generic Game events. */
+/*** Capture pointer/touch geometry and optional keyboard input as normalized generic Game events. */
 export function GameInputZone({
   x = 0,
   y = 0,
@@ -13,22 +13,31 @@ export function GameInputZone({
   zIndex = 0,
   enabled = true,
   continuous = true,
+  keyboardBindings,
   accessibilityLabel,
   testID,
   ...inputProps
 }: GameInputZoneProps) {
-  const { dispatchPointer, handleLayout, shouldSetResponder } = useGameInputZoneResponder({
-    ...inputProps,
-    x,
-    y,
-    width,
-    height,
+  const { dispatchKeyboard, dispatchPointer, handleLayout, shouldSetResponder } =
+    useGameInputZoneResponder({
+      ...inputProps,
+      x,
+      y,
+      width,
+      height,
+      enabled,
+      continuous,
+      ...(keyboardBindings === undefined ? {} : { keyboardBindings }),
+    });
+  const keyboardProps = createGameInputZoneKeyboardProps({
+    dispatchKeyboard,
     enabled,
-    continuous,
+    keyboardBindings,
   });
 
   return (
     <View
+      {...keyboardProps}
       {...(accessibilityLabel === undefined ? {} : { accessibilityLabel })}
       {...(testID === undefined ? {} : { testID })}
       {...(continuous
@@ -41,6 +50,24 @@ export function GameInputZone({
       style={createInputZoneStyle({ x, y, width, height, zIndex })}
     />
   );
+}
+
+interface GameInputZoneKeyboardPropsInput {
+  readonly dispatchKeyboard: (event: { readonly key: string; preventDefault(): void }) => void;
+  readonly enabled: boolean;
+  readonly keyboardBindings: GameInputZoneProps['keyboardBindings'];
+}
+
+/*** Add a focusable web keyboard target only when the input zone owns key bindings. */
+function createGameInputZoneKeyboardProps({
+  dispatchKeyboard,
+  enabled,
+  keyboardBindings,
+}: GameInputZoneKeyboardPropsInput) {
+  if (Platform.OS !== 'web' || !enabled || keyboardBindings === undefined) return {};
+  if (keyboardBindings.length === 0) return {};
+
+  return { onKeyDown: dispatchKeyboard, tabIndex: 0 as const };
 }
 
 interface InputZoneStyleInput {

@@ -2,6 +2,7 @@ export type {
   GameEntityProps,
   GameFieldProps,
   GameInputZoneProps,
+  GameKeyboardBinding,
   GameOverlayPlacement,
   GameOverlayProps,
   GamePointerEvents,

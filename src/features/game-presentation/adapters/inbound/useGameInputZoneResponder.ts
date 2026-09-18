@@ -3,7 +3,13 @@ import type { GestureResponderEvent, LayoutChangeEvent } from 'react-native';
 
 import type { GameInputZoneProps } from '../../../../types/gamePresentation';
 import { GameRuntimeContext } from '../../composition/GameRuntimeContext';
+import { createGameKeyboardEvent } from './createGameKeyboardEvent';
 import { createGamePointerEvent } from './createGamePointerEvent';
+
+interface GameKeyboardInputEvent {
+  readonly key: string;
+  preventDefault(): void;
+}
 
 interface MeasuredSize {
   readonly width: number;
@@ -41,7 +47,23 @@ export function useGameInputZoneResponder(props: GameInputZoneProps) {
     [props.entityId, props.eventType, props.height, props.width, props.x, props.y, runtime],
   );
 
+  const dispatchKeyboard = React.useCallback(
+    (event: GameKeyboardInputEvent) => {
+      const result = createGameKeyboardEvent({
+        bindings: props.keyboardBindings ?? [],
+        fallbackEventType: props.eventType,
+        ...(props.entityId === undefined ? {} : { fallbackEntityId: props.entityId }),
+        key: event.key,
+      });
+      if (result === undefined) return;
+      if (result.preventDefault) event.preventDefault();
+      runtime.dispatch(result.event);
+    },
+    [props.entityId, props.eventType, props.keyboardBindings, runtime],
+  );
+
   return {
+    dispatchKeyboard,
     dispatchPointer,
     handleLayout,
     shouldSetResponder: () => props.enabled ?? true,

@@ -22,16 +22,6 @@ describe('ZORA game plugin metadata', () => {
     expect(game.allowedChildren).toContain('GameOverlay');
   });
 
-  test('keeps Game input zones scoped to runtime-owning Game parents', () => {
-    const catalog = composeZoraPluginMetadata([ZORA_CORE_PLUGIN_METADATA, ZORA_PLUGIN_METADATA]);
-    const gameInputZone = readComponentMeta(catalog.componentMeta.GameInputZone, 'GameInputZone');
-
-    expect(gameInputZone.props.eventType?.type).toBe('string');
-    expect(gameInputZone.props.continuous?.type).toBe('boolean');
-    expect(catalog.componentMeta.Game?.allowedChildren).toContain('GameInputZone');
-    expect(catalog.componentMeta.GameField?.allowedChildren).not.toContain('GameInputZone');
-  });
-
   test('describes bindable Game inputs and domain-neutral outputs', () => {
     const catalog = composeZoraPluginMetadata([ZORA_CORE_PLUGIN_METADATA, ZORA_PLUGIN_METADATA]);
     const game = readComponentMeta(catalog.componentMeta.Game, 'Game');
@@ -57,6 +47,25 @@ describe('ZORA game plugin metadata', () => {
     expect(serialized).not.toContain('vocabulary');
     expect(serialized).not.toContain('wordcreature');
     expect(serialized).not.toContain('letterprojectile');
+  });
+});
+
+describe('ZORA game input zone metadata', () => {
+  test('keeps input zones scoped to runtime-owning Game parents', () => {
+    const catalog = composeZoraPluginMetadata([ZORA_CORE_PLUGIN_METADATA, ZORA_PLUGIN_METADATA]);
+    const gameInputZone = readComponentMeta(catalog.componentMeta.GameInputZone, 'GameInputZone');
+
+    expect(gameInputZone.props.eventType?.type).toBe('string');
+    expect(gameInputZone.props.continuous?.type).toBe('boolean');
+    expect(gameInputZone.props.keyboardBindings?.type).toBe('array');
+    expect(gameInputZone.props.keyboardBindings?.itemSchema?.map(({ key }) => key)).toEqual([
+      'key',
+      'eventType',
+      'entityId',
+      'preventDefault',
+    ]);
+    expect(catalog.componentMeta.Game?.allowedChildren).toContain('GameInputZone');
+    expect(catalog.componentMeta.GameField?.allowedChildren).not.toContain('GameInputZone');
   });
 });
 

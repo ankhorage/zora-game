@@ -1,3 +1,13 @@
+/***
+ * Embed a config-driven Game inside ordinary ZORA content.
+ *
+ * Game owns the local platform-neutral session, GameEntity renders positioned presentation, and
+ * GameOverlay composes HUD/feedback content. Set `fill` when the surrounding layout should give
+ * the game all available space; no dedicated GameScreen runtime type is required.
+ *
+ * @usage
+ * @readme
+ */
 import {
   AppBar,
   AppShell,
@@ -7,7 +17,7 @@ import {
   ZoraProvider,
   type ZoraTheme,
 } from '@ankhorage/zora';
-import { GameEntity, GameField, GameOverlay } from '@ankhorage/zora-game';
+import { Game, GameEntity, GameOverlay } from '@ankhorage/zora-game';
 
 const gameTheme: ZoraTheme = {
   id: 'basic-game-presentation',
@@ -17,15 +27,14 @@ const gameTheme: ZoraTheme = {
   harmony: 'analogous',
 };
 
-/***
- * Minimal non-product game presentation example.
- *
- * Compose a field, positioned entities, and overlay content without embedding
- * game rules or requiring a dedicated full-screen game application type.
- *
- * @usage
- * @readme
- */
+const definition = {
+  id: 'orb-field',
+  initialPhase: 'playing',
+  initialState: { score: 0 },
+  stages: [{ id: 'round' }],
+  rules: [],
+} as const;
+
 export default function BasicGamePresentationApp() {
   return (
     <ZoraProvider initialMode="light" theme={gameTheme}>
@@ -33,12 +42,12 @@ export default function BasicGamePresentationApp() {
         <Screen>
           <ScreenSection
             title="Mini-game region"
-            description="The game field lives beside ordinary screen content."
+            description="The game lives beside ordinary screen content."
           >
             <Text emphasis="muted">
-              This example contains presentation only; game semantics remain outside ZORA.
+              Game rules stay in @ankhorage/game; this package owns presentation and input adapters.
             </Text>
-            <GameField aspectRatio={1.4} minHeight={320}>
+            <Game definition={definition} aspectRatio={1.4} minHeight={320}>
               <GameEntity x={18} y={28} accessibilityLabel="Blue orb">
                 <Text>●</Text>
               </GameEntity>
@@ -49,9 +58,9 @@ export default function BasicGamePresentationApp() {
                 <Text>▲</Text>
               </GameEntity>
               <GameOverlay placement="top" padding={12}>
-                <Text>Score 2 / 5</Text>
+                <Text>Score 0 / 5</Text>
               </GameOverlay>
-            </GameField>
+            </Game>
           </ScreenSection>
         </Screen>
       </AppShell>

@@ -14,7 +14,7 @@
     {
       "id": "npm",
       "label": "npm",
-      "value": "v0.7.0",
+      "value": "v0.8.1",
       "color": "cb3837"
     },
     {
@@ -61,8 +61,16 @@
     }
   ],
   "usage": null,
-  "readmeUsageDescription": null,
-  "readmeUsage": [],
+  "readmeUsageDescription": "Use @ankhorage/game for serializable gameplay semantics and @ankhorage/zora-game for the React Native / React Native Web presentation edge. Embed Game in ordinary ZORA layout, render session state with GameEntity and overlays, and add input/measurement adapters only where the platform needs them.",
+  "readmeUsage": [
+    {
+      "title": "Embed a config-driven Game inside ordinary ZORA content.",
+      "description": "Embed a config-driven Game inside ordinary ZORA content.\n\nGame owns the local platform-neutral session, GameEntity renders positioned presentation, and\nGameOverlay composes HUD/feedback content. Set `fill` when the surrounding layout should give\nthe game all available space; no dedicated GameScreen runtime type is required.",
+      "language": "tsx",
+      "code": "import {\n  AppBar,\n  AppShell,\n  Screen,\n  ScreenSection,\n  Text,\n  ZoraProvider,\n  type ZoraTheme,\n} from '@ankhorage/zora';\nimport { Game, GameEntity, GameOverlay } from '@ankhorage/zora-game';\n\nconst gameTheme: ZoraTheme = {\n  id: 'basic-game-presentation',\n  name: 'Basic game presentation',\n  appCategory: 'games',\n  primaryColor: '#2563eb',\n  harmony: 'analogous',\n};\n\nconst definition = {\n  id: 'orb-field',\n  initialPhase: 'playing',\n  initialState: { score: 0 },\n  stages: [{ id: 'round' }],\n  rules: [],\n} as const;\n\nexport default function BasicGamePresentationApp() {\n  return (\n    <ZoraProvider initialMode=\"light\" theme={gameTheme}>\n      <AppShell header={<AppBar title=\"Orb field\" subtitle=\"Generic embeddable game UI\" />}>\n        <Screen>\n          <ScreenSection\n            title=\"Mini-game region\"\n            description=\"The game lives beside ordinary screen content.\"\n          >\n            <Text emphasis=\"muted\">\n              Game rules stay in @ankhorage/game; this package owns presentation and input adapters.\n            </Text>\n            <Game definition={definition} aspectRatio={1.4} minHeight={320}>\n              <GameEntity x={18} y={28} accessibilityLabel=\"Blue orb\">\n                <Text>●</Text>\n              </GameEntity>\n              <GameEntity x={68} y={52} scale={1.4} accessibilityLabel=\"Large orb\">\n                <Text>◆</Text>\n              </GameEntity>\n              <GameEntity x={46} y={78} accessibilityLabel=\"Player marker\">\n                <Text>▲</Text>\n              </GameEntity>\n              <GameOverlay placement=\"top\" padding={12}>\n                <Text>Score 0 / 5</Text>\n              </GameOverlay>\n            </Game>\n          </ScreenSection>\n        </Screen>\n      </AppShell>\n    </ZoraProvider>\n  );\n}",
+      "sourcePath": "examples/basic-game-presentation/App.tsx"
+    }
+  ],
   "readmeCli": null,
   "readmeConfig": null,
   "config": null,
@@ -789,7 +797,7 @@
       "modulePath": "src/types/gamePresentation.ts",
       "sourceLocation": {
         "filePath": "src/types/gamePresentation.ts",
-        "line": 37,
+        "line": 38,
         "column": 1
       },
       "exportPaths": [
@@ -1020,10 +1028,10 @@
       ],
       "signatures": [
         {
-          "label": "({\n  children,\n  aspectRatio,\n  minHeight = 240,\n  clip = true,\n  accessibilityLabel,\n  testID,\n}: GameFieldProps) => import(\"react\").JSX.Element",
+          "label": "({\n  children,\n  aspectRatio,\n  minHeight = 240,\n  fill = false,\n  clip = true,\n  accessibilityLabel,\n  testID,\n}: GameFieldProps) => import(\"react\").JSX.Element",
           "parameters": [
             {
-              "name": "{\n  children,\n  aspectRatio,\n  minHeight = 240,\n  clip = true,\n  accessibilityLabel,\n  testID,\n}",
+              "name": "{\n  children,\n  aspectRatio,\n  minHeight = 240,\n  fill = false,\n  clip = true,\n  accessibilityLabel,\n  testID,\n}",
               "type": "GameFieldProps",
               "required": true,
               "description": null
@@ -1077,6 +1085,13 @@
         },
         {
           "name": "clip",
+          "kind": "property",
+          "type": "boolean",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "fill",
           "kind": "property",
           "type": "boolean",
           "required": false,
@@ -1144,7 +1159,7 @@
       "modulePath": "src/types/gamePresentation.ts",
       "sourceLocation": {
         "filePath": "src/types/gamePresentation.ts",
-        "line": 61,
+        "line": 62,
         "column": 1
       },
       "exportPaths": [
@@ -1251,7 +1266,7 @@
       "modulePath": "src/types/gamePresentation.ts",
       "sourceLocation": {
         "filePath": "src/types/gamePresentation.ts",
-        "line": 54,
+        "line": 55,
         "column": 1
       },
       "exportPaths": [
@@ -1336,7 +1351,7 @@
       "modulePath": "src/types/gamePresentation.ts",
       "sourceLocation": {
         "filePath": "src/types/gamePresentation.ts",
-        "line": 76,
+        "line": 77,
         "column": 1
       },
       "exportPaths": [
@@ -1455,7 +1470,7 @@
       "modulePath": "src/types/gamePresentation.ts",
       "sourceLocation": {
         "filePath": "src/types/gamePresentation.ts",
-        "line": 85,
+        "line": 86,
         "column": 1
       },
       "exportPaths": [
@@ -1540,7 +1555,7 @@
       "modulePath": "src/types/gamePresentation.ts",
       "sourceLocation": {
         "filePath": "src/types/gamePresentation.ts",
-        "line": 94,
+        "line": 95,
         "column": 1
       },
       "exportPaths": [
@@ -1589,6 +1604,13 @@
           "kind": "property",
           "type": "GameDefinition",
           "required": true,
+          "description": null
+        },
+        {
+          "name": "fill",
+          "kind": "property",
+          "type": "boolean",
+          "required": false,
           "description": null
         },
         {
@@ -1747,6 +1769,12 @@
           "name": "definition",
           "type": "GameDefinition",
           "required": true,
+          "description": null
+        },
+        {
+          "name": "fill",
+          "type": "boolean | undefined",
+          "required": false,
           "description": null
         },
         {
@@ -2010,6 +2038,13 @@
           "type": "boolean | undefined",
           "required": false,
           "defaultValue": "true",
+          "description": null
+        },
+        {
+          "name": "fill",
+          "type": "boolean | undefined",
+          "required": false,
+          "defaultValue": "false",
           "description": null
         },
         {
@@ -2609,7 +2644,7 @@
       "description": "Require one composed component metadata entry for focused assertions.",
       "sourceLocation": {
         "filePath": "src/ZORA_PLUGIN_METADATA.test.ts",
-        "line": 108,
+        "line": 110,
         "column": 1
       }
     }
@@ -3742,7 +3777,7 @@
       {
         "fromComponent": "Game",
         "toComponent": "GameField",
-        "jsxElement": "<GameField\n          {...(props.aspectRatio === undefined ? {} : { aspectRatio: props.aspectRatio })}\n          {...(props.minHeight === undefined ? {} : { minHeight: props.minHeight })}\n          {...(props.clip === undefined ? {} : { clip: props.clip })}\n          {...(props.accessibilityLabel === undefined\n            ? {}\n            : { accessibilityLabel: props.accessibilityLabel })}\n          {...(props.testID === undefined ? {} : { testID: props.testID })}\n        >",
+        "jsxElement": "<GameField\n          {...(props.aspectRatio === undefined ? {} : { aspectRatio: props.aspectRatio })}\n          {...(props.minHeight === undefined ? {} : { minHeight: props.minHeight })}\n          {...(props.fill === undefined ? {} : { fill: props.fill })}\n          {...(props.clip === undefined ? {} : { clip: props.clip })}\n          {...(props.accessibilityLabel === undefined\n            ? {}\n            : { accessibilityLabel: props.accessibilityLabel })}\n          {...(props.testID === undefined ? {} : { testID: props.testID })}\n        >",
         "sourcePath": "src/features/game-presentation/adapters/inbound/Game.tsx"
       },
       {
@@ -3754,7 +3789,7 @@
       {
         "fromComponent": "GameField",
         "toComponent": "View",
-        "jsxElement": "<View\n      {...(accessibilityLabel === undefined ? {} : { accessibilityLabel })}\n      {...(testID === undefined ? {} : { testID })}\n      style={[\n        styles.root,\n        clip ? styles.clipped : styles.overflowVisible,\n        {\n          ...(aspectRatio === undefined ? {} : { aspectRatio }),\n          minHeight,\n        },\n      ]}\n    >",
+        "jsxElement": "<View\n      {...(accessibilityLabel === undefined ? {} : { accessibilityLabel })}\n      {...(testID === undefined ? {} : { testID })}\n      style={[\n        styles.root,\n        clip ? styles.clipped : styles.overflowVisible,\n        fill ? styles.fill : undefined,\n        {\n          ...(aspectRatio === undefined ? {} : { aspectRatio }),\n          minHeight,\n        },\n      ]}\n    >",
         "sourcePath": "src/features/game-presentation/adapters/inbound/GameField.tsx"
       },
       {

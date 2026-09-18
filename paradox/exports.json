@@ -221,7 +221,7 @@
     "modulePath": "src/types/gamePresentation.ts",
     "sourceLocation": {
       "filePath": "src/types/gamePresentation.ts",
-      "line": 37,
+      "line": 38,
       "column": 1
     },
     "exportPaths": [
@@ -452,10 +452,10 @@
     ],
     "signatures": [
       {
-        "label": "({\n  children,\n  aspectRatio,\n  minHeight = 240,\n  clip = true,\n  accessibilityLabel,\n  testID,\n}: GameFieldProps) => import(\"react\").JSX.Element",
+        "label": "({\n  children,\n  aspectRatio,\n  minHeight = 240,\n  fill = false,\n  clip = true,\n  accessibilityLabel,\n  testID,\n}: GameFieldProps) => import(\"react\").JSX.Element",
         "parameters": [
           {
-            "name": "{\n  children,\n  aspectRatio,\n  minHeight = 240,\n  clip = true,\n  accessibilityLabel,\n  testID,\n}",
+            "name": "{\n  children,\n  aspectRatio,\n  minHeight = 240,\n  fill = false,\n  clip = true,\n  accessibilityLabel,\n  testID,\n}",
             "type": "GameFieldProps",
             "required": true,
             "description": null
@@ -509,6 +509,13 @@
       },
       {
         "name": "clip",
+        "kind": "property",
+        "type": "boolean",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "fill",
         "kind": "property",
         "type": "boolean",
         "required": false,
@@ -576,7 +583,7 @@
     "modulePath": "src/types/gamePresentation.ts",
     "sourceLocation": {
       "filePath": "src/types/gamePresentation.ts",
-      "line": 61,
+      "line": 62,
       "column": 1
     },
     "exportPaths": [
@@ -683,7 +690,7 @@
     "modulePath": "src/types/gamePresentation.ts",
     "sourceLocation": {
       "filePath": "src/types/gamePresentation.ts",
-      "line": 54,
+      "line": 55,
       "column": 1
     },
     "exportPaths": [
@@ -768,7 +775,7 @@
     "modulePath": "src/types/gamePresentation.ts",
     "sourceLocation": {
       "filePath": "src/types/gamePresentation.ts",
-      "line": 76,
+      "line": 77,
       "column": 1
     },
     "exportPaths": [
@@ -887,7 +894,7 @@
     "modulePath": "src/types/gamePresentation.ts",
     "sourceLocation": {
       "filePath": "src/types/gamePresentation.ts",
-      "line": 85,
+      "line": 86,
       "column": 1
     },
     "exportPaths": [
@@ -972,7 +979,7 @@
     "modulePath": "src/types/gamePresentation.ts",
     "sourceLocation": {
       "filePath": "src/types/gamePresentation.ts",
-      "line": 94,
+      "line": 95,
       "column": 1
     },
     "exportPaths": [
@@ -1021,6 +1028,13 @@
         "kind": "property",
         "type": "GameDefinition",
         "required": true,
+        "description": null
+      },
+      {
+        "name": "fill",
+        "kind": "property",
+        "type": "boolean",
+        "required": false,
         "description": null
       },
       {

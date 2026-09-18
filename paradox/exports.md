@@ -63,7 +63,7 @@ Source: `src/types/gamePresentation.ts:9:1`
 
 Kind: `type`
 Module: `src/types/gamePresentation.ts`
-Source: `src/types/gamePresentation.ts:37:1`
+Source: `src/types/gamePresentation.ts:38:1`
 
 ### Members
 
@@ -112,6 +112,7 @@ Render a bounded relative-positioning surface for game presentation content.
   children,
   aspectRatio,
   minHeight = 240,
+  fill = false,
   clip = true,
   accessibilityLabel,
   testID,
@@ -120,6 +121,7 @@ Render a bounded relative-positioning surface for game presentation content.
   children,
   aspectRatio,
   minHeight = 240,
+  fill = false,
   clip = true,
   accessibilityLabel,
   testID,
@@ -140,6 +142,7 @@ Source: `src/types/gamePresentation.ts:28:1`
 | aspectRatio | property | `number` | no |  |
 | children | property | `React.ReactNode` | no |  |
 | clip | property | `boolean` | no |  |
+| fill | property | `boolean` | no |  |
 | minHeight | property | `number` | no |  |
 | testID | property | `string` | no |  |
 
@@ -185,7 +188,7 @@ Capture pointer/touch geometry and optional keyboard input as normalized generic
 
 Kind: `type`
 Module: `src/types/gamePresentation.ts`
-Source: `src/types/gamePresentation.ts:61:1`
+Source: `src/types/gamePresentation.ts:62:1`
 
 ### Members
 
@@ -208,7 +211,7 @@ Source: `src/types/gamePresentation.ts:61:1`
 
 Kind: `type`
 Module: `src/types/gamePresentation.ts`
-Source: `src/types/gamePresentation.ts:54:1`
+Source: `src/types/gamePresentation.ts:55:1`
 
 ### Members
 
@@ -251,7 +254,7 @@ Measure two registered game entities and dispatch only their raw rendered geomet
 
 Kind: `type`
 Module: `src/types/gamePresentation.ts`
-Source: `src/types/gamePresentation.ts:76:1`
+Source: `src/types/gamePresentation.ts:77:1`
 
 ### Members
 
@@ -302,7 +305,7 @@ Source: `src/types/gamePresentation.ts:25:1`
 
 Kind: `type`
 Module: `src/types/gamePresentation.ts`
-Source: `src/types/gamePresentation.ts:85:1`
+Source: `src/types/gamePresentation.ts:86:1`
 
 ### Members
 
@@ -325,7 +328,7 @@ Source: `src/types/gamePresentation.ts:6:1`
 
 Kind: `type`
 Module: `src/types/gamePresentation.ts`
-Source: `src/types/gamePresentation.ts:94:1`
+Source: `src/types/gamePresentation.ts:95:1`
 
 ### Members
 
@@ -337,6 +340,7 @@ Source: `src/types/gamePresentation.ts:94:1`
 | children | property | `React.ReactNode` | no |  |
 | clip | property | `boolean` | no |  |
 | definition | property | `GameDefinition` | yes |  |
+| fill | property | `boolean` | no |  |
 | input | property | `Readonly<Record<string, import("@ankhorage/game").GameValue>>` | no |  |
 | minHeight | property | `number` | no |  |
 | onOutput | property | `(output: GameOutput) => void` | no |  |

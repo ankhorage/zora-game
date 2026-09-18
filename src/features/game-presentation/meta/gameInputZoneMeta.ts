@@ -5,7 +5,7 @@ export const gameInputZoneMeta = {
   name: 'GameInputZone',
   category: 'component',
   description:
-    'Normalizes pointer and touch positions into field-relative percentages and dispatches a generic game event.',
+    'Normalizes pointer/touch positions and optional keyboard bindings into generic game events.',
   directManifestNode: true,
   allowedChildren: [],
   blueprint: {
@@ -82,6 +82,52 @@ export const gameInputZoneMeta = {
       category: 'Input',
       label: 'Dispatch while moving',
       default: true,
+      authoring: { authority: 'instance' },
+    },
+    keyboardBindings: {
+      type: 'array',
+      category: 'Input',
+      label: 'Keyboard bindings',
+      default: [],
+      itemSchema: [
+        {
+          key: 'key',
+          schema: {
+            type: 'string',
+            category: 'Input',
+            label: 'Key',
+            authoring: { authority: 'instance' },
+          },
+        },
+        {
+          key: 'eventType',
+          schema: {
+            type: 'string',
+            category: 'Input',
+            label: 'Event type',
+            authoring: { authority: 'instance' },
+          },
+        },
+        {
+          key: 'entityId',
+          schema: {
+            type: 'string',
+            category: 'Input',
+            label: 'Entity id',
+            authoring: { authority: 'instance' },
+          },
+        },
+        {
+          key: 'preventDefault',
+          schema: {
+            type: 'boolean',
+            category: 'Input',
+            label: 'Prevent browser default',
+            default: false,
+            authoring: { authority: 'instance' },
+          },
+        },
+      ],
       authoring: { authority: 'instance' },
     },
     accessibilityLabel: {

@@ -1,71 +1,69 @@
-import React from 'react';
 import { Animated } from 'react-native';
 
-import type { GameEntityMotionProps } from '../../../types/gamePresentation';
+import type { GameEntityProps } from '../../../types/gamePresentation';
 import { resolveGameEntityMotionPlan } from './resolveGameEntityMotionPlan';
 import { useAnimatedGameEntityValue } from './useAnimatedGameEntityValue';
 import { useGameEntityMotionProgress } from './useGameEntityMotionProgress';
 import { useGameReducedMotion } from './useGameReducedMotion';
 
-interface GameEntityAnimatedStyleInput extends GameEntityMotionProps {
-  readonly x: number;
-  readonly y: number;
-  readonly opacity: number;
-  readonly scale: number;
-  readonly rotation: number;
+interface GameEntityAnimatedValues {
+  readonly x: Animated.Value;
+  readonly y: Animated.Value;
+  readonly opacity: Animated.Value;
+  readonly scale: Animated.Value;
+  readonly rotation: Animated.Value;
+  readonly progress: Animated.Value;
 }
 
 /*** Compose bound GameEntity values with optional relative presentation motion. */
-export function useGameEntityAnimatedStyle(input: GameEntityAnimatedStyleInput) {
+export function useGameEntityAnimatedStyle(input: GameEntityProps) {
   const reduceMotion = useGameReducedMotion();
-  const plan = React.useMemo(
-    () => resolveGameEntityMotionPlan(input, reduceMotion),
-    [
-      input.motionAlternate,
-      input.motionDelayMs,
-      input.motionDurationMs,
-      input.motionEasing,
-      input.motionEssential,
-      input.motionOffsetX,
-      input.motionOffsetY,
-      input.motionOpacityDelta,
-      input.motionPaused,
-      input.motionRepeat,
-      input.motionRotationDelta,
-      input.motionScaleDelta,
-      input.transitionDurationMs,
-      input.transitionEasing,
-      reduceMotion,
-    ],
+  const plan = resolveGameEntityMotionPlan(input, reduceMotion);
+  const values: GameEntityAnimatedValues = {
+    x: useAnimatedGameEntityValue(input.x ?? 0, plan.transitionDurationMs, plan.transitionEasing),
+    y: useAnimatedGameEntityValue(input.y ?? 0, plan.transitionDurationMs, plan.transitionEasing),
+    opacity: useAnimatedGameEntityValue(
+      input.opacity ?? 1,
+      plan.transitionDurationMs,
+      plan.transitionEasing,
+    ),
+    scale: useAnimatedGameEntityValue(
+      input.scale ?? 1,
+      plan.transitionDurationMs,
+      plan.transitionEasing,
+    ),
+    rotation: useAnimatedGameEntityValue(
+      input.rotation ?? 0,
+      plan.transitionDurationMs,
+      plan.transitionEasing,
+    ),
+    progress: useGameEntityMotionProgress(plan),
+  };
+
+  return createGameEntityAnimatedStyle(values, input);
+}
+
+/*** Build one animated React Native style from base values and relative motion progress. */
+function createGameEntityAnimatedStyle(values: GameEntityAnimatedValues, input: GameEntityProps) {
+  const left = Animated.add(
+    values.x,
+    Animated.multiply(values.progress, input.motionOffsetX ?? 0),
   );
-  const x = useAnimatedGameEntityValue(input.x, plan.transitionDurationMs, plan.transitionEasing);
-  const y = useAnimatedGameEntityValue(input.y, plan.transitionDurationMs, plan.transitionEasing);
-  const opacity = useAnimatedGameEntityValue(
-    input.opacity,
-    plan.transitionDurationMs,
-    plan.transitionEasing,
+  const top = Animated.add(
+    values.y,
+    Animated.multiply(values.progress, input.motionOffsetY ?? 0),
   );
-  const scale = useAnimatedGameEntityValue(
-    input.scale,
-    plan.transitionDurationMs,
-    plan.transitionEasing,
+  const opacity = Animated.add(
+    values.opacity,
+    Animated.multiply(values.progress, input.motionOpacityDelta ?? 0),
   );
-  const rotation = useAnimatedGameEntityValue(
-    input.rotation,
-    plan.transitionDurationMs,
-    plan.transitionEasing,
+  const scale = Animated.add(
+    values.scale,
+    Animated.multiply(values.progress, input.motionScaleDelta ?? 0),
   );
-  const progress = useGameEntityMotionProgress(plan);
-  const left = Animated.add(x, Animated.multiply(progress, input.motionOffsetX ?? 0));
-  const top = Animated.add(y, Animated.multiply(progress, input.motionOffsetY ?? 0));
-  const animatedOpacity = Animated.add(
-    opacity,
-    Animated.multiply(progress, input.motionOpacityDelta ?? 0),
-  );
-  const animatedScale = Animated.add(scale, Animated.multiply(progress, input.motionScaleDelta ?? 0));
-  const animatedRotation = Animated.add(
-    rotation,
-    Animated.multiply(progress, input.motionRotationDelta ?? 0),
+  const rotation = Animated.add(
+    values.rotation,
+    Animated.multiply(values.progress, input.motionRotationDelta ?? 0),
   );
 
   return {
@@ -77,15 +75,15 @@ export function useGameEntityAnimatedStyle(input: GameEntityAnimatedStyleInput) 
       inputRange: [-10_000, 10_000],
       outputRange: ['-10000%', '10000%'],
     }),
-    opacity: animatedOpacity.interpolate({
+    opacity: opacity.interpolate({
       inputRange: [0, 1],
       outputRange: [0, 1],
       extrapolate: 'clamp',
     }),
     transform: [
-      { scale: animatedScale },
+      { scale },
       {
-        rotate: animatedRotation.interpolate({
+        rotate: rotation.interpolate({
           inputRange: [-36_000, 36_000],
           outputRange: ['-36000deg', '36000deg'],
         }),

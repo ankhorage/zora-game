@@ -4,6 +4,7 @@ import type { GameSession } from '@ankhorage/game';
 export function createGameBindingContext(session: GameSession): Record<string, unknown> {
   return {
     game: {
+      entities: Object.values(session.entities),
       session,
     },
   };

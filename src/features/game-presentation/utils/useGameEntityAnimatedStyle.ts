@@ -45,14 +45,8 @@ export function useGameEntityAnimatedStyle(input: GameEntityProps) {
 
 /*** Build one animated React Native style from base values and relative motion progress. */
 function createGameEntityAnimatedStyle(values: GameEntityAnimatedValues, input: GameEntityProps) {
-  const left = Animated.add(
-    values.x,
-    Animated.multiply(values.progress, input.motionOffsetX ?? 0),
-  );
-  const top = Animated.add(
-    values.y,
-    Animated.multiply(values.progress, input.motionOffsetY ?? 0),
-  );
+  const left = Animated.add(values.x, Animated.multiply(values.progress, input.motionOffsetX ?? 0));
+  const top = Animated.add(values.y, Animated.multiply(values.progress, input.motionOffsetY ?? 0));
   const opacity = Animated.add(
     values.opacity,
     Animated.multiply(values.progress, input.motionOpacityDelta ?? 0),

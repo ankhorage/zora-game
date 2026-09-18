@@ -15,7 +15,7 @@ const bounds: GameMeasurementBounds = {
 describe('createGameMeasurementRegistry', () => {
   test('registers, reads, and unregisters one local measurement source', async () => {
     const registry = createGameMeasurementRegistry();
-    const unregister = registry.registerMeasurement('player', async () => bounds);
+    const unregister = registry.registerMeasurement('player', () => Promise.resolve(bounds));
 
     expect(await registry.measure('player')).toEqual(bounds);
     unregister();
@@ -26,7 +26,7 @@ describe('createGameMeasurementRegistry', () => {
     const registry = createGameMeasurementRegistry();
     const firstCleanup = registry.registerMeasurement('actor', async () => bounds);
     const newerBounds = { ...bounds, left: 40, right: 60 };
-    registry.registerMeasurement('actor', async () => newerBounds);
+    registry.registerMeasurement('actor', () => Promise.resolve(newerBounds));
 
     firstCleanup();
 

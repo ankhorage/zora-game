@@ -2,7 +2,7 @@ import { describe, expect, test } from 'bun:test';
 
 import { resolveGameEntityMotionPlan } from './resolveGameEntityMotionPlan';
 
-describe('resolveGameEntityMotionPlan', () => {
+describe('resolveGameEntityMotionPlan configuration', () => {
   test('preserves explicit transition and repeating alternate motion', () => {
     expect(
       resolveGameEntityMotionPlan(
@@ -31,7 +31,18 @@ describe('resolveGameEntityMotionPlan', () => {
     });
   });
 
-  test('disables decorative motion and transitions for reduced motion', () => {
+  test('uses alternate only for repeating motion', () => {
+    expect(
+      resolveGameEntityMotionPlan(
+        { motionOffsetY: 5, motionDurationMs: 100, motionAlternate: true },
+        false,
+      ).motionAlternate,
+    ).toBe(false);
+  });
+});
+
+describe('resolveGameEntityMotionPlan reduced motion', () => {
+  test('disables decorative motion and transitions', () => {
     const plan = resolveGameEntityMotionPlan(
       { transitionDurationMs: 80, motionOffsetX: 12, motionDurationMs: 500 },
       true,
@@ -41,25 +52,12 @@ describe('resolveGameEntityMotionPlan', () => {
     expect(plan.motionEnabled).toBe(false);
   });
 
-  test('keeps essential trajectories enabled for reduced motion', () => {
+  test('keeps essential trajectories enabled', () => {
     const plan = resolveGameEntityMotionPlan(
-      {
-        motionOffsetY: 70,
-        motionDurationMs: 600,
-        motionEssential: true,
-      },
+      { motionOffsetY: 70, motionDurationMs: 600, motionEssential: true },
       true,
     );
 
     expect(plan.motionEnabled).toBe(true);
-  });
-
-  test('uses alternate only for repeating motion', () => {
-    expect(
-      resolveGameEntityMotionPlan(
-        { motionOffsetY: 5, motionDurationMs: 100, motionAlternate: true },
-        false,
-      ).motionAlternate,
-    ).toBe(false);
   });
 });

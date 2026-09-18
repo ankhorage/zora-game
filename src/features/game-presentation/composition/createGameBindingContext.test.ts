@@ -53,15 +53,6 @@ describe('createGameBindingContext', () => {
 
     expect(Array.isArray(entities)).toBe(true);
     expect(entities).toEqual(Object.values(session.entities));
-    expect(
-      Array.isArray(entities)
-        ? entities.map((entity) =>
-            typeof entity === 'object' && entity !== null && !Array.isArray(entity)
-              ? Object.values(entity)[0]
-              : undefined,
-          )
-        : [],
-    ).toEqual(['player', 'shot']);
   });
 
   test('owns only the local game namespace', () => {

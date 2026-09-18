@@ -4,7 +4,6 @@
     "slug": "zora-game-expo-acceptance",
     "version": "1.0.0",
     "orientation": "portrait",
-    "userInterfaceStyle": "automatic",
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.ankhorage.zoragameacceptance"

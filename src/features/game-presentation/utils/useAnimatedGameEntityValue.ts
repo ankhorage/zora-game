@@ -9,7 +9,7 @@ export function useAnimatedGameEntityValue(
   durationMs: number,
   easing: GameEntityEasing,
 ): Animated.Value {
-  const value = React.useRef(new Animated.Value(target)).current;
+  const [value] = React.useState(() => new Animated.Value(target));
 
   React.useEffect(() => {
     value.stopAnimation();

@@ -1,5 +1,12 @@
 # @ankhorage/zora-game
 
+## 0.7.0
+
+### Minor Changes
+
+- 44cdd1e: Add cross-platform GameEntity state transitions and relative one-shot/repeating motion timelines with
+  reduced-motion handling, while keeping game-session semantics unchanged.
+
 ## 0.6.2
 
 ### Patch Changes

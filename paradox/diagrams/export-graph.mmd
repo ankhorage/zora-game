@@ -28,7 +28,14 @@ graph LR
   module_src_features_game_presentation_meta_gameOverlayMeta_ts["src/features/game-presentation/meta/gameOverlayMeta.ts"]
   module_src_features_game_presentation_public_ts["src/features/game-presentation/public.ts"]
   module_src_features_game_presentation_utils_clampGamePercentage_ts["src/features/game-presentation/utils/clampGamePercentage.ts"]
+  module_src_features_game_presentation_utils_resolveGameEntityMotionPlan_test_ts["src/features/game-presentation/utils/resolveGameEntityMotionPlan.test.ts"]
+  module_src_features_game_presentation_utils_resolveGameEntityMotionPlan_ts["src/features/game-presentation/utils/resolveGameEntityMotionPlan.ts"]
   module_src_features_game_presentation_utils_toGamePercentage_ts["src/features/game-presentation/utils/toGamePercentage.ts"]
+  module_src_features_game_presentation_utils_useAnimatedGameEntityValue_ts["src/features/game-presentation/utils/useAnimatedGameEntityValue.ts"]
+  module_src_features_game_presentation_utils_useGameEntityAnimatedStyle_ts["src/features/game-presentation/utils/useGameEntityAnimatedStyle.ts"]
+  module_src_features_game_presentation_utils_useGameEntityMeasurement_ts["src/features/game-presentation/utils/useGameEntityMeasurement.ts"]
+  module_src_features_game_presentation_utils_useGameEntityMotionProgress_ts["src/features/game-presentation/utils/useGameEntityMotionProgress.ts"]
+  module_src_features_game_presentation_utils_useGameReducedMotion_ts["src/features/game-presentation/utils/useGameReducedMotion.ts"]
   module_src_index_ts["src/index.ts"]
   module_src_metadata_ts["src/metadata.ts"]
   module_src_types_gamePresentation_ts["src/types/gamePresentation.ts"]
@@ -43,8 +50,14 @@ graph LR
   export_GameEntity["GameEntity"]
   module_src_features_game_presentation_adapters_inbound_GameEntity_tsx --> export_GameEntity
   export_GameEntity -.-> export_GameEntityProps
+  export_GameEntityEasing["GameEntityEasing"]
+  module_src_types_gamePresentation_ts --> export_GameEntityEasing
+  export_GameEntityMotionProps["GameEntityMotionProps"]
+  module_src_types_gamePresentation_ts --> export_GameEntityMotionProps
+  export_GameEntityMotionProps -.-> export_GameEntityEasing
   export_GameEntityProps["GameEntityProps"]
   module_src_types_gamePresentation_ts --> export_GameEntityProps
+  export_GameEntityProps -.-> export_GameEntityEasing
   export_GameEntityProps -.-> export_GamePointerEvents
   export_GameField["GameField"]
   module_src_features_game_presentation_adapters_inbound_GameField_tsx --> export_GameField

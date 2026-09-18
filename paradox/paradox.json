@@ -14,7 +14,7 @@
     {
       "id": "npm",
       "label": "npm",
-      "value": "v0.6.2",
+      "value": "v0.7.0",
       "color": "cb3837"
     },
     {
@@ -145,9 +145,8 @@
       "path": "src/features/game-presentation/adapters/inbound/GameEntity.tsx",
       "isEntrypoint": false,
       "dependencies": [
-        "src/features/game-presentation/adapters/inbound/measureGameEntity.ts",
-        "src/features/game-presentation/composition/GameRuntimeContext.ts",
-        "src/features/game-presentation/utils/toGamePercentage.ts",
+        "src/features/game-presentation/utils/useGameEntityAnimatedStyle.ts",
+        "src/features/game-presentation/utils/useGameEntityMeasurement.ts",
         "src/types/gamePresentation.ts"
       ],
       "exports": [
@@ -344,6 +343,8 @@
       "exports": [
         "Game",
         "GameEntity",
+        "GameEntityEasing",
+        "GameEntityMotionProps",
         "GameEntityProps",
         "GameField",
         "GameFieldProps",
@@ -368,6 +369,25 @@
       ]
     },
     {
+      "path": "src/features/game-presentation/utils/resolveGameEntityMotionPlan.test.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/game-presentation/utils/resolveGameEntityMotionPlan.ts"
+      ],
+      "exports": []
+    },
+    {
+      "path": "src/features/game-presentation/utils/resolveGameEntityMotionPlan.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/types/gamePresentation.ts"
+      ],
+      "exports": [
+        "GameEntityMotionPlan",
+        "resolveGameEntityMotionPlan"
+      ]
+    },
+    {
       "path": "src/features/game-presentation/utils/toGamePercentage.ts",
       "isEntrypoint": false,
       "dependencies": [
@@ -378,12 +398,68 @@
       ]
     },
     {
+      "path": "src/features/game-presentation/utils/useAnimatedGameEntityValue.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/types/gamePresentation.ts"
+      ],
+      "exports": [
+        "useAnimatedGameEntityValue"
+      ]
+    },
+    {
+      "path": "src/features/game-presentation/utils/useGameEntityAnimatedStyle.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/game-presentation/utils/resolveGameEntityMotionPlan.ts",
+        "src/features/game-presentation/utils/useAnimatedGameEntityValue.ts",
+        "src/features/game-presentation/utils/useGameEntityMotionProgress.ts",
+        "src/features/game-presentation/utils/useGameReducedMotion.ts",
+        "src/types/gamePresentation.ts"
+      ],
+      "exports": [
+        "useGameEntityAnimatedStyle"
+      ]
+    },
+    {
+      "path": "src/features/game-presentation/utils/useGameEntityMeasurement.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/game-presentation/adapters/inbound/measureGameEntity.ts",
+        "src/features/game-presentation/composition/GameRuntimeContext.ts"
+      ],
+      "exports": [
+        "useGameEntityMeasurement"
+      ]
+    },
+    {
+      "path": "src/features/game-presentation/utils/useGameEntityMotionProgress.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/game-presentation/utils/resolveGameEntityMotionPlan.ts",
+        "src/types/gamePresentation.ts"
+      ],
+      "exports": [
+        "useGameEntityMotionProgress"
+      ]
+    },
+    {
+      "path": "src/features/game-presentation/utils/useGameReducedMotion.ts",
+      "isEntrypoint": false,
+      "dependencies": [],
+      "exports": [
+        "useGameReducedMotion"
+      ]
+    },
+    {
       "path": "src/index.ts",
       "isEntrypoint": true,
       "dependencies": [],
       "exports": [
         "Game",
         "GameEntity",
+        "GameEntityEasing",
+        "GameEntityMotionProps",
         "GameEntityProps",
         "GameField",
         "GameFieldProps",
@@ -414,6 +490,8 @@
       "isEntrypoint": false,
       "dependencies": [],
       "exports": [
+        "GameEntityEasing",
+        "GameEntityMotionProps",
         "GameEntityProps",
         "GameFieldProps",
         "GameInputZoneProps",
@@ -534,7 +612,7 @@
       "modulePath": "src/features/game-presentation/adapters/inbound/GameEntity.tsx",
       "sourceLocation": {
         "filePath": "src/features/game-presentation/adapters/inbound/GameEntity.tsx",
-        "line": 10,
+        "line": 9,
         "column": 1
       },
       "exportPaths": [
@@ -545,10 +623,10 @@
       ],
       "signatures": [
         {
-          "label": "({\n  children,\n  x = 0,\n  y = 0,\n  width,\n  height,\n  opacity = 1,\n  scale = 1,\n  rotation = 0,\n  zIndex = 0,\n  hidden = false,\n  pointerEvents = 'auto',\n  measurementId,\n  accessibilityLabel,\n  testID,\n}: GameEntityProps) => React.JSX.Element",
+          "label": "(props: GameEntityProps) => React.JSX.Element",
           "parameters": [
             {
-              "name": "{\n  children,\n  x = 0,\n  y = 0,\n  width,\n  height,\n  opacity = 1,\n  scale = 1,\n  rotation = 0,\n  zIndex = 0,\n  hidden = false,\n  pointerEvents = 'auto',\n  measurementId,\n  accessibilityLabel,\n  testID,\n}",
+              "name": "props",
               "type": "GameEntityProps",
               "required": true,
               "description": null
@@ -562,6 +640,147 @@
       "structuredRows": []
     },
     {
+      "name": "GameEntityEasing",
+      "description": null,
+      "isReadme": false,
+      "examples": [],
+      "kind": "unknown",
+      "modulePath": "src/types/gamePresentation.ts",
+      "sourceLocation": {
+        "filePath": "src/types/gamePresentation.ts",
+        "line": 7,
+        "column": 1
+      },
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [],
+      "signatures": [],
+      "members": [],
+      "structuredRows": []
+    },
+    {
+      "name": "GameEntityMotionProps",
+      "description": null,
+      "isReadme": false,
+      "examples": [],
+      "kind": "type",
+      "modulePath": "src/types/gamePresentation.ts",
+      "sourceLocation": {
+        "filePath": "src/types/gamePresentation.ts",
+        "line": 9,
+        "column": 1
+      },
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "GameEntityEasing"
+      ],
+      "signatures": [],
+      "members": [
+        {
+          "name": "motionAlternate",
+          "kind": "property",
+          "type": "boolean",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "motionDelayMs",
+          "kind": "property",
+          "type": "number",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "motionDurationMs",
+          "kind": "property",
+          "type": "number",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "motionEasing",
+          "kind": "property",
+          "type": "GameEntityEasing",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "motionEssential",
+          "kind": "property",
+          "type": "boolean",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "motionOffsetX",
+          "kind": "property",
+          "type": "number",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "motionOffsetY",
+          "kind": "property",
+          "type": "number",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "motionOpacityDelta",
+          "kind": "property",
+          "type": "number",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "motionPaused",
+          "kind": "property",
+          "type": "boolean",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "motionRepeat",
+          "kind": "property",
+          "type": "boolean",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "motionRotationDelta",
+          "kind": "property",
+          "type": "number",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "motionScaleDelta",
+          "kind": "property",
+          "type": "number",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "transitionDurationMs",
+          "kind": "property",
+          "type": "number",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "transitionEasing",
+          "kind": "property",
+          "type": "GameEntityEasing",
+          "required": false,
+          "description": null
+        }
+      ],
+      "structuredRows": []
+    },
+    {
       "name": "GameEntityProps",
       "description": null,
       "isReadme": false,
@@ -570,13 +789,14 @@
       "modulePath": "src/types/gamePresentation.ts",
       "sourceLocation": {
         "filePath": "src/types/gamePresentation.ts",
-        "line": 19,
+        "line": 37,
         "column": 1
       },
       "exportPaths": [
         "src/index.ts"
       ],
       "relatedSymbols": [
+        "GameEntityEasing",
         "GamePointerEvents"
       ],
       "signatures": [],
@@ -617,6 +837,90 @@
           "description": null
         },
         {
+          "name": "motionAlternate",
+          "kind": "property",
+          "type": "boolean",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "motionDelayMs",
+          "kind": "property",
+          "type": "number",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "motionDurationMs",
+          "kind": "property",
+          "type": "number",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "motionEasing",
+          "kind": "property",
+          "type": "GameEntityEasing",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "motionEssential",
+          "kind": "property",
+          "type": "boolean",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "motionOffsetX",
+          "kind": "property",
+          "type": "number",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "motionOffsetY",
+          "kind": "property",
+          "type": "number",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "motionOpacityDelta",
+          "kind": "property",
+          "type": "number",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "motionPaused",
+          "kind": "property",
+          "type": "boolean",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "motionRepeat",
+          "kind": "property",
+          "type": "boolean",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "motionRotationDelta",
+          "kind": "property",
+          "type": "number",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "motionScaleDelta",
+          "kind": "property",
+          "type": "number",
+          "required": false,
+          "description": null
+        },
+        {
           "name": "opacity",
           "kind": "property",
           "type": "number",
@@ -648,6 +952,20 @@
           "name": "testID",
           "kind": "property",
           "type": "string",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "transitionDurationMs",
+          "kind": "property",
+          "type": "number",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "transitionEasing",
+          "kind": "property",
+          "type": "GameEntityEasing",
           "required": false,
           "description": null
         },
@@ -727,7 +1045,7 @@
       "modulePath": "src/types/gamePresentation.ts",
       "sourceLocation": {
         "filePath": "src/types/gamePresentation.ts",
-        "line": 10,
+        "line": 28,
         "column": 1
       },
       "exportPaths": [
@@ -826,7 +1144,7 @@
       "modulePath": "src/types/gamePresentation.ts",
       "sourceLocation": {
         "filePath": "src/types/gamePresentation.ts",
-        "line": 43,
+        "line": 61,
         "column": 1
       },
       "exportPaths": [
@@ -933,7 +1251,7 @@
       "modulePath": "src/types/gamePresentation.ts",
       "sourceLocation": {
         "filePath": "src/types/gamePresentation.ts",
-        "line": 36,
+        "line": 54,
         "column": 1
       },
       "exportPaths": [
@@ -1018,7 +1336,7 @@
       "modulePath": "src/types/gamePresentation.ts",
       "sourceLocation": {
         "filePath": "src/types/gamePresentation.ts",
-        "line": 58,
+        "line": 76,
         "column": 1
       },
       "exportPaths": [
@@ -1117,7 +1435,7 @@
       "modulePath": "src/types/gamePresentation.ts",
       "sourceLocation": {
         "filePath": "src/types/gamePresentation.ts",
-        "line": 7,
+        "line": 25,
         "column": 1
       },
       "exportPaths": [
@@ -1137,7 +1455,7 @@
       "modulePath": "src/types/gamePresentation.ts",
       "sourceLocation": {
         "filePath": "src/types/gamePresentation.ts",
-        "line": 67,
+        "line": 85,
         "column": 1
       },
       "exportPaths": [
@@ -1222,7 +1540,7 @@
       "modulePath": "src/types/gamePresentation.ts",
       "sourceLocation": {
         "filePath": "src/types/gamePresentation.ts",
-        "line": 76,
+        "line": 94,
         "column": 1
       },
       "exportPaths": [
@@ -1477,7 +1795,7 @@
       "modulePath": "src/features/game-presentation/adapters/inbound/GameEntity.tsx",
       "sourceLocation": {
         "filePath": "src/features/game-presentation/adapters/inbound/GameEntity.tsx",
-        "line": 10,
+        "line": 9,
         "column": 1
       },
       "exportPaths": [
@@ -1506,7 +1824,6 @@
           "name": "hidden",
           "type": "boolean | undefined",
           "required": false,
-          "defaultValue": "false",
           "description": null
         },
         {
@@ -1516,36 +1833,116 @@
           "description": null
         },
         {
+          "name": "motionAlternate",
+          "type": "boolean | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "motionDelayMs",
+          "type": "number | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "motionDurationMs",
+          "type": "number | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "motionEasing",
+          "type": "GameEntityEasing | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "motionEssential",
+          "type": "boolean | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "motionOffsetX",
+          "type": "number | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "motionOffsetY",
+          "type": "number | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "motionOpacityDelta",
+          "type": "number | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "motionPaused",
+          "type": "boolean | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "motionRepeat",
+          "type": "boolean | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "motionRotationDelta",
+          "type": "number | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "motionScaleDelta",
+          "type": "number | undefined",
+          "required": false,
+          "description": null
+        },
+        {
           "name": "opacity",
           "type": "number | undefined",
           "required": false,
-          "defaultValue": "1",
           "description": null
         },
         {
           "name": "pointerEvents",
           "type": "GamePointerEvents | undefined",
           "required": false,
-          "defaultValue": "'auto'",
           "description": null
         },
         {
           "name": "rotation",
           "type": "number | undefined",
           "required": false,
-          "defaultValue": "0",
           "description": null
         },
         {
           "name": "scale",
           "type": "number | undefined",
           "required": false,
-          "defaultValue": "1",
           "description": null
         },
         {
           "name": "testID",
           "type": "string | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "transitionDurationMs",
+          "type": "number | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "transitionEasing",
+          "type": "GameEntityEasing | undefined",
           "required": false,
           "description": null
         },
@@ -1559,21 +1956,18 @@
           "name": "x",
           "type": "number | undefined",
           "required": false,
-          "defaultValue": "0",
           "description": null
         },
         {
           "name": "y",
           "type": "number | undefined",
           "required": false,
-          "defaultValue": "0",
           "description": null
         },
         {
           "name": "zIndex",
           "type": "number | undefined",
           "required": false,
-          "defaultValue": "0",
           "description": null
         }
       ]
@@ -1837,16 +2231,16 @@
       "description": "Render one generic positioned game entity without owning gameplay semantics.",
       "sourceLocation": {
         "filePath": "src/features/game-presentation/adapters/inbound/GameEntity.tsx",
-        "line": 10,
+        "line": 9,
         "column": 1
       }
     },
     {
-      "name": "createEntityStyle",
-      "description": "Convert serializable entity presentation props into a React Native view style.",
+      "name": "createEntityStaticStyle",
+      "description": "Convert non-animated GameEntity presentation props into a React Native view style.",
       "sourceLocation": {
         "filePath": "src/features/game-presentation/adapters/inbound/GameEntity.tsx",
-        "line": 64,
+        "line": 28,
         "column": 1
       }
     },
@@ -2067,6 +2461,33 @@
       }
     },
     {
+      "name": "resolveGameEntityMotionPlan",
+      "description": "Normalize serializable GameEntity motion props against the current reduced-motion preference.",
+      "sourceLocation": {
+        "filePath": "src/features/game-presentation/utils/resolveGameEntityMotionPlan.ts",
+        "line": 16,
+        "column": 1
+      }
+    },
+    {
+      "name": "hasMotionOffset",
+      "description": "Return whether any relative presentation offset requires a motion timeline.",
+      "sourceLocation": {
+        "filePath": "src/features/game-presentation/utils/resolveGameEntityMotionPlan.ts",
+        "line": 40,
+        "column": 1
+      }
+    },
+    {
+      "name": "normalizeDuration",
+      "description": "Clamp an optional duration to a finite non-negative millisecond value.",
+      "sourceLocation": {
+        "filePath": "src/features/game-presentation/utils/resolveGameEntityMotionPlan.ts",
+        "line": 51,
+        "column": 1
+      }
+    },
+    {
       "name": "toGamePercentage",
       "description": "Convert one game percentage coordinate to React Native percentage style syntax.",
       "sourceLocation": {
@@ -2076,11 +2497,119 @@
       }
     },
     {
+      "name": "useAnimatedGameEntityValue",
+      "description": "Animate one bound numeric GameEntity presentation value toward its latest session-driven target.",
+      "sourceLocation": {
+        "filePath": "src/features/game-presentation/utils/useAnimatedGameEntityValue.ts",
+        "line": 7,
+        "column": 1
+      }
+    },
+    {
+      "name": "resolveGameEntityEasing",
+      "description": "Map serializable easing names onto React Native easing functions.",
+      "sourceLocation": {
+        "filePath": "src/features/game-presentation/utils/useAnimatedGameEntityValue.ts",
+        "line": 36,
+        "column": 1
+      }
+    },
+    {
+      "name": "useGameEntityAnimatedStyle",
+      "description": "Compose bound GameEntity values with optional relative presentation motion.",
+      "sourceLocation": {
+        "filePath": "src/features/game-presentation/utils/useGameEntityAnimatedStyle.ts",
+        "line": 19,
+        "column": 1
+      }
+    },
+    {
+      "name": "createGameEntityAnimatedStyle",
+      "description": "Build one animated React Native style from base values and relative motion progress.",
+      "sourceLocation": {
+        "filePath": "src/features/game-presentation/utils/useGameEntityAnimatedStyle.ts",
+        "line": 47,
+        "column": 1
+      }
+    },
+    {
+      "name": "useGameEntityMeasurement",
+      "description": "Register one optional measurable GameEntity view inside its local Game scope.",
+      "sourceLocation": {
+        "filePath": "src/features/game-presentation/utils/useGameEntityMeasurement.ts",
+        "line": 8,
+        "column": 1
+      }
+    },
+    {
+      "name": "useGameEntityMotionProgress",
+      "description": "Drive one optional relative GameEntity motion timeline without changing game-session state.",
+      "sourceLocation": {
+        "filePath": "src/features/game-presentation/utils/useGameEntityMotionProgress.ts",
+        "line": 16,
+        "column": 1
+      }
+    },
+    {
+      "name": "createMotionAnimation",
+      "description": "Create the one-shot or repeating React Native motion sequence for one entity.",
+      "sourceLocation": {
+        "filePath": "src/features/game-presentation/utils/useGameEntityMotionProgress.ts",
+        "line": 70,
+        "column": 1
+      }
+    },
+    {
+      "name": "forward",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/features/game-presentation/utils/useGameEntityMotionProgress.ts",
+        "line": 71,
+        "column": 9
+      }
+    },
+    {
+      "name": "reverse",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/features/game-presentation/utils/useGameEntityMotionProgress.ts",
+        "line": 78,
+        "column": 9
+      }
+    },
+    {
+      "name": "createMotionSignature",
+      "description": "Create a stable signature for motion parameters that should restart the relative timeline.",
+      "sourceLocation": {
+        "filePath": "src/features/game-presentation/utils/useGameEntityMotionProgress.ts",
+        "line": 97,
+        "column": 1
+      }
+    },
+    {
+      "name": "resolveMotionEasing",
+      "description": "Map serializable timeline easing names onto React Native easing functions.",
+      "sourceLocation": {
+        "filePath": "src/features/game-presentation/utils/useGameEntityMotionProgress.ts",
+        "line": 109,
+        "column": 1
+      }
+    },
+    {
+      "name": "useGameReducedMotion",
+      "description": "Track the cross-platform system reduced-motion preference for game presentation.",
+      "sourceLocation": {
+        "filePath": "src/features/game-presentation/utils/useGameReducedMotion.ts",
+        "line": 5,
+        "column": 1
+      }
+    },
+    {
       "name": "readComponentMeta",
       "description": "Require one composed component metadata entry for focused assertions.",
       "sourceLocation": {
         "filePath": "src/ZORA_PLUGIN_METADATA.test.ts",
-        "line": 91,
+        "line": 108,
         "column": 1
       }
     }
@@ -2313,9 +2842,69 @@
         "sourcePath": "src/features/game-presentation/composition/useGameScheduledEffects.ts"
       },
       {
+        "fromPath": "src/features/game-presentation/utils/resolveGameEntityMotionPlan.test.ts",
+        "toPath": "src/features/game-presentation/utils/resolveGameEntityMotionPlan.ts",
+        "sourcePath": "src/features/game-presentation/utils/resolveGameEntityMotionPlan.test.ts"
+      },
+      {
+        "fromPath": "src/features/game-presentation/utils/resolveGameEntityMotionPlan.ts",
+        "toPath": "src/types/gamePresentation.ts",
+        "sourcePath": "src/features/game-presentation/utils/resolveGameEntityMotionPlan.ts"
+      },
+      {
         "fromPath": "src/features/game-presentation/utils/toGamePercentage.ts",
         "toPath": "src/features/game-presentation/utils/clampGamePercentage.ts",
         "sourcePath": "src/features/game-presentation/utils/toGamePercentage.ts"
+      },
+      {
+        "fromPath": "src/features/game-presentation/utils/useAnimatedGameEntityValue.ts",
+        "toPath": "src/types/gamePresentation.ts",
+        "sourcePath": "src/features/game-presentation/utils/useAnimatedGameEntityValue.ts"
+      },
+      {
+        "fromPath": "src/features/game-presentation/utils/useGameEntityAnimatedStyle.ts",
+        "toPath": "src/types/gamePresentation.ts",
+        "sourcePath": "src/features/game-presentation/utils/useGameEntityAnimatedStyle.ts"
+      },
+      {
+        "fromPath": "src/features/game-presentation/utils/useGameEntityAnimatedStyle.ts",
+        "toPath": "src/features/game-presentation/utils/resolveGameEntityMotionPlan.ts",
+        "sourcePath": "src/features/game-presentation/utils/useGameEntityAnimatedStyle.ts"
+      },
+      {
+        "fromPath": "src/features/game-presentation/utils/useGameEntityAnimatedStyle.ts",
+        "toPath": "src/features/game-presentation/utils/useAnimatedGameEntityValue.ts",
+        "sourcePath": "src/features/game-presentation/utils/useGameEntityAnimatedStyle.ts"
+      },
+      {
+        "fromPath": "src/features/game-presentation/utils/useGameEntityAnimatedStyle.ts",
+        "toPath": "src/features/game-presentation/utils/useGameEntityMotionProgress.ts",
+        "sourcePath": "src/features/game-presentation/utils/useGameEntityAnimatedStyle.ts"
+      },
+      {
+        "fromPath": "src/features/game-presentation/utils/useGameEntityAnimatedStyle.ts",
+        "toPath": "src/features/game-presentation/utils/useGameReducedMotion.ts",
+        "sourcePath": "src/features/game-presentation/utils/useGameEntityAnimatedStyle.ts"
+      },
+      {
+        "fromPath": "src/features/game-presentation/utils/useGameEntityMeasurement.ts",
+        "toPath": "src/features/game-presentation/adapters/inbound/measureGameEntity.ts",
+        "sourcePath": "src/features/game-presentation/utils/useGameEntityMeasurement.ts"
+      },
+      {
+        "fromPath": "src/features/game-presentation/utils/useGameEntityMeasurement.ts",
+        "toPath": "src/features/game-presentation/composition/GameRuntimeContext.ts",
+        "sourcePath": "src/features/game-presentation/utils/useGameEntityMeasurement.ts"
+      },
+      {
+        "fromPath": "src/features/game-presentation/utils/useGameEntityMotionProgress.ts",
+        "toPath": "src/types/gamePresentation.ts",
+        "sourcePath": "src/features/game-presentation/utils/useGameEntityMotionProgress.ts"
+      },
+      {
+        "fromPath": "src/features/game-presentation/utils/useGameEntityMotionProgress.ts",
+        "toPath": "src/features/game-presentation/utils/resolveGameEntityMotionPlan.ts",
+        "sourcePath": "src/features/game-presentation/utils/useGameEntityMotionProgress.ts"
       },
       {
         "fromPath": "src/features/game-presentation/adapters/inbound/createGameKeyboardEvent.test.ts",
@@ -2389,17 +2978,12 @@
       },
       {
         "fromPath": "src/features/game-presentation/adapters/inbound/GameEntity.tsx",
-        "toPath": "src/features/game-presentation/composition/GameRuntimeContext.ts",
+        "toPath": "src/features/game-presentation/utils/useGameEntityAnimatedStyle.ts",
         "sourcePath": "src/features/game-presentation/adapters/inbound/GameEntity.tsx"
       },
       {
         "fromPath": "src/features/game-presentation/adapters/inbound/GameEntity.tsx",
-        "toPath": "src/features/game-presentation/utils/toGamePercentage.ts",
-        "sourcePath": "src/features/game-presentation/adapters/inbound/GameEntity.tsx"
-      },
-      {
-        "fromPath": "src/features/game-presentation/adapters/inbound/GameEntity.tsx",
-        "toPath": "src/features/game-presentation/adapters/inbound/measureGameEntity.ts",
+        "toPath": "src/features/game-presentation/utils/useGameEntityMeasurement.ts",
         "sourcePath": "src/features/game-presentation/adapters/inbound/GameEntity.tsx"
       },
       {
@@ -2691,10 +3275,130 @@
         "sourcePath": "src/features/game-presentation/composition/useGameScheduledEffects.ts"
       },
       {
+        "fromSymbol": "src/features/game-presentation/utils/resolveGameEntityMotionPlan.test.ts",
+        "toSymbol": "describe",
+        "callExpression": "describe",
+        "sourcePath": "src/features/game-presentation/utils/resolveGameEntityMotionPlan.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/game-presentation/utils/resolveGameEntityMotionPlan.test.ts",
+        "toSymbol": "test",
+        "callExpression": "test",
+        "sourcePath": "src/features/game-presentation/utils/resolveGameEntityMotionPlan.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/game-presentation/utils/resolveGameEntityMotionPlan.test.ts",
+        "toSymbol": "expect",
+        "callExpression": "expect",
+        "sourcePath": "src/features/game-presentation/utils/resolveGameEntityMotionPlan.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/game-presentation/utils/resolveGameEntityMotionPlan.test.ts",
+        "toSymbol": "resolveGameEntityMotionPlan",
+        "callExpression": "resolveGameEntityMotionPlan",
+        "sourcePath": "src/features/game-presentation/utils/resolveGameEntityMotionPlan.test.ts"
+      },
+      {
+        "fromSymbol": "resolveGameEntityMotionPlan",
+        "toSymbol": "hasMotionOffset",
+        "callExpression": "hasMotionOffset",
+        "sourcePath": "src/features/game-presentation/utils/resolveGameEntityMotionPlan.ts"
+      },
+      {
+        "fromSymbol": "resolveGameEntityMotionPlan",
+        "toSymbol": "normalizeDuration",
+        "callExpression": "normalizeDuration",
+        "sourcePath": "src/features/game-presentation/utils/resolveGameEntityMotionPlan.ts"
+      },
+      {
         "fromSymbol": "toGamePercentage",
         "toSymbol": "clampGamePercentage",
         "callExpression": "clampGamePercentage",
         "sourcePath": "src/features/game-presentation/utils/toGamePercentage.ts"
+      },
+      {
+        "fromSymbol": "src/features/game-presentation/utils/useAnimatedGameEntityValue.ts",
+        "toSymbol": "resolveGameEntityEasing",
+        "callExpression": "resolveGameEntityEasing",
+        "sourcePath": "src/features/game-presentation/utils/useAnimatedGameEntityValue.ts"
+      },
+      {
+        "fromSymbol": "useGameEntityAnimatedStyle",
+        "toSymbol": "useGameReducedMotion",
+        "callExpression": "useGameReducedMotion",
+        "sourcePath": "src/features/game-presentation/utils/useGameEntityAnimatedStyle.ts"
+      },
+      {
+        "fromSymbol": "useGameEntityAnimatedStyle",
+        "toSymbol": "resolveGameEntityMotionPlan",
+        "callExpression": "resolveGameEntityMotionPlan",
+        "sourcePath": "src/features/game-presentation/utils/useGameEntityAnimatedStyle.ts"
+      },
+      {
+        "fromSymbol": "useGameEntityAnimatedStyle",
+        "toSymbol": "useAnimatedGameEntityValue",
+        "callExpression": "useAnimatedGameEntityValue",
+        "sourcePath": "src/features/game-presentation/utils/useGameEntityAnimatedStyle.ts"
+      },
+      {
+        "fromSymbol": "useGameEntityAnimatedStyle",
+        "toSymbol": "useGameEntityMotionProgress",
+        "callExpression": "useGameEntityMotionProgress",
+        "sourcePath": "src/features/game-presentation/utils/useGameEntityAnimatedStyle.ts"
+      },
+      {
+        "fromSymbol": "useGameEntityAnimatedStyle",
+        "toSymbol": "createGameEntityAnimatedStyle",
+        "callExpression": "createGameEntityAnimatedStyle",
+        "sourcePath": "src/features/game-presentation/utils/useGameEntityAnimatedStyle.ts"
+      },
+      {
+        "fromSymbol": "src/features/game-presentation/utils/useGameEntityMeasurement.ts",
+        "toSymbol": "registerMeasurement",
+        "callExpression": "registerMeasurement",
+        "sourcePath": "src/features/game-presentation/utils/useGameEntityMeasurement.ts"
+      },
+      {
+        "fromSymbol": "src/features/game-presentation/utils/useGameEntityMeasurement.ts",
+        "toSymbol": "measureGameEntity",
+        "callExpression": "measureGameEntity",
+        "sourcePath": "src/features/game-presentation/utils/useGameEntityMeasurement.ts"
+      },
+      {
+        "fromSymbol": "useGameEntityMotionProgress",
+        "toSymbol": "createMotionSignature",
+        "callExpression": "createMotionSignature",
+        "sourcePath": "src/features/game-presentation/utils/useGameEntityMotionProgress.ts"
+      },
+      {
+        "fromSymbol": "src/features/game-presentation/utils/useGameEntityMotionProgress.ts",
+        "toSymbol": "createMotionAnimation",
+        "callExpression": "createMotionAnimation",
+        "sourcePath": "src/features/game-presentation/utils/useGameEntityMotionProgress.ts"
+      },
+      {
+        "fromSymbol": "forward",
+        "toSymbol": "resolveMotionEasing",
+        "callExpression": "resolveMotionEasing",
+        "sourcePath": "src/features/game-presentation/utils/useGameEntityMotionProgress.ts"
+      },
+      {
+        "fromSymbol": "reverse",
+        "toSymbol": "resolveMotionEasing",
+        "callExpression": "resolveMotionEasing",
+        "sourcePath": "src/features/game-presentation/utils/useGameEntityMotionProgress.ts"
+      },
+      {
+        "fromSymbol": "createMotionAnimation",
+        "toSymbol": "forward",
+        "callExpression": "forward",
+        "sourcePath": "src/features/game-presentation/utils/useGameEntityMotionProgress.ts"
+      },
+      {
+        "fromSymbol": "createMotionAnimation",
+        "toSymbol": "reverse",
+        "callExpression": "reverse",
+        "sourcePath": "src/features/game-presentation/utils/useGameEntityMotionProgress.ts"
       },
       {
         "fromSymbol": "src/features/game-presentation/adapters/inbound/createGameKeyboardEvent.test.ts",
@@ -2793,27 +3497,21 @@
         "sourcePath": "src/features/game-presentation/adapters/inbound/Game.tsx"
       },
       {
-        "fromSymbol": "src/features/game-presentation/adapters/inbound/GameEntity.tsx",
-        "toSymbol": "registerMeasurement",
-        "callExpression": "registerMeasurement",
-        "sourcePath": "src/features/game-presentation/adapters/inbound/GameEntity.tsx"
-      },
-      {
-        "fromSymbol": "src/features/game-presentation/adapters/inbound/GameEntity.tsx",
-        "toSymbol": "measureGameEntity",
-        "callExpression": "measureGameEntity",
+        "fromSymbol": "GameEntity",
+        "toSymbol": "useGameEntityAnimatedStyle",
+        "callExpression": "useGameEntityAnimatedStyle",
         "sourcePath": "src/features/game-presentation/adapters/inbound/GameEntity.tsx"
       },
       {
         "fromSymbol": "GameEntity",
-        "toSymbol": "createEntityStyle",
-        "callExpression": "createEntityStyle",
+        "toSymbol": "useGameEntityMeasurement",
+        "callExpression": "useGameEntityMeasurement",
         "sourcePath": "src/features/game-presentation/adapters/inbound/GameEntity.tsx"
       },
       {
-        "fromSymbol": "createEntityStyle",
-        "toSymbol": "toGamePercentage",
-        "callExpression": "toGamePercentage",
+        "fromSymbol": "GameEntity",
+        "toSymbol": "createEntityStaticStyle",
+        "callExpression": "createEntityStaticStyle",
         "sourcePath": "src/features/game-presentation/adapters/inbound/GameEntity.tsx"
       },
       {
@@ -2902,6 +3600,16 @@
       }
     ],
     "typeReferences": [
+      {
+        "fromSymbol": "GameEntityMotionProps",
+        "toType": "GameEntityEasing",
+        "sourcePath": "src/types/gamePresentation.ts"
+      },
+      {
+        "fromSymbol": "GameEntityProps",
+        "toType": "GameEntityEasing",
+        "sourcePath": "src/types/gamePresentation.ts"
+      },
       {
         "fromSymbol": "GameEntityProps",
         "toType": "GamePointerEvents",
@@ -3039,8 +3747,8 @@
       },
       {
         "fromComponent": "GameEntity",
-        "toComponent": "View",
-        "jsxElement": "<View\n      ref={elementRef}\n      {...(accessibilityLabel === undefined ? {} : { accessibilityLabel })}\n      {...(testID === undefined ? {} : { testID })}\n      pointerEvents={pointerEvents}\n      style={[\n        styles.root,\n        createEntityStyle({ x, y, width, height, opacity, scale, rotation, zIndex, hidden }),\n      ]}\n    >",
+        "toComponent": "Animated.View",
+        "jsxElement": "<Animated.View\n      ref={elementRef}\n      accessibilityLabel={props.accessibilityLabel}\n      testID={props.testID}\n      pointerEvents={props.pointerEvents ?? 'auto'}\n      style={[styles.root, createEntityStaticStyle(props), animatedStyle]}\n    >",
         "sourcePath": "src/features/game-presentation/adapters/inbound/GameEntity.tsx"
       },
       {

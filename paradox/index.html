@@ -207,8 +207,38 @@
       <small>1 function</small>
     </button>
   </li><li>
+    <button class="nav-button" type="button" data-target="src/features/game-presentation/utils/resolveGameEntityMotionPlan.ts">
+      src/features/game-presentation/utils/resolveGameEntityMotionPlan.ts
+      <small>3 functions</small>
+    </button>
+  </li><li>
     <button class="nav-button" type="button" data-target="src/features/game-presentation/utils/toGamePercentage.ts">
       src/features/game-presentation/utils/toGamePercentage.ts
+      <small>1 function</small>
+    </button>
+  </li><li>
+    <button class="nav-button" type="button" data-target="src/features/game-presentation/utils/useAnimatedGameEntityValue.ts">
+      src/features/game-presentation/utils/useAnimatedGameEntityValue.ts
+      <small>2 functions</small>
+    </button>
+  </li><li>
+    <button class="nav-button" type="button" data-target="src/features/game-presentation/utils/useGameEntityAnimatedStyle.ts">
+      src/features/game-presentation/utils/useGameEntityAnimatedStyle.ts
+      <small>2 functions</small>
+    </button>
+  </li><li>
+    <button class="nav-button" type="button" data-target="src/features/game-presentation/utils/useGameEntityMeasurement.ts">
+      src/features/game-presentation/utils/useGameEntityMeasurement.ts
+      <small>1 function</small>
+    </button>
+  </li><li>
+    <button class="nav-button" type="button" data-target="src/features/game-presentation/utils/useGameEntityMotionProgress.ts">
+      src/features/game-presentation/utils/useGameEntityMotionProgress.ts
+      <small>6 functions</small>
+    </button>
+  </li><li>
+    <button class="nav-button" type="button" data-target="src/features/game-presentation/utils/useGameReducedMotion.ts">
+      src/features/game-presentation/utils/useGameReducedMotion.ts
       <small>1 function</small>
     </button>
   </li><li>
@@ -226,9 +256,9 @@
     <section class="panel">
       <h2>Package overview</h2>
       <div class="summary">
-        <div><strong>18</strong><span class="muted">public exports</span></div>
+        <div><strong>20</strong><span class="muted">public exports</span></div>
         <div><strong>5</strong><span class="muted">components</span></div>
-        <div><strong>38</strong><span class="muted">modules</span></div>
+        <div><strong>45</strong><span class="muted">modules</span></div>
         <div><strong>2</strong><span class="muted">entrypoints</span></div>
       </div>
       <h3>Entrypoints</h3>
@@ -274,10 +304,10 @@
     <p class="muted">Referenced module</p>
     <p><strong>Dependencies:</strong> <code>src/features/game-presentation/adapters/inbound/GameField.tsx</code>, <code>src/features/game-presentation/composition/createGameBindingContext.ts</code>, <code>src/features/game-presentation/composition/createGameMeasurementRegistry.ts</code>, <code>src/features/game-presentation/composition/GameRuntimeContext.ts</code>, <code>src/features/game-presentation/composition/useGameRuntime.ts</code>, <code>src/types/gamePresentation.ts</code></p>
     <p><strong>Exports:</strong> <code>Game</code></p>
-  </article><article class="item" data-search="src/features/game-presentation/adapters/inbound/GameEntity.tsx src/features/game-presentation/adapters/inbound/measureGameEntity.ts src/features/game-presentation/composition/GameRuntimeContext.ts src/features/game-presentation/utils/toGamePercentage.ts src/types/gamePresentation.ts GameEntity">
+  </article><article class="item" data-search="src/features/game-presentation/adapters/inbound/GameEntity.tsx src/features/game-presentation/utils/useGameEntityAnimatedStyle.ts src/features/game-presentation/utils/useGameEntityMeasurement.ts src/types/gamePresentation.ts GameEntity">
     <h3>src/features/game-presentation/adapters/inbound/GameEntity.tsx</h3>
     <p class="muted">Referenced module</p>
-    <p><strong>Dependencies:</strong> <code>src/features/game-presentation/adapters/inbound/measureGameEntity.ts</code>, <code>src/features/game-presentation/composition/GameRuntimeContext.ts</code>, <code>src/features/game-presentation/utils/toGamePercentage.ts</code>, <code>src/types/gamePresentation.ts</code></p>
+    <p><strong>Dependencies:</strong> <code>src/features/game-presentation/utils/useGameEntityAnimatedStyle.ts</code>, <code>src/features/game-presentation/utils/useGameEntityMeasurement.ts</code>, <code>src/types/gamePresentation.ts</code></p>
     <p><strong>Exports:</strong> <code>GameEntity</code></p>
   </article><article class="item" data-search="src/features/game-presentation/adapters/inbound/GameField.tsx src/types/gamePresentation.ts GameField">
     <h3>src/features/game-presentation/adapters/inbound/GameField.tsx</h3>
@@ -374,36 +404,71 @@
     <p class="muted">Referenced module</p>
     <p><strong>Dependencies:</strong> <span class="empty">None</span></p>
     <p><strong>Exports:</strong> <code>gameOverlayMeta</code></p>
-  </article><article class="item" data-search="src/features/game-presentation/public.ts Game GameEntity GameEntityProps GameField GameFieldProps GameInputZone GameInputZoneProps GameKeyboardBinding GameMeasurementProbe GameMeasurementProbeProps GameOverlay GameOverlayPlacement GameOverlayProps GamePointerEvents GameProps">
+  </article><article class="item" data-search="src/features/game-presentation/public.ts Game GameEntity GameEntityEasing GameEntityMotionProps GameEntityProps GameField GameFieldProps GameInputZone GameInputZoneProps GameKeyboardBinding GameMeasurementProbe GameMeasurementProbeProps GameOverlay GameOverlayPlacement GameOverlayProps GamePointerEvents GameProps">
     <h3>src/features/game-presentation/public.ts</h3>
     <p class="muted">Referenced module</p>
     <p><strong>Dependencies:</strong> <span class="empty">None</span></p>
-    <p><strong>Exports:</strong> <code>Game</code>, <code>GameEntity</code>, <code>GameEntityProps</code>, <code>GameField</code>, <code>GameFieldProps</code>, <code>GameInputZone</code>, <code>GameInputZoneProps</code>, <code>GameKeyboardBinding</code>, <code>GameMeasurementProbe</code>, <code>GameMeasurementProbeProps</code>, <code>GameOverlay</code>, <code>GameOverlayPlacement</code>, <code>GameOverlayProps</code>, <code>GamePointerEvents</code>, <code>GameProps</code></p>
+    <p><strong>Exports:</strong> <code>Game</code>, <code>GameEntity</code>, <code>GameEntityEasing</code>, <code>GameEntityMotionProps</code>, <code>GameEntityProps</code>, <code>GameField</code>, <code>GameFieldProps</code>, <code>GameInputZone</code>, <code>GameInputZoneProps</code>, <code>GameKeyboardBinding</code>, <code>GameMeasurementProbe</code>, <code>GameMeasurementProbeProps</code>, <code>GameOverlay</code>, <code>GameOverlayPlacement</code>, <code>GameOverlayProps</code>, <code>GamePointerEvents</code>, <code>GameProps</code></p>
   </article><article class="item" data-search="src/features/game-presentation/utils/clampGamePercentage.ts clampGamePercentage">
     <h3>src/features/game-presentation/utils/clampGamePercentage.ts</h3>
     <p class="muted">Referenced module</p>
     <p><strong>Dependencies:</strong> <span class="empty">None</span></p>
     <p><strong>Exports:</strong> <code>clampGamePercentage</code></p>
+  </article><article class="item" data-search="src/features/game-presentation/utils/resolveGameEntityMotionPlan.test.ts src/features/game-presentation/utils/resolveGameEntityMotionPlan.ts">
+    <h3>src/features/game-presentation/utils/resolveGameEntityMotionPlan.test.ts</h3>
+    <p class="muted">Referenced module</p>
+    <p><strong>Dependencies:</strong> <code>src/features/game-presentation/utils/resolveGameEntityMotionPlan.ts</code></p>
+    <p><strong>Exports:</strong> <span class="empty">None</span></p>
+  </article><article class="item" data-search="src/features/game-presentation/utils/resolveGameEntityMotionPlan.ts src/types/gamePresentation.ts GameEntityMotionPlan resolveGameEntityMotionPlan">
+    <h3>src/features/game-presentation/utils/resolveGameEntityMotionPlan.ts</h3>
+    <p class="muted">Referenced module</p>
+    <p><strong>Dependencies:</strong> <code>src/types/gamePresentation.ts</code></p>
+    <p><strong>Exports:</strong> <code>GameEntityMotionPlan</code>, <code>resolveGameEntityMotionPlan</code></p>
   </article><article class="item" data-search="src/features/game-presentation/utils/toGamePercentage.ts src/features/game-presentation/utils/clampGamePercentage.ts toGamePercentage">
     <h3>src/features/game-presentation/utils/toGamePercentage.ts</h3>
     <p class="muted">Referenced module</p>
     <p><strong>Dependencies:</strong> <code>src/features/game-presentation/utils/clampGamePercentage.ts</code></p>
     <p><strong>Exports:</strong> <code>toGamePercentage</code></p>
-  </article><article class="item" data-search="src/index.ts Game GameEntity GameEntityProps GameField GameFieldProps GameInputZone GameInputZoneProps GameKeyboardBinding GameMeasurementProbe GameMeasurementProbeProps GameOverlay GameOverlayPlacement GameOverlayProps GamePointerEvents GameProps ZORA_GAME_PLUGIN">
+  </article><article class="item" data-search="src/features/game-presentation/utils/useAnimatedGameEntityValue.ts src/types/gamePresentation.ts useAnimatedGameEntityValue">
+    <h3>src/features/game-presentation/utils/useAnimatedGameEntityValue.ts</h3>
+    <p class="muted">Referenced module</p>
+    <p><strong>Dependencies:</strong> <code>src/types/gamePresentation.ts</code></p>
+    <p><strong>Exports:</strong> <code>useAnimatedGameEntityValue</code></p>
+  </article><article class="item" data-search="src/features/game-presentation/utils/useGameEntityAnimatedStyle.ts src/features/game-presentation/utils/resolveGameEntityMotionPlan.ts src/features/game-presentation/utils/useAnimatedGameEntityValue.ts src/features/game-presentation/utils/useGameEntityMotionProgress.ts src/features/game-presentation/utils/useGameReducedMotion.ts src/types/gamePresentation.ts useGameEntityAnimatedStyle">
+    <h3>src/features/game-presentation/utils/useGameEntityAnimatedStyle.ts</h3>
+    <p class="muted">Referenced module</p>
+    <p><strong>Dependencies:</strong> <code>src/features/game-presentation/utils/resolveGameEntityMotionPlan.ts</code>, <code>src/features/game-presentation/utils/useAnimatedGameEntityValue.ts</code>, <code>src/features/game-presentation/utils/useGameEntityMotionProgress.ts</code>, <code>src/features/game-presentation/utils/useGameReducedMotion.ts</code>, <code>src/types/gamePresentation.ts</code></p>
+    <p><strong>Exports:</strong> <code>useGameEntityAnimatedStyle</code></p>
+  </article><article class="item" data-search="src/features/game-presentation/utils/useGameEntityMeasurement.ts src/features/game-presentation/adapters/inbound/measureGameEntity.ts src/features/game-presentation/composition/GameRuntimeContext.ts useGameEntityMeasurement">
+    <h3>src/features/game-presentation/utils/useGameEntityMeasurement.ts</h3>
+    <p class="muted">Referenced module</p>
+    <p><strong>Dependencies:</strong> <code>src/features/game-presentation/adapters/inbound/measureGameEntity.ts</code>, <code>src/features/game-presentation/composition/GameRuntimeContext.ts</code></p>
+    <p><strong>Exports:</strong> <code>useGameEntityMeasurement</code></p>
+  </article><article class="item" data-search="src/features/game-presentation/utils/useGameEntityMotionProgress.ts src/features/game-presentation/utils/resolveGameEntityMotionPlan.ts src/types/gamePresentation.ts useGameEntityMotionProgress">
+    <h3>src/features/game-presentation/utils/useGameEntityMotionProgress.ts</h3>
+    <p class="muted">Referenced module</p>
+    <p><strong>Dependencies:</strong> <code>src/features/game-presentation/utils/resolveGameEntityMotionPlan.ts</code>, <code>src/types/gamePresentation.ts</code></p>
+    <p><strong>Exports:</strong> <code>useGameEntityMotionProgress</code></p>
+  </article><article class="item" data-search="src/features/game-presentation/utils/useGameReducedMotion.ts useGameReducedMotion">
+    <h3>src/features/game-presentation/utils/useGameReducedMotion.ts</h3>
+    <p class="muted">Referenced module</p>
+    <p><strong>Dependencies:</strong> <span class="empty">None</span></p>
+    <p><strong>Exports:</strong> <code>useGameReducedMotion</code></p>
+  </article><article class="item" data-search="src/index.ts Game GameEntity GameEntityEasing GameEntityMotionProps GameEntityProps GameField GameFieldProps GameInputZone GameInputZoneProps GameKeyboardBinding GameMeasurementProbe GameMeasurementProbeProps GameOverlay GameOverlayPlacement GameOverlayProps GamePointerEvents GameProps ZORA_GAME_PLUGIN">
     <h3>src/index.ts</h3>
     <p class="muted">Configured entrypoint</p>
     <p><strong>Dependencies:</strong> <span class="empty">None</span></p>
-    <p><strong>Exports:</strong> <code>Game</code>, <code>GameEntity</code>, <code>GameEntityProps</code>, <code>GameField</code>, <code>GameFieldProps</code>, <code>GameInputZone</code>, <code>GameInputZoneProps</code>, <code>GameKeyboardBinding</code>, <code>GameMeasurementProbe</code>, <code>GameMeasurementProbeProps</code>, <code>GameOverlay</code>, <code>GameOverlayPlacement</code>, <code>GameOverlayProps</code>, <code>GamePointerEvents</code>, <code>GameProps</code>, <code>ZORA_GAME_PLUGIN</code></p>
+    <p><strong>Exports:</strong> <code>Game</code>, <code>GameEntity</code>, <code>GameEntityEasing</code>, <code>GameEntityMotionProps</code>, <code>GameEntityProps</code>, <code>GameField</code>, <code>GameFieldProps</code>, <code>GameInputZone</code>, <code>GameInputZoneProps</code>, <code>GameKeyboardBinding</code>, <code>GameMeasurementProbe</code>, <code>GameMeasurementProbeProps</code>, <code>GameOverlay</code>, <code>GameOverlayPlacement</code>, <code>GameOverlayProps</code>, <code>GamePointerEvents</code>, <code>GameProps</code>, <code>ZORA_GAME_PLUGIN</code></p>
   </article><article class="item" data-search="src/metadata.ts ZORA_GAME_COMPONENT_META ZORA_PLUGIN_METADATA">
     <h3>src/metadata.ts</h3>
     <p class="muted">Configured entrypoint</p>
     <p><strong>Dependencies:</strong> <span class="empty">None</span></p>
     <p><strong>Exports:</strong> <code>ZORA_GAME_COMPONENT_META</code>, <code>ZORA_PLUGIN_METADATA</code></p>
-  </article><article class="item" data-search="src/types/gamePresentation.ts GameEntityProps GameFieldProps GameInputZoneProps GameKeyboardBinding GameMeasurementProbeProps GameOverlayPlacement GameOverlayProps GamePointerEvents GameProps">
+  </article><article class="item" data-search="src/types/gamePresentation.ts GameEntityEasing GameEntityMotionProps GameEntityProps GameFieldProps GameInputZoneProps GameKeyboardBinding GameMeasurementProbeProps GameOverlayPlacement GameOverlayProps GamePointerEvents GameProps">
     <h3>src/types/gamePresentation.ts</h3>
     <p class="muted">Referenced module</p>
     <p><strong>Dependencies:</strong> <span class="empty">None</span></p>
-    <p><strong>Exports:</strong> <code>GameEntityProps</code>, <code>GameFieldProps</code>, <code>GameInputZoneProps</code>, <code>GameKeyboardBinding</code>, <code>GameMeasurementProbeProps</code>, <code>GameOverlayPlacement</code>, <code>GameOverlayProps</code>, <code>GamePointerEvents</code>, <code>GameProps</code></p>
+    <p><strong>Exports:</strong> <code>GameEntityEasing</code>, <code>GameEntityMotionProps</code>, <code>GameEntityProps</code>, <code>GameFieldProps</code>, <code>GameInputZoneProps</code>, <code>GameKeyboardBinding</code>, <code>GameMeasurementProbeProps</code>, <code>GameOverlayPlacement</code>, <code>GameOverlayProps</code>, <code>GamePointerEvents</code>, <code>GameProps</code></p>
   </article><article class="item" data-search="src/types/gameRuntime.ts GameMeasurementBounds GameMeasurementReader GameMeasurementRegistry GameRuntimeContextValue GameRuntimeState GameRuntimeValue">
     <h3>src/types/gameRuntime.ts</h3>
     <p class="muted">Referenced module</p>
@@ -463,50 +528,20 @@
             </section>
             <section>
               <h3>src/features/game-presentation/adapters/inbound/GameEntity.tsx</h3>
-              <article class="item" id="symbol-gameentity" data-search="GameEntity function src/features/game-presentation/adapters/inbound/GameEntity.tsx Render one generic positioned game entity without owning gameplay semantics. GameEntityProps ({&#10;  children,&#10;  x = 0,&#10;  y = 0,&#10;  width,&#10;  height,&#10;  opacity = 1,&#10;  scale = 1,&#10;  rotation = 0,&#10;  zIndex = 0,&#10;  hidden = false,&#10;  pointerEvents = &#39;auto&#39;,&#10;  measurementId,&#10;  accessibilityLabel,&#10;  testID,&#10;}: GameEntityProps) =&gt; React.JSX.Element">
+              <article class="item" id="symbol-gameentity" data-search="GameEntity function src/features/game-presentation/adapters/inbound/GameEntity.tsx Render one generic positioned game entity without owning gameplay semantics. GameEntityProps (props: GameEntityProps) =&gt; React.JSX.Element">
     <h4>GameEntity</h4>
-    <p class="muted">function • <code>src/features/game-presentation/adapters/inbound/GameEntity.tsx:10:1</code></p>
+    <p class="muted">function • <code>src/features/game-presentation/adapters/inbound/GameEntity.tsx:9:1</code></p>
     <p>Render one generic positioned game entity without owning gameplay semantics.</p>
     <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
     <div><strong>Related symbols:</strong> <ul class="chips"><li class="chip">GameEntityProps</li></ul></div>
     <div>
         <h5>Signature</h5>
-        <pre>({
-  children,
-  x = 0,
-  y = 0,
-  width,
-  height,
-  opacity = 1,
-  scale = 1,
-  rotation = 0,
-  zIndex = 0,
-  hidden = false,
-  pointerEvents = &#39;auto&#39;,
-  measurementId,
-  accessibilityLabel,
-  testID,
-}: GameEntityProps) =&gt; React.JSX.Element</pre>
+        <pre>(props: GameEntityProps) =&gt; React.JSX.Element</pre>
         <table>
                 <thead><tr><th>Parameter</th><th>Type</th><th>Required</th><th>Description</th></tr></thead>
                 <tbody>
                   <tr>
-                        <td><code>{
-  children,
-  x = 0,
-  y = 0,
-  width,
-  height,
-  opacity = 1,
-  scale = 1,
-  rotation = 0,
-  zIndex = 0,
-  hidden = false,
-  pointerEvents = &#39;auto&#39;,
-  measurementId,
-  accessibilityLabel,
-  testID,
-}</code></td>
+                        <td><code>props</code></td>
                         <td><code>GameEntityProps</code></td>
                         <td>yes</td>
                         <td></td>
@@ -694,12 +729,117 @@
             </section>
             <section>
               <h3>src/types/gamePresentation.ts</h3>
-              <article class="item" id="symbol-gameentityprops" data-search="GameEntityProps type src/types/gamePresentation.ts  GamePointerEvents">
-    <h4>GameEntityProps</h4>
-    <p class="muted">type • <code>src/types/gamePresentation.ts:19:1</code></p>
+              <article class="item" id="symbol-gameentityeasing" data-search="GameEntityEasing unknown src/types/gamePresentation.ts ">
+    <h4>GameEntityEasing</h4>
+    <p class="muted">unknown • <code>src/types/gamePresentation.ts:7:1</code></p>
     
     <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
-    <div><strong>Related symbols:</strong> <ul class="chips"><li class="chip">GamePointerEvents</li></ul></div>
+    <div><strong>Related symbols:</strong> <span class="empty">None</span></div>
+    
+    
+  </article><article class="item" id="symbol-gameentitymotionprops" data-search="GameEntityMotionProps type src/types/gamePresentation.ts  GameEntityEasing">
+    <h4>GameEntityMotionProps</h4>
+    <p class="muted">type • <code>src/types/gamePresentation.ts:9:1</code></p>
+    
+    <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
+    <div><strong>Related symbols:</strong> <ul class="chips"><li class="chip">GameEntityEasing</li></ul></div>
+    
+    <table>
+    <thead><tr><th>Member</th><th>Kind</th><th>Type</th><th>Required</th><th>Description</th></tr></thead>
+    <tbody>
+      <tr>
+            <td><code>motionAlternate</code></td>
+            <td>property</td>
+            <td><code>boolean</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>motionDelayMs</code></td>
+            <td>property</td>
+            <td><code>number</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>motionDurationMs</code></td>
+            <td>property</td>
+            <td><code>number</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>motionEasing</code></td>
+            <td>property</td>
+            <td><code>GameEntityEasing</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>motionEssential</code></td>
+            <td>property</td>
+            <td><code>boolean</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>motionOffsetX</code></td>
+            <td>property</td>
+            <td><code>number</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>motionOffsetY</code></td>
+            <td>property</td>
+            <td><code>number</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>motionOpacityDelta</code></td>
+            <td>property</td>
+            <td><code>number</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>motionPaused</code></td>
+            <td>property</td>
+            <td><code>boolean</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>motionRepeat</code></td>
+            <td>property</td>
+            <td><code>boolean</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>motionRotationDelta</code></td>
+            <td>property</td>
+            <td><code>number</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>motionScaleDelta</code></td>
+            <td>property</td>
+            <td><code>number</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>transitionDurationMs</code></td>
+            <td>property</td>
+            <td><code>number</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>transitionEasing</code></td>
+            <td>property</td>
+            <td><code>GameEntityEasing</code></td>
+            <td>no</td>
+            <td></td>
+          </tr>
+    </tbody>
+  </table>
+  </article><article class="item" id="symbol-gameentityprops" data-search="GameEntityProps type src/types/gamePresentation.ts  GameEntityEasing GamePointerEvents">
+    <h4>GameEntityProps</h4>
+    <p class="muted">type • <code>src/types/gamePresentation.ts:37:1</code></p>
+    
+    <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
+    <div><strong>Related symbols:</strong> <ul class="chips"><li class="chip">GameEntityEasing</li><li class="chip">GamePointerEvents</li></ul></div>
     
     <table>
     <thead><tr><th>Member</th><th>Kind</th><th>Type</th><th>Required</th><th>Description</th></tr></thead>
@@ -735,6 +875,78 @@
             <td>no</td>
             <td></td>
           </tr><tr>
+            <td><code>motionAlternate</code></td>
+            <td>property</td>
+            <td><code>boolean</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>motionDelayMs</code></td>
+            <td>property</td>
+            <td><code>number</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>motionDurationMs</code></td>
+            <td>property</td>
+            <td><code>number</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>motionEasing</code></td>
+            <td>property</td>
+            <td><code>GameEntityEasing</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>motionEssential</code></td>
+            <td>property</td>
+            <td><code>boolean</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>motionOffsetX</code></td>
+            <td>property</td>
+            <td><code>number</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>motionOffsetY</code></td>
+            <td>property</td>
+            <td><code>number</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>motionOpacityDelta</code></td>
+            <td>property</td>
+            <td><code>number</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>motionPaused</code></td>
+            <td>property</td>
+            <td><code>boolean</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>motionRepeat</code></td>
+            <td>property</td>
+            <td><code>boolean</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>motionRotationDelta</code></td>
+            <td>property</td>
+            <td><code>number</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>motionScaleDelta</code></td>
+            <td>property</td>
+            <td><code>number</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
             <td><code>opacity</code></td>
             <td>property</td>
             <td><code>number</code></td>
@@ -762,6 +974,18 @@
             <td><code>testID</code></td>
             <td>property</td>
             <td><code>string</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>transitionDurationMs</code></td>
+            <td>property</td>
+            <td><code>number</code></td>
+            <td>no</td>
+            <td></td>
+          </tr><tr>
+            <td><code>transitionEasing</code></td>
+            <td>property</td>
+            <td><code>GameEntityEasing</code></td>
             <td>no</td>
             <td></td>
           </tr><tr>
@@ -793,7 +1017,7 @@
   </table>
   </article><article class="item" id="symbol-gamefieldprops" data-search="GameFieldProps type src/types/gamePresentation.ts ">
     <h4>GameFieldProps</h4>
-    <p class="muted">type • <code>src/types/gamePresentation.ts:10:1</code></p>
+    <p class="muted">type • <code>src/types/gamePresentation.ts:28:1</code></p>
     
     <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
     <div><strong>Related symbols:</strong> <span class="empty">None</span></div>
@@ -842,7 +1066,7 @@
   </table>
   </article><article class="item" id="symbol-gameinputzoneprops" data-search="GameInputZoneProps type src/types/gamePresentation.ts  GameKeyboardBinding">
     <h4>GameInputZoneProps</h4>
-    <p class="muted">type • <code>src/types/gamePresentation.ts:43:1</code></p>
+    <p class="muted">type • <code>src/types/gamePresentation.ts:61:1</code></p>
     
     <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
     <div><strong>Related symbols:</strong> <ul class="chips"><li class="chip">GameKeyboardBinding</li></ul></div>
@@ -927,7 +1151,7 @@
   </table>
   </article><article class="item" id="symbol-gamekeyboardbinding" data-search="GameKeyboardBinding type src/types/gamePresentation.ts ">
     <h4>GameKeyboardBinding</h4>
-    <p class="muted">type • <code>src/types/gamePresentation.ts:36:1</code></p>
+    <p class="muted">type • <code>src/types/gamePresentation.ts:54:1</code></p>
     
     <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
     <div><strong>Related symbols:</strong> <span class="empty">None</span></div>
@@ -964,7 +1188,7 @@
   </table>
   </article><article class="item" id="symbol-gamemeasurementprobeprops" data-search="GameMeasurementProbeProps type src/types/gamePresentation.ts ">
     <h4>GameMeasurementProbeProps</h4>
-    <p class="muted">type • <code>src/types/gamePresentation.ts:58:1</code></p>
+    <p class="muted">type • <code>src/types/gamePresentation.ts:76:1</code></p>
     
     <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
     <div><strong>Related symbols:</strong> <span class="empty">None</span></div>
@@ -1013,7 +1237,7 @@
   </table>
   </article><article class="item" id="symbol-gameoverlayplacement" data-search="GameOverlayPlacement unknown src/types/gamePresentation.ts ">
     <h4>GameOverlayPlacement</h4>
-    <p class="muted">unknown • <code>src/types/gamePresentation.ts:7:1</code></p>
+    <p class="muted">unknown • <code>src/types/gamePresentation.ts:25:1</code></p>
     
     <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
     <div><strong>Related symbols:</strong> <span class="empty">None</span></div>
@@ -1021,7 +1245,7 @@
     
   </article><article class="item" id="symbol-gameoverlayprops" data-search="GameOverlayProps type src/types/gamePresentation.ts  GameOverlayPlacement">
     <h4>GameOverlayProps</h4>
-    <p class="muted">type • <code>src/types/gamePresentation.ts:67:1</code></p>
+    <p class="muted">type • <code>src/types/gamePresentation.ts:85:1</code></p>
     
     <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
     <div><strong>Related symbols:</strong> <ul class="chips"><li class="chip">GameOverlayPlacement</li></ul></div>
@@ -1078,7 +1302,7 @@
     
   </article><article class="item" id="symbol-gameprops" data-search="GameProps type src/types/gamePresentation.ts ">
     <h4>GameProps</h4>
-    <p class="muted">type • <code>src/types/gamePresentation.ts:76:1</code></p>
+    <p class="muted">type • <code>src/types/gamePresentation.ts:94:1</code></p>
     
     <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
     <div><strong>Related symbols:</strong> <span class="empty">None</span></div>
@@ -1273,9 +1497,9 @@
             </tr>
       </tbody>
     </table>
-  </article><article class="item" id="component-gameentity" data-search="GameEntity src/features/game-presentation/adapters/inbound/GameEntity.tsx Render one generic positioned game entity without owning gameplay semantics. accessibilityLabel string | undefined children React.ReactNode | undefined height number | undefined hidden boolean | undefined measurementId string | undefined opacity number | undefined pointerEvents GamePointerEvents | undefined rotation number | undefined scale number | undefined testID string | undefined width number | undefined x number | undefined y number | undefined zIndex number | undefined">
+  </article><article class="item" id="component-gameentity" data-search="GameEntity src/features/game-presentation/adapters/inbound/GameEntity.tsx Render one generic positioned game entity without owning gameplay semantics. accessibilityLabel string | undefined children React.ReactNode | undefined height number | undefined hidden boolean | undefined measurementId string | undefined motionAlternate boolean | undefined motionDelayMs number | undefined motionDurationMs number | undefined motionEasing GameEntityEasing | undefined motionEssential boolean | undefined motionOffsetX number | undefined motionOffsetY number | undefined motionOpacityDelta number | undefined motionPaused boolean | undefined motionRepeat boolean | undefined motionRotationDelta number | undefined motionScaleDelta number | undefined opacity number | undefined pointerEvents GamePointerEvents | undefined rotation number | undefined scale number | undefined testID string | undefined transitionDurationMs number | undefined transitionEasing GameEntityEasing | undefined width number | undefined x number | undefined y number | undefined zIndex number | undefined">
     <h3>GameEntity</h3>
-    <p class="muted"><code>src/features/game-presentation/adapters/inbound/GameEntity.tsx:10:1</code></p>
+    <p class="muted"><code>src/features/game-presentation/adapters/inbound/GameEntity.tsx:9:1</code></p>
     <p>Render one generic positioned game entity without owning gameplay semantics.</p>
     <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
     <table>
@@ -1307,6 +1531,66 @@
               <td>no</td>
               <td></td>
             </tr><tr>
+              <td><code>motionAlternate</code></td>
+              <td><code>boolean | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>motionDelayMs</code></td>
+              <td><code>number | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>motionDurationMs</code></td>
+              <td><code>number | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>motionEasing</code></td>
+              <td><code>GameEntityEasing | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>motionEssential</code></td>
+              <td><code>boolean | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>motionOffsetX</code></td>
+              <td><code>number | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>motionOffsetY</code></td>
+              <td><code>number | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>motionOpacityDelta</code></td>
+              <td><code>number | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>motionPaused</code></td>
+              <td><code>boolean | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>motionRepeat</code></td>
+              <td><code>boolean | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>motionRotationDelta</code></td>
+              <td><code>number | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>motionScaleDelta</code></td>
+              <td><code>number | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
               <td><code>opacity</code></td>
               <td><code>number | undefined</code></td>
               <td>no</td>
@@ -1329,6 +1613,16 @@
             </tr><tr>
               <td><code>testID</code></td>
               <td><code>string | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>transitionDurationMs</code></td>
+              <td><code>number | undefined</code></td>
+              <td>no</td>
+              <td></td>
+            </tr><tr>
+              <td><code>transitionEasing</code></td>
+              <td><code>GameEntityEasing | undefined</code></td>
               <td>no</td>
               <td></td>
             </tr><tr>
@@ -1549,9 +1843,8 @@
   module_src_features_game_presentation_adapters_inbound_Game_tsx --&gt; module_src_types_gamePresentation_ts
   module_src_features_game_presentation_adapters_inbound_GameEntity_tsx[&quot;src/features/game-presentation/adapters/inbound/GameEntity.tsx&quot;]
   package__ankhorage_zora_game -.-&gt; module_src_features_game_presentation_adapters_inbound_GameEntity_tsx
-  module_src_features_game_presentation_adapters_inbound_GameEntity_tsx --&gt; module_src_features_game_presentation_adapters_inbound_measureGameEntity_ts
-  module_src_features_game_presentation_adapters_inbound_GameEntity_tsx --&gt; module_src_features_game_presentation_composition_GameRuntimeContext_ts
-  module_src_features_game_presentation_adapters_inbound_GameEntity_tsx --&gt; module_src_features_game_presentation_utils_toGamePercentage_ts
+  module_src_features_game_presentation_adapters_inbound_GameEntity_tsx --&gt; module_src_features_game_presentation_utils_useGameEntityAnimatedStyle_ts
+  module_src_features_game_presentation_adapters_inbound_GameEntity_tsx --&gt; module_src_features_game_presentation_utils_useGameEntityMeasurement_ts
   module_src_features_game_presentation_adapters_inbound_GameEntity_tsx --&gt; module_src_types_gamePresentation_ts
   module_src_features_game_presentation_adapters_inbound_GameField_tsx[&quot;src/features/game-presentation/adapters/inbound/GameField.tsx&quot;]
   package__ankhorage_zora_game -.-&gt; module_src_features_game_presentation_adapters_inbound_GameField_tsx
@@ -1618,9 +1911,35 @@
   package__ankhorage_zora_game -.-&gt; module_src_features_game_presentation_public_ts
   module_src_features_game_presentation_utils_clampGamePercentage_ts[&quot;src/features/game-presentation/utils/clampGamePercentage.ts&quot;]
   package__ankhorage_zora_game -.-&gt; module_src_features_game_presentation_utils_clampGamePercentage_ts
+  module_src_features_game_presentation_utils_resolveGameEntityMotionPlan_test_ts[&quot;src/features/game-presentation/utils/resolveGameEntityMotionPlan.test.ts&quot;]
+  package__ankhorage_zora_game -.-&gt; module_src_features_game_presentation_utils_resolveGameEntityMotionPlan_test_ts
+  module_src_features_game_presentation_utils_resolveGameEntityMotionPlan_test_ts --&gt; module_src_features_game_presentation_utils_resolveGameEntityMotionPlan_ts
+  module_src_features_game_presentation_utils_resolveGameEntityMotionPlan_ts[&quot;src/features/game-presentation/utils/resolveGameEntityMotionPlan.ts&quot;]
+  package__ankhorage_zora_game -.-&gt; module_src_features_game_presentation_utils_resolveGameEntityMotionPlan_ts
+  module_src_features_game_presentation_utils_resolveGameEntityMotionPlan_ts --&gt; module_src_types_gamePresentation_ts
   module_src_features_game_presentation_utils_toGamePercentage_ts[&quot;src/features/game-presentation/utils/toGamePercentage.ts&quot;]
   package__ankhorage_zora_game -.-&gt; module_src_features_game_presentation_utils_toGamePercentage_ts
   module_src_features_game_presentation_utils_toGamePercentage_ts --&gt; module_src_features_game_presentation_utils_clampGamePercentage_ts
+  module_src_features_game_presentation_utils_useAnimatedGameEntityValue_ts[&quot;src/features/game-presentation/utils/useAnimatedGameEntityValue.ts&quot;]
+  package__ankhorage_zora_game -.-&gt; module_src_features_game_presentation_utils_useAnimatedGameEntityValue_ts
+  module_src_features_game_presentation_utils_useAnimatedGameEntityValue_ts --&gt; module_src_types_gamePresentation_ts
+  module_src_features_game_presentation_utils_useGameEntityAnimatedStyle_ts[&quot;src/features/game-presentation/utils/useGameEntityAnimatedStyle.ts&quot;]
+  package__ankhorage_zora_game -.-&gt; module_src_features_game_presentation_utils_useGameEntityAnimatedStyle_ts
+  module_src_features_game_presentation_utils_useGameEntityAnimatedStyle_ts --&gt; module_src_features_game_presentation_utils_resolveGameEntityMotionPlan_ts
+  module_src_features_game_presentation_utils_useGameEntityAnimatedStyle_ts --&gt; module_src_features_game_presentation_utils_useAnimatedGameEntityValue_ts
+  module_src_features_game_presentation_utils_useGameEntityAnimatedStyle_ts --&gt; module_src_features_game_presentation_utils_useGameEntityMotionProgress_ts
+  module_src_features_game_presentation_utils_useGameEntityAnimatedStyle_ts --&gt; module_src_features_game_presentation_utils_useGameReducedMotion_ts
+  module_src_features_game_presentation_utils_useGameEntityAnimatedStyle_ts --&gt; module_src_types_gamePresentation_ts
+  module_src_features_game_presentation_utils_useGameEntityMeasurement_ts[&quot;src/features/game-presentation/utils/useGameEntityMeasurement.ts&quot;]
+  package__ankhorage_zora_game -.-&gt; module_src_features_game_presentation_utils_useGameEntityMeasurement_ts
+  module_src_features_game_presentation_utils_useGameEntityMeasurement_ts --&gt; module_src_features_game_presentation_adapters_inbound_measureGameEntity_ts
+  module_src_features_game_presentation_utils_useGameEntityMeasurement_ts --&gt; module_src_features_game_presentation_composition_GameRuntimeContext_ts
+  module_src_features_game_presentation_utils_useGameEntityMotionProgress_ts[&quot;src/features/game-presentation/utils/useGameEntityMotionProgress.ts&quot;]
+  package__ankhorage_zora_game -.-&gt; module_src_features_game_presentation_utils_useGameEntityMotionProgress_ts
+  module_src_features_game_presentation_utils_useGameEntityMotionProgress_ts --&gt; module_src_features_game_presentation_utils_resolveGameEntityMotionPlan_ts
+  module_src_features_game_presentation_utils_useGameEntityMotionProgress_ts --&gt; module_src_types_gamePresentation_ts
+  module_src_features_game_presentation_utils_useGameReducedMotion_ts[&quot;src/features/game-presentation/utils/useGameReducedMotion.ts&quot;]
+  package__ankhorage_zora_game -.-&gt; module_src_features_game_presentation_utils_useGameReducedMotion_ts
   module_src_index_ts[&quot;src/index.ts&quot;]
   module_src_metadata_ts[&quot;src/metadata.ts&quot;]
   module_src_types_gamePresentation_ts[&quot;src/types/gamePresentation.ts&quot;]
@@ -1688,9 +2007,8 @@
   module_src_features_game_presentation_adapters_inbound_Game_tsx --&gt; module_src_types_gamePresentation_ts
   module_src_features_game_presentation_adapters_inbound_GameEntity_tsx[&quot;src/features/game-presentation/adapters/inbound/GameEntity.tsx&quot;]
   package__ankhorage_zora_game -.-&gt; module_src_features_game_presentation_adapters_inbound_GameEntity_tsx
-  module_src_features_game_presentation_adapters_inbound_GameEntity_tsx --&gt; module_src_features_game_presentation_adapters_inbound_measureGameEntity_ts
-  module_src_features_game_presentation_adapters_inbound_GameEntity_tsx --&gt; module_src_features_game_presentation_composition_GameRuntimeContext_ts
-  module_src_features_game_presentation_adapters_inbound_GameEntity_tsx --&gt; module_src_features_game_presentation_utils_toGamePercentage_ts
+  module_src_features_game_presentation_adapters_inbound_GameEntity_tsx --&gt; module_src_features_game_presentation_utils_useGameEntityAnimatedStyle_ts
+  module_src_features_game_presentation_adapters_inbound_GameEntity_tsx --&gt; module_src_features_game_presentation_utils_useGameEntityMeasurement_ts
   module_src_features_game_presentation_adapters_inbound_GameEntity_tsx --&gt; module_src_types_gamePresentation_ts
   module_src_features_game_presentation_adapters_inbound_GameField_tsx[&quot;src/features/game-presentation/adapters/inbound/GameField.tsx&quot;]
   package__ankhorage_zora_game -.-&gt; module_src_features_game_presentation_adapters_inbound_GameField_tsx
@@ -1757,9 +2075,35 @@
   package__ankhorage_zora_game -.-&gt; module_src_features_game_presentation_public_ts
   module_src_features_game_presentation_utils_clampGamePercentage_ts[&quot;src/features/game-presentation/utils/clampGamePercentage.ts&quot;]
   package__ankhorage_zora_game -.-&gt; module_src_features_game_presentation_utils_clampGamePercentage_ts
+  module_src_features_game_presentation_utils_resolveGameEntityMotionPlan_test_ts[&quot;src/features/game-presentation/utils/resolveGameEntityMotionPlan.test.ts&quot;]
+  package__ankhorage_zora_game -.-&gt; module_src_features_game_presentation_utils_resolveGameEntityMotionPlan_test_ts
+  module_src_features_game_presentation_utils_resolveGameEntityMotionPlan_test_ts --&gt; module_src_features_game_presentation_utils_resolveGameEntityMotionPlan_ts
+  module_src_features_game_presentation_utils_resolveGameEntityMotionPlan_ts[&quot;src/features/game-presentation/utils/resolveGameEntityMotionPlan.ts&quot;]
+  package__ankhorage_zora_game -.-&gt; module_src_features_game_presentation_utils_resolveGameEntityMotionPlan_ts
+  module_src_features_game_presentation_utils_resolveGameEntityMotionPlan_ts --&gt; module_src_types_gamePresentation_ts
   module_src_features_game_presentation_utils_toGamePercentage_ts[&quot;src/features/game-presentation/utils/toGamePercentage.ts&quot;]
   package__ankhorage_zora_game -.-&gt; module_src_features_game_presentation_utils_toGamePercentage_ts
   module_src_features_game_presentation_utils_toGamePercentage_ts --&gt; module_src_features_game_presentation_utils_clampGamePercentage_ts
+  module_src_features_game_presentation_utils_useAnimatedGameEntityValue_ts[&quot;src/features/game-presentation/utils/useAnimatedGameEntityValue.ts&quot;]
+  package__ankhorage_zora_game -.-&gt; module_src_features_game_presentation_utils_useAnimatedGameEntityValue_ts
+  module_src_features_game_presentation_utils_useAnimatedGameEntityValue_ts --&gt; module_src_types_gamePresentation_ts
+  module_src_features_game_presentation_utils_useGameEntityAnimatedStyle_ts[&quot;src/features/game-presentation/utils/useGameEntityAnimatedStyle.ts&quot;]
+  package__ankhorage_zora_game -.-&gt; module_src_features_game_presentation_utils_useGameEntityAnimatedStyle_ts
+  module_src_features_game_presentation_utils_useGameEntityAnimatedStyle_ts --&gt; module_src_features_game_presentation_utils_resolveGameEntityMotionPlan_ts
+  module_src_features_game_presentation_utils_useGameEntityAnimatedStyle_ts --&gt; module_src_features_game_presentation_utils_useAnimatedGameEntityValue_ts
+  module_src_features_game_presentation_utils_useGameEntityAnimatedStyle_ts --&gt; module_src_features_game_presentation_utils_useGameEntityMotionProgress_ts
+  module_src_features_game_presentation_utils_useGameEntityAnimatedStyle_ts --&gt; module_src_features_game_presentation_utils_useGameReducedMotion_ts
+  module_src_features_game_presentation_utils_useGameEntityAnimatedStyle_ts --&gt; module_src_types_gamePresentation_ts
+  module_src_features_game_presentation_utils_useGameEntityMeasurement_ts[&quot;src/features/game-presentation/utils/useGameEntityMeasurement.ts&quot;]
+  package__ankhorage_zora_game -.-&gt; module_src_features_game_presentation_utils_useGameEntityMeasurement_ts
+  module_src_features_game_presentation_utils_useGameEntityMeasurement_ts --&gt; module_src_features_game_presentation_adapters_inbound_measureGameEntity_ts
+  module_src_features_game_presentation_utils_useGameEntityMeasurement_ts --&gt; module_src_features_game_presentation_composition_GameRuntimeContext_ts
+  module_src_features_game_presentation_utils_useGameEntityMotionProgress_ts[&quot;src/features/game-presentation/utils/useGameEntityMotionProgress.ts&quot;]
+  package__ankhorage_zora_game -.-&gt; module_src_features_game_presentation_utils_useGameEntityMotionProgress_ts
+  module_src_features_game_presentation_utils_useGameEntityMotionProgress_ts --&gt; module_src_features_game_presentation_utils_resolveGameEntityMotionPlan_ts
+  module_src_features_game_presentation_utils_useGameEntityMotionProgress_ts --&gt; module_src_types_gamePresentation_ts
+  module_src_features_game_presentation_utils_useGameReducedMotion_ts[&quot;src/features/game-presentation/utils/useGameReducedMotion.ts&quot;]
+  package__ankhorage_zora_game -.-&gt; module_src_features_game_presentation_utils_useGameReducedMotion_ts
   module_src_index_ts[&quot;src/index.ts&quot;]
   module_src_metadata_ts[&quot;src/metadata.ts&quot;]
   module_src_types_gamePresentation_ts[&quot;src/types/gamePresentation.ts&quot;]
@@ -1824,7 +2168,14 @@
   module_src_features_game_presentation_meta_gameOverlayMeta_ts[&quot;src/features/game-presentation/meta/gameOverlayMeta.ts&quot;]
   module_src_features_game_presentation_public_ts[&quot;src/features/game-presentation/public.ts&quot;]
   module_src_features_game_presentation_utils_clampGamePercentage_ts[&quot;src/features/game-presentation/utils/clampGamePercentage.ts&quot;]
+  module_src_features_game_presentation_utils_resolveGameEntityMotionPlan_test_ts[&quot;src/features/game-presentation/utils/resolveGameEntityMotionPlan.test.ts&quot;]
+  module_src_features_game_presentation_utils_resolveGameEntityMotionPlan_ts[&quot;src/features/game-presentation/utils/resolveGameEntityMotionPlan.ts&quot;]
   module_src_features_game_presentation_utils_toGamePercentage_ts[&quot;src/features/game-presentation/utils/toGamePercentage.ts&quot;]
+  module_src_features_game_presentation_utils_useAnimatedGameEntityValue_ts[&quot;src/features/game-presentation/utils/useAnimatedGameEntityValue.ts&quot;]
+  module_src_features_game_presentation_utils_useGameEntityAnimatedStyle_ts[&quot;src/features/game-presentation/utils/useGameEntityAnimatedStyle.ts&quot;]
+  module_src_features_game_presentation_utils_useGameEntityMeasurement_ts[&quot;src/features/game-presentation/utils/useGameEntityMeasurement.ts&quot;]
+  module_src_features_game_presentation_utils_useGameEntityMotionProgress_ts[&quot;src/features/game-presentation/utils/useGameEntityMotionProgress.ts&quot;]
+  module_src_features_game_presentation_utils_useGameReducedMotion_ts[&quot;src/features/game-presentation/utils/useGameReducedMotion.ts&quot;]
   module_src_index_ts[&quot;src/index.ts&quot;]
   module_src_metadata_ts[&quot;src/metadata.ts&quot;]
   module_src_types_gamePresentation_ts[&quot;src/types/gamePresentation.ts&quot;]
@@ -1846,9 +2197,8 @@
   module_src_features_game_presentation_adapters_inbound_Game_tsx --&gt; module_src_features_game_presentation_composition_GameRuntimeContext_ts
   module_src_features_game_presentation_adapters_inbound_Game_tsx --&gt; module_src_features_game_presentation_composition_useGameRuntime_ts
   module_src_features_game_presentation_adapters_inbound_Game_tsx --&gt; module_src_types_gamePresentation_ts
-  module_src_features_game_presentation_adapters_inbound_GameEntity_tsx --&gt; module_src_features_game_presentation_adapters_inbound_measureGameEntity_ts
-  module_src_features_game_presentation_adapters_inbound_GameEntity_tsx --&gt; module_src_features_game_presentation_composition_GameRuntimeContext_ts
-  module_src_features_game_presentation_adapters_inbound_GameEntity_tsx --&gt; module_src_features_game_presentation_utils_toGamePercentage_ts
+  module_src_features_game_presentation_adapters_inbound_GameEntity_tsx --&gt; module_src_features_game_presentation_utils_useGameEntityAnimatedStyle_ts
+  module_src_features_game_presentation_adapters_inbound_GameEntity_tsx --&gt; module_src_features_game_presentation_utils_useGameEntityMeasurement_ts
   module_src_features_game_presentation_adapters_inbound_GameEntity_tsx --&gt; module_src_types_gamePresentation_ts
   module_src_features_game_presentation_adapters_inbound_GameField_tsx --&gt; module_src_types_gamePresentation_ts
   module_src_features_game_presentation_adapters_inbound_GameInputZone_tsx --&gt; module_src_features_game_presentation_adapters_inbound_useGameInputZoneResponder_ts
@@ -1873,7 +2223,19 @@
   module_src_features_game_presentation_composition_useGameRuntime_ts --&gt; module_src_types_gamePresentation_ts
   module_src_features_game_presentation_composition_useGameRuntime_ts --&gt; module_src_types_gameRuntime_ts
   module_src_features_game_presentation_composition_useGameScheduledEffects_ts --&gt; module_src_types_gameRuntime_ts
+  module_src_features_game_presentation_utils_resolveGameEntityMotionPlan_test_ts --&gt; module_src_features_game_presentation_utils_resolveGameEntityMotionPlan_ts
+  module_src_features_game_presentation_utils_resolveGameEntityMotionPlan_ts --&gt; module_src_types_gamePresentation_ts
   module_src_features_game_presentation_utils_toGamePercentage_ts --&gt; module_src_features_game_presentation_utils_clampGamePercentage_ts
+  module_src_features_game_presentation_utils_useAnimatedGameEntityValue_ts --&gt; module_src_types_gamePresentation_ts
+  module_src_features_game_presentation_utils_useGameEntityAnimatedStyle_ts --&gt; module_src_features_game_presentation_utils_resolveGameEntityMotionPlan_ts
+  module_src_features_game_presentation_utils_useGameEntityAnimatedStyle_ts --&gt; module_src_features_game_presentation_utils_useAnimatedGameEntityValue_ts
+  module_src_features_game_presentation_utils_useGameEntityAnimatedStyle_ts --&gt; module_src_features_game_presentation_utils_useGameEntityMotionProgress_ts
+  module_src_features_game_presentation_utils_useGameEntityAnimatedStyle_ts --&gt; module_src_features_game_presentation_utils_useGameReducedMotion_ts
+  module_src_features_game_presentation_utils_useGameEntityAnimatedStyle_ts --&gt; module_src_types_gamePresentation_ts
+  module_src_features_game_presentation_utils_useGameEntityMeasurement_ts --&gt; module_src_features_game_presentation_adapters_inbound_measureGameEntity_ts
+  module_src_features_game_presentation_utils_useGameEntityMeasurement_ts --&gt; module_src_features_game_presentation_composition_GameRuntimeContext_ts
+  module_src_features_game_presentation_utils_useGameEntityMotionProgress_ts --&gt; module_src_features_game_presentation_utils_resolveGameEntityMotionPlan_ts
+  module_src_features_game_presentation_utils_useGameEntityMotionProgress_ts --&gt; module_src_types_gamePresentation_ts
   module_src_ZORA_GAME_COMPONENT_META_ts --&gt; module_src_features_game_presentation_meta_gameEntityMeta_ts
   module_src_ZORA_GAME_COMPONENT_META_ts --&gt; module_src_features_game_presentation_meta_gameFieldMeta_ts
   module_src_ZORA_GAME_COMPONENT_META_ts --&gt; module_src_features_game_presentation_meta_gameInputZoneMeta_ts
@@ -1922,7 +2284,14 @@
   module_src_features_game_presentation_meta_gameOverlayMeta_ts[&quot;src/features/game-presentation/meta/gameOverlayMeta.ts&quot;]
   module_src_features_game_presentation_public_ts[&quot;src/features/game-presentation/public.ts&quot;]
   module_src_features_game_presentation_utils_clampGamePercentage_ts[&quot;src/features/game-presentation/utils/clampGamePercentage.ts&quot;]
+  module_src_features_game_presentation_utils_resolveGameEntityMotionPlan_test_ts[&quot;src/features/game-presentation/utils/resolveGameEntityMotionPlan.test.ts&quot;]
+  module_src_features_game_presentation_utils_resolveGameEntityMotionPlan_ts[&quot;src/features/game-presentation/utils/resolveGameEntityMotionPlan.ts&quot;]
   module_src_features_game_presentation_utils_toGamePercentage_ts[&quot;src/features/game-presentation/utils/toGamePercentage.ts&quot;]
+  module_src_features_game_presentation_utils_useAnimatedGameEntityValue_ts[&quot;src/features/game-presentation/utils/useAnimatedGameEntityValue.ts&quot;]
+  module_src_features_game_presentation_utils_useGameEntityAnimatedStyle_ts[&quot;src/features/game-presentation/utils/useGameEntityAnimatedStyle.ts&quot;]
+  module_src_features_game_presentation_utils_useGameEntityMeasurement_ts[&quot;src/features/game-presentation/utils/useGameEntityMeasurement.ts&quot;]
+  module_src_features_game_presentation_utils_useGameEntityMotionProgress_ts[&quot;src/features/game-presentation/utils/useGameEntityMotionProgress.ts&quot;]
+  module_src_features_game_presentation_utils_useGameReducedMotion_ts[&quot;src/features/game-presentation/utils/useGameReducedMotion.ts&quot;]
   module_src_index_ts[&quot;src/index.ts&quot;]
   module_src_metadata_ts[&quot;src/metadata.ts&quot;]
   module_src_types_gamePresentation_ts[&quot;src/types/gamePresentation.ts&quot;]
@@ -1944,9 +2313,8 @@
   module_src_features_game_presentation_adapters_inbound_Game_tsx --&gt; module_src_features_game_presentation_composition_GameRuntimeContext_ts
   module_src_features_game_presentation_adapters_inbound_Game_tsx --&gt; module_src_features_game_presentation_composition_useGameRuntime_ts
   module_src_features_game_presentation_adapters_inbound_Game_tsx --&gt; module_src_types_gamePresentation_ts
-  module_src_features_game_presentation_adapters_inbound_GameEntity_tsx --&gt; module_src_features_game_presentation_adapters_inbound_measureGameEntity_ts
-  module_src_features_game_presentation_adapters_inbound_GameEntity_tsx --&gt; module_src_features_game_presentation_composition_GameRuntimeContext_ts
-  module_src_features_game_presentation_adapters_inbound_GameEntity_tsx --&gt; module_src_features_game_presentation_utils_toGamePercentage_ts
+  module_src_features_game_presentation_adapters_inbound_GameEntity_tsx --&gt; module_src_features_game_presentation_utils_useGameEntityAnimatedStyle_ts
+  module_src_features_game_presentation_adapters_inbound_GameEntity_tsx --&gt; module_src_features_game_presentation_utils_useGameEntityMeasurement_ts
   module_src_features_game_presentation_adapters_inbound_GameEntity_tsx --&gt; module_src_types_gamePresentation_ts
   module_src_features_game_presentation_adapters_inbound_GameField_tsx --&gt; module_src_types_gamePresentation_ts
   module_src_features_game_presentation_adapters_inbound_GameInputZone_tsx --&gt; module_src_features_game_presentation_adapters_inbound_useGameInputZoneResponder_ts
@@ -1971,7 +2339,19 @@
   module_src_features_game_presentation_composition_useGameRuntime_ts --&gt; module_src_types_gamePresentation_ts
   module_src_features_game_presentation_composition_useGameRuntime_ts --&gt; module_src_types_gameRuntime_ts
   module_src_features_game_presentation_composition_useGameScheduledEffects_ts --&gt; module_src_types_gameRuntime_ts
+  module_src_features_game_presentation_utils_resolveGameEntityMotionPlan_test_ts --&gt; module_src_features_game_presentation_utils_resolveGameEntityMotionPlan_ts
+  module_src_features_game_presentation_utils_resolveGameEntityMotionPlan_ts --&gt; module_src_types_gamePresentation_ts
   module_src_features_game_presentation_utils_toGamePercentage_ts --&gt; module_src_features_game_presentation_utils_clampGamePercentage_ts
+  module_src_features_game_presentation_utils_useAnimatedGameEntityValue_ts --&gt; module_src_types_gamePresentation_ts
+  module_src_features_game_presentation_utils_useGameEntityAnimatedStyle_ts --&gt; module_src_features_game_presentation_utils_resolveGameEntityMotionPlan_ts
+  module_src_features_game_presentation_utils_useGameEntityAnimatedStyle_ts --&gt; module_src_features_game_presentation_utils_useAnimatedGameEntityValue_ts
+  module_src_features_game_presentation_utils_useGameEntityAnimatedStyle_ts --&gt; module_src_features_game_presentation_utils_useGameEntityMotionProgress_ts
+  module_src_features_game_presentation_utils_useGameEntityAnimatedStyle_ts --&gt; module_src_features_game_presentation_utils_useGameReducedMotion_ts
+  module_src_features_game_presentation_utils_useGameEntityAnimatedStyle_ts --&gt; module_src_types_gamePresentation_ts
+  module_src_features_game_presentation_utils_useGameEntityMeasurement_ts --&gt; module_src_features_game_presentation_adapters_inbound_measureGameEntity_ts
+  module_src_features_game_presentation_utils_useGameEntityMeasurement_ts --&gt; module_src_features_game_presentation_composition_GameRuntimeContext_ts
+  module_src_features_game_presentation_utils_useGameEntityMotionProgress_ts --&gt; module_src_features_game_presentation_utils_resolveGameEntityMotionPlan_ts
+  module_src_features_game_presentation_utils_useGameEntityMotionProgress_ts --&gt; module_src_types_gamePresentation_ts
   module_src_ZORA_GAME_COMPONENT_META_ts --&gt; module_src_features_game_presentation_meta_gameEntityMeta_ts
   module_src_ZORA_GAME_COMPONENT_META_ts --&gt; module_src_features_game_presentation_meta_gameFieldMeta_ts
   module_src_ZORA_GAME_COMPONENT_META_ts --&gt; module_src_features_game_presentation_meta_gameInputZoneMeta_ts
@@ -2022,7 +2402,14 @@
   module_src_features_game_presentation_meta_gameOverlayMeta_ts[&quot;src/features/game-presentation/meta/gameOverlayMeta.ts&quot;]
   module_src_features_game_presentation_public_ts[&quot;src/features/game-presentation/public.ts&quot;]
   module_src_features_game_presentation_utils_clampGamePercentage_ts[&quot;src/features/game-presentation/utils/clampGamePercentage.ts&quot;]
+  module_src_features_game_presentation_utils_resolveGameEntityMotionPlan_test_ts[&quot;src/features/game-presentation/utils/resolveGameEntityMotionPlan.test.ts&quot;]
+  module_src_features_game_presentation_utils_resolveGameEntityMotionPlan_ts[&quot;src/features/game-presentation/utils/resolveGameEntityMotionPlan.ts&quot;]
   module_src_features_game_presentation_utils_toGamePercentage_ts[&quot;src/features/game-presentation/utils/toGamePercentage.ts&quot;]
+  module_src_features_game_presentation_utils_useAnimatedGameEntityValue_ts[&quot;src/features/game-presentation/utils/useAnimatedGameEntityValue.ts&quot;]
+  module_src_features_game_presentation_utils_useGameEntityAnimatedStyle_ts[&quot;src/features/game-presentation/utils/useGameEntityAnimatedStyle.ts&quot;]
+  module_src_features_game_presentation_utils_useGameEntityMeasurement_ts[&quot;src/features/game-presentation/utils/useGameEntityMeasurement.ts&quot;]
+  module_src_features_game_presentation_utils_useGameEntityMotionProgress_ts[&quot;src/features/game-presentation/utils/useGameEntityMotionProgress.ts&quot;]
+  module_src_features_game_presentation_utils_useGameReducedMotion_ts[&quot;src/features/game-presentation/utils/useGameReducedMotion.ts&quot;]
   module_src_index_ts[&quot;src/index.ts&quot;]
   module_src_metadata_ts[&quot;src/metadata.ts&quot;]
   module_src_types_gamePresentation_ts[&quot;src/types/gamePresentation.ts&quot;]
@@ -2037,8 +2424,14 @@
   export_GameEntity[&quot;GameEntity&quot;]
   module_src_features_game_presentation_adapters_inbound_GameEntity_tsx --&gt; export_GameEntity
   export_GameEntity -.-&gt; export_GameEntityProps
+  export_GameEntityEasing[&quot;GameEntityEasing&quot;]
+  module_src_types_gamePresentation_ts --&gt; export_GameEntityEasing
+  export_GameEntityMotionProps[&quot;GameEntityMotionProps&quot;]
+  module_src_types_gamePresentation_ts --&gt; export_GameEntityMotionProps
+  export_GameEntityMotionProps -.-&gt; export_GameEntityEasing
   export_GameEntityProps[&quot;GameEntityProps&quot;]
   module_src_types_gamePresentation_ts --&gt; export_GameEntityProps
+  export_GameEntityProps -.-&gt; export_GameEntityEasing
   export_GameEntityProps -.-&gt; export_GamePointerEvents
   export_GameField[&quot;GameField&quot;]
   module_src_features_game_presentation_adapters_inbound_GameField_tsx --&gt; export_GameField
@@ -2109,7 +2502,14 @@
   module_src_features_game_presentation_meta_gameOverlayMeta_ts[&quot;src/features/game-presentation/meta/gameOverlayMeta.ts&quot;]
   module_src_features_game_presentation_public_ts[&quot;src/features/game-presentation/public.ts&quot;]
   module_src_features_game_presentation_utils_clampGamePercentage_ts[&quot;src/features/game-presentation/utils/clampGamePercentage.ts&quot;]
+  module_src_features_game_presentation_utils_resolveGameEntityMotionPlan_test_ts[&quot;src/features/game-presentation/utils/resolveGameEntityMotionPlan.test.ts&quot;]
+  module_src_features_game_presentation_utils_resolveGameEntityMotionPlan_ts[&quot;src/features/game-presentation/utils/resolveGameEntityMotionPlan.ts&quot;]
   module_src_features_game_presentation_utils_toGamePercentage_ts[&quot;src/features/game-presentation/utils/toGamePercentage.ts&quot;]
+  module_src_features_game_presentation_utils_useAnimatedGameEntityValue_ts[&quot;src/features/game-presentation/utils/useAnimatedGameEntityValue.ts&quot;]
+  module_src_features_game_presentation_utils_useGameEntityAnimatedStyle_ts[&quot;src/features/game-presentation/utils/useGameEntityAnimatedStyle.ts&quot;]
+  module_src_features_game_presentation_utils_useGameEntityMeasurement_ts[&quot;src/features/game-presentation/utils/useGameEntityMeasurement.ts&quot;]
+  module_src_features_game_presentation_utils_useGameEntityMotionProgress_ts[&quot;src/features/game-presentation/utils/useGameEntityMotionProgress.ts&quot;]
+  module_src_features_game_presentation_utils_useGameReducedMotion_ts[&quot;src/features/game-presentation/utils/useGameReducedMotion.ts&quot;]
   module_src_index_ts[&quot;src/index.ts&quot;]
   module_src_metadata_ts[&quot;src/metadata.ts&quot;]
   module_src_types_gamePresentation_ts[&quot;src/types/gamePresentation.ts&quot;]
@@ -2124,8 +2524,14 @@
   export_GameEntity[&quot;GameEntity&quot;]
   module_src_features_game_presentation_adapters_inbound_GameEntity_tsx --&gt; export_GameEntity
   export_GameEntity -.-&gt; export_GameEntityProps
+  export_GameEntityEasing[&quot;GameEntityEasing&quot;]
+  module_src_types_gamePresentation_ts --&gt; export_GameEntityEasing
+  export_GameEntityMotionProps[&quot;GameEntityMotionProps&quot;]
+  module_src_types_gamePresentation_ts --&gt; export_GameEntityMotionProps
+  export_GameEntityMotionProps -.-&gt; export_GameEntityEasing
   export_GameEntityProps[&quot;GameEntityProps&quot;]
   module_src_types_gamePresentation_ts --&gt; export_GameEntityProps
+  export_GameEntityProps -.-&gt; export_GameEntityEasing
   export_GameEntityProps -.-&gt; export_GamePointerEvents
   export_GameField[&quot;GameField&quot;]
   module_src_features_game_presentation_adapters_inbound_GameField_tsx --&gt; export_GameField
@@ -2211,36 +2617,6 @@
   participant_useGameRuntime-&gt;&gt;participant_useGameScheduledEffects: useGameScheduledEffects()
   participant_useGameScheduledEffects--&gt;&gt;participant_useGameRuntime: return
   participant_useGameRuntime--&gt;&gt;participant_Game: return
-</pre>
-    </details>
-  </article><article class="item" data-search="GameEntity sequence diagrams/sequences/game-entity.mmd">
-    <h3>GameEntity sequence</h3>
-    <p class="muted"><code>diagrams/sequences/game-entity.mmd</code></p>
-    <div class="mermaid">sequenceDiagram
-  participant participant_clampGamePercentage as clampGamePercentage
-  participant participant_createEntityStyle as createEntityStyle
-  participant participant_GameEntity as GameEntity
-  participant participant_toGamePercentage as toGamePercentage
-  participant_GameEntity-&gt;&gt;participant_createEntityStyle: createEntityStyle()
-  participant_createEntityStyle-&gt;&gt;participant_toGamePercentage: toGamePercentage()
-  participant_toGamePercentage-&gt;&gt;participant_clampGamePercentage: clampGamePercentage()
-  participant_clampGamePercentage--&gt;&gt;participant_toGamePercentage: return
-  participant_toGamePercentage--&gt;&gt;participant_createEntityStyle: return
-  participant_createEntityStyle--&gt;&gt;participant_GameEntity: return
-</div>
-    <details>
-      <summary>View Mermaid source</summary>
-      <pre>sequenceDiagram
-  participant participant_clampGamePercentage as clampGamePercentage
-  participant participant_createEntityStyle as createEntityStyle
-  participant participant_GameEntity as GameEntity
-  participant participant_toGamePercentage as toGamePercentage
-  participant_GameEntity-&gt;&gt;participant_createEntityStyle: createEntityStyle()
-  participant_createEntityStyle-&gt;&gt;participant_toGamePercentage: toGamePercentage()
-  participant_toGamePercentage-&gt;&gt;participant_clampGamePercentage: clampGamePercentage()
-  participant_clampGamePercentage--&gt;&gt;participant_toGamePercentage: return
-  participant_toGamePercentage--&gt;&gt;participant_createEntityStyle: return
-  participant_createEntityStyle--&gt;&gt;participant_GameEntity: return
 </pre>
     </details>
   </article><article class="item" data-search="GameInputZone sequence diagrams/sequences/game-input-zone.mmd">
@@ -2351,12 +2727,12 @@
       <h2>src/features/game-presentation/adapters/inbound/GameEntity.tsx</h2>
       <article class="item" data-search="GameEntity src/features/game-presentation/adapters/inbound/GameEntity.tsx Render one generic positioned game entity without owning gameplay semantics.">
     <h3>GameEntity</h3>
-    <p class="muted"><code>src/features/game-presentation/adapters/inbound/GameEntity.tsx:10:1</code></p>
+    <p class="muted"><code>src/features/game-presentation/adapters/inbound/GameEntity.tsx:9:1</code></p>
     <p>Render one generic positioned game entity without owning gameplay semantics.</p>
-  </article><article class="item" data-search="createEntityStyle src/features/game-presentation/adapters/inbound/GameEntity.tsx Convert serializable entity presentation props into a React Native view style.">
-    <h3>createEntityStyle</h3>
-    <p class="muted"><code>src/features/game-presentation/adapters/inbound/GameEntity.tsx:64:1</code></p>
-    <p>Convert serializable entity presentation props into a React Native view style.</p>
+  </article><article class="item" data-search="createEntityStaticStyle src/features/game-presentation/adapters/inbound/GameEntity.tsx Convert non-animated GameEntity presentation props into a React Native view style.">
+    <h3>createEntityStaticStyle</h3>
+    <p class="muted"><code>src/features/game-presentation/adapters/inbound/GameEntity.tsx:28:1</code></p>
+    <p>Convert non-animated GameEntity presentation props into a React Native view style.</p>
   </article>
     </section>
   </section><section id="view-src-features-game-presentation-adapters-inbound-gamefield-tsx" class="view" data-view="src/features/game-presentation/adapters/inbound/GameField.tsx" hidden>
@@ -2510,6 +2886,23 @@
     <p>Clamp one game presentation coordinate to the inclusive field-percentage range.</p>
   </article>
     </section>
+  </section><section id="view-src-features-game-presentation-utils-resolvegameentitymotionplan-ts" class="view" data-view="src/features/game-presentation/utils/resolveGameEntityMotionPlan.ts" hidden>
+    <section class="panel">
+      <h2>src/features/game-presentation/utils/resolveGameEntityMotionPlan.ts</h2>
+      <article class="item" data-search="resolveGameEntityMotionPlan src/features/game-presentation/utils/resolveGameEntityMotionPlan.ts Normalize serializable GameEntity motion props against the current reduced-motion preference.">
+    <h3>resolveGameEntityMotionPlan</h3>
+    <p class="muted"><code>src/features/game-presentation/utils/resolveGameEntityMotionPlan.ts:16:1</code></p>
+    <p>Normalize serializable GameEntity motion props against the current reduced-motion preference.</p>
+  </article><article class="item" data-search="hasMotionOffset src/features/game-presentation/utils/resolveGameEntityMotionPlan.ts Return whether any relative presentation offset requires a motion timeline.">
+    <h3>hasMotionOffset</h3>
+    <p class="muted"><code>src/features/game-presentation/utils/resolveGameEntityMotionPlan.ts:40:1</code></p>
+    <p>Return whether any relative presentation offset requires a motion timeline.</p>
+  </article><article class="item" data-search="normalizeDuration src/features/game-presentation/utils/resolveGameEntityMotionPlan.ts Clamp an optional duration to a finite non-negative millisecond value.">
+    <h3>normalizeDuration</h3>
+    <p class="muted"><code>src/features/game-presentation/utils/resolveGameEntityMotionPlan.ts:51:1</code></p>
+    <p>Clamp an optional duration to a finite non-negative millisecond value.</p>
+  </article>
+    </section>
   </section><section id="view-src-features-game-presentation-utils-togamepercentage-ts" class="view" data-view="src/features/game-presentation/utils/toGamePercentage.ts" hidden>
     <section class="panel">
       <h2>src/features/game-presentation/utils/toGamePercentage.ts</h2>
@@ -2519,12 +2912,85 @@
     <p>Convert one game percentage coordinate to React Native percentage style syntax.</p>
   </article>
     </section>
+  </section><section id="view-src-features-game-presentation-utils-useanimatedgameentityvalue-ts" class="view" data-view="src/features/game-presentation/utils/useAnimatedGameEntityValue.ts" hidden>
+    <section class="panel">
+      <h2>src/features/game-presentation/utils/useAnimatedGameEntityValue.ts</h2>
+      <article class="item" data-search="useAnimatedGameEntityValue src/features/game-presentation/utils/useAnimatedGameEntityValue.ts Animate one bound numeric GameEntity presentation value toward its latest session-driven target.">
+    <h3>useAnimatedGameEntityValue</h3>
+    <p class="muted"><code>src/features/game-presentation/utils/useAnimatedGameEntityValue.ts:7:1</code></p>
+    <p>Animate one bound numeric GameEntity presentation value toward its latest session-driven target.</p>
+  </article><article class="item" data-search="resolveGameEntityEasing src/features/game-presentation/utils/useAnimatedGameEntityValue.ts Map serializable easing names onto React Native easing functions.">
+    <h3>resolveGameEntityEasing</h3>
+    <p class="muted"><code>src/features/game-presentation/utils/useAnimatedGameEntityValue.ts:36:1</code></p>
+    <p>Map serializable easing names onto React Native easing functions.</p>
+  </article>
+    </section>
+  </section><section id="view-src-features-game-presentation-utils-usegameentityanimatedstyle-ts" class="view" data-view="src/features/game-presentation/utils/useGameEntityAnimatedStyle.ts" hidden>
+    <section class="panel">
+      <h2>src/features/game-presentation/utils/useGameEntityAnimatedStyle.ts</h2>
+      <article class="item" data-search="useGameEntityAnimatedStyle src/features/game-presentation/utils/useGameEntityAnimatedStyle.ts Compose bound GameEntity values with optional relative presentation motion.">
+    <h3>useGameEntityAnimatedStyle</h3>
+    <p class="muted"><code>src/features/game-presentation/utils/useGameEntityAnimatedStyle.ts:19:1</code></p>
+    <p>Compose bound GameEntity values with optional relative presentation motion.</p>
+  </article><article class="item" data-search="createGameEntityAnimatedStyle src/features/game-presentation/utils/useGameEntityAnimatedStyle.ts Build one animated React Native style from base values and relative motion progress.">
+    <h3>createGameEntityAnimatedStyle</h3>
+    <p class="muted"><code>src/features/game-presentation/utils/useGameEntityAnimatedStyle.ts:47:1</code></p>
+    <p>Build one animated React Native style from base values and relative motion progress.</p>
+  </article>
+    </section>
+  </section><section id="view-src-features-game-presentation-utils-usegameentitymeasurement-ts" class="view" data-view="src/features/game-presentation/utils/useGameEntityMeasurement.ts" hidden>
+    <section class="panel">
+      <h2>src/features/game-presentation/utils/useGameEntityMeasurement.ts</h2>
+      <article class="item" data-search="useGameEntityMeasurement src/features/game-presentation/utils/useGameEntityMeasurement.ts Register one optional measurable GameEntity view inside its local Game scope.">
+    <h3>useGameEntityMeasurement</h3>
+    <p class="muted"><code>src/features/game-presentation/utils/useGameEntityMeasurement.ts:8:1</code></p>
+    <p>Register one optional measurable GameEntity view inside its local Game scope.</p>
+  </article>
+    </section>
+  </section><section id="view-src-features-game-presentation-utils-usegameentitymotionprogress-ts" class="view" data-view="src/features/game-presentation/utils/useGameEntityMotionProgress.ts" hidden>
+    <section class="panel">
+      <h2>src/features/game-presentation/utils/useGameEntityMotionProgress.ts</h2>
+      <article class="item" data-search="useGameEntityMotionProgress src/features/game-presentation/utils/useGameEntityMotionProgress.ts Drive one optional relative GameEntity motion timeline without changing game-session state.">
+    <h3>useGameEntityMotionProgress</h3>
+    <p class="muted"><code>src/features/game-presentation/utils/useGameEntityMotionProgress.ts:16:1</code></p>
+    <p>Drive one optional relative GameEntity motion timeline without changing game-session state.</p>
+  </article><article class="item" data-search="createMotionAnimation src/features/game-presentation/utils/useGameEntityMotionProgress.ts Create the one-shot or repeating React Native motion sequence for one entity.">
+    <h3>createMotionAnimation</h3>
+    <p class="muted"><code>src/features/game-presentation/utils/useGameEntityMotionProgress.ts:70:1</code></p>
+    <p>Create the one-shot or repeating React Native motion sequence for one entity.</p>
+  </article><article class="item" data-search="forward src/features/game-presentation/utils/useGameEntityMotionProgress.ts ">
+    <h3>forward</h3>
+    <p class="muted"><code>src/features/game-presentation/utils/useGameEntityMotionProgress.ts:71:9</code></p>
+    <p class="empty">No description available.</p>
+  </article><article class="item" data-search="reverse src/features/game-presentation/utils/useGameEntityMotionProgress.ts ">
+    <h3>reverse</h3>
+    <p class="muted"><code>src/features/game-presentation/utils/useGameEntityMotionProgress.ts:78:9</code></p>
+    <p class="empty">No description available.</p>
+  </article><article class="item" data-search="createMotionSignature src/features/game-presentation/utils/useGameEntityMotionProgress.ts Create a stable signature for motion parameters that should restart the relative timeline.">
+    <h3>createMotionSignature</h3>
+    <p class="muted"><code>src/features/game-presentation/utils/useGameEntityMotionProgress.ts:97:1</code></p>
+    <p>Create a stable signature for motion parameters that should restart the relative timeline.</p>
+  </article><article class="item" data-search="resolveMotionEasing src/features/game-presentation/utils/useGameEntityMotionProgress.ts Map serializable timeline easing names onto React Native easing functions.">
+    <h3>resolveMotionEasing</h3>
+    <p class="muted"><code>src/features/game-presentation/utils/useGameEntityMotionProgress.ts:109:1</code></p>
+    <p>Map serializable timeline easing names onto React Native easing functions.</p>
+  </article>
+    </section>
+  </section><section id="view-src-features-game-presentation-utils-usegamereducedmotion-ts" class="view" data-view="src/features/game-presentation/utils/useGameReducedMotion.ts" hidden>
+    <section class="panel">
+      <h2>src/features/game-presentation/utils/useGameReducedMotion.ts</h2>
+      <article class="item" data-search="useGameReducedMotion src/features/game-presentation/utils/useGameReducedMotion.ts Track the cross-platform system reduced-motion preference for game presentation.">
+    <h3>useGameReducedMotion</h3>
+    <p class="muted"><code>src/features/game-presentation/utils/useGameReducedMotion.ts:5:1</code></p>
+    <p>Track the cross-platform system reduced-motion preference for game presentation.</p>
+  </article>
+    </section>
   </section><section id="view-src-zora-plugin-metadata-test-ts" class="view" data-view="src/ZORA_PLUGIN_METADATA.test.ts" hidden>
     <section class="panel">
       <h2>src/ZORA_PLUGIN_METADATA.test.ts</h2>
       <article class="item" data-search="readComponentMeta src/ZORA_PLUGIN_METADATA.test.ts Require one composed component metadata entry for focused assertions.">
     <h3>readComponentMeta</h3>
-    <p class="muted"><code>src/ZORA_PLUGIN_METADATA.test.ts:91:1</code></p>
+    <p class="muted"><code>src/ZORA_PLUGIN_METADATA.test.ts:108:1</code></p>
     <p>Require one composed component metadata entry for focused assertions.</p>
   </article>
     </section>

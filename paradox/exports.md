@@ -18,51 +18,52 @@ Bind one serializable game definition to a local transient session and presentat
 
 Kind: `function`
 Module: `src/features/game-presentation/adapters/inbound/GameEntity.tsx`
-Source: `src/features/game-presentation/adapters/inbound/GameEntity.tsx:10:1`
+Source: `src/features/game-presentation/adapters/inbound/GameEntity.tsx:9:1`
 
 Render one generic positioned game entity without owning gameplay semantics.
 
 ### Signatures
 
-- `({
-  children,
-  x = 0,
-  y = 0,
-  width,
-  height,
-  opacity = 1,
-  scale = 1,
-  rotation = 0,
-  zIndex = 0,
-  hidden = false,
-  pointerEvents = 'auto',
-  measurementId,
-  accessibilityLabel,
-  testID,
-}: GameEntityProps) => React.JSX.Element`
-  - {
-  children,
-  x = 0,
-  y = 0,
-  width,
-  height,
-  opacity = 1,
-  scale = 1,
-  rotation = 0,
-  zIndex = 0,
-  hidden = false,
-  pointerEvents = 'auto',
-  measurementId,
-  accessibilityLabel,
-  testID,
-}: `GameEntityProps`
+- `(props: GameEntityProps) => React.JSX.Element`
+  - props: `GameEntityProps`
   - returns: `React.JSX.Element`
+
+## GameEntityEasing
+
+Kind: `unknown`
+Module: `src/types/gamePresentation.ts`
+Source: `src/types/gamePresentation.ts:7:1`
+
+## GameEntityMotionProps
+
+Kind: `type`
+Module: `src/types/gamePresentation.ts`
+Source: `src/types/gamePresentation.ts:9:1`
+
+### Members
+
+| Name | Kind | Type | Required | Description |
+| --- | --- | --- | --- | --- |
+| motionAlternate | property | `boolean` | no |  |
+| motionDelayMs | property | `number` | no |  |
+| motionDurationMs | property | `number` | no |  |
+| motionEasing | property | `GameEntityEasing` | no |  |
+| motionEssential | property | `boolean` | no |  |
+| motionOffsetX | property | `number` | no |  |
+| motionOffsetY | property | `number` | no |  |
+| motionOpacityDelta | property | `number` | no |  |
+| motionPaused | property | `boolean` | no |  |
+| motionRepeat | property | `boolean` | no |  |
+| motionRotationDelta | property | `number` | no |  |
+| motionScaleDelta | property | `number` | no |  |
+| transitionDurationMs | property | `number` | no |  |
+| transitionEasing | property | `GameEntityEasing` | no |  |
 
 ## GameEntityProps
 
 Kind: `type`
 Module: `src/types/gamePresentation.ts`
-Source: `src/types/gamePresentation.ts:19:1`
+Source: `src/types/gamePresentation.ts:37:1`
 
 ### Members
 
@@ -73,11 +74,25 @@ Source: `src/types/gamePresentation.ts:19:1`
 | height | property | `number` | no |  |
 | hidden | property | `boolean` | no |  |
 | measurementId | property | `string` | no |  |
+| motionAlternate | property | `boolean` | no |  |
+| motionDelayMs | property | `number` | no |  |
+| motionDurationMs | property | `number` | no |  |
+| motionEasing | property | `GameEntityEasing` | no |  |
+| motionEssential | property | `boolean` | no |  |
+| motionOffsetX | property | `number` | no |  |
+| motionOffsetY | property | `number` | no |  |
+| motionOpacityDelta | property | `number` | no |  |
+| motionPaused | property | `boolean` | no |  |
+| motionRepeat | property | `boolean` | no |  |
+| motionRotationDelta | property | `number` | no |  |
+| motionScaleDelta | property | `number` | no |  |
 | opacity | property | `number` | no |  |
 | pointerEvents | property | `GamePointerEvents` | no |  |
 | rotation | property | `number` | no |  |
 | scale | property | `number` | no |  |
 | testID | property | `string` | no |  |
+| transitionDurationMs | property | `number` | no |  |
+| transitionEasing | property | `GameEntityEasing` | no |  |
 | width | property | `number` | no |  |
 | x | property | `number` | no |  |
 | y | property | `number` | no |  |
@@ -115,7 +130,7 @@ Render a bounded relative-positioning surface for game presentation content.
 
 Kind: `type`
 Module: `src/types/gamePresentation.ts`
-Source: `src/types/gamePresentation.ts:10:1`
+Source: `src/types/gamePresentation.ts:28:1`
 
 ### Members
 
@@ -170,7 +185,7 @@ Capture pointer/touch geometry and optional keyboard input as normalized generic
 
 Kind: `type`
 Module: `src/types/gamePresentation.ts`
-Source: `src/types/gamePresentation.ts:43:1`
+Source: `src/types/gamePresentation.ts:61:1`
 
 ### Members
 
@@ -193,7 +208,7 @@ Source: `src/types/gamePresentation.ts:43:1`
 
 Kind: `type`
 Module: `src/types/gamePresentation.ts`
-Source: `src/types/gamePresentation.ts:36:1`
+Source: `src/types/gamePresentation.ts:54:1`
 
 ### Members
 
@@ -236,7 +251,7 @@ Measure two registered game entities and dispatch only their raw rendered geomet
 
 Kind: `type`
 Module: `src/types/gamePresentation.ts`
-Source: `src/types/gamePresentation.ts:58:1`
+Source: `src/types/gamePresentation.ts:76:1`
 
 ### Members
 
@@ -281,13 +296,13 @@ Render an absolute game presentation layer for HUD, feedback, and phase content.
 
 Kind: `unknown`
 Module: `src/types/gamePresentation.ts`
-Source: `src/types/gamePresentation.ts:7:1`
+Source: `src/types/gamePresentation.ts:25:1`
 
 ## GameOverlayProps
 
 Kind: `type`
 Module: `src/types/gamePresentation.ts`
-Source: `src/types/gamePresentation.ts:67:1`
+Source: `src/types/gamePresentation.ts:85:1`
 
 ### Members
 
@@ -310,7 +325,7 @@ Source: `src/types/gamePresentation.ts:6:1`
 
 Kind: `type`
 Module: `src/types/gamePresentation.ts`
-Source: `src/types/gamePresentation.ts:76:1`
+Source: `src/types/gamePresentation.ts:94:1`
 
 ### Members
 

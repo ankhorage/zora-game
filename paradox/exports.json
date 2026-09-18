@@ -44,7 +44,7 @@
     "modulePath": "src/features/game-presentation/adapters/inbound/GameEntity.tsx",
     "sourceLocation": {
       "filePath": "src/features/game-presentation/adapters/inbound/GameEntity.tsx",
-      "line": 10,
+      "line": 9,
       "column": 1
     },
     "exportPaths": [
@@ -55,10 +55,10 @@
     ],
     "signatures": [
       {
-        "label": "({\n  children,\n  x = 0,\n  y = 0,\n  width,\n  height,\n  opacity = 1,\n  scale = 1,\n  rotation = 0,\n  zIndex = 0,\n  hidden = false,\n  pointerEvents = 'auto',\n  measurementId,\n  accessibilityLabel,\n  testID,\n}: GameEntityProps) => React.JSX.Element",
+        "label": "(props: GameEntityProps) => React.JSX.Element",
         "parameters": [
           {
-            "name": "{\n  children,\n  x = 0,\n  y = 0,\n  width,\n  height,\n  opacity = 1,\n  scale = 1,\n  rotation = 0,\n  zIndex = 0,\n  hidden = false,\n  pointerEvents = 'auto',\n  measurementId,\n  accessibilityLabel,\n  testID,\n}",
+            "name": "props",
             "type": "GameEntityProps",
             "required": true,
             "description": null
@@ -72,6 +72,147 @@
     "structuredRows": []
   },
   {
+    "name": "GameEntityEasing",
+    "description": null,
+    "isReadme": false,
+    "examples": [],
+    "kind": "unknown",
+    "modulePath": "src/types/gamePresentation.ts",
+    "sourceLocation": {
+      "filePath": "src/types/gamePresentation.ts",
+      "line": 7,
+      "column": 1
+    },
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [],
+    "signatures": [],
+    "members": [],
+    "structuredRows": []
+  },
+  {
+    "name": "GameEntityMotionProps",
+    "description": null,
+    "isReadme": false,
+    "examples": [],
+    "kind": "type",
+    "modulePath": "src/types/gamePresentation.ts",
+    "sourceLocation": {
+      "filePath": "src/types/gamePresentation.ts",
+      "line": 9,
+      "column": 1
+    },
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "GameEntityEasing"
+    ],
+    "signatures": [],
+    "members": [
+      {
+        "name": "motionAlternate",
+        "kind": "property",
+        "type": "boolean",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "motionDelayMs",
+        "kind": "property",
+        "type": "number",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "motionDurationMs",
+        "kind": "property",
+        "type": "number",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "motionEasing",
+        "kind": "property",
+        "type": "GameEntityEasing",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "motionEssential",
+        "kind": "property",
+        "type": "boolean",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "motionOffsetX",
+        "kind": "property",
+        "type": "number",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "motionOffsetY",
+        "kind": "property",
+        "type": "number",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "motionOpacityDelta",
+        "kind": "property",
+        "type": "number",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "motionPaused",
+        "kind": "property",
+        "type": "boolean",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "motionRepeat",
+        "kind": "property",
+        "type": "boolean",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "motionRotationDelta",
+        "kind": "property",
+        "type": "number",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "motionScaleDelta",
+        "kind": "property",
+        "type": "number",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "transitionDurationMs",
+        "kind": "property",
+        "type": "number",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "transitionEasing",
+        "kind": "property",
+        "type": "GameEntityEasing",
+        "required": false,
+        "description": null
+      }
+    ],
+    "structuredRows": []
+  },
+  {
     "name": "GameEntityProps",
     "description": null,
     "isReadme": false,
@@ -80,13 +221,14 @@
     "modulePath": "src/types/gamePresentation.ts",
     "sourceLocation": {
       "filePath": "src/types/gamePresentation.ts",
-      "line": 19,
+      "line": 37,
       "column": 1
     },
     "exportPaths": [
       "src/index.ts"
     ],
     "relatedSymbols": [
+      "GameEntityEasing",
       "GamePointerEvents"
     ],
     "signatures": [],
@@ -127,6 +269,90 @@
         "description": null
       },
       {
+        "name": "motionAlternate",
+        "kind": "property",
+        "type": "boolean",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "motionDelayMs",
+        "kind": "property",
+        "type": "number",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "motionDurationMs",
+        "kind": "property",
+        "type": "number",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "motionEasing",
+        "kind": "property",
+        "type": "GameEntityEasing",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "motionEssential",
+        "kind": "property",
+        "type": "boolean",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "motionOffsetX",
+        "kind": "property",
+        "type": "number",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "motionOffsetY",
+        "kind": "property",
+        "type": "number",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "motionOpacityDelta",
+        "kind": "property",
+        "type": "number",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "motionPaused",
+        "kind": "property",
+        "type": "boolean",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "motionRepeat",
+        "kind": "property",
+        "type": "boolean",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "motionRotationDelta",
+        "kind": "property",
+        "type": "number",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "motionScaleDelta",
+        "kind": "property",
+        "type": "number",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "opacity",
         "kind": "property",
         "type": "number",
@@ -158,6 +384,20 @@
         "name": "testID",
         "kind": "property",
         "type": "string",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "transitionDurationMs",
+        "kind": "property",
+        "type": "number",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "transitionEasing",
+        "kind": "property",
+        "type": "GameEntityEasing",
         "required": false,
         "description": null
       },
@@ -237,7 +477,7 @@
     "modulePath": "src/types/gamePresentation.ts",
     "sourceLocation": {
       "filePath": "src/types/gamePresentation.ts",
-      "line": 10,
+      "line": 28,
       "column": 1
     },
     "exportPaths": [
@@ -336,7 +576,7 @@
     "modulePath": "src/types/gamePresentation.ts",
     "sourceLocation": {
       "filePath": "src/types/gamePresentation.ts",
-      "line": 43,
+      "line": 61,
       "column": 1
     },
     "exportPaths": [
@@ -443,7 +683,7 @@
     "modulePath": "src/types/gamePresentation.ts",
     "sourceLocation": {
       "filePath": "src/types/gamePresentation.ts",
-      "line": 36,
+      "line": 54,
       "column": 1
     },
     "exportPaths": [
@@ -528,7 +768,7 @@
     "modulePath": "src/types/gamePresentation.ts",
     "sourceLocation": {
       "filePath": "src/types/gamePresentation.ts",
-      "line": 58,
+      "line": 76,
       "column": 1
     },
     "exportPaths": [
@@ -627,7 +867,7 @@
     "modulePath": "src/types/gamePresentation.ts",
     "sourceLocation": {
       "filePath": "src/types/gamePresentation.ts",
-      "line": 7,
+      "line": 25,
       "column": 1
     },
     "exportPaths": [
@@ -647,7 +887,7 @@
     "modulePath": "src/types/gamePresentation.ts",
     "sourceLocation": {
       "filePath": "src/types/gamePresentation.ts",
-      "line": 67,
+      "line": 85,
       "column": 1
     },
     "exportPaths": [
@@ -732,7 +972,7 @@
     "modulePath": "src/types/gamePresentation.ts",
     "sourceLocation": {
       "filePath": "src/types/gamePresentation.ts",
-      "line": 76,
+      "line": 94,
       "column": 1
     },
     "exportPaths": [

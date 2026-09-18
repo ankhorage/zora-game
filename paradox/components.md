@@ -25,7 +25,7 @@ Export paths: `src/index.ts`
 
 ## GameEntity
 
-Source: `src/features/game-presentation/adapters/inbound/GameEntity.tsx:10:1`
+Source: `src/features/game-presentation/adapters/inbound/GameEntity.tsx:9:1`
 
 Render one generic positioned game entity without owning gameplay semantics.
 
@@ -36,17 +36,31 @@ Export paths: `src/index.ts`
 | accessibilityLabel | `string \| undefined` | no | — |  |
 | children | `React.ReactNode \| undefined` | no | — |  |
 | height | `number \| undefined` | no | — |  |
-| hidden | `boolean \| undefined` | no | `false` |  |
+| hidden | `boolean \| undefined` | no | — |  |
 | measurementId | `string \| undefined` | no | — |  |
-| opacity | `number \| undefined` | no | `1` |  |
-| pointerEvents | `GamePointerEvents \| undefined` | no | `'auto'` |  |
-| rotation | `number \| undefined` | no | `0` |  |
-| scale | `number \| undefined` | no | `1` |  |
+| motionAlternate | `boolean \| undefined` | no | — |  |
+| motionDelayMs | `number \| undefined` | no | — |  |
+| motionDurationMs | `number \| undefined` | no | — |  |
+| motionEasing | `GameEntityEasing \| undefined` | no | — |  |
+| motionEssential | `boolean \| undefined` | no | — |  |
+| motionOffsetX | `number \| undefined` | no | — |  |
+| motionOffsetY | `number \| undefined` | no | — |  |
+| motionOpacityDelta | `number \| undefined` | no | — |  |
+| motionPaused | `boolean \| undefined` | no | — |  |
+| motionRepeat | `boolean \| undefined` | no | — |  |
+| motionRotationDelta | `number \| undefined` | no | — |  |
+| motionScaleDelta | `number \| undefined` | no | — |  |
+| opacity | `number \| undefined` | no | — |  |
+| pointerEvents | `GamePointerEvents \| undefined` | no | — |  |
+| rotation | `number \| undefined` | no | — |  |
+| scale | `number \| undefined` | no | — |  |
 | testID | `string \| undefined` | no | — |  |
+| transitionDurationMs | `number \| undefined` | no | — |  |
+| transitionEasing | `GameEntityEasing \| undefined` | no | — |  |
 | width | `number \| undefined` | no | — |  |
-| x | `number \| undefined` | no | `0` |  |
-| y | `number \| undefined` | no | `0` |  |
-| zIndex | `number \| undefined` | no | `0` |  |
+| x | `number \| undefined` | no | — |  |
+| y | `number \| undefined` | no | — |  |
+| zIndex | `number \| undefined` | no | — |  |
 
 ## GameField
 

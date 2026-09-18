@@ -1,5 +1,11 @@
 # @ankhorage/zora-game
 
+## 0.7.2
+
+### Patch Changes
+
+- 1c3f276: Add packed-package Expo 57, React Native, and React Native Web acceptance coverage to the package CI path.
+
 ## 0.7.1
 
 ### Patch Changes

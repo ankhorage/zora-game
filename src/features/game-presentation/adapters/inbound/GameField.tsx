@@ -8,6 +8,7 @@ export function GameField({
   children,
   aspectRatio,
   minHeight = 240,
+  fill = false,
   clip = true,
   accessibilityLabel,
   testID,
@@ -19,6 +20,7 @@ export function GameField({
       style={[
         styles.root,
         clip ? styles.clipped : styles.overflowVisible,
+        fill ? styles.fill : undefined,
         {
           ...(aspectRatio === undefined ? {} : { aspectRatio }),
           minHeight,
@@ -33,6 +35,9 @@ export function GameField({
 const styles = StyleSheet.create({
   clipped: {
     overflow: 'hidden',
+  },
+  fill: {
+    flex: 1,
   },
   overflowVisible: {
     overflow: 'visible',

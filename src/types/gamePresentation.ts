@@ -29,6 +29,7 @@ export interface GameFieldProps {
   readonly children?: React.ReactNode;
   readonly aspectRatio?: number;
   readonly minHeight?: number;
+  readonly fill?: boolean;
   readonly clip?: boolean;
   readonly accessibilityLabel?: string;
   readonly testID?: string;

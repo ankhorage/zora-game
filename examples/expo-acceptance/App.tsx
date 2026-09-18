@@ -41,7 +41,12 @@ export default function App() {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <ZoraProvider initialMode="light" theme={theme}>
-        <Game definition={definition} minHeight={360} accessibilityLabel="Game acceptance field">
+        <Game
+          definition={definition}
+          fill
+          minHeight={360}
+          accessibilityLabel="Game acceptance field"
+        >
           <GameEntity
             x={20}
             y={28}

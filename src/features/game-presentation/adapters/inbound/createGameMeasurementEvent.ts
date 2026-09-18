@@ -3,9 +3,7 @@ import type { GameEvent, GameRecord } from '@ankhorage/game';
 import type { GameMeasurementBounds } from '../../../../types/gameRuntime';
 
 /*** Create one raw geometry event without deciding collision semantics. */
-export function createGameMeasurementEvent(
-  input: CreateGameMeasurementEventInput,
-): GameEvent {
+export function createGameMeasurementEvent(input: CreateGameMeasurementEventInput): GameEvent {
   return {
     type: input.eventType,
     entityId: input.entityId ?? input.sourceId,

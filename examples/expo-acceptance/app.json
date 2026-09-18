@@ -1,0 +1,28 @@
+{
+  "expo": {
+    "name": "zora-game-expo-acceptance",
+    "slug": "zora-game-expo-acceptance",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.ankhorage.zoragameacceptance"
+    },
+    "android": {
+      "package": "com.ankhorage.zoragameacceptance"
+    },
+    "web": {
+      "output": "single"
+    },
+    "plugins": [
+      "@react-native-vector-icons/fontawesome",
+      "@react-native-vector-icons/fontawesome5",
+      "@react-native-vector-icons/fontawesome6",
+      "@react-native-vector-icons/ionicons"
+    ],
+    "experiments": {
+      "reactCompiler": true
+    }
+  }
+}

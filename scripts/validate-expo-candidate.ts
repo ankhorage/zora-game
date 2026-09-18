@@ -114,7 +114,10 @@ function verifyCandidateGraph(
     'Fixture no longer points to the packed zora-game candidate.',
   );
   const lockText = readFileSync(join(fixtureRoot, 'bun.lock'), 'utf8');
-  assert(lockText.includes(basename(candidatePath)), 'Fixture lockfile misses the candidate tarball.');
+  assert(
+    lockText.includes(basename(candidatePath)),
+    'Fixture lockfile misses the candidate tarball.',
+  );
 
   const installedRoot = join(fixtureRoot, 'node_modules', '@ankhorage', 'zora-game');
   const installedPackage = readJsonObject(join(installedRoot, 'package.json'));
@@ -123,7 +126,10 @@ function verifyCandidateGraph(
     installedVersion === candidateVersion,
     `Expected zora-game ${candidateVersion}, received ${installedVersion}.`,
   );
-  assert(existsSync(join(installedRoot, 'dist', 'index.js')), 'Packed candidate lacks dist/index.js.');
+  assert(
+    existsSync(join(installedRoot, 'dist', 'index.js')),
+    'Packed candidate lacks dist/index.js.',
+  );
 }
 
 /*** Validate one packed candidate through Expo 57 web and native consumer boundaries. */
@@ -150,7 +156,10 @@ function runExpoAcceptance(temporaryRoot: string, candidatePath: string): void {
   );
   assert(existsSync(join(exportRoot, 'index.html')), 'Expo Web export did not produce index.html.');
 
-  run(['bun', 'x', 'expo', 'prebuild', '--platform', 'ios', '--no-install', '--clean'], fixtureRoot);
+  run(
+    ['bun', 'x', 'expo', 'prebuild', '--platform', 'ios', '--no-install', '--clean'],
+    fixtureRoot,
+  );
   assert(existsSync(join(fixtureRoot, 'ios')), 'Expo native prebuild did not produce ios/.');
 }
 

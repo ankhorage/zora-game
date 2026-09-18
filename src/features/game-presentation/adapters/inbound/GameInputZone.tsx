@@ -4,7 +4,7 @@ import type { GameInputZoneProps } from '../../../../types/gamePresentation';
 import { toGamePercentage } from '../../utils/toGamePercentage';
 import { useGameInputZoneResponder } from './useGameInputZoneResponder';
 
-/*** Capture pointer/touch geometry and dispatch only normalized generic Game events. */
+/*** Capture pointer/touch geometry and optional keyboard input as normalized generic Game events. */
 export function GameInputZone({
   x = 0,
   y = 0,
@@ -21,11 +21,11 @@ export function GameInputZone({
   const { dispatchKeyboard, dispatchPointer, handleLayout, shouldSetResponder } =
     useGameInputZoneResponder({
       ...inputProps,
-    x,
-    y,
-    width,
-    height,
-    enabled,
+      x,
+      y,
+      width,
+      height,
+      enabled,
       continuous,
       keyboardBindings,
     });

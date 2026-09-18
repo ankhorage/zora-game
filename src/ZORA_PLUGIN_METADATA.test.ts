@@ -19,6 +19,7 @@ describe('ZORA game plugin metadata', () => {
     expect(gameField.allowedChildren).toContain('GameOverlay');
     expect(game.allowedChildren).toContain('GameEntity');
     expect(game.allowedChildren).toContain('GameInputZone');
+    expect(game.allowedChildren).toContain('GameMeasurementProbe');
     expect(game.allowedChildren).toContain('GameOverlay');
   });
 
@@ -38,6 +39,7 @@ describe('ZORA game plugin metadata', () => {
     expect(gameEntity.bindings?.props?.x?.value.type).toBe('number');
     expect(gameEntity.bindings?.props?.y?.value.type).toBe('number');
     expect(gameEntity.bindings?.props?.hidden?.value.type).toBe('boolean');
+    expect(gameEntity.bindings?.props?.measurementId?.value.type).toBe('string');
   });
 
   test('keeps the generic presentation vocabulary free of product-specific concepts', () => {
@@ -47,6 +49,22 @@ describe('ZORA game plugin metadata', () => {
     expect(serialized).not.toContain('vocabulary');
     expect(serialized).not.toContain('wordcreature');
     expect(serialized).not.toContain('letterprojectile');
+  });
+});
+
+describe('ZORA game measurement metadata', () => {
+  test('keeps measurement probes scoped to runtime-owning Game parents', () => {
+    const catalog = composeZoraPluginMetadata([ZORA_CORE_PLUGIN_METADATA, ZORA_PLUGIN_METADATA]);
+    const probe = readComponentMeta(
+      catalog.componentMeta.GameMeasurementProbe,
+      'GameMeasurementProbe',
+    );
+
+    expect(probe.props.sourceId?.type).toBe('string');
+    expect(probe.props.targetId?.type).toBe('string');
+    expect(probe.props.delayMs?.type).toBe('number');
+    expect(catalog.componentMeta.Game?.allowedChildren).toContain('GameMeasurementProbe');
+    expect(catalog.componentMeta.GameField?.allowedChildren).not.toContain('GameMeasurementProbe');
   });
 });
 

@@ -25,6 +25,13 @@ export const gameFieldMeta = {
       default: 320,
       authoring: { authority: 'instance' },
     },
+    fill: {
+      type: 'boolean',
+      category: 'Layout',
+      label: 'Fill available space',
+      default: false,
+      authoring: { authority: 'instance' },
+    },
     clip: {
       type: 'boolean',
       category: 'Layout',

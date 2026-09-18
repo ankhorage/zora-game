@@ -28,6 +28,7 @@ export interface GameEntityProps {
   readonly zIndex?: number;
   readonly hidden?: boolean;
   readonly pointerEvents?: GamePointerEvents;
+  readonly measurementId?: string;
   readonly accessibilityLabel?: string;
   readonly testID?: string;
 }
@@ -52,6 +53,15 @@ export interface GameInputZoneProps {
   readonly keyboardBindings?: readonly GameKeyboardBinding[];
   readonly accessibilityLabel?: string;
   readonly testID?: string;
+}
+
+export interface GameMeasurementProbeProps {
+  readonly sourceId: string;
+  readonly targetId: string;
+  readonly eventType?: string;
+  readonly entityId?: string;
+  readonly delayMs?: number;
+  readonly enabled?: boolean;
 }
 
 export interface GameOverlayProps {

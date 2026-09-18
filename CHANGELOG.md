@@ -1,5 +1,12 @@
 # @ankhorage/zora-game
 
+## 0.4.1
+
+### Patch Changes
+
+- bba6595: Expose the current local game entities as a repeatable binding array while preserving the canonical
+  map-shaped GameSession entity storage.
+
 ## 0.4.0
 
 ### Minor Changes

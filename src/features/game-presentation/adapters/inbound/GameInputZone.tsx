@@ -1,4 +1,4 @@
-import { StyleSheet, View, type ViewStyle } from 'react-native';
+import { Platform, StyleSheet, View, type ViewStyle } from 'react-native';
 
 import type { GameInputZoneProps } from '../../../../types/gamePresentation';
 import { toGamePercentage } from '../../utils/toGamePercentage';
@@ -13,22 +13,30 @@ export function GameInputZone({
   zIndex = 0,
   enabled = true,
   continuous = true,
+  keyboardBindings,
   accessibilityLabel,
   testID,
   ...inputProps
 }: GameInputZoneProps) {
-  const { dispatchPointer, handleLayout, shouldSetResponder } = useGameInputZoneResponder({
-    ...inputProps,
+  const { dispatchKeyboard, dispatchPointer, handleLayout, shouldSetResponder } =
+    useGameInputZoneResponder({
+      ...inputProps,
     x,
     y,
     width,
     height,
     enabled,
-    continuous,
-  });
+      continuous,
+      keyboardBindings,
+    });
+  const keyboardProps =
+    Platform.OS === 'web' && enabled && (keyboardBindings?.length ?? 0) > 0
+      ? { onKeyDown: dispatchKeyboard, tabIndex: 0 }
+      : {};
 
   return (
     <View
+      {...keyboardProps}
       {...(accessibilityLabel === undefined ? {} : { accessibilityLabel })}
       {...(testID === undefined ? {} : { testID })}
       {...(continuous

@@ -1,4 +1,6 @@
 graph LR
+  module_src_features_game_presentation_adapters_inbound_createGameKeyboardEvent_test_ts["src/features/game-presentation/adapters/inbound/createGameKeyboardEvent.test.ts"]
+  module_src_features_game_presentation_adapters_inbound_createGameKeyboardEvent_ts["src/features/game-presentation/adapters/inbound/createGameKeyboardEvent.ts"]
   module_src_features_game_presentation_adapters_inbound_createGamePointerEvent_test_ts["src/features/game-presentation/adapters/inbound/createGamePointerEvent.test.ts"]
   module_src_features_game_presentation_adapters_inbound_createGamePointerEvent_ts["src/features/game-presentation/adapters/inbound/createGamePointerEvent.ts"]
   module_src_features_game_presentation_adapters_inbound_Game_tsx["src/features/game-presentation/adapters/inbound/Game.tsx"]
@@ -47,6 +49,9 @@ graph LR
   export_GameInputZone -.-> export_GameInputZoneProps
   export_GameInputZoneProps["GameInputZoneProps"]
   module_src_types_gamePresentation_ts --> export_GameInputZoneProps
+  export_GameInputZoneProps -.-> export_GameKeyboardBinding
+  export_GameKeyboardBinding["GameKeyboardBinding"]
+  module_src_types_gamePresentation_ts --> export_GameKeyboardBinding
   export_GameOverlay["GameOverlay"]
   module_src_features_game_presentation_adapters_inbound_GameOverlay_tsx --> export_GameOverlay
   export_GameOverlay -.-> export_GameOverlayProps

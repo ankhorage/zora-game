@@ -14,7 +14,7 @@
     {
       "id": "npm",
       "label": "npm",
-      "value": "v0.4.1",
+      "value": "v0.5.0",
       "color": "cb3837"
     },
     {
@@ -71,6 +71,24 @@
     "src/metadata.ts"
   ],
   "modules": [
+    {
+      "path": "src/features/game-presentation/adapters/inbound/createGameKeyboardEvent.test.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/game-presentation/adapters/inbound/createGameKeyboardEvent.ts"
+      ],
+      "exports": []
+    },
+    {
+      "path": "src/features/game-presentation/adapters/inbound/createGameKeyboardEvent.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/types/gamePresentation.ts"
+      ],
+      "exports": [
+        "createGameKeyboardEvent"
+      ]
+    },
     {
       "path": "src/features/game-presentation/adapters/inbound/createGamePointerEvent.test.ts",
       "isEntrypoint": false,
@@ -150,6 +168,7 @@
       "path": "src/features/game-presentation/adapters/inbound/useGameInputZoneResponder.ts",
       "isEntrypoint": false,
       "dependencies": [
+        "src/features/game-presentation/adapters/inbound/createGameKeyboardEvent.ts",
         "src/features/game-presentation/adapters/inbound/createGamePointerEvent.ts",
         "src/features/game-presentation/composition/GameRuntimeContext.ts",
         "src/types/gamePresentation.ts"
@@ -258,6 +277,7 @@
         "GameFieldProps",
         "GameInputZone",
         "GameInputZoneProps",
+        "GameKeyboardBinding",
         "GameOverlay",
         "GameOverlayPlacement",
         "GameOverlayProps",
@@ -295,6 +315,7 @@
         "GameFieldProps",
         "GameInputZone",
         "GameInputZoneProps",
+        "GameKeyboardBinding",
         "GameOverlay",
         "GameOverlayPlacement",
         "GameOverlayProps",
@@ -320,6 +341,7 @@
         "GameEntityProps",
         "GameFieldProps",
         "GameInputZoneProps",
+        "GameKeyboardBinding",
         "GameOverlayPlacement",
         "GameOverlayProps",
         "GamePointerEvents",
@@ -671,7 +693,7 @@
     },
     {
       "name": "GameInputZone",
-      "description": "Capture pointer/touch geometry and dispatch only normalized generic Game events.",
+      "description": "Capture pointer/touch geometry and optional keyboard input as normalized generic Game events.",
       "isReadme": false,
       "examples": [],
       "kind": "function",
@@ -689,10 +711,10 @@
       ],
       "signatures": [
         {
-          "label": "({\n  x = 0,\n  y = 0,\n  width = 100,\n  height = 100,\n  zIndex = 0,\n  enabled = true,\n  continuous = true,\n  accessibilityLabel,\n  testID,\n  ...inputProps\n}: GameInputZoneProps) => import(\"react\").JSX.Element",
+          "label": "({\n  x = 0,\n  y = 0,\n  width = 100,\n  height = 100,\n  zIndex = 0,\n  enabled = true,\n  continuous = true,\n  keyboardBindings,\n  accessibilityLabel,\n  testID,\n  ...inputProps\n}: GameInputZoneProps) => import(\"react\").JSX.Element",
           "parameters": [
             {
-              "name": "{\n  x = 0,\n  y = 0,\n  width = 100,\n  height = 100,\n  zIndex = 0,\n  enabled = true,\n  continuous = true,\n  accessibilityLabel,\n  testID,\n  ...inputProps\n}",
+              "name": "{\n  x = 0,\n  y = 0,\n  width = 100,\n  height = 100,\n  zIndex = 0,\n  enabled = true,\n  continuous = true,\n  keyboardBindings,\n  accessibilityLabel,\n  testID,\n  ...inputProps\n}",
               "type": "GameInputZoneProps",
               "required": true,
               "description": null
@@ -714,13 +736,15 @@
       "modulePath": "src/types/gamePresentation.ts",
       "sourceLocation": {
         "filePath": "src/types/gamePresentation.ts",
-        "line": 35,
+        "line": 42,
         "column": 1
       },
       "exportPaths": [
         "src/index.ts"
       ],
-      "relatedSymbols": [],
+      "relatedSymbols": [
+        "GameKeyboardBinding"
+      ],
       "signatures": [],
       "members": [
         {
@@ -766,6 +790,13 @@
           "description": null
         },
         {
+          "name": "keyboardBindings",
+          "kind": "property",
+          "type": "readonly GameKeyboardBinding[]",
+          "required": false,
+          "description": null
+        },
+        {
           "name": "testID",
           "kind": "property",
           "type": "string",
@@ -797,6 +828,55 @@
           "name": "zIndex",
           "kind": "property",
           "type": "number",
+          "required": false,
+          "description": null
+        }
+      ],
+      "structuredRows": []
+    },
+    {
+      "name": "GameKeyboardBinding",
+      "description": null,
+      "isReadme": false,
+      "examples": [],
+      "kind": "type",
+      "modulePath": "src/types/gamePresentation.ts",
+      "sourceLocation": {
+        "filePath": "src/types/gamePresentation.ts",
+        "line": 35,
+        "column": 1
+      },
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [],
+      "signatures": [],
+      "members": [
+        {
+          "name": "entityId",
+          "kind": "property",
+          "type": "string",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "eventType",
+          "kind": "property",
+          "type": "string",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "key",
+          "kind": "property",
+          "type": "string",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "preventDefault",
+          "kind": "property",
+          "type": "boolean",
           "required": false,
           "description": null
         }
@@ -868,7 +948,7 @@
       "modulePath": "src/types/gamePresentation.ts",
       "sourceLocation": {
         "filePath": "src/types/gamePresentation.ts",
-        "line": 49,
+        "line": 57,
         "column": 1
       },
       "exportPaths": [
@@ -953,7 +1033,7 @@
       "modulePath": "src/types/gamePresentation.ts",
       "sourceLocation": {
         "filePath": "src/types/gamePresentation.ts",
-        "line": 58,
+        "line": 66,
         "column": 1
       },
       "exportPaths": [
@@ -1360,7 +1440,7 @@
     },
     {
       "name": "GameInputZone",
-      "description": "Capture pointer/touch geometry and dispatch only normalized generic Game events.",
+      "description": "Capture pointer/touch geometry and optional keyboard input as normalized generic Game events.",
       "isReadme": false,
       "examples": [],
       "modulePath": "src/features/game-presentation/adapters/inbound/GameInputZone.tsx",
@@ -1410,6 +1490,12 @@
           "type": "number | undefined",
           "required": false,
           "defaultValue": "100",
+          "description": null
+        },
+        {
+          "name": "keyboardBindings",
+          "type": "readonly GameKeyboardBinding[] | undefined",
+          "required": false,
           "description": null
         },
         {
@@ -1507,6 +1593,15 @@
   ],
   "sourceFunctions": [
     {
+      "name": "createGameKeyboardEvent",
+      "description": "Map one configured keyboard key into a generic Game event.",
+      "sourceLocation": {
+        "filePath": "src/features/game-presentation/adapters/inbound/createGameKeyboardEvent.ts",
+        "line": 18,
+        "column": 1
+      }
+    },
+    {
       "name": "createGamePointerEvent",
       "description": "Normalize one measured pointer/touch position into a field-relative generic Game event.",
       "sourceLocation": {
@@ -1553,10 +1648,19 @@
     },
     {
       "name": "GameInputZone",
-      "description": "Capture pointer/touch geometry and dispatch only normalized generic Game events.",
+      "description": "Capture pointer/touch geometry and optional keyboard input as normalized generic Game events.",
       "sourceLocation": {
         "filePath": "src/features/game-presentation/adapters/inbound/GameInputZone.tsx",
         "line": 8,
+        "column": 1
+      }
+    },
+    {
+      "name": "createGameInputZoneKeyboardProps",
+      "description": "Add a focusable web keyboard target only when the input zone owns key bindings.",
+      "sourceLocation": {
+        "filePath": "src/features/game-presentation/adapters/inbound/GameInputZone.tsx",
+        "line": 62,
         "column": 1
       }
     },
@@ -1565,7 +1669,7 @@
       "description": "Convert field-relative input-zone props into one absolute React Native style.",
       "sourceLocation": {
         "filePath": "src/features/game-presentation/adapters/inbound/GameInputZone.tsx",
-        "line": 55,
+        "line": 82,
         "column": 1
       }
     },
@@ -1592,7 +1696,7 @@
       "description": "Own React Native responder measurement and event dispatch for one Game input zone.",
       "sourceLocation": {
         "filePath": "src/features/game-presentation/adapters/inbound/useGameInputZoneResponder.ts",
-        "line": 14,
+        "line": 20,
         "column": 1
       }
     },
@@ -1727,7 +1831,7 @@
       "description": "Require one composed component metadata entry for focused assertions.",
       "sourceLocation": {
         "filePath": "src/ZORA_PLUGIN_METADATA.test.ts",
-        "line": 64,
+        "line": 73,
         "column": 1
       }
     }
@@ -1762,7 +1866,7 @@
       "name": "GameInputZone",
       "sourcePath": "src/features/game-presentation/adapters/inbound/GameInputZone.tsx",
       "symbolName": "GameInputZone",
-      "description": "Capture pointer/touch geometry and dispatch only normalized generic Game events.",
+      "description": "Capture pointer/touch geometry and optional keyboard input as normalized generic Game events.",
       "isReadme": false
     },
     {
@@ -1927,6 +2031,16 @@
         "sourcePath": "src/features/game-presentation/utils/toGamePercentage.ts"
       },
       {
+        "fromPath": "src/features/game-presentation/adapters/inbound/createGameKeyboardEvent.test.ts",
+        "toPath": "src/features/game-presentation/adapters/inbound/createGameKeyboardEvent.ts",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/createGameKeyboardEvent.test.ts"
+      },
+      {
+        "fromPath": "src/features/game-presentation/adapters/inbound/createGameKeyboardEvent.ts",
+        "toPath": "src/types/gamePresentation.ts",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/createGameKeyboardEvent.ts"
+      },
+      {
         "fromPath": "src/features/game-presentation/adapters/inbound/createGamePointerEvent.test.ts",
         "toPath": "src/features/game-presentation/adapters/inbound/createGamePointerEvent.ts",
         "sourcePath": "src/features/game-presentation/adapters/inbound/createGamePointerEvent.test.ts"
@@ -2004,6 +2118,11 @@
       {
         "fromPath": "src/features/game-presentation/adapters/inbound/useGameInputZoneResponder.ts",
         "toPath": "src/features/game-presentation/composition/GameRuntimeContext.ts",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/useGameInputZoneResponder.ts"
+      },
+      {
+        "fromPath": "src/features/game-presentation/adapters/inbound/useGameInputZoneResponder.ts",
+        "toPath": "src/features/game-presentation/adapters/inbound/createGameKeyboardEvent.ts",
         "sourcePath": "src/features/game-presentation/adapters/inbound/useGameInputZoneResponder.ts"
       },
       {
@@ -2188,6 +2307,30 @@
         "sourcePath": "src/features/game-presentation/utils/toGamePercentage.ts"
       },
       {
+        "fromSymbol": "src/features/game-presentation/adapters/inbound/createGameKeyboardEvent.test.ts",
+        "toSymbol": "describe",
+        "callExpression": "describe",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/createGameKeyboardEvent.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/game-presentation/adapters/inbound/createGameKeyboardEvent.test.ts",
+        "toSymbol": "test",
+        "callExpression": "test",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/createGameKeyboardEvent.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/game-presentation/adapters/inbound/createGameKeyboardEvent.test.ts",
+        "toSymbol": "expect",
+        "callExpression": "expect",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/createGameKeyboardEvent.test.ts"
+      },
+      {
+        "fromSymbol": "src/features/game-presentation/adapters/inbound/createGameKeyboardEvent.test.ts",
+        "toSymbol": "createGameKeyboardEvent",
+        "callExpression": "createGameKeyboardEvent",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/createGameKeyboardEvent.test.ts"
+      },
+      {
         "fromSymbol": "src/features/game-presentation/adapters/inbound/createGamePointerEvent.test.ts",
         "toSymbol": "describe",
         "callExpression": "describe",
@@ -2249,6 +2392,12 @@
       },
       {
         "fromSymbol": "GameInputZone",
+        "toSymbol": "createGameInputZoneKeyboardProps",
+        "callExpression": "createGameInputZoneKeyboardProps",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/GameInputZone.tsx"
+      },
+      {
+        "fromSymbol": "GameInputZone",
         "toSymbol": "createInputZoneStyle",
         "callExpression": "createInputZoneStyle",
         "sourcePath": "src/features/game-presentation/adapters/inbound/GameInputZone.tsx"
@@ -2276,6 +2425,18 @@
         "toSymbol": "dispatch",
         "callExpression": "runtime.dispatch",
         "sourcePath": "src/features/game-presentation/adapters/inbound/useGameInputZoneResponder.ts"
+      },
+      {
+        "fromSymbol": "src/features/game-presentation/adapters/inbound/useGameInputZoneResponder.ts",
+        "toSymbol": "createGameKeyboardEvent",
+        "callExpression": "createGameKeyboardEvent",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/useGameInputZoneResponder.ts"
+      },
+      {
+        "fromSymbol": "src/features/game-presentation/adapters/inbound/useGameInputZoneResponder.ts",
+        "toSymbol": "preventDefault",
+        "callExpression": "event.preventDefault",
+        "sourcePath": "src/features/game-presentation/adapters/inbound/useGameInputZoneResponder.ts"
       }
     ],
     "typeReferences": [
@@ -2302,6 +2463,11 @@
       {
         "fromSymbol": "GameFieldProps",
         "toType": "ReactNode",
+        "sourcePath": "src/types/gamePresentation.ts"
+      },
+      {
+        "fromSymbol": "GameInputZoneProps",
+        "toType": "GameKeyboardBinding",
         "sourcePath": "src/types/gamePresentation.ts"
       },
       {
@@ -2414,7 +2580,7 @@
       {
         "fromComponent": "GameInputZone",
         "toComponent": "View",
-        "jsxElement": "<View\n      {...(accessibilityLabel === undefined ? {} : { accessibilityLabel })}\n      {...(testID === undefined ? {} : { testID })}\n      {...(continuous\n        ? { onResponderGrant: dispatchPointer, onResponderMove: dispatchPointer }\n        : { onResponderRelease: dispatchPointer })}\n      collapsable={false}\n      onLayout={handleLayout}\n      onStartShouldSetResponder={shouldSetResponder}\n      pointerEvents={enabled ? 'auto' : 'none'}\n      style={createInputZoneStyle({ x, y, width, height, zIndex })}\n    />",
+        "jsxElement": "<View\n      {...keyboardProps}\n      {...(accessibilityLabel === undefined ? {} : { accessibilityLabel })}\n      {...(testID === undefined ? {} : { testID })}\n      {...(continuous\n        ? { onResponderGrant: dispatchPointer, onResponderMove: dispatchPointer }\n        : { onResponderRelease: dispatchPointer })}\n      collapsable={false}\n      onLayout={handleLayout}\n      onStartShouldSetResponder={shouldSetResponder}\n      pointerEvents={enabled ? 'auto' : 'none'}\n      style={createInputZoneStyle({ x, y, width, height, zIndex })}\n    />",
         "sourcePath": "src/features/game-presentation/adapters/inbound/GameInputZone.tsx"
       },
       {

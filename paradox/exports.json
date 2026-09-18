@@ -286,7 +286,7 @@
   },
   {
     "name": "GameInputZone",
-    "description": "Capture pointer/touch geometry and dispatch only normalized generic Game events.",
+    "description": "Capture pointer/touch geometry and optional keyboard input as normalized generic Game events.",
     "isReadme": false,
     "examples": [],
     "kind": "function",
@@ -304,10 +304,10 @@
     ],
     "signatures": [
       {
-        "label": "({\n  x = 0,\n  y = 0,\n  width = 100,\n  height = 100,\n  zIndex = 0,\n  enabled = true,\n  continuous = true,\n  accessibilityLabel,\n  testID,\n  ...inputProps\n}: GameInputZoneProps) => import(\"react\").JSX.Element",
+        "label": "({\n  x = 0,\n  y = 0,\n  width = 100,\n  height = 100,\n  zIndex = 0,\n  enabled = true,\n  continuous = true,\n  keyboardBindings,\n  accessibilityLabel,\n  testID,\n  ...inputProps\n}: GameInputZoneProps) => import(\"react\").JSX.Element",
         "parameters": [
           {
-            "name": "{\n  x = 0,\n  y = 0,\n  width = 100,\n  height = 100,\n  zIndex = 0,\n  enabled = true,\n  continuous = true,\n  accessibilityLabel,\n  testID,\n  ...inputProps\n}",
+            "name": "{\n  x = 0,\n  y = 0,\n  width = 100,\n  height = 100,\n  zIndex = 0,\n  enabled = true,\n  continuous = true,\n  keyboardBindings,\n  accessibilityLabel,\n  testID,\n  ...inputProps\n}",
             "type": "GameInputZoneProps",
             "required": true,
             "description": null
@@ -329,13 +329,15 @@
     "modulePath": "src/types/gamePresentation.ts",
     "sourceLocation": {
       "filePath": "src/types/gamePresentation.ts",
-      "line": 35,
+      "line": 42,
       "column": 1
     },
     "exportPaths": [
       "src/index.ts"
     ],
-    "relatedSymbols": [],
+    "relatedSymbols": [
+      "GameKeyboardBinding"
+    ],
     "signatures": [],
     "members": [
       {
@@ -381,6 +383,13 @@
         "description": null
       },
       {
+        "name": "keyboardBindings",
+        "kind": "property",
+        "type": "readonly GameKeyboardBinding[]",
+        "required": false,
+        "description": null
+      },
+      {
         "name": "testID",
         "kind": "property",
         "type": "string",
@@ -412,6 +421,55 @@
         "name": "zIndex",
         "kind": "property",
         "type": "number",
+        "required": false,
+        "description": null
+      }
+    ],
+    "structuredRows": []
+  },
+  {
+    "name": "GameKeyboardBinding",
+    "description": null,
+    "isReadme": false,
+    "examples": [],
+    "kind": "type",
+    "modulePath": "src/types/gamePresentation.ts",
+    "sourceLocation": {
+      "filePath": "src/types/gamePresentation.ts",
+      "line": 35,
+      "column": 1
+    },
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [],
+    "signatures": [],
+    "members": [
+      {
+        "name": "entityId",
+        "kind": "property",
+        "type": "string",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "eventType",
+        "kind": "property",
+        "type": "string",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "key",
+        "kind": "property",
+        "type": "string",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "preventDefault",
+        "kind": "property",
+        "type": "boolean",
         "required": false,
         "description": null
       }
@@ -483,7 +541,7 @@
     "modulePath": "src/types/gamePresentation.ts",
     "sourceLocation": {
       "filePath": "src/types/gamePresentation.ts",
-      "line": 49,
+      "line": 57,
       "column": 1
     },
     "exportPaths": [
@@ -568,7 +626,7 @@
     "modulePath": "src/types/gamePresentation.ts",
     "sourceLocation": {
       "filePath": "src/types/gamePresentation.ts",
-      "line": 58,
+      "line": 66,
       "column": 1
     },
     "exportPaths": [

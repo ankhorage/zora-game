@@ -1,5 +1,12 @@
 # @ankhorage/zora-game
 
+## 0.5.0
+
+### Minor Changes
+
+- 16cf5a7: Add declarative web keyboard bindings to GameInputZone while preserving its existing native/mobile
+  pointer and touch normalization path.
+
 ## 0.4.1
 
 ### Patch Changes

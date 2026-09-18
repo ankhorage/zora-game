@@ -131,7 +131,7 @@ Kind: `function`
 Module: `src/features/game-presentation/adapters/inbound/GameInputZone.tsx`
 Source: `src/features/game-presentation/adapters/inbound/GameInputZone.tsx:8:1`
 
-Capture pointer/touch geometry and dispatch only normalized generic Game events.
+Capture pointer/touch geometry and optional keyboard input as normalized generic Game events.
 
 ### Signatures
 
@@ -143,6 +143,7 @@ Capture pointer/touch geometry and dispatch only normalized generic Game events.
   zIndex = 0,
   enabled = true,
   continuous = true,
+  keyboardBindings,
   accessibilityLabel,
   testID,
   ...inputProps
@@ -155,6 +156,7 @@ Capture pointer/touch geometry and dispatch only normalized generic Game events.
   zIndex = 0,
   enabled = true,
   continuous = true,
+  keyboardBindings,
   accessibilityLabel,
   testID,
   ...inputProps
@@ -165,7 +167,7 @@ Capture pointer/touch geometry and dispatch only normalized generic Game events.
 
 Kind: `type`
 Module: `src/types/gamePresentation.ts`
-Source: `src/types/gamePresentation.ts:35:1`
+Source: `src/types/gamePresentation.ts:42:1`
 
 ### Members
 
@@ -177,11 +179,27 @@ Source: `src/types/gamePresentation.ts:35:1`
 | entityId | property | `string` | no |  |
 | eventType | property | `string` | yes |  |
 | height | property | `number` | no |  |
+| keyboardBindings | property | `readonly GameKeyboardBinding[]` | no |  |
 | testID | property | `string` | no |  |
 | width | property | `number` | no |  |
 | x | property | `number` | no |  |
 | y | property | `number` | no |  |
 | zIndex | property | `number` | no |  |
+
+## GameKeyboardBinding
+
+Kind: `type`
+Module: `src/types/gamePresentation.ts`
+Source: `src/types/gamePresentation.ts:35:1`
+
+### Members
+
+| Name | Kind | Type | Required | Description |
+| --- | --- | --- | --- | --- |
+| entityId | property | `string` | no |  |
+| eventType | property | `string` | no |  |
+| key | property | `string` | yes |  |
+| preventDefault | property | `boolean` | no |  |
 
 ## GameOverlay
 
@@ -221,7 +239,7 @@ Source: `src/types/gamePresentation.ts:7:1`
 
 Kind: `type`
 Module: `src/types/gamePresentation.ts`
-Source: `src/types/gamePresentation.ts:49:1`
+Source: `src/types/gamePresentation.ts:57:1`
 
 ### Members
 
@@ -244,7 +262,7 @@ Source: `src/types/gamePresentation.ts:6:1`
 
 Kind: `type`
 Module: `src/types/gamePresentation.ts`
-Source: `src/types/gamePresentation.ts:58:1`
+Source: `src/types/gamePresentation.ts:66:1`
 
 ### Members
 

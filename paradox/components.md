@@ -68,7 +68,7 @@ Export paths: `src/index.ts`
 
 Source: `src/features/game-presentation/adapters/inbound/GameInputZone.tsx:8:1`
 
-Capture pointer/touch geometry and dispatch only normalized generic Game events.
+Capture pointer/touch geometry and optional keyboard input as normalized generic Game events.
 
 Export paths: `src/index.ts`
 
@@ -80,6 +80,7 @@ Export paths: `src/index.ts`
 | entityId | `string \| undefined` | no | — |  |
 | eventType | `string` | yes | — |  |
 | height | `number \| undefined` | no | `100` |  |
+| keyboardBindings | `readonly GameKeyboardBinding[] \| undefined` | no | — |  |
 | testID | `string \| undefined` | no | — |  |
 | width | `number \| undefined` | no | `100` |  |
 | x | `number \| undefined` | no | `0` |  |

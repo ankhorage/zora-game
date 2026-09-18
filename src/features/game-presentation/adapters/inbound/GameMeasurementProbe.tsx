@@ -20,19 +20,31 @@ export function GameMeasurementProbe({
   React.useEffect(() => {
     if (!enabled) return undefined;
 
-    const timer = setTimeout(() => {
-      void dispatchGameMeasurement({
-        dispatch: runtime.dispatch,
-        measure: runtime.measure,
-        sourceId,
-        targetId,
-        eventType,
-        ...(entityId === undefined ? {} : { entityId }),
-      });
-    }, Math.max(0, delayMs));
+    const timer = setTimeout(
+      () => {
+        void dispatchGameMeasurement({
+          dispatch: runtime.dispatch,
+          measure: runtime.measure,
+          sourceId,
+          targetId,
+          eventType,
+          ...(entityId === undefined ? {} : { entityId }),
+        });
+      },
+      Math.max(0, delayMs),
+    );
 
     return () => clearTimeout(timer);
-  }, [delayMs, enabled, entityId, eventType, runtime.dispatch, runtime.measure, sourceId, targetId]);
+  }, [
+    delayMs,
+    enabled,
+    entityId,
+    eventType,
+    runtime.dispatch,
+    runtime.measure,
+    sourceId,
+    targetId,
+  ]);
 
   return null;
 }

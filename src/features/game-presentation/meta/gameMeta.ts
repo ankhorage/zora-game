@@ -29,6 +29,7 @@ export const gameMeta = {
       resetKey: '',
       autoAdvanceTime: true,
       minHeight: 320,
+      fill: false,
       clip: true,
     },
   },
@@ -88,6 +89,13 @@ export const gameMeta = {
       category: 'Layout',
       label: 'Minimum height',
       default: 320,
+      authoring: { authority: 'instance' },
+    },
+    fill: {
+      type: 'boolean',
+      category: 'Layout',
+      label: 'Fill available space',
+      default: false,
       authoring: { authority: 'instance' },
     },
     clip: {

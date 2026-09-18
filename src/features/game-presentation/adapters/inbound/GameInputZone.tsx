@@ -29,10 +29,11 @@ export function GameInputZone({
       continuous,
       ...(keyboardBindings === undefined ? {} : { keyboardBindings }),
     });
-  const keyboardProps =
-    Platform.OS === 'web' && enabled && (keyboardBindings?.length ?? 0) > 0
-      ? { onKeyDown: dispatchKeyboard, tabIndex: 0 as const }
-      : {};
+  const keyboardProps = createGameInputZoneKeyboardProps({
+    dispatchKeyboard,
+    enabled,
+    keyboardBindings,
+  });
 
   return (
     <View
@@ -49,6 +50,24 @@ export function GameInputZone({
       style={createInputZoneStyle({ x, y, width, height, zIndex })}
     />
   );
+}
+
+interface GameInputZoneKeyboardPropsInput {
+  readonly dispatchKeyboard: (event: { readonly key: string; preventDefault(): void }) => void;
+  readonly enabled: boolean;
+  readonly keyboardBindings: GameInputZoneProps['keyboardBindings'];
+}
+
+/*** Add a focusable web keyboard target only when the input zone owns key bindings. */
+function createGameInputZoneKeyboardProps({
+  dispatchKeyboard,
+  enabled,
+  keyboardBindings,
+}: GameInputZoneKeyboardPropsInput) {
+  if (Platform.OS !== 'web' || !enabled || keyboardBindings === undefined) return {};
+  if (keyboardBindings.length === 0) return {};
+
+  return { onKeyDown: dispatchKeyboard, tabIndex: 0 as const };
 }
 
 interface InputZoneStyleInput {

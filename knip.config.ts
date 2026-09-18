@@ -18,6 +18,7 @@ export default createKnipConfig({
     'examples/expo-acceptance': {
       entry: ['index.ts', 'App.tsx'],
       project: ['*.ts', '*.tsx'],
+      ignoreDependencies: ['expo-updates'],
     },
   },
 });

@@ -39,6 +39,9 @@ const styles = StyleSheet.create({
   fill: {
     flex: 1,
   },
+  fill: {
+    flex: 1,
+  },
   overflowVisible: {
     overflow: 'visible',
   },

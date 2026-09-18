@@ -93,7 +93,7 @@
   },
   "packageManager": "bun@1.4.2",
   "dependencies": {
-    "@ankhorage/game": "^0.1.0",
+    "@ankhorage/game": "^0.1.1",
     "@ankhorage/runtime": "^2.3.1"
   }
 }

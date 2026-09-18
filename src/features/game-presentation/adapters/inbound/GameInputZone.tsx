@@ -27,11 +27,11 @@ export function GameInputZone({
       height,
       enabled,
       continuous,
-      keyboardBindings,
+      ...(keyboardBindings === undefined ? {} : { keyboardBindings }),
     });
   const keyboardProps =
     Platform.OS === 'web' && enabled && (keyboardBindings?.length ?? 0) > 0
-      ? { onKeyDown: dispatchKeyboard, tabIndex: 0 }
+      ? { onKeyDown: dispatchKeyboard, tabIndex: 0 as const }
       : {};
 
   return (

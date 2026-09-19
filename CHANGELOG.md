@@ -1,5 +1,11 @@
 # @ankhorage/zora-game
 
+## 0.8.14
+
+### Patch Changes
+
+- ff977e7: Update Ankhorage dependencies: `@ankhorage/zora`.
+
 ## 0.8.13
 
 ### Patch Changes

@@ -79,7 +79,7 @@
     "expo:acceptance": "bun scripts/validate-expo-candidate.ts"
   },
   "devDependencies": {
-    "@ankhorage/devtools": "^1.18.2",
+    "@ankhorage/devtools": "^1.18.3",
     "@ankhorage/paradox": "^0.1.26",
     "@ankhorage/zora": "^20.3.2",
     "@types/bun": "^1.4.1",

@@ -9,7 +9,7 @@
         "@ankhorage/runtime": "^3.0.2",
       },
       "devDependencies": {
-        "@ankhorage/devtools": "^1.17.1",
+        "@ankhorage/devtools": "^1.17.2",
         "@ankhorage/paradox": "^0.1.26",
         "@ankhorage/zora": "^20.0.2",
         "@types/bun": "^1.4.1",
@@ -38,7 +38,7 @@
 
     "@ankhorage/data-sources": ["@ankhorage/data-sources@2.0.5", "", { "dependencies": { "@ankhorage/contracts": "^12.0.1" } }, "sha512-MyDcMNfMjDdREYUkh4Ple0x83r5wLDerJyMRrRwnoqJMXvI43F2RIKLha7fBDMYGMp9VnjVsRe/FxUstH4Xnrw=="],
 
-    "@ankhorage/devtools": ["@ankhorage/devtools@1.17.1", "", { "dependencies": { "@ankhorage/apm": "^0.6.0", "@ankhorage/project-detector": "^0.1.0", "@ankhorage/utility": "^0.5.1", "@changesets/cli": "^3.0.2", "@eslint/compat": "^2.1.1", "@eslint/js": "^10.0.1", "@next/eslint-plugin-next": "^16.3.5", "eslint": "^10.10.0", "eslint-config-prettier": "^10.1.8", "eslint-plugin-import": "^2.32.0", "eslint-plugin-prettier": "^5.5.6", "eslint-plugin-react": "^7.37.5", "eslint-plugin-react-hooks": "^7.0.0", "eslint-plugin-react-native": "^5.0.0", "eslint-plugin-security": "^4.0.1", "eslint-plugin-simple-import-sort": "^14.0.0", "eslint-plugin-unused-imports": "^4.4.1", "knip": "^6.34.0", "prettier": "^3.9.6", "typescript-eslint": "^8.69.0" }, "bin": { "ankhorage-knip": "dist/cli/bin/knip.js", "ankhorage-eslint": "dist/cli/bin/eslint.js", "ankhorage-prettier": "dist/cli/bin/prettier.js", "ankhorage-changeset": "dist/cli/bin/changeset.js", "ankhorage-apm-release": "dist/cli/bin/apm-release.js" } }, "sha512-lEQk/pPdmOz8KXU0WwtRTvqHgO+cMY2Q5bwpGk0/oTT53iQfE3/qaUc6M9az89Jeb2zfJugkPVQSaxlPvH/wkg=="],
+    "@ankhorage/devtools": ["@ankhorage/devtools@1.17.2", "", { "dependencies": { "@ankhorage/apm": "^0.6.0", "@ankhorage/project-detector": "^0.1.0", "@ankhorage/utility": "^0.5.1", "@changesets/cli": "^3.0.2", "@eslint/compat": "^2.1.1", "@eslint/js": "^10.0.1", "@next/eslint-plugin-next": "^16.3.5", "eslint": "^10.10.0", "eslint-config-prettier": "^10.1.8", "eslint-plugin-import": "^2.32.0", "eslint-plugin-prettier": "^5.5.6", "eslint-plugin-react": "^7.37.5", "eslint-plugin-react-hooks": "^7.0.0", "eslint-plugin-react-native": "^5.0.0", "eslint-plugin-security": "^4.0.1", "eslint-plugin-simple-import-sort": "^14.0.0", "eslint-plugin-unused-imports": "^4.4.1", "knip": "^6.34.0", "prettier": "^3.9.6", "typescript-eslint": "^8.69.0" }, "bin": { "ankhorage-knip": "dist/cli/bin/knip.js", "ankhorage-eslint": "dist/cli/bin/eslint.js", "ankhorage-prettier": "dist/cli/bin/prettier.js", "ankhorage-changeset": "dist/cli/bin/changeset.js", "ankhorage-apm-release": "dist/cli/bin/apm-release.js" } }, "sha512-mMPZXDS11q9Eqc/3CO6M3x7WmPjnmftJyHWedZ1WD5PRN1ng+GSXUayXf1Xldglbl6Nd37ZoJ274J9P5vI36Cw=="],
 
     "@ankhorage/game": ["@ankhorage/game@0.1.1", "", {}, "sha512-QmdaJoec0gXeWmO/OeGzvOUP92m55N1Lnc5KoxRpZGUeT7obv3xs6WX+nYidizbqY4S1ZpPtHIKz5G0TzsFf0g=="],
 

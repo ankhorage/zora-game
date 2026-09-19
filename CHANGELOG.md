@@ -1,5 +1,11 @@
 # @ankhorage/zora-game
 
+## 0.8.9
+
+### Patch Changes
+
+- f53e722: Update Ankhorage dependencies: `@ankhorage/zora`.
+
 ## 0.8.8
 
 ### Patch Changes

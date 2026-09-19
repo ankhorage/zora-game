@@ -1,5 +1,11 @@
 # @ankhorage/zora-game
 
+## 0.8.11
+
+### Patch Changes
+
+- ae0d06c: Update Ankhorage dependencies: `@ankhorage/zora`.
+
 ## 0.8.10
 
 ### Patch Changes

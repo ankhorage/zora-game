@@ -57,7 +57,7 @@
     "node": ">=24"
   },
   "peerDependencies": {
-    "@ankhorage/zora": ">=20.3.2",
+    "@ankhorage/zora": ">=20.3.3",
     "react": "19.2.3",
     "react-native": "0.86.x"
   },
@@ -81,7 +81,7 @@
   "devDependencies": {
     "@ankhorage/devtools": "^1.18.3",
     "@ankhorage/paradox": "^0.1.26",
-    "@ankhorage/zora": "^20.3.2",
+    "@ankhorage/zora": "^20.3.3",
     "@types/bun": "^1.4.1",
     "@types/node": "^26.6.1",
     "@types/react": "^19.2.18",

@@ -11,7 +11,7 @@
       "devDependencies": {
         "@ankhorage/devtools": "^1.18.5",
         "@ankhorage/paradox": "^0.1.26",
-        "@ankhorage/zora": "^21.0.1",
+        "@ankhorage/zora": "^21.0.2",
         "@types/bun": "^1.4.1",
         "@types/node": "^26.6.1",
         "@types/react": "^19.2.18",
@@ -23,7 +23,7 @@
         "typescript": "~6.0.3",
       },
       "peerDependencies": {
-        "@ankhorage/zora": ">=21.0.1",
+        "@ankhorage/zora": ">=21.0.2",
         "react": "19.2.3",
         "react-native": "0.86.x",
       },
@@ -52,7 +52,7 @@
 
     "@ankhorage/utility": ["@ankhorage/utility@0.5.5", "", { "dependencies": { "@ankhorage/contracts": "^12.0.1" }, "peerDependencies": { "@techstark/opencv-js": "^5.0.0-release.1", "pixelmatch": "^7.2.0", "sharp": "^0.35.4", "tesseract.js": "^7.0.0" }, "optionalPeers": ["@techstark/opencv-js", "pixelmatch", "sharp", "tesseract.js"] }, "sha512-so1NXcIOQjEPNsNpdGp9McXsw8oIo4Mw/pF3y2x69f1MbwqEC79H7I0dResKs52S8Il4JeO/e5RO3Sf4yDdMGA=="],
 
-    "@ankhorage/zora": ["@ankhorage/zora@21.0.1", "", { "dependencies": { "@ankhorage/color-theory": "^0.3.1", "@ankhorage/contracts": "^22.2.0", "@ankhorage/surface": "^9.0.12", "@ankhorage/utility": "^1.4.0", "expo-document-picker": "~57.0.1", "expo-image-picker": "~57.0.16" }, "peerDependencies": { "@react-native-vector-icons/fontawesome": "^13.1.3", "@react-native-vector-icons/fontawesome5": "^13.1.3", "@react-native-vector-icons/fontawesome6": "^13.1.3", "@react-native-vector-icons/ionicons": "^13.1.3", "react": "19.2.3", "react-native": "0.86.x", "react-native-gesture-handler": "~2.32.0", "react-native-reanimated": "4.5.1", "react-native-safe-area-context": "~5.7.0", "react-native-svg": "15.15.4", "react-native-web": "~0.21.0", "react-native-worklets": "0.10.1" } }, "sha512-Rj1reZPq2t0+Y2MH4uYKCvrXHDVD6qG4FK+txYyI6UxOAZCT21s01TaMgJ/xb0iJtMPv7eheUreDiwPMK2y0yg=="],
+    "@ankhorage/zora": ["@ankhorage/zora@21.0.2", "", { "dependencies": { "@ankhorage/color-theory": "^0.3.1", "@ankhorage/contracts": "^22.2.0", "@ankhorage/surface": "^9.0.12", "@ankhorage/utility": "^1.4.0", "expo-document-picker": "~57.0.1", "expo-image-picker": "~57.0.16" }, "peerDependencies": { "@react-native-vector-icons/fontawesome": "^13.1.3", "@react-native-vector-icons/fontawesome5": "^13.1.3", "@react-native-vector-icons/fontawesome6": "^13.1.3", "@react-native-vector-icons/ionicons": "^13.1.3", "react": "19.2.3", "react-native": "0.86.x", "react-native-gesture-handler": "~2.32.0", "react-native-reanimated": "4.5.1", "react-native-safe-area-context": "~5.7.0", "react-native-svg": "15.15.4", "react-native-web": "~0.21.0", "react-native-worklets": "0.10.1" } }, "sha512-+R+PjVn8UBVPeXV4kLw4RAqWeIiUDL+A51hdN0BtjAOxBnXKpGBqwcMpYa4lIT8YjrxYnVBnStRdvGrH9EaCgA=="],
 
     "@babel/code-frame": ["@babel/code-frame@7.29.7", "", { "dependencies": { "@babel/helper-validator-identifier": "^7.29.7", "js-tokens": "^4.0.0", "picocolors": "^1.1.1" } }, "sha512-Aup7aUOfpbAUg2ROOJN6Iw5f9DMBlzu0mIkm/malLQFN/YQgO48wCj0Kxa3sEHJvPVFg7siR+qRInwXd2qhQKw=="],
 

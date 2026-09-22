@@ -1,5 +1,11 @@
 # @ankhorage/zora-game
 
+## 0.8.40
+
+### Patch Changes
+
+- cebc1a4: Update Ankhorage dependencies: `@ankhorage/runtime`.
+
 ## 0.8.39
 
 ### Patch Changes

@@ -57,7 +57,7 @@
     "node": ">=24"
   },
   "peerDependencies": {
-    "@ankhorage/zora": ">=21.0.10",
+    "@ankhorage/zora": ">=21.0.11",
     "react": "19.2.3",
     "react-native": "0.86.x"
   },
@@ -81,7 +81,7 @@
   "devDependencies": {
     "@ankhorage/devtools": "^1.18.5",
     "@ankhorage/paradox": "^0.1.26",
-    "@ankhorage/zora": "^21.0.10",
+    "@ankhorage/zora": "^21.0.11",
     "@types/bun": "^1.4.1",
     "@types/node": "^26.6.1",
     "@types/react": "^19.2.18",
@@ -95,6 +95,6 @@
   "packageManager": "bun@1.4.2",
   "dependencies": {
     "@ankhorage/game": "^0.1.2",
-    "@ankhorage/runtime": "^3.0.16"
+    "@ankhorage/runtime": "^3.0.17"
   }
 }

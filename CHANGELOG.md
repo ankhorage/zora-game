@@ -1,5 +1,11 @@
 # @ankhorage/zora-game
 
+## 0.8.33
+
+### Patch Changes
+
+- d5c3830: Update Ankhorage dependencies: `@ankhorage/runtime`, `@ankhorage/zora`.
+
 ## 0.8.32
 
 ### Patch Changes

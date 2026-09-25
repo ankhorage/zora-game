@@ -1,6 +1,6 @@
 {
   "name": "@ankhorage/zora-game",
-  "version": "0.8.51",
+  "version": "0.8.52",
   "type": "module",
   "description": "Generic game presentation primitives for React Native and React Native Web apps built on ZORA.",
   "homepage": "https://github.com/ankhorage/zora-game#readme",

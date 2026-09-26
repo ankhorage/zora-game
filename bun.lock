@@ -12,7 +12,7 @@
         "@ankhorage/devtools": "^1.18.5",
         "@ankhorage/paradox": "^0.2.6",
         "@ankhorage/zora": "^21.0.22",
-        "@types/bun": "^1.4.1",
+        "@types/bun": "^1.4.2",
         "@types/node": "^26.6.1",
         "@types/react": "^19.2.18",
         "@types/react-dom": "^19.2.4",
